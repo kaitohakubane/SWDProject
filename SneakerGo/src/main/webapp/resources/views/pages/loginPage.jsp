@@ -11,16 +11,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>SneakerGo Login Page</title>
-    <!-- Bootstrap core CSS -->
-    <link href="<c:url value="/resources/css/bootstrap.css"/>" rel="stylesheet">
-    <!--external css-->
-    <link href="<c:url value="/resources/font-awesome/css/font-awesome.css"/>" rel="stylesheet" />
-
-    <!-- Custom styles for this template -->
-    <link href="<c:url value="/resources/css/style.css"/>" rel="stylesheet">
-    <link href="<c:url value="/resources/css/style-responsive.css"/>" rel="stylesheet">
+    <c:import url="/resources/views/common/header.jsp"/>
 </head>
 
 <body>
@@ -73,10 +65,6 @@ MAIN CONTENT
 
     </div>
 </div>
-
-<!-- js placed at the end of the document so the pages load faster -->
-<script src="<c:url value="/resources/js/jquery.js"/>"></script>
-<script src="<c:url value="/resources/js/bootstrap.min.js"/>"></script>
 
 <%--<!--BACKSTRETCH-->--%>
 <%--<!-- You can use an image of whatever size. This script will stretch to fit in any screen size.-->--%>
