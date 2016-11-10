@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="SQL Server (Microsoft) - SneakerGo@localhost" uuid="4aba3604-733d-4547-b711-efb56e291bfc">
+      <database-info product="Microsoft SQL Server" version="10.50.4000" jdbc-version="4.0" driver-name="Microsoft JDBC Driver 4.0 for SQL Server" driver-version="4.0.2206.100">
+        <extra-name-characters>$#@</extra-name-characters>
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>sa</user-name>
+      <introspection-scope>SneakerGo:*|*:dbo</introspection-scope>
+      <resolve-scope>SneakerGo:*</resolve-scope>
+    </data-source>
+    <data-source name="src:main:webapp:resources:hibernate.cfg.xml/Hibernate" uuid="55a98571-7635-430a-a95b-46e8e410e5a3">
+      <database-info product="Microsoft SQL Server" version="10.50.4000" jdbc-version="4.0" driver-name="Microsoft JDBC Driver 4.0 for SQL Server" driver-version="4.0.2206.100">
+        <extra-name-characters>$#@</extra-name-characters>
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
+      <user-name>sa</user-name>
+      <user-password>dfc0dfcedfc8dfc9df90dfd9dfdbdfc6dfd9dfcfdfd8dfdcdfcfdfd8df90df85df85dfc6dfc5dfc9dfcbdfc6dfc2dfc5dfd9dfdedf90df9bdf9edf99df99df91dfcedfcbdfdedfcbdfc8dfcbdfd9dfcfdfe4dfcbdfc7dfcfdf97dff9dfc4dfcfdfcbdfc1dfcfdfd8dfeddfc5</user-password>
+      <introspection-scope>SneakerGo:*|*:dbo</introspection-scope>
+      <resolve-scope>SneakerGo:*</resolve-scope>
+    </data-source>
+    <data-source name="dataSource" uuid="f5b92dd7-26e0-41b0-95c8-8d4fdf752bd2">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <first-sync>true</first-sync>
+      <user-name>${database.username}</user-name>
+      <user-password>df8edfd1dfcedfcbdfdedfcbdfc8dfcbdfd9dfcfdf84dfdadfcbdfd9dfd9dfdddfc5dfd8dfcedfd7</user-password>
+    </data-source>
+  </component>
+</project>

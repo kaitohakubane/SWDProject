@@ -16,16 +16,26 @@ CREATE TABLE Account (
   PRIMARY KEY (accountId)
 );
 
+CREATE TABLE Attribute(
+attributeID INT NOT NULL IDENTITY,
+size		INT
+PRIMARY KEY (attributeID)
+);
+
+CREATE TABLE Stock(
+attributeID INT,
+productID	INT,
+quantity	INT,
+PRIMARY KEY (attributeID,productID)
+);
+
 CREATE TABLE Product (
   productID   INT NOT NULL IDENTITY,
   productName NVARCHAR(255),
   price       VARCHAR(255),
   picture     VARCHAR(255),
-  size        NVARCHAR(50),
-  color       NVARCHAR(100),
   nation      NVARCHAR(100),
   description NVARCHAR(255),
-  quantity    INT,
   type        VARCHAR(100),
   enabled     BIT,
   PRIMARY KEY (productID)
@@ -101,3 +111,9 @@ ALTER TABLE ImportDetail
 
 ALTER TABLE ImportDetail
   ADD FOREIGN KEY (importID) REFERENCES Import (importID);
+  
+ALTER TABLE Stock
+ADD FOREIGN KEY (attributeID) REFERENCES Attribute(attributeID);
+
+ALTER TABLE Stock
+ADD FOREIGN KEY (productID) REFERENCES Product(productID);
