@@ -11,6 +11,12 @@ public class HelloController {
 	@RequestMapping(method = RequestMethod.GET)
 	public String printWelcome(ModelMap model) {
 		model.addAttribute("message", "Hello world!");
-		return "addProductPage";
+		return "productPage";
+	}
+
+	@RequestMapping("/billManagement")
+	public String bill(ModelMap model) {
+		model.addAttribute("message", "Hello world!");
+		return "billManagementPage";
 	}
 }

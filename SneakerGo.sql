@@ -17,8 +17,8 @@ CREATE TABLE Account (
 );
 
 CREATE TABLE Attribute(
-attributeID INT NOT NULL IDENTITY,
-size		INT
+attributeID INT NOT NULL AUTO_INCREMENT,
+size		INT,
 PRIMARY KEY (attributeID)
 );
 
@@ -30,19 +30,18 @@ PRIMARY KEY (attributeID,productID)
 );
 
 CREATE TABLE Product (
-  productID   INT NOT NULL IDENTITY,
+  productID   INT NOT NULL AUTO_INCREMENT,
   productName NVARCHAR(255),
   price       VARCHAR(255),
   picture     VARCHAR(255),
   nation      NVARCHAR(100),
   description NVARCHAR(255),
-  type        VARCHAR(100),
   enabled     BIT,
   PRIMARY KEY (productID)
 );
 
 CREATE TABLE Bill (
-  billID     INT NOT NULL IDENTITY,
+  billID     INT NOT NULL AUTO_INCREMENT,
   accountID NVARCHAR(255),
   totalPrice VARCHAR(255),
   date       DATE,
@@ -60,13 +59,13 @@ CREATE TABLE BillDetail (
 );
 
 CREATE TABLE SaleProduct (
-  saleID      INT NOT NULL IDENTITY,
+  saleID      INT NOT NULL AUTO_INCREMENT,
   productID   INT,
   PRIMARY KEY (saleID,productID)
 );
 
 CREATE TABLE Sale (
-  saleID      INT NOT NULL IDENTITY,
+  saleID      INT NOT NULL AUTO_INCREMENT,
   salePercent INT,
   fromDate    DATE,
   toDate      DATE,
@@ -75,14 +74,14 @@ CREATE TABLE Sale (
 );
 
 CREATE TABLE Import (
-  importID        INT NOT NULL IDENTITY,
+  importID        INT NOT NULL AUTO_INCREMENT,
   importDate      DATE,
   Supplier        NVARCHAR(255),
   PRIMARY KEY (importID)
 );
 
 CREATE TABLE ImportDetail (
-  importID       INT NOT NULL IDENTITY,
+  importID       INT NOT NULL AUTO_INCREMENT,
   productID      INT,
   price          NVARCHAR(255),
   quantity	 INT,

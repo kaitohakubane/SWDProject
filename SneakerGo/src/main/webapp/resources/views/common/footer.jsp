@@ -12,3 +12,6 @@
         src="<c:url value="/resources/js/jquery.dcjqaccordion.2.7.js"/>"></script>
 <script src="<c:url value="/resources/js/jquery.scrollTo.min.js"/>"></script>
 <script src="<c:url value="/resources/js/jquery.nicescroll.js"/>" type="text/javascript"></script>
+<script src="<c:url value="/resources/js/bootstrap.min.js"/>" type="text/javascript"></script>
+<script src="<c:url value="/resources/js/advanced-form-components.js"/>" type="text/javascript"></script>
+<script src="<c:url value="/resources/js/common-scripts.js"/>"></script>

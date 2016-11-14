@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="SQL Server (Microsoft) - SneakerGo@localhost" uuid="4aba3604-733d-4547-b711-efb56e291bfc">
-      <driver-ref>sqlserver.ms</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
-      <jdbc-url>jdbc:sqlserver://localhost:1433;databaseName=SneakerGo</jdbc-url>
-    </data-source>
     <data-source source="LOCAL" name="src:main:webapp:resources:hibernate.cfg.xml/Hibernate" uuid="55a98571-7635-430a-a95b-46e8e410e5a3">
       <driver-ref>sqlserver.ms</driver-ref>
       <synchronize>true</synchronize>
@@ -26,6 +20,20 @@
       <remarks>$PROJECT_DIR$/src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml</remarks>
       <jdbc-driver>${database.driverClass}</jdbc-driver>
       <jdbc-url>${database.url}</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="MySQL - sneakergo@localhost" uuid="40262b3c-b74e-4792-8539-14eb3e3c8f5e">
+      <driver-ref>mysql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/sneakergo</jdbc-url>
+      <driver-properties>
+        <property name="autoReconnect" value="true" />
+        <property name="zeroDateTimeBehavior" value="convertToNull" />
+        <property name="tinyInt1isBit" value="false" />
+        <property name="characterEncoding" value="utf8" />
+        <property name="characterSetResults" value="utf8" />
+        <property name="yearIsDateType" value="false" />
+      </driver-properties>
     </data-source>
   </component>
 </project>
