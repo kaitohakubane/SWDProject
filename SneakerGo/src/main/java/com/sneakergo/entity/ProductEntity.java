@@ -1,9 +1,10 @@
 package com.sneakergo.entity;
 
 import javax.persistence.*;
+import java.sql.Date;
 
 /**
- * Created by Hung on 11/13/2016.
+ * Created by Hung on 11/17/2016.
  */
 @Entity
 @Table(name = "product", schema = "sneakergo", catalog = "")
@@ -14,7 +15,7 @@ public class ProductEntity {
     private String picture;
     private String nation;
     private String description;
-    private String type;
+    private Date createdDate;
     private Boolean enabled;
 
     @Id
@@ -78,13 +79,13 @@ public class ProductEntity {
     }
 
     @Basic
-    @Column(name = "type", nullable = true, length = 100)
-    public String getType() {
-        return type;
+    @Column(name = "createdDate", nullable = true)
+    public Date getCreatedDate() {
+        return createdDate;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setCreatedDate(Date createdDate) {
+        this.createdDate = createdDate;
     }
 
     @Basic
@@ -110,7 +111,7 @@ public class ProductEntity {
         if (picture != null ? !picture.equals(that.picture) : that.picture != null) return false;
         if (nation != null ? !nation.equals(that.nation) : that.nation != null) return false;
         if (description != null ? !description.equals(that.description) : that.description != null) return false;
-        if (type != null ? !type.equals(that.type) : that.type != null) return false;
+        if (createdDate != null ? !createdDate.equals(that.createdDate) : that.createdDate != null) return false;
         if (enabled != null ? !enabled.equals(that.enabled) : that.enabled != null) return false;
 
         return true;
@@ -124,7 +125,7 @@ public class ProductEntity {
         result = 31 * result + (picture != null ? picture.hashCode() : 0);
         result = 31 * result + (nation != null ? nation.hashCode() : 0);
         result = 31 * result + (description != null ? description.hashCode() : 0);
-        result = 31 * result + (type != null ? type.hashCode() : 0);
+        result = 31 * result + (createdDate != null ? createdDate.hashCode() : 0);
         result = 31 * result + (enabled != null ? enabled.hashCode() : 0);
         return result;
     }

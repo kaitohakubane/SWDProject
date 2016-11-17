@@ -4,12 +4,13 @@ import javax.persistence.*;
 import java.sql.Date;
 
 /**
- * Created by Hung on 11/13/2016.
+ * Created by Hung on 11/17/2016.
  */
 @Entity
 @Table(name = "sale", schema = "sneakergo", catalog = "")
 public class SaleEntity {
     private int saleId;
+    private Integer productId;
     private Integer salePercent;
     private Date fromDate;
     private Date toDate;
@@ -23,6 +24,16 @@ public class SaleEntity {
 
     public void setSaleId(int saleId) {
         this.saleId = saleId;
+    }
+
+    @Basic
+    @Column(name = "productID", nullable = true)
+    public Integer getProductId() {
+        return productId;
+    }
+
+    public void setProductId(Integer productId) {
+        this.productId = productId;
     }
 
     @Basic
@@ -73,6 +84,7 @@ public class SaleEntity {
         SaleEntity that = (SaleEntity) o;
 
         if (saleId != that.saleId) return false;
+        if (productId != null ? !productId.equals(that.productId) : that.productId != null) return false;
         if (salePercent != null ? !salePercent.equals(that.salePercent) : that.salePercent != null) return false;
         if (fromDate != null ? !fromDate.equals(that.fromDate) : that.fromDate != null) return false;
         if (toDate != null ? !toDate.equals(that.toDate) : that.toDate != null) return false;
@@ -84,6 +96,7 @@ public class SaleEntity {
     @Override
     public int hashCode() {
         int result = saleId;
+        result = 31 * result + (productId != null ? productId.hashCode() : 0);
         result = 31 * result + (salePercent != null ? salePercent.hashCode() : 0);
         result = 31 * result + (fromDate != null ? fromDate.hashCode() : 0);
         result = 31 * result + (toDate != null ? toDate.hashCode() : 0);

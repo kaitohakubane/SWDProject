@@ -3,34 +3,22 @@ package com.sneakergo.entity;
 import javax.persistence.*;
 
 /**
- * Created by Hung on 11/13/2016.
+ * Created by Hung on 11/17/2016.
  */
 @Entity
 @Table(name = "stock", schema = "sneakergo", catalog = "")
-@IdClass(StockEntityPK.class)
 public class StockEntity {
-    private int attributeId;
-    private int productId;
+    private int stockId;
     private Integer quantity;
 
     @Id
-    @Column(name = "attributeID", nullable = false)
-    public int getAttributeId() {
-        return attributeId;
+    @Column(name = "stockID", nullable = false)
+    public int getStockId() {
+        return stockId;
     }
 
-    public void setAttributeId(int attributeId) {
-        this.attributeId = attributeId;
-    }
-
-    @Id
-    @Column(name = "productID", nullable = false)
-    public int getProductId() {
-        return productId;
-    }
-
-    public void setProductId(int productId) {
-        this.productId = productId;
+    public void setStockId(int stockId) {
+        this.stockId = stockId;
     }
 
     @Basic
@@ -50,8 +38,7 @@ public class StockEntity {
 
         StockEntity that = (StockEntity) o;
 
-        if (attributeId != that.attributeId) return false;
-        if (productId != that.productId) return false;
+        if (stockId != that.stockId) return false;
         if (quantity != null ? !quantity.equals(that.quantity) : that.quantity != null) return false;
 
         return true;
@@ -59,8 +46,7 @@ public class StockEntity {
 
     @Override
     public int hashCode() {
-        int result = attributeId;
-        result = 31 * result + productId;
+        int result = stockId;
         result = 31 * result + (quantity != null ? quantity.hashCode() : 0);
         return result;
     }

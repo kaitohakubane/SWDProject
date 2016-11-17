@@ -49,6 +49,36 @@
 
     <tx:annotation-driven transaction-manager="transactionManager"/>
 
+    <!--Security-->
+    <security:http auto-config="true">
+        <security:intercept-url pattern="/" access="hasRole('ROLE_ADMIN')"/>
+        <security:intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')"/>
+        <security:intercept-url pattern="/login" access="permitAll"/>
+
+
+        <security:logout logout-url="/admincp/logout" logout-success-url="/login"/>
+
+        <security:form-login login-page="/login"
+                             username-parameter="username"
+                             password-parameter="password"
+                             authentication-failure-url="/login?error=true"
+                             default-target-url="/admin"
+                             always-use-default-target="true"/>
+        <security:csrf disabled="true"/>
+        <security:session-management>
+            <security:concurrency-control max-sessions="1"/>
+        </security:session-management>
+    </security:http>
+
+    <security:authentication-manager>
+        <security:authentication-provider>
+            <security:jdbc-user-service data-source-ref="dataSource"
+                                        authorities-by-username-query="SELECT username, role FROM account WHERE username = ?"
+                                        users-by-username-query="SELECT username, `password`, enabled FROM account WHERE username = ?"/>
+
+            <security:password-encoder hash="bcrypt"/>
+        </security:authentication-provider>
+    </security:authentication-manager>
 
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">

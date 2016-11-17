@@ -23,10 +23,11 @@ PRIMARY KEY (attributeID)
 );
 
 CREATE TABLE Stock(
+stockID INT NOT NULL AUTO_INCREMENT,
 attributeID INT,
 productID	INT,
 quantity	INT,
-PRIMARY KEY (attributeID,productID)
+PRIMARY KEY (stockID)
 );
 
 CREATE TABLE Product (
@@ -36,6 +37,7 @@ CREATE TABLE Product (
   picture     VARCHAR(255),
   nation      NVARCHAR(100),
   description NVARCHAR(255),
+  createdDate DATE,
   enabled     BIT,
   PRIMARY KEY (productID)
 );
@@ -58,14 +60,10 @@ CREATE TABLE BillDetail (
   PRIMARY KEY (billID,productID)
 );
 
-CREATE TABLE SaleProduct (
-  saleID      INT NOT NULL AUTO_INCREMENT,
-  productID   INT,
-  PRIMARY KEY (saleID,productID)
-);
 
 CREATE TABLE Sale (
   saleID      INT NOT NULL AUTO_INCREMENT,
+  productID   INT,
   salePercent INT,
   fromDate    DATE,
   toDate      DATE,
@@ -75,19 +73,13 @@ CREATE TABLE Sale (
 
 CREATE TABLE Import (
   importID        INT NOT NULL AUTO_INCREMENT,
+  stockID  	      INT,
+  price			  NVARCHAR(255),
+  quantity		  INT,
   importDate      DATE,
   Supplier        NVARCHAR(255),
   PRIMARY KEY (importID)
 );
-
-CREATE TABLE ImportDetail (
-  importID       INT NOT NULL AUTO_INCREMENT,
-  productID      INT,
-  price          NVARCHAR(255),
-  quantity	 INT,
-  PRIMARY KEY (importID,ProductID)
-);
-
 
 ALTER TABLE Bill
   ADD FOREIGN KEY (accountID) REFERENCES Account (accountID);
@@ -98,18 +90,8 @@ ALTER TABLE BillDetail
 ALTER TABLE BillDetail
   ADD FOREIGN KEY (productId) REFERENCES Product (productId);
 
-ALTER TABLE SaleProduct
-  ADD FOREIGN KEY (saleID) REFERENCES Sale (saleID);
-
-ALTER TABLE SaleProduct
-  ADD FOREIGN KEY (productID) REFERENCES Product (productID);
-
-ALTER TABLE ImportDetail
-  ADD FOREIGN KEY (productID) REFERENCES Product (productID);
-  
-
-ALTER TABLE ImportDetail
-  ADD FOREIGN KEY (importID) REFERENCES Import (importID);
+ALTER TABLE Import
+ADD FOREIGN KEY (stockID) REFERENCES Stock(stockID);
   
 ALTER TABLE Stock
 ADD FOREIGN KEY (attributeID) REFERENCES Attribute(attributeID);

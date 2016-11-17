@@ -17,10 +17,10 @@
         <ul class="sidebar-menu" id="nav-accordion">
 
             <p class="centered"><a href="profile.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
-            <h5 class="centered">Marcel Newman</h5>
+            <h5 class="centered">Hung Mai</h5>
 
             <li class="mt">
-                <a href="index.html">
+                <a href="${pageContext.request.contextPath}/">
                     <i class="fa fa-dashboard"></i>
                     <span>Dashboard</span>
                 </a>
@@ -29,64 +29,39 @@
             <li class="sub-menu">
                 <a href="javascript:;" >
                     <i class="fa fa-desktop"></i>
-                    <span>UI Elements</span>
+                    <span>Product</span>
                 </a>
                 <ul class="sub">
-                    <li><a  href="general.html">General</a></li>
-                    <li><a  href="buttons.html">Buttons</a></li>
-                    <li><a  href="panels.html">Panels</a></li>
+                    <li><a  href="${pageContext.request.contextPath}/productManagement">Product Management</a></li>
                 </ul>
             </li>
 
             <li class="sub-menu">
                 <a href="javascript:;" >
                     <i class="fa fa-cogs"></i>
-                    <span>Components</span>
+                    <span>Bill</span>
                 </a>
                 <ul class="sub">
-                    <li><a  href="calendar.html">Calendar</a></li>
-                    <li><a  href="gallery.html">Gallery</a></li>
-                    <li><a  href="todo_list.html">Todo List</a></li>
+                    <li><a  href="${pageContext.request.contextPath}/billManagement">Bill Management</a></li>
                 </ul>
             </li>
             <li class="sub-menu">
                 <a href="javascript:;" >
                     <i class="fa fa-book"></i>
-                    <span>Extra Pages</span>
+                    <span>Sale</span>
                 </a>
                 <ul class="sub">
-                    <li><a  href="blank.html">Blank Page</a></li>
-                    <li><a  href="login.html">Login</a></li>
-                    <li><a  href="lock_screen.html">Lock Screen</a></li>
-                </ul>
-            </li>
-            <li class="sub-menu">
-                <a href="javascript:;" >
-                    <i class="fa fa-tasks"></i>
-                    <span>Forms</span>
-                </a>
-                <ul class="sub">
-                    <li><a  href="form_component.html">Form Components</a></li>
-                </ul>
-            </li>
-            <li class="sub-menu">
-                <a class="active" href="javascript:;" >
-                    <i class="fa fa-th"></i>
-                    <span>Data Tables</span>
-                </a>
-                <ul class="sub">
-                    <li><a  href="basic_table.html">Basic Table</a></li>
-                    <li class="active"><a  href="responsive_table.html">Responsive Table</a></li>
+                    <li><a  href="${pageContext.request.contextPath}/saleManagement">Sale Management</a></li>
                 </ul>
             </li>
             <li class="sub-menu">
                 <a href="javascript:;" >
                     <i class=" fa fa-bar-chart-o"></i>
-                    <span>Charts</span>
+                    <span>Report</span>
                 </a>
                 <ul class="sub">
-                    <li><a  href="morris.html">Morris</a></li>
-                    <li><a  href="chartjs.html">Chartjs</a></li>
+                    <li><a  href="morris.html">Revenue Report</a></li>
+                    <li><a  href="chartjs.html">Import Report</a></li>
                 </ul>
             </li>
 

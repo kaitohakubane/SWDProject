@@ -11,8 +11,13 @@
 <head>
     <title>Bill Management</title>
     <c:import url="/resources/views/common/header.jsp"/>
-    <c:import url="/resources/views/common/menu.jsp"/>
-    <c:import url="/resources/views/common/topBar.jsp"/>
+
+    <%--Date time CSS--%>
+    <link href="<c:url value="/resources/js/bootstrap-datepicker/datepicker.css"/>" rel="stylesheet">
+    <link href="<c:url value="/resources/js/bootstrap-daterangepicker/daterangepicker.css"/>" rel="stylesheet">
+    <link href="<c:url value="/resources/js/bootstrap-datetimepicker/datertimepicker.css"/>" rel="stylesheet">
+
+    <%--Table CSS--%>
     <link href="<c:url value="/resources/css/table-responsive.css"/>" rel="stylesheet">
     <link href="<c:url value="/resources/js/advanced-datatable/demo_table.css"/>" rel="stylesheet">
     <link href="<c:url value="/resources/js/advanced-datatable/demo_page.css"/>" rel="stylesheet">
@@ -191,24 +196,20 @@
     </div>
 </div>
 
+
+<%--Time script--%>
 <script src="<c:url value = "/resources/js/bootstrap-datepicker/bootstrap-datepicker.js"/>"
         type="text/javascript"></script>
-<script src="<c:url value = "/resources/js/bootstrap-daterangepicker/daterangepicker.js"/>"
-        type="text/javascript"></script>
+
 <script src="<c:url value = "/resources/js/bootstrap-daterangepicker/date.js"/>" type="text/javascript"></script>
-<script src="<c:url value = "/resources/js/bootstrap-daterangepicker/moment.min.js"/>"
+<script src="<c:url value = "/resources/js/bootstrap-daterangepicker/daterangepicker.js"/>"
         type="text/javascript"></script>
 <script src="<c:url value = "/resources/js/bootstrap-datetimepicker/bootstrap-datetimepicker.js"/>"
         type="text/javascript"></script>
-<script src="<c:url value = "/resources/js/bootstrap-fileupload/bootstrap-fileupload.js"/>"
-        type="text/javascript">
-</script>
-<script src="<c:url value = "/resources/js/advanced-datatable/jquery.dataTables.js"/>"
-        type="text/javascript">
-</script>
-<script src="<c:url value = "/resources/js/advanced-datatable/jquery.js"/>" type="text/javascript"></script>
-<c:import url="/resources/views/common/footer.jsp"/>
+<script src="<c:url value = "/resources/js/bootstrap-daterangepicker/moment.min.js"/>"
+        type="text/javascript"></script>
 
+<c:import url="/resources/views/common/footer.jsp"/>
 <div class="datepicker dropdown-menu">
     <div class="datepicker-days" style="display: block;">
         <table class=" table-condensed">
@@ -248,9 +249,9 @@
                 <td class="day">12</td>
             </tr>
             <tr>
-                <td class="day active">13</td>
+                <td class="day">13</td>
                 <td class="day">14</td>
-                <td class="day">15</td>
+                <td class="day active">15</td>
                 <td class="day">16</td>
                 <td class="day">17</td>
                 <td class="day">18</td>
@@ -300,8 +301,8 @@
                 <td colspan="7"><span class="month">Jan</span><span class="month">Feb</span><span
                         class="month">Mar</span><span class="month">Apr</span><span class="month">May</span><span
                         class="month">Jun</span><span class="month">Jul</span><span class="month">Aug</span><span
-                        class="month">Sep</span><span class="month">Oct</span><span
-                        class="month active">Nov</span><span class="month">Dec</span></td>
+                        class="month">Sep</span><span class="month">Oct</span><span class="month active">Nov</span><span
+                        class="month">Dec</span></td>
             </tr>
             </tbody>
         </table>
@@ -318,9 +319,8 @@
             <tbody>
             <tr>
                 <td colspan="7"><span class="year old">2009</span><span class="year">2010</span><span
-                        class="year">2011</span><span
-                        class="year">2012</span><span class="year">2013</span><span class="year">2014</span><span
-                        class="year">2015</span><span class="year active">2016</span><span
+                        class="year">2011</span><span class="year">2012</span><span class="year">2013</span><span
+                        class="year">2014</span><span class="year">2015</span><span class="year active">2016</span><span
                         class="year">2017</span><span class="year">2018</span><span class="year">2019</span><span
                         class="year old">2020</span></td>
             </tr>
@@ -328,7 +328,6 @@
         </table>
     </div>
 </div>
-
 
 </body>
 

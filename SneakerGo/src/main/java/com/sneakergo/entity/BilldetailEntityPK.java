@@ -5,7 +5,7 @@ import javax.persistence.Id;
 import java.io.Serializable;
 
 /**
- * Created by Hung on 11/13/2016.
+ * Created by Hung on 11/17/2016.
  */
 public class BilldetailEntityPK implements Serializable {
     private int billId;

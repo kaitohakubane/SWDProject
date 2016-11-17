@@ -10,16 +10,23 @@
 <html>
 <head>
     <title>Product</title>
-    <link href="<c:url value="/resources/css/table-responsive.css"/>" rel="stylesheet">
+    <c:import url="/resources/views/common/header.jsp"/>
+
+    <%--Date time CSS--%>
     <link href="<c:url value="/resources/js/bootstrap-datepicker/datepicker.css"/>" rel="stylesheet">
     <link href="<c:url value="/resources/js/bootstrap-daterangepicker/daterangepicker.css"/>" rel="stylesheet">
     <link href="<c:url value="/resources/js/bootstrap-datetimepicker/datertimepicker.css"/>" rel="stylesheet">
+
+    <%--File upload CSS--%>
     <link href="<c:url value="/resources/js/bootstrap-fileupload/bootstrap-fileupload.css"/>" rel="stylesheet">
+
+    <%--Table CSS--%>
+    <link href="<c:url value="/resources/css/table-responsive.css"/>" rel="stylesheet">
     <link href="<c:url value="/resources/js/advanced-datatable/demo_page.css"/>" rel="stylesheet">
     <link href="<c:url value="/resources/js/advanced-datatable/demo_table.css"/>" rel="stylesheet">
     <link href="<c:url value="/resources/js/advanced-datatable/DT_bootstrap.css"/>" rel="stylesheet">
     <link href="<c:url value="/resources/css/productPage.css"/>" rel="stylesheet">
-    <c:import url="/resources/views/common/header.jsp"/>
+
 </head>
 <body>
 <section id="container">
@@ -37,100 +44,110 @@
                 <!-- page start-->
                 <div class="content-panel">
                     <div class="adv-table">
-                        <div id="hidden-table-info_wrapper" class="dataTables_wrapper" role="grid">
-                            <div id="hidden-table-info_length" class="dataTables_length"><label>Show <select size="1"
-                                                                                                             name="hidden-table-info_length"
-                                                                                                             aria-controls="hidden-table-info">
-                                <option value="10" selected="selected">10</option>
-                                <option value="25">25</option>
-                                <option value="50">50</option>
-                                <option value="100">100</option>
-                            </select> entries</label></div>
-                            <div class="dataTables_filter" id="hidden-table-info_filter">
-                                <button type="button" class="btn btn-primary addNew" data-toggle="modal"
-                                        data-target="#productModal" >Add</button>
-                                <label>Search: <input
-                                    type="text" aria-controls="hidden-table-info"></label></div>
-                            <table cellpadding="0" cellspacing="0" border="0"
-                                   class="display table table-bordered dataTable" id="hidden-table-info"
-                                   aria-describedby="hidden-table-info_info">
-                                <thead>
-                                <tr role="row">
-                                    <th></th>
-                                    <th>ID</th>
-                                    <th>Name</th>
-                                    <th>Price</th>
-                                    <th>Nation</th>
-                                    <th>Sale</th>
-                                    <th>Import</th>
-                                    <th>Update</th>
-                                    <th>Delete</th>
-                                </tr>
-                                </thead>
+                        <form class="form-inline" role="form">
+                            <select class="form-control">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                            <label>Display</label>
+                            <div class="form-group search-control">
 
-                                <tbody role="alert" aria-live="polite" aria-relevant="all">
-                                <tr class="gradeC even">
-                                    <td class="center "></td>
-                                    <td class="center "></td>
-                                    <td class="center "></td>
-                                    <td class="center "></td>
-                                    <td class="center">Mac OS 8-X</td>
-                                    <td class="center">
-                                        <button type="button" class="btn btn-round btn-warning" data-toggle="modal"
-                                                data-target="#salemodal">Sale</button>
-                                    </td>
-                                    <td class="center">
-                                        <button type="button" class="btn btn-round btn-success" data-toggle="modal"
-                                                data-target="#importModal">Import</button>
-                                    </td>
-                                    <td class="center">
-                                        <button type="button" class="btn btn-round btn-info" data-toggle="modal"
-                                                data-target="#productModal">Update
-                                        </button>
-                                    </td>
-                                    <td class="center">
-                                        <button type="button" class="btn btn-round btn-danger" data-toggle="modal"
-                                                data-target="#confirmModal">Delete
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr class="gradeA odd">
-                                    <td class="center "></td>
-                                    <td class="center "></td>
-                                    <td class="center "></td>
-                                    <td class="center "></td>
-                                    <td class="">Trident</td>
-                                    <td class="center">
-                                        <button type="button" class="btn btn-round btn-warning">Sale</button>
-                                    </td>
-                                    <td class="center">
-                                        <button type="button" class="btn btn-round btn-success">Import</button>
-                                    </td>
-                                    <td class="center">
-                                        <button type="button" class="btn btn-round btn-info" data-toggle="modal"
-                                                data-target="#productModal">Update
-                                        </button>
-                                    </td>
-                                    <td class="center">
-                                        <button type="button" class="btn btn-round btn-danger" data-toggle="modal"
-                                                data-target="#confirmModal">Delete
-                                        </button>
-                                    </td>
-                                </tr>
+                                <input type="email" class="form-control" id="exampleInputEmail2"
+                                       placeholder="Enter email">
+                                <button type="submit" class="btn btn-theme">Search</button>
+                            </div>
+
+                            <div class="form-group">
+                                <button type="button" class="btn btn-primary" ata-toggle="modal"
+                                        data-target="#productModal">Add Product</button>
+                            </div>
+                        </form>
+
+                        <table cellpadding="0" cellspacing="0" border="0"
+                               class="display table table-bordered dataTable" id="hidden-table-info"
+                               aria-describedby="hidden-table-info_info">
+                            <thead>
+                            <tr role="row">
+                                <th></th>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>Nation</th>
+                                <th>Sale</th>
+                                <th>Import</th>
+                                <th>Update</th>
+                                <th>Delete</th>
+                            </tr>
+                            </thead>
+
+                            <tbody role="alert" aria-live="polite" aria-relevant="all">
+                            <tr class="gradeC even">
+                                <td class="center "></td>
+                                <td class="center "></td>
+                                <td class="center "></td>
+                                <td class="center "></td>
+                                <td class="center">Mac OS 8-X</td>
+                                <td class="center">
+                                    <button type="button" class="btn btn-round btn-warning" data-toggle="modal"
+                                            data-target="#saleModal">Sale
+                                    </button>
+                                </td>
+                                <td class="center">
+                                    <button type="button" class="btn btn-round btn-success" data-toggle="modal"
+                                            data-target="#importModal">Import
+                                    </button>
+                                </td>
+                                <td class="center">
+                                    <button type="button" class="btn btn-round btn-info" data-toggle="modal"
+                                            data-target="#productModal">Update
+                                    </button>
+                                </td>
+                                <td class="center">
+                                    <button type="button" class="btn btn-round btn-danger" data-toggle="modal"
+                                            data-target="#confirmModal">Delete
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr class="gradeA odd">
+                                <td class="center "></td>
+                                <td class="center "></td>
+                                <td class="center "></td>
+                                <td class="center "></td>
+                                <td class="">Trident</td>
+                                <td class="center">
+                                    <button type="button" class="btn btn-round btn-warning">Sale</button>
+                                </td>
+                                <td class="center">
+                                    <button type="button" class="btn btn-round btn-success">Import</button>
+                                </td>
+                                <td class="center">
+                                    <button type="button" class="btn btn-round btn-info" data-toggle="modal"
+                                            data-target="#productModal">Update
+                                    </button>
+                                </td>
+                                <td class="center">
+                                    <button type="button" class="btn btn-round btn-danger" data-toggle="modal"
+                                            data-target="#confirmModal">Delete
+                                    </button>
+                                </td>
+                            </tr>
 
 
-                                </tbody>
-                            </table>
-                            <div class="dataTables_info" id="hidden-table-info_info">Showing 1 to 57 of 57 entries</div>
-                            <div class="dataTables_paginate paging_two_button" id="hidden-table-info_paginate"><a
-                                    class="paginate_disabled_previous" tabindex="0" role="button"
-                                    id="hidden-table-info_previous" aria-controls="hidden-table-info">Previous</a><a
-                                    class="paginate_disabled_next" tabindex="0" role="button"
-                                    id="hidden-table-info_next" aria-controls="hidden-table-info">Next</a></div>
-                        </div>
+                            </tbody>
+                        </table>
+                        <div class="dataTables_info" id="hidden-table-info_info">Showing 1 to 57 of 57 entries</div>
+                        <div class="dataTables_paginate paging_two_button" id="hidden-table-info_paginate"><a
+                                class="paginate_disabled_previous" tabindex="0" role="button"
+                                id="hidden-table-info_previous" aria-controls="hidden-table-info">Previous</a><a
+                                class="paginate_disabled_next" tabindex="0" role="button"
+                                id="hidden-table-info_next" aria-controls="hidden-table-info">Next</a></div>
                     </div>
                 </div>
-                <!-- page end-->
+            </div>
+            <!-- page end-->
             </div><!-- /row -->
         </section><!-- --/wrapper ---->
     </section><!-- /MAIN CONTENT -->
@@ -353,6 +370,7 @@
     </div>
 </div>
 
+
 <script src="<c:url value = "/resources/js/bootstrap-datepicker/bootstrap-datepicker.js"/>"
         type="text/javascript"></script>
 <script src="<c:url value = "/resources/js/bootstrap-daterangepicker/daterangepicker.js"/>"
@@ -365,11 +383,6 @@
 <script src="<c:url value = "/resources/js/bootstrap-fileupload/bootstrap-fileupload.js"/>"
         type="text/javascript">
 </script>
-<script src="<c:url value = "/resources/js/advanced-datatable/jquery.dataTables.js"/>"
-        type="text/javascript">
-</script>
-<script src="<c:url value = "/resources/js/advanced-datatable/jquery.js"/>" type="text/javascript"></script>
-<c:import url="/resources/views/common/footer.jsp"/>
 
 <div class="datepicker dropdown-menu">
     <div class="datepicker-days" style="display: block;">
@@ -490,7 +503,7 @@
         </table>
     </div>
 </div>
-
+<c:import url="/resources/views/common/footer.jsp"/>
 
 </body>
 </html>
