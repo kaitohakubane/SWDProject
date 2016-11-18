@@ -16,7 +16,7 @@ import java.util.List;
 
 @Repository
 public class ProductModel extends CommonDAO implements ProductModelInterface {
-    @Override
+
     public ProductEntity getProductByID(int productID) {
         ProductEntity productEntity = getSession().get(ProductEntity.class, productID);
         return productEntity;

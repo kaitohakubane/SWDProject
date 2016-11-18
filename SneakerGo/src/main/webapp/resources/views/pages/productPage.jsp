@@ -504,6 +504,5 @@
     </div>
 </div>
 <c:import url="/resources/views/common/footer.jsp"/>
-
 </body>
 </html>

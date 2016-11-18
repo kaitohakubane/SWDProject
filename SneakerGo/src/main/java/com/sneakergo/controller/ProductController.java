@@ -22,6 +22,9 @@ public class ProductController {
     @RequestMapping(value = PageConstant.PRODUCT_PAGE_URL, method = RequestMethod.GET)
     public ModelAndView initProductPage() {
         List<ProductEntity> listProduct = productServiceInterface.getAllProduct();
+        System.out.println(listProduct.size());
+        System.out.println(listProduct.get(0).getProductName());
+
         ModelAndView modelAndView = new ModelAndView(PageConstant.PRODUCT_PAGE);
         modelAndView.addObject(ParamConstant.LIST_PRODUCT, listProduct);
         return modelAndView;

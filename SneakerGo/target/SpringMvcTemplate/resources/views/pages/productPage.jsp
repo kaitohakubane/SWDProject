@@ -504,6 +504,9 @@
     </div>
 </div>
 <c:import url="/resources/views/common/footer.jsp"/>
-
+<script language="javascript">
+    var listOfProduct="<c:out value="${listProduct}" />";
+    alert(listOfProduct.length);
+</script>
 </body>
 </html>

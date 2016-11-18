@@ -98,3 +98,7 @@ ADD FOREIGN KEY (attributeID) REFERENCES Attribute(attributeID);
 
 ALTER TABLE Stock
 ADD FOREIGN KEY (productID) REFERENCES Product(productID);
+
+INSERT INTO Account (accountID, password,name,address,birthday, phone, email, role, enabled)
+VALUES ('hungmc', '$2a$06$GuAywy4wXpX5GwH8mHv3wu/iyILUGOW0n4oScztdewpd5L3iP3vmK','Hung Akai',
+        'Ho Chi Minh City','1995-10-17', '+84946469554', 'hungmc@sneaker.com', 'ROLE_ADMIN', 1);
