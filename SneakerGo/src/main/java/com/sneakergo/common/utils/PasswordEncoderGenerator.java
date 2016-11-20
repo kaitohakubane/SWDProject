@@ -1,4 +1,4 @@
-package com.shoppee.common.utils;
+package com.sneakergo.common.utils;
 
 /**
  * Created by Administrator on 10/4/2016.

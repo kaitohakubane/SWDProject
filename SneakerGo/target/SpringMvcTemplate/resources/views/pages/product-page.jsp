@@ -11,9 +11,10 @@
 <head>
     <title>Product</title>
     <c:import url="/resources/views/common/header.jsp"/>
-
+    <link href="<c:url value="/resources/lib/css/common.css"/>" rel="stylesheet">
     <%--Date time CSS--%>
     <link href="<c:url value="/resources/js/bootstrap-datepicker/datepicker.css"/>" rel="stylesheet">
+
     <link href="<c:url value="/resources/js/bootstrap-daterangepicker/daterangepicker.css"/>" rel="stylesheet">
     <link href="<c:url value="/resources/js/bootstrap-datetimepicker/datertimepicker.css"/>" rel="stylesheet">
 
@@ -61,8 +62,9 @@
                             </div>
 
                             <div class="form-group">
-                                <button type="button" class="btn btn-primary" ata-toggle="modal"
-                                        data-target="#productModal">Add Product</button>
+                                <button type="button" class="btn btn-primary" data-toggle="modal"
+                                        data-target="#productModal">Add Product
+                                </button>
                             </div>
                         </form>
 
@@ -71,8 +73,8 @@
                                aria-describedby="hidden-table-info_info">
                             <thead>
                             <tr role="row">
-                                <th></th>
                                 <th>ID</th>
+                                <th>Picture</th>
                                 <th>Name</th>
                                 <th>Price</th>
                                 <th>Nation</th>
@@ -84,58 +86,46 @@
                             </thead>
 
                             <tbody role="alert" aria-live="polite" aria-relevant="all">
-                            <tr class="gradeC even">
-                                <td class="center "></td>
-                                <td class="center "></td>
-                                <td class="center "></td>
-                                <td class="center "></td>
-                                <td class="center">Mac OS 8-X</td>
-                                <td class="center">
-                                    <button type="button" class="btn btn-round btn-warning" data-toggle="modal"
-                                            data-target="#saleModal">Sale
-                                    </button>
-                                </td>
-                                <td class="center">
-                                    <button type="button" class="btn btn-round btn-success" data-toggle="modal"
-                                            data-target="#importModal">Import
-                                    </button>
-                                </td>
-                                <td class="center">
-                                    <button type="button" class="btn btn-round btn-info" data-toggle="modal"
-                                            data-target="#productModal">Update
-                                    </button>
-                                </td>
-                                <td class="center">
-                                    <button type="button" class="btn btn-round btn-danger" data-toggle="modal"
-                                            data-target="#confirmModal">Delete
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr class="gradeA odd">
-                                <td class="center "></td>
-                                <td class="center "></td>
-                                <td class="center "></td>
-                                <td class="center "></td>
-                                <td class="">Trident</td>
-                                <td class="center">
-                                    <button type="button" class="btn btn-round btn-warning">Sale</button>
-                                </td>
-                                <td class="center">
-                                    <button type="button" class="btn btn-round btn-success">Import</button>
-                                </td>
-                                <td class="center">
-                                    <button type="button" class="btn btn-round btn-info" data-toggle="modal"
-                                            data-target="#productModal">Update
-                                    </button>
-                                </td>
-                                <td class="center">
-                                    <button type="button" class="btn btn-round btn-danger" data-toggle="modal"
-                                            data-target="#confirmModal">Delete
-                                    </button>
-                                </td>
-                            </tr>
-
-
+                            <c:forEach var="item" items="${listProduct}">
+                                <tr class="gradeC even">
+                                    <td class="center">${item.productId}</td>
+                                    <td class="center">
+                                        <c:choose>
+                                            <c:when test="${item.picture eq null}">
+                                                <img src="<c:url value="/resources/lib/img/noimagefound.jpg"/>"
+                                                     class="product-image"/>
+                                            </c:when>
+                                            <c:otherwise>
+                                                <img src="${pageContext.request.contextPath}/product-images/${item.picture}"
+                                                     class="product-image"/>
+                                            </c:otherwise>
+                                        </c:choose>
+                                    </td>
+                                    <td class="center">${item.productName}</td>
+                                    <td class="center">${item.price}</td>
+                                    <td class="center">${item.nation}</td>
+                                    <td class="center">
+                                        <button type="button" class="btn btn-round btn-warning" data-toggle="modal"
+                                                data-target="#saleModal">Sale
+                                        </button>
+                                    </td>
+                                    <td class="center">
+                                        <button type="button" class="btn btn-round btn-success" data-toggle="modal"
+                                                data-target="#importModal">Import
+                                        </button>
+                                    </td>
+                                    <td class="center">
+                                        <button type="button" class="btn btn-round btn-info" data-toggle="modal"
+                                                data-target="#productModal">Update
+                                        </button>
+                                    </td>
+                                    <td class="center">
+                                        <button type="button" class="btn btn-round btn-danger" data-toggle="modal"
+                                                data-target="#confirmModal">Delete
+                                        </button>
+                                    </td>
+                                </tr>
+                            </c:forEach>
                             </tbody>
                         </table>
                         <div class="dataTables_info" id="hidden-table-info_info">Showing 1 to 57 of 57 entries</div>
@@ -249,11 +239,11 @@
                     <div class="form-group">
                         <div class="col-sm-10">
                             <select class="form-control" id="nation">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
+                                <option>USA</option>
+                                <option>Europe</option>
+                                <option>VietNam</option>
+                                <option>China</option>
+                                <option>Thailand</option>
                             </select>
                         </div>
                     </div>

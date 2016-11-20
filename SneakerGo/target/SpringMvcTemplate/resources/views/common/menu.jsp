@@ -32,7 +32,7 @@
                     <span>Product</span>
                 </a>
                 <ul class="sub">
-                    <li><a  href="${pageContext.request.contextPath}/productManagement">Product Management</a></li>
+                    <li><a  href="${pageContext.request.contextPath}/admin/product">Product Management</a></li>
                 </ul>
             </li>
 
@@ -42,7 +42,7 @@
                     <span>Bill</span>
                 </a>
                 <ul class="sub">
-                    <li><a  href="${pageContext.request.contextPath}/billManagement">Bill Management</a></li>
+                    <li><a  href="${pageContext.request.contextPath}/admin/bill-management">Bill Management</a></li>
                 </ul>
             </li>
             <li class="sub-menu">
@@ -51,7 +51,7 @@
                     <span>Sale</span>
                 </a>
                 <ul class="sub">
-                    <li><a  href="${pageContext.request.contextPath}/saleManagement">Sale Management</a></li>
+                    <li><a  href="${pageContext.request.contextPath}/admin/sale-management">Sale Management</a></li>
                 </ul>
             </li>
             <li class="sub-menu">

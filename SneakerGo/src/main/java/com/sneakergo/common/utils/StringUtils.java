@@ -1,6 +1,6 @@
-package com.shoppee.common.utils;
+package com.sneakergo.common.utils;
 
-import com.shoppee.common.constants.UtilsConstant;
+import com.sneakergo.common.constants.UtilsConstant;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import java.text.DateFormat;

@@ -4,12 +4,13 @@ import javax.persistence.*;
 import java.sql.Date;
 
 /**
- * Created by Hung on 11/17/2016.
+ * Created by Hung on 11/20/2016.
  */
 @Entity
 @Table(name = "bill", schema = "sneakergo", catalog = "")
 public class BillEntity {
     private int billId;
+    private String accountId;
     private String totalPrice;
     private Date date;
     private String status;
@@ -23,6 +24,16 @@ public class BillEntity {
 
     public void setBillId(int billId) {
         this.billId = billId;
+    }
+
+    @Basic
+    @Column(name = "accountID", nullable = true, length = 255)
+    public String getAccountId() {
+        return accountId;
+    }
+
+    public void setAccountId(String accountId) {
+        this.accountId = accountId;
     }
 
     @Basic
@@ -73,6 +84,7 @@ public class BillEntity {
         BillEntity that = (BillEntity) o;
 
         if (billId != that.billId) return false;
+        if (accountId != null ? !accountId.equals(that.accountId) : that.accountId != null) return false;
         if (totalPrice != null ? !totalPrice.equals(that.totalPrice) : that.totalPrice != null) return false;
         if (date != null ? !date.equals(that.date) : that.date != null) return false;
         if (status != null ? !status.equals(that.status) : that.status != null) return false;
@@ -84,6 +96,7 @@ public class BillEntity {
     @Override
     public int hashCode() {
         int result = billId;
+        result = 31 * result + (accountId != null ? accountId.hashCode() : 0);
         result = 31 * result + (totalPrice != null ? totalPrice.hashCode() : 0);
         result = 31 * result + (date != null ? date.hashCode() : 0);
         result = 31 * result + (status != null ? status.hashCode() : 0);

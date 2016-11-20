@@ -1,7 +1,5 @@
 package com.sneakergo.service.interfaces;
 
-import com.sneakergo.entity.ProductEntity;
-
 import java.util.List;
 
 /**
@@ -15,4 +13,6 @@ public interface ProductServiceInterface {
     boolean updateProduct(ProductEntity product);
 
     ProductEntity getProductByID(int productID);
+
+    List<ProductEntity> getProductByName(String productName);
 }

@@ -39,9 +39,7 @@ public class ParamConstant {
     public static final String PRODUCT_NAME = "productName";
     public static final String PRICE = "price";
     public static final String SIZE = "size";
-    public static final String TYPE = "type";
     public static final String SALE = "sale";
-    public static final String MATERIAL = "material";
     public static final String COLOR = "color";
     public static final String NATION = "nation";
     public static final String DESCRIPTION = "description";

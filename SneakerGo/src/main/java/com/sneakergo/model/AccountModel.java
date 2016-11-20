@@ -1,6 +1,5 @@
 package com.sneakergo.model;
 
-import com.sneakergo.entity.AccountEntity;
 import com.sneakergo.model.common.CommonDAO;
 import org.springframework.stereotype.Repository;
 

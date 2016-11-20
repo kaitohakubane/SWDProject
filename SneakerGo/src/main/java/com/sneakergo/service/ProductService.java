@@ -1,6 +1,5 @@
 package com.sneakergo.service;
 
-import com.sneakergo.entity.ProductEntity;
 import com.sneakergo.model.interfaces.ProductModelInterface;
 import com.sneakergo.service.interfaces.ProductServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,5 +35,10 @@ public class ProductService implements ProductServiceInterface {
     @Override
     public ProductEntity getProductByID(int productID) {
         return productModelInterface.getProductByID(productID);
+    }
+
+    @Override
+    public List<ProductEntity> getProductByName(String productName) {
+        return productModelInterface.getProductByName(productName);
     }
 }

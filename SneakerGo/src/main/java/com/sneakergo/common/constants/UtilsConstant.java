@@ -1,4 +1,4 @@
-package com.shoppee.common.constants;
+package com.sneakergo.common.constants;
 
 /**
  * Created by Administrator on 10/4/2016.

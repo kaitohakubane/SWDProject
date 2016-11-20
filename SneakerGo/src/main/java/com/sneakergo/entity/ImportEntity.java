@@ -4,12 +4,13 @@ import javax.persistence.*;
 import java.sql.Date;
 
 /**
- * Created by Hung on 11/17/2016.
+ * Created by Hung on 11/20/2016.
  */
 @Entity
 @Table(name = "import", schema = "sneakergo", catalog = "")
 public class ImportEntity {
     private int importId;
+    private Integer stockId;
     private String price;
     private Integer quantity;
     private Date importDate;
@@ -23,6 +24,16 @@ public class ImportEntity {
 
     public void setImportId(int importId) {
         this.importId = importId;
+    }
+
+    @Basic
+    @Column(name = "stockID", nullable = true)
+    public Integer getStockId() {
+        return stockId;
+    }
+
+    public void setStockId(Integer stockId) {
+        this.stockId = stockId;
     }
 
     @Basic
@@ -73,6 +84,7 @@ public class ImportEntity {
         ImportEntity that = (ImportEntity) o;
 
         if (importId != that.importId) return false;
+        if (stockId != null ? !stockId.equals(that.stockId) : that.stockId != null) return false;
         if (price != null ? !price.equals(that.price) : that.price != null) return false;
         if (quantity != null ? !quantity.equals(that.quantity) : that.quantity != null) return false;
         if (importDate != null ? !importDate.equals(that.importDate) : that.importDate != null) return false;
@@ -84,6 +96,7 @@ public class ImportEntity {
     @Override
     public int hashCode() {
         int result = importId;
+        result = 31 * result + (stockId != null ? stockId.hashCode() : 0);
         result = 31 * result + (price != null ? price.hashCode() : 0);
         result = 31 * result + (quantity != null ? quantity.hashCode() : 0);
         result = 31 * result + (importDate != null ? importDate.hashCode() : 0);

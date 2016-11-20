@@ -15,4 +15,6 @@ public interface ProductModelInterface {
     boolean addProduct(ProductEntity product);
 
     boolean updateProduct(ProductEntity product);
+    List<ProductEntity> getProductByName(String productName);
+
 }

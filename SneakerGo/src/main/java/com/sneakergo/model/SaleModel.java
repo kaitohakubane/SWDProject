@@ -1,39 +1,57 @@
-//package com.shoppee.model;
-//
-//import com.shoppee.entity.SaleEntity;
-//import com.shoppee.model.common.AbstractDao;
-//import org.hibernate.Criteria;
-//import org.hibernate.criterion.Restrictions;
-//import org.springframework.stereotype.Repository;
-//
-//import java.util.List;
-//
-///**
-// * Created by HuanTNH on 9/23/2016.
-// */
-//@Repository
-//public class SaleModel extends AbstractDao<Integer, SaleEntity> implements SaleModelInterface {
-//
-//    @Override
-//    public SaleEntity findSaleBySaleId(int saleId) {
-//        SaleEntity saleEntity = getByKey(saleId);
-//        if (saleEntity != null) {
-//            return saleEntity;
-//        }
-//        return null;
-//    }
-//
-//    @Override
-//    public List<SaleEntity> findAllSales() {
-//        Criteria criteria = createEntityCriteria();
-//        criteria.add(Restrictions.eq("enabled", true));
-//        List<SaleEntity> sales = (List<SaleEntity>) criteria.list();
-//        return sales;
-//    }
-//
-//    @Override
-//    public void saveSale(SaleEntity saleEntity) {
-//        persist(saleEntity);
-//    }
-//
-//}
+package com.sneakergo.model;
+
+import com.sneakergo.entity.SaleEntity;
+import com.sneakergo.model.common.CommonDAO;
+import com.sneakergo.model.interfaces.SaleModelInterface;
+import org.hibernate.Criteria;
+import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Restrictions;
+
+import java.sql.Date;
+import java.util.Calendar;
+import java.util.List;
+
+/**
+ * Created by Hung on 11/20/2016.
+ */
+public class SaleModel extends CommonDAO implements SaleModelInterface {
+
+    @Override
+    public SaleEntity getSaleByID(int saleID) {
+        return getSession().get(SaleEntity.class, saleID);
+    }
+
+    @Override
+    public List<SaleEntity> getSaleByTime(Date time) {
+        Criteria criteria = getSession().createCriteria(SaleEntity.class).add(Restrictions.lt("toDate", time))
+                .add(Restrictions.ge("fromDate", time)).add(Restrictions.eq("enabled", true));
+        List<SaleEntity> sales = criteria.list();
+        return sales;
+    }
+
+    @Override
+    public List<SaleEntity> getAllSale() {
+        Criteria criteria = getSession().createCriteria(SaleEntity.class).add(Restrictions.eq("enabled", true)).
+                addOrder(Order.desc("toDate"));
+        List<SaleEntity> sales = criteria.list();
+        return sales;
+    }
+
+    @Override
+    public List<SaleEntity> getSaleFromToday() {
+        Date today = new Date(Calendar.getInstance().getTimeInMillis());
+        Criteria criteria = getSession().createCriteria(SaleEntity.class).add(Restrictions.eq("enabled", true)).
+                add(Restrictions.lt("toDate", today)).addOrder(Order.desc("toDate"));
+        List<SaleEntity> sales = criteria.list();
+        return sales;
+    }
+
+    @Override
+    public boolean createSave(SaleEntity saleEntity) {
+        if (getSaleByID(saleEntity.getSaleId()) == null) {
+            getSession().persist(saleEntity);
+            return true;
+        }
+        return false;
+    }
+}
