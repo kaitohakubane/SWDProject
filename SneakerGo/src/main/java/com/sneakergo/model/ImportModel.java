@@ -5,6 +5,7 @@ import com.sneakergo.model.common.CommonDAO;
 import com.sneakergo.model.interfaces.ImportModelInterface;
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Restrictions;
+import org.springframework.stereotype.Repository;
 
 import java.sql.Date;
 import java.util.List;
@@ -12,6 +13,7 @@ import java.util.List;
 /**
  * Created by Hung on 11/20/2016.
  */
+@Repository
 public class ImportModel extends CommonDAO implements ImportModelInterface {
 
     @Override

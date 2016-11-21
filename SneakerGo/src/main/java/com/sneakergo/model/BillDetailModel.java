@@ -6,12 +6,14 @@ import com.sneakergo.model.common.CommonDAO;
 import com.sneakergo.model.interfaces.BillDetailModelInterface;
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Restrictions;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 /**
  * Created by Hung on 11/21/2016.
  */
+@Repository
 public class BillDetailModel extends CommonDAO implements BillDetailModelInterface {
 
     @Override

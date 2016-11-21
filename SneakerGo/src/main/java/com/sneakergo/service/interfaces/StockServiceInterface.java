@@ -1,4 +1,4 @@
-package com.sneakergo.model.interfaces;
+package com.sneakergo.service.interfaces;
 
 import com.sneakergo.entity.StockDisplayEntity;
 import com.sneakergo.entity.StockEntity;
@@ -6,9 +6,9 @@ import com.sneakergo.entity.StockEntity;
 import java.util.List;
 
 /**
- * Created by Hung on 11/20/2016.
+ * Created by Hung on 11/21/2016.
  */
-public interface StockModelInterface {
+public interface StockServiceInterface {
     StockEntity getStockByProductIDAndAttributeID(int productID, int attributeID);
 
     boolean updateStockQuantity(StockEntity stockEntity, int quantity);

@@ -12,6 +12,7 @@ public class StockEntity {
     private Integer attributeId;
     private Integer productId;
     private Integer quantity;
+    private Boolean enabled;
 
     @Id
     @Column(name = "stockID", nullable = false)
@@ -53,6 +54,16 @@ public class StockEntity {
         this.quantity = quantity;
     }
 
+    @Basic
+    @Column(name = "enabled", nullable = true)
+    public Boolean getEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -64,6 +75,7 @@ public class StockEntity {
         if (attributeId != null ? !attributeId.equals(that.attributeId) : that.attributeId != null) return false;
         if (productId != null ? !productId.equals(that.productId) : that.productId != null) return false;
         if (quantity != null ? !quantity.equals(that.quantity) : that.quantity != null) return false;
+        if (enabled != null ? !enabled.equals(that.enabled) : that.enabled != null) return false;
 
         return true;
     }
@@ -74,6 +86,7 @@ public class StockEntity {
         result = 31 * result + (attributeId != null ? attributeId.hashCode() : 0);
         result = 31 * result + (productId != null ? productId.hashCode() : 0);
         result = 31 * result + (quantity != null ? quantity.hashCode() : 0);
+        result = 31 * result + (enabled != null ? enabled.hashCode() : 0);
         return result;
     }
 }

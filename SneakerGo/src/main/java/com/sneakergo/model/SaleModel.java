@@ -6,6 +6,7 @@ import com.sneakergo.model.interfaces.SaleModelInterface;
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
+import org.springframework.stereotype.Repository;
 
 import java.sql.Date;
 import java.util.Calendar;
@@ -14,6 +15,7 @@ import java.util.List;
 /**
  * Created by Hung on 11/20/2016.
  */
+@Repository
 public class SaleModel extends CommonDAO implements SaleModelInterface {
 
     @Override
@@ -38,7 +40,7 @@ public class SaleModel extends CommonDAO implements SaleModelInterface {
     }
 
     @Override
-    public List<SaleEntity> getSaleFromToday() {
+    public List<SaleEntity> getSaleContainsToday() {
         Date today = new Date(Calendar.getInstance().getTimeInMillis());
         Criteria criteria = getSession().createCriteria(SaleEntity.class).add(Restrictions.eq("enabled", true)).
                 add(Restrictions.lt("toDate", today)).addOrder(Order.desc("toDate"));

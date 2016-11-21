@@ -18,7 +18,7 @@ CREATE TABLE Account (
 
 CREATE TABLE Attribute(
 attributeID INT NOT NULL AUTO_INCREMENT,
-size		INT,
+size		VARCHAR(30),
 PRIMARY KEY (attributeID)
 );
 
@@ -27,6 +27,7 @@ stockID INT NOT NULL AUTO_INCREMENT,
 attributeID INT,
 productID	INT,
 quantity	INT,
+enabled     BIT,
 PRIMARY KEY (stockID)
 );
 
@@ -51,11 +52,12 @@ CREATE TABLE Bill (
 );
 
 CREATE TABLE BillDetail (
+  billDetailID INT NOT NULL AUTO_INCREMENT,
   billID       INT,
   productID    INT,
   quantity     INT,
   price     VARCHAR(255),
-  PRIMARY KEY (billID,productID)
+  PRIMARY KEY (billDetailID)
 );
 
 
@@ -125,48 +127,40 @@ INSERT INTO Product (productName,price,picture,nation,description,enabled)
 VALUES ('Nike Air Huarache','1500',NULL,'China','',1); 
 
 INSERT INTO Attribute(size) 
-VALUES (5);   
+VALUES ('2');   
 INSERT INTO Attribute(size) 
-VALUES (6);   
+VALUES ('3');   
 INSERT INTO Attribute(size) 
-VALUES (7);   
+VALUES ('5');   
 INSERT INTO Attribute(size) 
-VALUES (8);   
+VALUES ('6');   
 INSERT INTO Attribute(size) 
-VALUES (9);   
+VALUES ('7');   
 INSERT INTO Attribute(size) 
-VALUES (10);   
+VALUES ('8');   
 INSERT INTO Attribute(size) 
-VALUES (11);   
+VALUES ('9');   
 INSERT INTO Attribute(size) 
-VALUES (12);   
+VALUES ('10');   
+INSERT INTO Attribute(size) 
+VALUES ('11');   
 
- INSERT INTO Stock(attributeID,productID,quantity) 
-VALUES (1,1,10); 
 
-INSERT INTO Stock(attributeID,productID,quantity) 
-VALUES (1,3,20);  
+ INSERT INTO Stock(attributeID,productID,quantity,enabled) 
+VALUES (1,1,10,1); 
 
-INSERT INTO Stock(attributeID,productID,quantity) 
-VALUES (2,4,30);
+INSERT INTO Stock(attributeID,productID,quantity,enabled) 
+VALUES (1,3,20,1);  
 
-INSERT INTO Stock(attributeID,productID,quantity) 
-VALUES (2,5,10);
+INSERT INTO Stock(attributeID,productID,quantity,enabled) 
+VALUES (2,4,30,1);
 
-INSERT INTO Stock(attributeID,productID,quantity) 
-VALUES (5,1,10);
+INSERT INTO Stock(attributeID,productID,quantity,enabled) 
+VALUES (2,5,10,1);
 
-INSERT INTO Stock(attributeID,productID,quantity) 
-VALUES (1,1,10); 
+INSERT INTO Stock(attributeID,productID,quantity,enabled) 
+VALUES (5,1,10,1);
 
-INSERT INTO Stock(attributeID,productID,quantity) 
-VALUES (1,3,20);  
-
-INSERT INTO Stock(attributeID,productID,quantity) 
-VALUES (2,4,30);
-
-INSERT INTO Stock(attributeID,productID,quantity) 
-VALUES (2,5,10);
 
 INSERT INTO Bill(accountID,totalPrice,date,enabled) 
 VALUES ('kietta','2500','2016-11-20',1);

@@ -7,6 +7,7 @@ import com.sneakergo.model.interfaces.BillModelInterface;
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
+import org.springframework.stereotype.Repository;
 
 import java.sql.Date;
 import java.util.List;
@@ -14,6 +15,7 @@ import java.util.List;
 /**
  * Created by Hung on 11/20/2016.
  */
+@Repository
 public class BillModel extends CommonDAO implements BillModelInterface {
     @Override
     public BillEntity getBillByID(int billID) {

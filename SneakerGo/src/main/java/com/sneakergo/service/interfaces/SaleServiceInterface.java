@@ -1,4 +1,4 @@
-package com.sneakergo.model.interfaces;
+package com.sneakergo.service.interfaces;
 
 import com.sneakergo.entity.SaleEntity;
 
@@ -6,10 +6,9 @@ import java.sql.Date;
 import java.util.List;
 
 /**
- * Created by Hung on 11/20/2016.
+ * Created by Hung on 11/21/2016.
  */
-public interface SaleModelInterface {
-
+public interface SaleServiceInterface {
     SaleEntity getSaleByID(int saleID);
 
     List<SaleEntity> getSaleByTime(Date time);
@@ -19,5 +18,4 @@ public interface SaleModelInterface {
     List<SaleEntity> getSaleContainsToday();
 
     boolean createSave(SaleEntity saleEntity);
-
 }

@@ -22,7 +22,7 @@ public class AttributeEntity {
     }
 
     @Basic
-    @Column(name = "size", nullable = true, length = 20)
+    @Column(name = "size", nullable = true, length = 30)
     public String getSize() {
         return size;
     }

@@ -18,5 +18,11 @@ public class SQLParamConstant {
     public static final String GET_ALL_BILL_BY_DAY = "SELECT billId, date, totalPrice from Bill WHERE status = " +
             "'Finished' AND enabled = true AND DAY(date) = :day AND MONTH(date) = :month AND YEAR(date) = :year";
 
-    public static final String COUNT_ALL_STOCK_QUANTITY_OF_PRODUCT="SELECT COUNT(stockID) FROM Stock Where productID =:productID";
+    public static final String GET_STOCK_RECORDS = "SELECT s.stockID as stockID, p.productID as productID,s.quantity" +
+            " as quantity, a.size as size, p.productName as productName " +
+            "FROM attribute a,stock s, product p " +
+            "WHERE a.attributeID=s.attributeID AND s.productID=p.productID ORDER BY s.quantity ASC";
+
+    public static final String COUNT_ALL_STOCK_QUANTITY_OF_PRODUCT = "SELECT COUNT(stockID) " +
+            "FROM Stock Where productID =:productID";
 }
