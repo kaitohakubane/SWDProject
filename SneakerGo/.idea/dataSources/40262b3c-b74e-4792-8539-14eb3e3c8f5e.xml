@@ -56,7 +56,7 @@
       <sequence-identity>1</sequence-identity>
     </column>
     <column id="27" parent="9" name="size">
-      <data-type>int(11)|0</data-type>
+      <data-type>varchar(20)|0</data-type>
     </column>
     <key id="28" parent="9" name="PRIMARY">
       <columns>attributeID</columns>
@@ -76,32 +76,32 @@
     <column id="32" parent="10" name="date">
       <data-type>date|0</data-type>
     </column>
-    <column id="33" parent="10" name="status">
-      <data-type>varchar(80)|0</data-type>
-    </column>
-    <column id="34" parent="10" name="enabled">
+    <column id="33" parent="10" name="enabled">
       <data-type>bit(1)|0</data-type>
     </column>
-    <index id="35" parent="10" name="accountID">
+    <index id="34" parent="10" name="accountID">
       <columns>accountID</columns>
       <desc-columns></desc-columns>
     </index>
-    <key id="36" parent="10" name="PRIMARY">
+    <key id="35" parent="10" name="PRIMARY">
       <columns>billID</columns>
       <primary>1</primary>
     </key>
-    <foreign-key id="37" parent="10" name="bill_ibfk_1">
+    <foreign-key id="36" parent="10" name="bill_ibfk_1">
       <columns>accountID</columns>
       <ref-key>~.account.PRIMARY</ref-key>
       <cascade-update-rule>restrict</cascade-update-rule>
       <cascade-delete-rule>restrict</cascade-delete-rule>
     </foreign-key>
-    <column id="38" parent="11" name="billID">
+    <column id="37" parent="11" name="billDetailID">
       <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="38" parent="11" name="billID">
       <data-type>int(11)|0</data-type>
     </column>
     <column id="39" parent="11" name="productID">
-      <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
     </column>
     <column id="40" parent="11" name="quantity">
@@ -110,145 +110,148 @@
     <column id="41" parent="11" name="price">
       <data-type>varchar(255)|0</data-type>
     </column>
-    <index id="42" parent="11" name="productID">
+    <index id="42" parent="11" name="billID">
+      <columns>billID</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="43" parent="11" name="productID">
       <columns>productID</columns>
       <desc-columns></desc-columns>
     </index>
-    <key id="43" parent="11" name="PRIMARY">
-      <columns>billID
-productID</columns>
+    <key id="44" parent="11" name="PRIMARY">
+      <columns>billDetailID</columns>
       <primary>1</primary>
     </key>
-    <foreign-key id="44" parent="11" name="billdetail_ibfk_1">
+    <foreign-key id="45" parent="11" name="billdetail_ibfk_1">
       <columns>billID</columns>
       <ref-key>~.bill.PRIMARY</ref-key>
       <cascade-update-rule>restrict</cascade-update-rule>
       <cascade-delete-rule>restrict</cascade-delete-rule>
     </foreign-key>
-    <foreign-key id="45" parent="11" name="billdetail_ibfk_2">
+    <foreign-key id="46" parent="11" name="billdetail_ibfk_2">
       <columns>productID</columns>
       <ref-key>~.product.PRIMARY</ref-key>
       <cascade-update-rule>restrict</cascade-update-rule>
       <cascade-delete-rule>restrict</cascade-delete-rule>
     </foreign-key>
-    <column id="46" parent="12" name="importID">
+    <column id="47" parent="12" name="importID">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
       <sequence-identity>1</sequence-identity>
     </column>
-    <column id="47" parent="12" name="stockID">
+    <column id="48" parent="12" name="stockID">
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="48" parent="12" name="price">
+    <column id="49" parent="12" name="price">
       <data-type>varchar(255)|0</data-type>
     </column>
-    <column id="49" parent="12" name="quantity">
+    <column id="50" parent="12" name="quantity">
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="50" parent="12" name="importDate">
+    <column id="51" parent="12" name="importDate">
       <data-type>date|0</data-type>
     </column>
-    <column id="51" parent="12" name="Supplier">
+    <column id="52" parent="12" name="Supplier">
       <data-type>varchar(255)|0</data-type>
     </column>
-    <index id="52" parent="12" name="stockID">
+    <index id="53" parent="12" name="stockID">
       <columns>stockID</columns>
       <desc-columns></desc-columns>
     </index>
-    <key id="53" parent="12" name="PRIMARY">
+    <key id="54" parent="12" name="PRIMARY">
       <columns>importID</columns>
       <primary>1</primary>
     </key>
-    <foreign-key id="54" parent="12" name="import_ibfk_1">
+    <foreign-key id="55" parent="12" name="import_ibfk_1">
       <columns>stockID</columns>
       <ref-key>~.stock.PRIMARY</ref-key>
       <cascade-update-rule>restrict</cascade-update-rule>
       <cascade-delete-rule>restrict</cascade-delete-rule>
     </foreign-key>
-    <column id="55" parent="13" name="productID">
+    <column id="56" parent="13" name="productID">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
       <sequence-identity>1</sequence-identity>
     </column>
-    <column id="56" parent="13" name="productName">
+    <column id="57" parent="13" name="productName">
       <data-type>varchar(255)|0</data-type>
     </column>
-    <column id="57" parent="13" name="price">
+    <column id="58" parent="13" name="price">
       <data-type>varchar(255)|0</data-type>
     </column>
-    <column id="58" parent="13" name="picture">
+    <column id="59" parent="13" name="picture">
       <data-type>varchar(255)|0</data-type>
     </column>
-    <column id="59" parent="13" name="nation">
+    <column id="60" parent="13" name="nation">
       <data-type>varchar(100)|0</data-type>
     </column>
-    <column id="60" parent="13" name="description">
+    <column id="61" parent="13" name="description">
       <data-type>varchar(255)|0</data-type>
     </column>
-    <column id="61" parent="13" name="enabled">
+    <column id="62" parent="13" name="enabled">
       <data-type>bit(1)|0</data-type>
     </column>
-    <key id="62" parent="13" name="PRIMARY">
+    <key id="63" parent="13" name="PRIMARY">
       <columns>productID</columns>
       <primary>1</primary>
     </key>
-    <column id="63" parent="14" name="saleID">
+    <column id="64" parent="14" name="saleID">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
       <sequence-identity>1</sequence-identity>
     </column>
-    <column id="64" parent="14" name="productID">
+    <column id="65" parent="14" name="productID">
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="65" parent="14" name="salePercent">
+    <column id="66" parent="14" name="salePercent">
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="66" parent="14" name="fromDate">
+    <column id="67" parent="14" name="fromDate">
       <data-type>date|0</data-type>
     </column>
-    <column id="67" parent="14" name="toDate">
+    <column id="68" parent="14" name="toDate">
       <data-type>date|0</data-type>
     </column>
-    <column id="68" parent="14" name="enabled">
+    <column id="69" parent="14" name="enabled">
       <data-type>bit(1)|0</data-type>
     </column>
-    <key id="69" parent="14" name="PRIMARY">
+    <key id="70" parent="14" name="PRIMARY">
       <columns>saleID</columns>
       <primary>1</primary>
     </key>
-    <column id="70" parent="15" name="stockID">
+    <column id="71" parent="15" name="stockID">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
       <sequence-identity>1</sequence-identity>
     </column>
-    <column id="71" parent="15" name="attributeID">
+    <column id="72" parent="15" name="attributeID">
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="72" parent="15" name="productID">
+    <column id="73" parent="15" name="productID">
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="73" parent="15" name="quantity">
+    <column id="74" parent="15" name="quantity">
       <data-type>int(11)|0</data-type>
     </column>
-    <index id="74" parent="15" name="attributeID">
+    <index id="75" parent="15" name="attributeID">
       <columns>attributeID</columns>
       <desc-columns></desc-columns>
     </index>
-    <index id="75" parent="15" name="productID">
+    <index id="76" parent="15" name="productID">
       <columns>productID</columns>
       <desc-columns></desc-columns>
     </index>
-    <key id="76" parent="15" name="PRIMARY">
+    <key id="77" parent="15" name="PRIMARY">
       <columns>stockID</columns>
       <primary>1</primary>
     </key>
-    <foreign-key id="77" parent="15" name="stock_ibfk_1">
+    <foreign-key id="78" parent="15" name="stock_ibfk_1">
       <columns>attributeID</columns>
       <ref-key>~.attribute.PRIMARY</ref-key>
       <cascade-update-rule>restrict</cascade-update-rule>
       <cascade-delete-rule>restrict</cascade-delete-rule>
     </foreign-key>
-    <foreign-key id="78" parent="15" name="stock_ibfk_2">
+    <foreign-key id="79" parent="15" name="stock_ibfk_2">
       <columns>productID</columns>
       <ref-key>~.product.PRIMARY</ref-key>
       <cascade-update-rule>restrict</cascade-update-rule>

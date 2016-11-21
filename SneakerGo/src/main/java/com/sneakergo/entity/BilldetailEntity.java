@@ -3,34 +3,44 @@ package com.sneakergo.entity;
 import javax.persistence.*;
 
 /**
- * Created by Hung on 11/20/2016.
+ * Created by Hung on 11/21/2016.
  */
 @Entity
 @Table(name = "billdetail", schema = "sneakergo", catalog = "")
-@IdClass(BilldetailEntityPK.class)
 public class BilldetailEntity {
-    private int billId;
-    private int productId;
+    private int billDetailId;
+    private Integer billId;
+    private Integer productId;
     private Integer quantity;
     private String price;
 
     @Id
-    @Column(name = "billID", nullable = false)
-    public int getBillId() {
+    @Column(name = "billDetailID", nullable = false)
+    public int getBillDetailId() {
+        return billDetailId;
+    }
+
+    public void setBillDetailId(int billDetailId) {
+        this.billDetailId = billDetailId;
+    }
+
+    @Basic
+    @Column(name = "billID", nullable = true)
+    public Integer getBillId() {
         return billId;
     }
 
-    public void setBillId(int billId) {
+    public void setBillId(Integer billId) {
         this.billId = billId;
     }
 
-    @Id
-    @Column(name = "productID", nullable = false)
-    public int getProductId() {
+    @Basic
+    @Column(name = "productID", nullable = true)
+    public Integer getProductId() {
         return productId;
     }
 
-    public void setProductId(int productId) {
+    public void setProductId(Integer productId) {
         this.productId = productId;
     }
 
@@ -61,8 +71,9 @@ public class BilldetailEntity {
 
         BilldetailEntity that = (BilldetailEntity) o;
 
-        if (billId != that.billId) return false;
-        if (productId != that.productId) return false;
+        if (billDetailId != that.billDetailId) return false;
+        if (billId != null ? !billId.equals(that.billId) : that.billId != null) return false;
+        if (productId != null ? !productId.equals(that.productId) : that.productId != null) return false;
         if (quantity != null ? !quantity.equals(that.quantity) : that.quantity != null) return false;
         if (price != null ? !price.equals(that.price) : that.price != null) return false;
 
@@ -71,8 +82,9 @@ public class BilldetailEntity {
 
     @Override
     public int hashCode() {
-        int result = billId;
-        result = 31 * result + productId;
+        int result = billDetailId;
+        result = 31 * result + (billId != null ? billId.hashCode() : 0);
+        result = 31 * result + (productId != null ? productId.hashCode() : 0);
         result = 31 * result + (quantity != null ? quantity.hashCode() : 0);
         result = 31 * result + (price != null ? price.hashCode() : 0);
         return result;

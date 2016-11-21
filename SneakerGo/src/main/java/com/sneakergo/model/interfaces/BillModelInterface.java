@@ -11,6 +11,8 @@ import java.util.List;
  */
 public interface BillModelInterface {
     BillEntity getBillByID(int billID);
+
     List<BillEntity> getBillByAccount(AccountEntity accountEntity);
+
     List<BillEntity> getBillByTime(Date fromDate, Date toDate);
 }

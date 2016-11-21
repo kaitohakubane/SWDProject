@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.sql.Date;
 
 /**
- * Created by Hung on 11/20/2016.
+ * Created by Hung on 11/21/2016.
  */
 @Entity
 @Table(name = "bill", schema = "sneakergo", catalog = "")
@@ -13,7 +13,6 @@ public class BillEntity {
     private String accountId;
     private String totalPrice;
     private Date date;
-    private String status;
     private Boolean enabled;
 
     @Id
@@ -57,16 +56,6 @@ public class BillEntity {
     }
 
     @Basic
-    @Column(name = "status", nullable = true, length = 80)
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    @Basic
     @Column(name = "enabled", nullable = true)
     public Boolean getEnabled() {
         return enabled;
@@ -87,7 +76,6 @@ public class BillEntity {
         if (accountId != null ? !accountId.equals(that.accountId) : that.accountId != null) return false;
         if (totalPrice != null ? !totalPrice.equals(that.totalPrice) : that.totalPrice != null) return false;
         if (date != null ? !date.equals(that.date) : that.date != null) return false;
-        if (status != null ? !status.equals(that.status) : that.status != null) return false;
         if (enabled != null ? !enabled.equals(that.enabled) : that.enabled != null) return false;
 
         return true;
@@ -99,7 +87,6 @@ public class BillEntity {
         result = 31 * result + (accountId != null ? accountId.hashCode() : 0);
         result = 31 * result + (totalPrice != null ? totalPrice.hashCode() : 0);
         result = 31 * result + (date != null ? date.hashCode() : 0);
-        result = 31 * result + (status != null ? status.hashCode() : 0);
         result = 31 * result + (enabled != null ? enabled.hashCode() : 0);
         return result;
     }

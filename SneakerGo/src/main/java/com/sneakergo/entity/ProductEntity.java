@@ -3,7 +3,7 @@ package com.sneakergo.entity;
 import javax.persistence.*;
 
 /**
- * Created by Hung on 11/20/2016.
+ * Created by Hung on 11/21/2016.
  */
 @Entity
 @Table(name = "product", schema = "sneakergo", catalog = "")

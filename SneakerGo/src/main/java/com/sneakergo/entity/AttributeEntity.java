@@ -3,13 +3,13 @@ package com.sneakergo.entity;
 import javax.persistence.*;
 
 /**
- * Created by Hung on 11/20/2016.
+ * Created by Hung on 11/21/2016.
  */
 @Entity
 @Table(name = "attribute", schema = "sneakergo", catalog = "")
 public class AttributeEntity {
     private int attributeId;
-    private Integer size;
+    private String size;
 
     @Id
     @Column(name = "attributeID", nullable = false)
@@ -22,12 +22,12 @@ public class AttributeEntity {
     }
 
     @Basic
-    @Column(name = "size", nullable = true)
-    public Integer getSize() {
+    @Column(name = "size", nullable = true, length = 20)
+    public String getSize() {
         return size;
     }
 
-    public void setSize(Integer size) {
+    public void setSize(String size) {
         this.size = size;
     }
 

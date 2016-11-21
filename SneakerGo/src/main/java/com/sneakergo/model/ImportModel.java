@@ -1,13 +1,12 @@
 package com.sneakergo.model;
 
 import com.sneakergo.entity.ImportEntity;
-import com.sneakergo.entity.StockEntity;
 import com.sneakergo.model.common.CommonDAO;
 import com.sneakergo.model.interfaces.ImportModelInterface;
-import com.sun.xml.internal.bind.v2.schemagen.xmlschema.Import;
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Restrictions;
 
+import java.sql.Date;
 import java.util.List;
 
 /**
@@ -18,5 +17,20 @@ public class ImportModel extends CommonDAO implements ImportModelInterface {
     @Override
     public void importProduct(ImportEntity importEntity) {
         getSession().persist(importEntity);
+    }
+
+    @Override
+    public List<ImportEntity> getImportByStockId(int stockID){
+        Criteria criteria=getSession().createCriteria(ImportEntity.class).add(Restrictions.eq("stockId",stockID));
+        List<ImportEntity> imports=criteria.list();
+        return imports;
+    }
+
+    @Override
+    public List<ImportEntity> getImportFromTimeToTime(Date fromTime,Date toTime){
+        Criteria criteria=getSession().createCriteria(ImportEntity.class).add(Restrictions
+                .lt("importDate",toTime)).add(Restrictions.ge("importDate",toTime));
+        List<ImportEntity> imports=criteria.list();
+        return imports;
     }
 }

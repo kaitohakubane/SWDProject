@@ -9,6 +9,7 @@ import java.util.List;
  * Created by Hung on 11/20/2016.
  */
 public interface SaleModelInterface {
+
     SaleEntity getSaleByID(int saleID);
 
     List<SaleEntity> getSaleByTime(Date time);
