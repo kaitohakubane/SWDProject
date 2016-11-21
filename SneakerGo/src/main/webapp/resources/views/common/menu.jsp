@@ -20,7 +20,7 @@
             <h5 class="centered">Hung Mai</h5>
 
             <li class="mt">
-                <a href="${pageContext.request.contextPath}/">
+                <a href="${pageContext.request.contextPath}/admin/">
                     <i class="fa fa-dashboard"></i>
                     <span>Dashboard</span>
                 </a>

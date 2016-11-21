@@ -5,6 +5,8 @@
   Time: 10:15 PM
   To change this template use File | Settings | File Templates.
 --%>
+
+<!DOCTYPE html>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
@@ -360,7 +362,7 @@
     </div>
 </div>
 
-
+<c:import url="/resources/views/common/confirm-modal.jsp"/>
 <script src="<c:url value = "/resources/js/bootstrap-datepicker/bootstrap-datepicker.js"/>"
         type="text/javascript"></script>
 <script src="<c:url value = "/resources/js/bootstrap-daterangepicker/daterangepicker.js"/>"
@@ -371,6 +373,9 @@
 <script src="<c:url value = "/resources/js/bootstrap-datetimepicker/bootstrap-datetimepicker.js"/>"
         type="text/javascript"></script>
 <script src="<c:url value = "/resources/js/bootstrap-fileupload/bootstrap-fileupload.js"/>"
+        type="text/javascript">
+</script>
+<script src="<c:url value = "/resources/lib/js/common.js"/>"
         type="text/javascript">
 </script>
 
@@ -494,5 +499,7 @@
     </div>
 </div>
 <c:import url="/resources/views/common/footer.jsp"/>
+<script src="<c:url value="/resources/js/advanced-form-components.js"/>" type="text/javascript"></script>
+<script src="<c:url value="/resources/js/common-scripts.js"/>"></script>
 </body>
 </html>

@@ -62,7 +62,7 @@
                              username-parameter="accountID"
                              password-parameter="password"
                              authentication-failure-url="/login?error=true"
-                             default-target-url="/admin/product"
+                             default-target-url="/admin/"
                              always-use-default-target="true"/>
         <security:csrf disabled="true"/>
         <security:session-management>

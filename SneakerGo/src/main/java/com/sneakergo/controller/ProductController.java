@@ -4,6 +4,7 @@ import com.sneakergo.common.constants.PageConstant;
 import com.sneakergo.common.constants.ParamConstant;
 import com.sneakergo.common.utils.FileUtils;
 import com.sneakergo.common.utils.StringUtils;
+import com.sneakergo.entity.ProductEntity;
 import com.sneakergo.service.interfaces.ProductServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
