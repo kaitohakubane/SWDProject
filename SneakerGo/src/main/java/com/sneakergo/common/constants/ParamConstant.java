@@ -8,7 +8,8 @@ public class ParamConstant {
     public static final String DATE = "yyyy/MM/dd";
     public static final String DATE_API = "yyyy-MM-dd";
     public static final String ROLE = "ROLE_USER";
-
+    public static final String FROM_DATE = "fromDate";
+    public static final String TO_DATE = "toDate";
 
     /**
      * Homepage
@@ -70,8 +71,7 @@ public class ParamConstant {
     public static final String LIST_SALE_ATTR = "listSale";
     public static final String SALE_ID = "saleId";
     public static final String SALE_PERCENT = "salePercent";
-    public static final String FROM_DATE = "fromDate";
-    public static final String TO_DATE = "toDate";
+
 
     public static final String CART = "cart";
 
@@ -89,4 +89,9 @@ public class ParamConstant {
     public static final String PRODUCT = "product";
     public static final String IMPORT_PRICE = "importPrice";
     public static final String IMPORT_QUANTITY = "importQuantity";
+
+    /**
+     * Stock
+     */
+    public static final String LIST_STOCK_ATTR="listStock";
 }

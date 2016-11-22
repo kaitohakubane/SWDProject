@@ -1,6 +1,7 @@
 package com.sneakergo.model.interfaces;
 
 import com.sneakergo.entity.AccountEntity;
+import com.sneakergo.entity.BillDisplayEntity;
 import com.sneakergo.entity.BillEntity;
 
 import java.sql.Date;
@@ -14,5 +15,5 @@ public interface BillModelInterface {
 
     List<BillEntity> getBillByAccount(AccountEntity accountEntity);
 
-    List<BillEntity> getBillByTime(Date fromDate, Date toDate);
+    List<BillDisplayEntity> getBillByTime(Date fromDate, Date toDate);
 }

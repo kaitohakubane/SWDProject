@@ -16,9 +16,7 @@
     <link href="<c:url value="/resources/lib/css/common.css"/>" rel="stylesheet">
     <%--Date time CSS--%>
     <link href="<c:url value="/resources/js/bootstrap-datepicker/datepicker.css"/>" rel="stylesheet">
-
     <link href="<c:url value="/resources/js/bootstrap-daterangepicker/daterangepicker.css"/>" rel="stylesheet">
-    <link href="<c:url value="/resources/js/bootstrap-datetimepicker/datertimepicker.css"/>" rel="stylesheet">
 
     <%--File upload CSS--%>
     <link href="<c:url value="/resources/js/bootstrap-fileupload/bootstrap-fileupload.css"/>" rel="stylesheet">
@@ -157,7 +155,7 @@
 </section>
 <!-- Modal -->
 <div class="modal fade" id="importModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-     aria-hidden="true">
+     aria-hidden="true" data-keyboard="false" data-backdrop="static">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -218,7 +216,7 @@
 
 <!-- Modal -->
 <div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-     aria-hidden="true">
+     aria-hidden="true" data-keyboard="false" data-backdrop="static">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -290,20 +288,76 @@
                                  </span>
                     </div>
                 </div>
+                <label>Size</label>
+                <br/>
+                <div class="radio-inline">
+                    <label>
+                        <input type="radio" name="optionsRadios" id="optionsRadios1"
+                               value="0"
+                               checked>0.0
+                    </label>
+                </div>
+
+                <div class="radio-inline">
+                    <label>
+                        <input type="radio" name="optionsRadios" id="optionsRadios2"
+                               value="0.5">0.5
+                    </label>
+                </div>
+                <hr>
+                <label class="checkbox-inline">
+                    <input type="checkbox" class="size-checkbox" value="3"> 3
+                </label>
+                <label class="checkbox-inline">
+                    <input type="checkbox" class="size-checkbox" value="4"> 4
+                </label>
+                <label class="checkbox-inline">
+                    <input type="checkbox" class="size-checkbox" value="5"> 5
+                </label>
+                <label class="checkbox-inline">
+                    <input type="checkbox" class="size-checkbox" value="6"> 6
+                </label>
+                <label class="checkbox-inline">
+                    <input type="checkbox" class="size-checkbox" value="7"> 7
+                </label>
+                <label class="checkbox-inline">
+                    <input type="checkbox" class="size-checkbox" value="8"> 8
+                </label>
+                <label class="checkbox-inline">
+                    <input type="checkbox" class="size-checkbox" value="9"> 9
+                </label>
+                <label class="checkbox-inline">
+                    <input type="checkbox" class="size-checkbox" value="10"> 10
+                </label>
+                <label class="checkbox-inline">
+                    <input type="checkbox" class="size-checkbox" value="11"> 11
+                </label>
+                <label class="checkbox-inline">
+                    <input type="checkbox" class="size-checkbox" value="12"> 12
+                </label>
+                <label class="checkbox-inline">
+                    <input type="checkbox" class="size-checkbox" value="13"> 13
+                </label>
+                <label class="checkbox-inline">
+                    <input type="checkbox" class="size-checkbox" value="14"> 14
+                </label>
+                <hr>
+                <div class="form-inline action-form">
+                    <button type="button" class="btn btn-default">Cancel</button>
+                    <button type="button" class="btn btn-primary">Add Product</button>
+                </div>
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Add Product</button>
+
             </div>
         </div>
     </div>
 </div>
 
-
 <!-- Modal -->
 <div class="modal fade" id="saleModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-     aria-hidden="true">
+     aria-hidden="true" data-keyboard="false" data-backdrop="static">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -369,8 +423,6 @@
         type="text/javascript"></script>
 <script src="<c:url value = "/resources/js/bootstrap-daterangepicker/date.js"/>" type="text/javascript"></script>
 <script src="<c:url value = "/resources/js/bootstrap-daterangepicker/moment.min.js"/>"
-        type="text/javascript"></script>
-<script src="<c:url value = "/resources/js/bootstrap-datetimepicker/bootstrap-datetimepicker.js"/>"
         type="text/javascript"></script>
 <script src="<c:url value = "/resources/js/bootstrap-fileupload/bootstrap-fileupload.js"/>"
         type="text/javascript">

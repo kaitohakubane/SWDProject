@@ -10,6 +10,17 @@ public class StockDisplayEntity {
     private String size;
     private String productName;
 
+    public StockDisplayEntity(int stockID, int productID, int quantity, String size, String productName) {
+        this.stockID = stockID;
+        this.productID = productID;
+        this.quantity = quantity;
+        this.size = size;
+        this.productName = productName;
+    }
+
+    public StockDisplayEntity() {
+    }
+
     public int getStockID() {
         return stockID;
     }

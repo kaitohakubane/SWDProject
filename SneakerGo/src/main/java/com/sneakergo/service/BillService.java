@@ -1,6 +1,7 @@
 package com.sneakergo.service;
 
 import com.sneakergo.entity.AccountEntity;
+import com.sneakergo.entity.BillDisplayEntity;
 import com.sneakergo.entity.BillEntity;
 import com.sneakergo.model.interfaces.BillModelInterface;
 import com.sneakergo.service.interfaces.BillServiceInterface;
@@ -32,7 +33,7 @@ public class BillService implements BillServiceInterface{
     }
 
     @Override
-    public List<BillEntity> getBillByTime(Date fromDate, Date toDate){
+    public List<BillDisplayEntity> getBillByTime(Date fromDate, Date toDate){
         return billModelInterface.getBillByTime(fromDate,toDate);
     }
 }

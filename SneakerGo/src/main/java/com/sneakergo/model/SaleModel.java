@@ -1,5 +1,6 @@
 package com.sneakergo.model;
 
+import com.sneakergo.common.utils.NumbericUtils;
 import com.sneakergo.entity.SaleEntity;
 import com.sneakergo.model.common.CommonDAO;
 import com.sneakergo.model.interfaces.SaleModelInterface;
@@ -41,9 +42,8 @@ public class SaleModel extends CommonDAO implements SaleModelInterface {
 
     @Override
     public List<SaleEntity> getSaleContainsToday() {
-        Date today = new Date(Calendar.getInstance().getTimeInMillis());
         Criteria criteria = getSession().createCriteria(SaleEntity.class).add(Restrictions.eq("enabled", true)).
-                add(Restrictions.lt("toDate", today)).addOrder(Order.desc("toDate"));
+                add(Restrictions.lt("toDate", NumbericUtils.getCurrentDate())).addOrder(Order.desc("toDate"));
         List<SaleEntity> sales = criteria.list();
         return sales;
     }

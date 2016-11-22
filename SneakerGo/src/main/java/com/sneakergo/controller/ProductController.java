@@ -135,4 +135,16 @@ public class ProductController {
 
         return false;
     }
+
+    @RequestMapping(value = {PageConstant.CREATE_PRODUCT_PAGE_URL}, method = RequestMethod.GET)
+    public ModelAndView initHomePage() {
+        ModelAndView modelAndView = new ModelAndView(PageConstant.CREATE_PRODUCT_PAGE);
+//        int numOfProduct = productServiceInterface.countAllProduct();
+//        int numOfOrder = billServiceInterface.countAllOrder();
+//        modelAndView.addObject(ParamConstant.NUMBER_PRODUCT_ATTR, numOfProduct);
+//        modelAndView.addObject(ParamConstant.NUMBER_ORDER_ATTR, numOfOrder);
+        return modelAndView;
+    }
+
+
 }

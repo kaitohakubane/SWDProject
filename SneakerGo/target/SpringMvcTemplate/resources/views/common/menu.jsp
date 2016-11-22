@@ -34,6 +34,9 @@
                 <ul class="sub">
                     <li><a  href="${pageContext.request.contextPath}/admin/product">Product Management</a></li>
                 </ul>
+                <ul class="sub">
+                    <li><a  href="${pageContext.request.contextPath}/admin/stock">Stock Management</a></li>
+                </ul>
             </li>
 
             <li class="sub-menu">
