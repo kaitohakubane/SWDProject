@@ -17,6 +17,9 @@
 <link href="<c:url value="/resources/css/style-responsive.css"/>" rel="stylesheet">
 <link href="<c:url value="/resources/css/common.css"/>" rel="stylesheet">
 <script src="<c:url value="/resources/js/jquery.js"/>"></script>
+<link href="<c:url value="/resources/css/dataTables.bootstrap4.css"/>" rel="stylesheet">
+<link href="<c:url value="/resources/css/responsive.bootstrap.css"/>" rel="stylesheet">
+
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>

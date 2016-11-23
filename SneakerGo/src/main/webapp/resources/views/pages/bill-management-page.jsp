@@ -12,20 +12,13 @@
 <head>
     <title>Bill Management</title>
     <c:import url="/resources/views/common/header.jsp"/>
-
     <%--Date time CSS--%>
     <link href="<c:url value="/resources/js/bootstrap-datepicker/datepicker.css"/>" rel="stylesheet">
     <link href="<c:url value="/resources/js/bootstrap-daterangepicker/daterangepicker.css"/>" rel="stylesheet">
-
-    <%--Table CSS--%>
-    <link href="<c:url value="/resources/css/table-responsive.css"/>" rel="stylesheet">
-    <link href="<c:url value="/resources/js/advanced-datatable/demo_table.css"/>" rel="stylesheet">
-    <link href="<c:url value="/resources/js/advanced-datatable/demo_page.css"/>" rel="stylesheet">
-    <link href="<c:url value="/resources/js/advanced-datatable/DT_bootstrap.css"/>" rel="stylesheet">
-    <link href="<c:url value="/resources/css/dataTables.bootstrap.css"/>" rel="stylesheet">
 </head>
 <body>
 <section id="container">
+    <c:import url="/resources/views/common/data-table.jsp"/>
     <c:import url="/resources/views/common/topBar.jsp"/>
     <c:import url="/resources/views/common/menu.jsp"/>
     <!-- **********************************************************************************************************************************************************
@@ -41,23 +34,7 @@
                 <div class="content-panel">
                     <div class="adv-table">
                         <div id="hidden-table-info_wrapper" class="dataTables_wrapper" role="grid">
-                            <form class="form-inline" role="form">
-                                <select class="form-control">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                                <label>Display</label>
-                                <div class="form-group search-control">
-
-                                    <input type="email" class="form-control" id="exampleInputEmail2"
-                                           placeholder="Enter email">
-                                    <button type="submit" class="btn btn-theme">Search</button>
-                                </div>
-
-                                <div class="col-md-6 form-group time-control">
+                                <div class="col-md-4 form-group time-control">
                                     <div class="input-group input-large"
                                          data-date-format="mm/dd/yyyy">
                                         <input type="text" class="form-control dpd1" name="from" id="fromDate" value="${fromDate}">
@@ -65,9 +42,8 @@
                                         <input type="text" class="form-control dpd2" name="to" id="toDate" value=${toDate}>
                                     </div>
                                 </div>
-                            </form>
 
-                            <table class="display table table-bordered dataTable" id="hidden-table-info"
+                            <table class="display table table-bordered dataTable" id="bill-table"
                                    aria-describedby="hidden-table-info_info">
                                 <thead>
                                 <tr role="row">
@@ -105,12 +81,6 @@
                                 </c:forEach>
                                 </tbody>
                             </table>
-                            <div class="dataTables_info" id="hidden-table-info_info">Showing 1 to 57 of 57 entries</div>
-                            <div class="dataTables_paginate paging_two_button" id="hidden-table-info_paginate"><a
-                                    class="paginate_disabled_previous" tabindex="0" role="button"
-                                    id="hidden-table-info_previous" aria-controls="hidden-table-info">Previous</a><a
-                                    class="paginate_disabled_next" tabindex="0" role="button"
-                                    id="hidden-table-info_next" aria-controls="hidden-table-info">Next</a></div>
                         </div>
                     </div>
                 </div>
@@ -141,17 +111,12 @@
 
 <script src="<c:url value = "/resources/js/bootstrap-daterangepicker/moment.min.js"/>"
         type="text/javascript"></script>
-
+<script src="<c:url value="/resources/lib/js/bill-management-page.js"/>"></script>
 <c:import url="/resources/views/common/footer.jsp"/>
 <script src="<c:url value="/resources/js/advanced-form-components.js"/>" type="text/javascript"></script>
 <script src="<c:url value="/resources/js/common-scripts.js"/>"></script>
-<script src="<c:url value="/resources/js/jquery.dataTables.js"/>"></script>
-<script language="javascript">
-    $(document).ready(function(){
-        $('#hidden-table-info').DataTable();
-    })
 
-</script>
+
 <div class="datepicker dropdown-menu">
     <div class="datepicker-days" style="display: block;">
         <table class=" table-condensed">

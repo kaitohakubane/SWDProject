@@ -13,24 +13,17 @@
 <head>
     <title>Product</title>
     <c:import url="/resources/views/common/header.jsp"/>
+
     <link href="<c:url value="/resources/lib/css/common.css"/>" rel="stylesheet">
     <%--Date time CSS--%>
     <link href="<c:url value="/resources/js/bootstrap-datepicker/datepicker.css"/>" rel="stylesheet">
     <link href="<c:url value="/resources/js/bootstrap-daterangepicker/daterangepicker.css"/>" rel="stylesheet">
 
-    <%--File upload CSS--%>
-    <link href="<c:url value="/resources/js/bootstrap-fileupload/bootstrap-fileupload.css"/>" rel="stylesheet">
-
-    <%--Table CSS--%>
-    <link href="<c:url value="/resources/css/table-responsive.css"/>" rel="stylesheet">
-    <link href="<c:url value="/resources/js/advanced-datatable/demo_page.css"/>" rel="stylesheet">
-    <link href="<c:url value="/resources/js/advanced-datatable/demo_table.css"/>" rel="stylesheet">
-    <link href="<c:url value="/resources/js/advanced-datatable/DT_bootstrap.css"/>" rel="stylesheet">
-    <link href="<c:url value="/resources/css/productPage.css"/>" rel="stylesheet">
 
 </head>
 <body>
 <section id="container">
+    <c:import url="/resources/views/common/data-table.jsp"/>
     <c:import url="/resources/views/common/topBar.jsp"/>
     <c:import url="/resources/views/common/menu.jsp"/>
     <!-- **********************************************************************************************************************************************************
@@ -45,35 +38,11 @@
                 <!-- page start-->
                 <div class="content-panel">
                     <div class="adv-table">
-                        <form class="form-inline" role="form">
-                            <select class="form-control">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                            </select>
-                            <label>Display</label>
-                            <div class="form-group search-control">
-
-                                <input type="email" class="form-control" id="exampleInputEmail2"
-                                       placeholder="Enter email">
-                                <button type="submit" class="btn btn-theme">Search</button>
-                            </div>
-
-                            <div class="form-group">
-                                <button type="button" class="btn btn-primary" data-toggle="modal"
-                                        data-target="#productModal">Add Product
-                                </button>
-                            </div>
-                        </form>
-
                         <table cellpadding="0" cellspacing="0" border="0"
-                               class="display table table-bordered dataTable" id="hidden-table-info"
+                               class="display table table-bordered dataTable" id="stock-table"
                                aria-describedby="hidden-table-info_info">
                             <thead>
                             <tr role="row">
-                                <th>Product ID</th>
                                 <th>Name</th>
                                 <th>Size</th>
                                 <th>Quantity</th>
@@ -84,7 +53,6 @@
                             <tbody role="alert" aria-live="polite" aria-relevant="all">
                             <c:forEach var="item" items="${listStock}">
                                 <tr class="gradeC even">
-                                    <td class="center">${item.productID}</td>
                                     <td class="center">${item.productName}</td>
                                     <td class="center">${item.size}</td>
                                     <td class="center">${item.quantity}</td>
@@ -97,12 +65,6 @@
                             </c:forEach>
                             </tbody>
                         </table>
-                        <div class="dataTables_info" id="hidden-table-info_info">Showing 1 to 57 of 57 entries</div>
-                        <div class="dataTables_paginate paging_two_button" id="hidden-table-info_paginate"><a
-                                class="paginate_disabled_previous" tabindex="0" role="button"
-                                id="hidden-table-info_previous" aria-controls="hidden-table-info">Previous</a><a
-                                class="paginate_disabled_next" tabindex="0" role="button"
-                                id="hidden-table-info_next" aria-controls="hidden-table-info">Next</a></div>
                     </div>
                 </div>
             </div>
@@ -331,5 +293,7 @@
 <c:import url="/resources/views/common/footer.jsp"/>
 <script src="<c:url value="/resources/js/advanced-form-components.js"/>" type="text/javascript"></script>
 <script src="<c:url value="/resources/js/common-scripts.js"/>"></script>
+<script src="<c:url value="/resources/lib/js/stock-management.js"/>"></script>
+
 </body>
 </html>

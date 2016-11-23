@@ -81,3 +81,7 @@ var CommonAjax = {
         }
     },
 };
+
+function addDataTable(datatable){
+    datatable.DataTable();
+}
