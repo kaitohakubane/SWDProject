@@ -97,8 +97,8 @@
                                         </button>
                                     </td>
                                     <td class="center">
-                                        <button type="button" class="btn btn-round btn-danger" data-toggle="modal"
-                                                data-target="#confirmModal">Delete
+                                        <button type="button" class="btn btn-round btn-danger delete-btn"
+                                                data-id="${item.productId}">Delete
                                         </button>
                                     </td>
                                 </tr>
@@ -185,7 +185,7 @@
 </div>
 
 
-<!-- Modal -->
+<!-- Product Modal -->
 <div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
      aria-hidden="true" data-keyboard="false" data-backdrop="static">
     <div class="modal-dialog">
@@ -326,7 +326,7 @@
     </div>
 </div>
 
-<!-- Modal -->
+<!-- Sale Modal -->
 <div class="modal fade" id="saleModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
      aria-hidden="true" data-keyboard="false" data-backdrop="static">
     <div class="modal-dialog">
@@ -382,6 +382,45 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 <button type="button" class="btn btn-primary">Sale Product</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade notify-modal" id="notifyModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true"
+     data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title notify-title" id="myModalLabel">Modal title</h4>
+            </div>
+            <div class="modal-body notify-content">
+                Hi there, I am a Modal Example for Dashgum Admin Panel.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default notify-button" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade confirm-modal" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true"
+     data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title confirm-title">Modal title</h4>
+            </div>
+            <div class="modal-body confirm-content">
+                Are you sure to do this ?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary confirm-button">OK</button>
             </div>
         </div>
     </div>

@@ -46,13 +46,8 @@ public class ProductModel extends CommonDAO implements ProductModelInterface {
     }
 
     @Override
-    public boolean updateProduct(ProductEntity product) {
-        if (getProductByID(product.getProductId()) != null) {
-            getSession().merge(product);
-            getSession().saveOrUpdate(product);
-            return true;
-        }
-        return false;
+    public void updateProduct(ProductEntity product) {
+            getSession().update(product);
     }
 
 

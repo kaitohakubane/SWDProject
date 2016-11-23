@@ -29,8 +29,8 @@ public class ProductService implements ProductServiceInterface {
     }
 
     @Override
-    public boolean updateProduct(ProductEntity product) {
-        return productModelInterface.updateProduct(product);
+    public void updateProduct(ProductEntity product) {
+         productModelInterface.updateProduct(product);
     }
 
     @Override

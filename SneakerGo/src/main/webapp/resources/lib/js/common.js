@@ -4,84 +4,59 @@
 /**
  * Scroll top for common ajax.
  */
-var IS_SCROLL_TOP = true;
-var CommonAjax = {
-    request: function (url, requestMethod, data, isAsync, successCallbackFunc,
-                       errorCallBackFunc, showLoading, $element, isProcessData, isContentType) {
-        var isLoadingSymbol = typeof (showLoading) == 'undefined' ? true : showLoading;
-        $element = typeof $element !== 'undefined' ? $element : $("body");
-        var currentTitle = document.title;
-        var loadingTitle = "処理中...";
+var DELETE_PRODUCT_URL='/admin/product/remove';
+var PRODUCT_PAGE_URL="/admin/product";
+function addDataTable(dataTable){
+    dataTable.DataTable();
+}
 
-        var processData = typeof isProcessData !== 'undefined' ? isProcessData : undefined;
-        var contentType = typeof isContentType !== 'undefined' ? isContentType : undefined;
+function notify(msg){
+    $('#notify-message').val(msg);
+    $('#notifyModal').show();
+}
 
-        if (currentTitle == loadingTitle) {
-            currentTitle = "";
-        }
+function confirm(msg){
 
-        // Todo: Remove log
-        console.log('URL: ' + url);
+}
 
-        // Loading symbol in middle of the screen.
-        if (isLoadingSymbol) {
-            $element.addClass("loading");
-            document.title = loadingTitle;
-        }
+function showNotifyModal(callIfOk, isNavigate, data) {
+    var modal = $(".notify-modal");
+    var title = $(".notify-title");
+    var content = $(".notify-content");
+    var okBtn = $(".notify-button");
 
-        CommonAjax.done(function () {
-            $('#hidden-loading-focus').focus();
-            // Process ajax call
-            $.ajax({
-                    url: contextPath + url,
-                    async: isAsync,
-                    type: requestMethod,
-                    data: data,
-                    processData: processData,
-                    contentType: contentType,
-                    success: function (returnedData, textStatus, jqXHR) {
-                        // Turn off loading symbol
-                        CommonAjax.hideLoadingSymbol(isLoadingSymbol, currentTitle);
-                        successCallbackFunc(returnedData, jqXHR);
-                    },
-                    error: function (jqXHR, textStatus, errorThrown) {
-                        // Turn off loading symbol
-                        CommonAjax.hideLoadingSymbol(isLoadingSymbol, currentTitle);
-
-                        if (textStatus == "error" && jqXHR.status == 401 && errorThrown == "Unauthorized") {
-                            window.location = contextPath + "/login";
-                        } else if (jqXHR.status == 500) {
-                            window.location = contextPath + "/500-error";
-                        } else if (jqXHR.status == 403) {
-                            window.location = contextPath + "/403-error";
-                        } else if (jqXHR.status == 412) {
-                            window.location = contextPath + "/412-error";
-                        }
-                        else {
-                            errorCallBackFunc(jqXHR, textStatus, errorThrown);
-                        }
-                    }
+    if (okBtn.data('registered-onclick') != true) {
+        okBtn.data('registered-onclick', true);
+        okBtn.click(function (e) {
+            e.preventDefault();
+            if (typeof(callIfOk) == 'function') {
+                callIfOk();
+            } else {
+                if (isNavigate) {
+                    window.location = callIfOk;
                 }
-            )
+            }
         });
-    },
+    }
+    title.text(data.title);
+    content.html(data.content);
+    modal.modal('show');
+}
 
-    hideLoadingSymbol: function (isLoadingSymbol, currentTitle) {
-        // Turn off loading symbol
-        if (isLoadingSymbol) {
-            $(".loading").removeClass("loading");
+function showConfirmModal(callIfConfirm, data) {
 
-            if (!isNullOrEmptyStr(currentTitle)) {
-                document.title = currentTitle;
-            }
+    var modal = $(".confirm-modal");
+    var title = $(".confirm-title");
+    var content = $(".confirm-content");
+    var confirmBtn = $(".confirm-button");
 
-            if (IS_SCROLL_TOP) {
-                $('body').animate({scrollTop: 0}, 'slow');
-            }
-        }
-    },
-};
+    title.text(data.title);
+    content.text(data.content);
+    confirmBtn.click(function (e) {
+        e.preventDefault();
+        callIfConfirm();
+        confirmBtn.unbind();
+    });
 
-function addDataTable(datatable){
-    datatable.DataTable();
+    modal.modal('show');
 }

@@ -12,7 +12,7 @@ public interface ProductServiceInterface {
 
     boolean addProduct(ProductEntity product);
 
-    boolean updateProduct(ProductEntity product);
+    void updateProduct(ProductEntity product);
 
     ProductEntity getProductByID(int productID);
 

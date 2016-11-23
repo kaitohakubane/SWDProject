@@ -17,6 +17,7 @@ public class ProductEntity {
     private Boolean enabled;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "productID", nullable = false)
     public int getProductId() {
         return productId;
