@@ -22,6 +22,7 @@
     <link href="<c:url value="/resources/js/advanced-datatable/demo_table.css"/>" rel="stylesheet">
     <link href="<c:url value="/resources/js/advanced-datatable/demo_page.css"/>" rel="stylesheet">
     <link href="<c:url value="/resources/js/advanced-datatable/DT_bootstrap.css"/>" rel="stylesheet">
+    <link href="<c:url value="/resources/css/dataTables.bootstrap.css"/>" rel="stylesheet">
 </head>
 <body>
 <section id="container">
@@ -144,6 +145,13 @@
 <c:import url="/resources/views/common/footer.jsp"/>
 <script src="<c:url value="/resources/js/advanced-form-components.js"/>" type="text/javascript"></script>
 <script src="<c:url value="/resources/js/common-scripts.js"/>"></script>
+<script src="<c:url value="/resources/js/jquery.dataTables.js"/>"></script>
+<script language="javascript">
+    $(document).ready(function(){
+        $('#hidden-table-info').DataTable();
+    })
+
+</script>
 <div class="datepicker dropdown-menu">
     <div class="datepicker-days" style="display: block;">
         <table class=" table-condensed">
