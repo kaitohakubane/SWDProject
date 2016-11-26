@@ -2,36 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9f363a78-be37-44b1-8834-69e9a7c78f34" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/SpringMvcTemplate/WEB-INF/classes/com/sneakergo/controller/ProductController.class" afterPath="$PROJECT_DIR$/target/SpringMvcTemplate/WEB-INF/classes/com/sneakergo/controller/ProductController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/SpringMvcTemplate/WEB-INF/classes/com/sneakergo/entity/ProductEntity.class" afterPath="$PROJECT_DIR$/target/SpringMvcTemplate/WEB-INF/classes/com/sneakergo/entity/ProductEntity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/SpringMvcTemplate/WEB-INF/classes/com/sneakergo/model/ProductModel.class" afterPath="$PROJECT_DIR$/target/SpringMvcTemplate/WEB-INF/classes/com/sneakergo/model/ProductModel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/SpringMvcTemplate/WEB-INF/classes/com/sneakergo/model/interfaces/ProductModelInterface.class" afterPath="$PROJECT_DIR$/target/SpringMvcTemplate/WEB-INF/classes/com/sneakergo/model/interfaces/ProductModelInterface.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/SpringMvcTemplate/WEB-INF/classes/com/sneakergo/service/ProductService.class" afterPath="$PROJECT_DIR$/target/SpringMvcTemplate/WEB-INF/classes/com/sneakergo/service/ProductService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/SpringMvcTemplate/WEB-INF/classes/com/sneakergo/service/interfaces/ProductServiceInterface.class" afterPath="$PROJECT_DIR$/target/SpringMvcTemplate/WEB-INF/classes/com/sneakergo/service/interfaces/ProductServiceInterface.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/sneakergo/controller/ProductController.class" afterPath="$PROJECT_DIR$/target/classes/com/sneakergo/controller/ProductController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/sneakergo/entity/ProductEntity.class" afterPath="$PROJECT_DIR$/target/classes/com/sneakergo/entity/ProductEntity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/sneakergo/model/ProductModel.class" afterPath="$PROJECT_DIR$/target/classes/com/sneakergo/model/ProductModel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/sneakergo/model/interfaces/ProductModelInterface.class" afterPath="$PROJECT_DIR$/target/classes/com/sneakergo/model/interfaces/ProductModelInterface.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/sneakergo/service/ProductService.class" afterPath="$PROJECT_DIR$/target/classes/com/sneakergo/service/ProductService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/sneakergo/service/interfaces/ProductServiceInterface.class" afterPath="$PROJECT_DIR$/target/classes/com/sneakergo/service/interfaces/ProductServiceInterface.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/SneakerGo_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/SneakerGo_war_exploded.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/sneakergo/controller/SaleController.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SneakerGo.iml" afterPath="$PROJECT_DIR$/SneakerGo.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sneakergo/controller/ProductController.java" afterPath="$PROJECT_DIR$/src/main/java/com/sneakergo/controller/ProductController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sneakergo/entity/ProductEntity.java" afterPath="$PROJECT_DIR$/src/main/java/com/sneakergo/entity/ProductEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sneakergo/model/ProductModel.java" afterPath="$PROJECT_DIR$/src/main/java/com/sneakergo/model/ProductModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sneakergo/model/interfaces/ProductModelInterface.java" afterPath="$PROJECT_DIR$/src/main/java/com/sneakergo/model/interfaces/ProductModelInterface.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sneakergo/service/ProductService.java" afterPath="$PROJECT_DIR$/src/main/java/com/sneakergo/service/ProductService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sneakergo/service/interfaces/ProductServiceInterface.java" afterPath="$PROJECT_DIR$/src/main/java/com/sneakergo/service/interfaces/ProductServiceInterface.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sneakergo/common/constants/PageConstant.java" afterPath="$PROJECT_DIR$/src/main/java/com/sneakergo/common/constants/PageConstant.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sneakergo/common/constants/ParamConstant.java" afterPath="$PROJECT_DIR$/src/main/java/com/sneakergo/common/constants/ParamConstant.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sneakergo/common/constants/SQLParamConstant.java" afterPath="$PROJECT_DIR$/src/main/java/com/sneakergo/common/constants/SQLParamConstant.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sneakergo/common/utils/NumbericUtils.java" afterPath="$PROJECT_DIR$/src/main/java/com/sneakergo/common/utils/NumbericUtils.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sneakergo/model/SaleModel.java" afterPath="$PROJECT_DIR$/src/main/java/com/sneakergo/model/SaleModel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sneakergo/model/interfaces/SaleModelInterface.java" afterPath="$PROJECT_DIR$/src/main/java/com/sneakergo/model/interfaces/SaleModelInterface.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sneakergo/service/SaleService.java" afterPath="$PROJECT_DIR$/src/main/java/com/sneakergo/service/SaleService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sneakergo/service/interfaces/SaleServiceInterface.java" afterPath="$PROJECT_DIR$/src/main/java/com/sneakergo/service/interfaces/SaleServiceInterface.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/lib/js/common.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/lib/js/common.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/lib/js/product-page.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/lib/js/product-page.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/views/common/header.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/resources/views/common/header.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/lib/js/stock-management.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/lib/js/stock-management.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/views/common/menu.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/resources/views/common/menu.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/views/pages/product-page.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/resources/views/pages/product-page.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/views/pages/sale-management-page.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/resources/views/pages/sale-management-page.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/views/pages/stock-management-page.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/resources/views/pages/stock-management-page.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/SpringMvcTemplate/WEB-INF/classes/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/target/SpringMvcTemplate/WEB-INF/classes/hibernate.cfg.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/SpringMvcTemplate/resources/lib/js/common.js" afterPath="$PROJECT_DIR$/target/SpringMvcTemplate/resources/lib/js/common.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/SpringMvcTemplate/resources/lib/js/product-page.js" afterPath="$PROJECT_DIR$/target/SpringMvcTemplate/resources/lib/js/product-page.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/SpringMvcTemplate/resources/views/common/header.jsp" afterPath="$PROJECT_DIR$/target/SpringMvcTemplate/resources/views/common/header.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/SpringMvcTemplate/resources/lib/js/stock-management.js" afterPath="$PROJECT_DIR$/target/SpringMvcTemplate/resources/lib/js/stock-management.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/SpringMvcTemplate/resources/views/pages/product-page.jsp" afterPath="$PROJECT_DIR$/target/SpringMvcTemplate/resources/views/pages/product-page.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/SpringMvcTemplate/resources/views/pages/stock-management-page.jsp" afterPath="$PROJECT_DIR$/target/SpringMvcTemplate/resources/views/pages/stock-management-page.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" />
     </list>
     <ignored path="SpringMvcTemplate.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -107,31 +102,58 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="product-page.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/lib/js/product-page.js">
+      <file leaf-file-name="import-page.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/views/pages/import-page.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="290">
-              <caret line="34" column="25" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
+              <caret line="55" column="41" selection-start-line="55" selection-start-column="41" selection-end-line="55" selection-end-column="41" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="product-page.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/views/pages/product-page.jsp">
+      <file leaf-file-name="ImportDisplayEntity.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/sneakergo/entity/ImportDisplayEntity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="398" column="50" selection-start-line="398" selection-start-column="50" selection-end-line="398" selection-end-column="50" />
-              <folding />
+            <state relative-caret-position="306">
+              <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+              <folding>
+                <element signature="e#477#478#0" expanded="true" />
+                <element signature="e#517#518#0" expanded="true" />
+                <element signature="e#555#556#0" expanded="true" />
+                <element signature="e#589#590#0" expanded="true" />
+                <element signature="e#643#644#0" expanded="true" />
+                <element signature="e#689#690#0" expanded="true" />
+                <element signature="e#720#721#0" expanded="true" />
+                <element signature="e#747#748#0" expanded="true" />
+                <element signature="e#787#788#0" expanded="true" />
+                <element signature="e#819#820#0" expanded="true" />
+                <element signature="e#855#856#0" expanded="true" />
+                <element signature="e#886#887#0" expanded="true" />
+                <element signature="e#935#936#0" expanded="true" />
+                <element signature="e#975#976#0" expanded="true" />
+                <element signature="e#1007#1008#0" expanded="true" />
+                <element signature="e#1035#1036#0" expanded="true" />
+                <element signature="e#1077#1078#0" expanded="true" />
+                <element signature="e#1111#1112#0" expanded="true" />
+                <element signature="e#1146#1147#0" expanded="true" />
+                <element signature="e#1179#1180#0" expanded="true" />
+                <element signature="e#1229#1230#0" expanded="true" />
+                <element signature="e#1273#1274#0" expanded="true" />
+                <element signature="e#1308#1309#0" expanded="true" />
+                <element signature="e#1339#1340#0" expanded="true" />
+                <element signature="e#1387#1388#0" expanded="true" />
+                <element signature="e#1427#1428#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="common.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/lib/js/common.js">
+      <file leaf-file-name="ImportEntity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/sneakergo/entity/ImportEntity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="25" column="36" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
+            <state relative-caret-position="180">
+              <caret line="16" column="28" selection-start-line="11" selection-start-column="4" selection-end-line="16" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -147,9 +169,9 @@
         <option value="Tag Library Descriptor" />
         <option value="Interface" />
         <option value="CSS File" />
-        <option value="Class" />
-        <option value="JavaScript File" />
         <option value="Jsp File" />
+        <option value="JavaScript File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -169,45 +191,23 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/sneakergo/service/SaleService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/sneakergo/service/StockService.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/Theme/morris.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/advanced-form-components.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/Theme/assets/js/advanced-form-components.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/views/common/confirm-modal.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/Theme/index.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/views/pages/dashboard.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/Theme/form_component.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/lib/css/add-product-page.css" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/views/pages/add-product-page.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/sneakergo/controller/AccountController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/sneakergo/common/constants/PageConstant.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sneakergo/controller/StockController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/views/common/menu.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/sneakergo/controller/IndexController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/sneakergo/common/constants/SQLParamConstant.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sneakergo/model/BillModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sneakergo/service/BillService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sneakergo/model/interfaces/BillModelInterface.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sneakergo/service/interfaces/BillServiceInterface.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sneakergo/common/utils/NumberUtils.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/sneakergo/model/SaleModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sneakergo/entity/BillDisplayEntity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/sneakergo/common/constants/ParamConstant.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sneakergo/common/constants/UtilsConstant.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sneakergo/controller/BillController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/sneakergo/common/utils/NumbericUtils.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/lib/js/bill-management-page-script.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/lib/js/dashboard.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/views/common/footer.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/views/pages/bill-management-page.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/lib/js/sale-management.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/lib/js/stock-management.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/lib/js/bill-management-page.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/views/pages/sale-management-page.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/sneakergo/entity/StockDisplayEntity.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/views/pages/stock-management-page.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/views/common/data-table.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/views/common/header.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/sneakergo/entity/ProductEntity.java" />
@@ -216,10 +216,32 @@
         <option value="$PROJECT_DIR$/src/main/java/com/sneakergo/model/interfaces/ProductModelInterface.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/sneakergo/service/ProductService.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/lib/js/product-page.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/sneakergo/controller/ProductController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sneakergo/entity/ImportEntity.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/views/pages/product-page.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/lib/js/common.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/lib/js/product-page.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/lib/js/stock-management.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/views/pages/stock-management-page.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/lib/js/bill-detail-management.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/lib/js/bill-detail-management.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/views/pages/bill-detail-management.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/lib/js/import-page.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/views/common/menu.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sneakergo/common/constants/PageConstant.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/views/pages/import-page.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sneakergo/entity/SaleDisplayEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sneakergo/common/constants/SQLParamConstant.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sneakergo/model/interfaces/SaleModelInterface.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sneakergo/service/interfaces/SaleServiceInterface.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sneakergo/service/SaleService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sneakergo/model/SaleModel.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/views/pages/sale-management-page.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sneakergo/common/constants/ParamConstant.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sneakergo/common/utils/NumbericUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sneakergo/controller/SaleController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sneakergo/entity/ImportDisplayEntity.java" />
       </list>
     </option>
   </component>
@@ -287,6 +309,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -468,40 +492,6 @@
               <option name="myItemId" value="lib" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SneakerGo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SneakerGo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -574,6 +564,36 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="sneakergo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SneakerGo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SneakerGo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sneakergo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -707,9 +727,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -722,9 +740,9 @@
     <property name="recentsLimit" value="5" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/lib/sqljdbc4-4.0.jar!/" />
+    <property name="last_opened_file_path" value="G:/SWD/SWD391/Assignment/BatchSequential" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
-    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.importing" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL&#10;SQL Server (Microsoft)" />
@@ -736,7 +754,7 @@
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="product&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/webapp/resources/views/pages/product-page.jsp&#10;productmodelin&#9;PSI&#9;JAVA://com.sneakergo.model.interfaces.ProductModelInterface&#10;productmodel&#9;PSI&#9;JAVA://com.sneakergo.model.ProductModel&#10;productentity&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/java/com/sneakergo/entity/ProductEntity.java&#10;productmo&#9;PSI&#9;JAVA://com.sneakergo.model.ProductModel&#10;contro&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/java/com/sneakergo/controller/ProductController.java&#10;general.h&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/webapp/resources/Theme/general.html&#10;header&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/webapp/resources/views/common/header.jsp&#10;PageCons&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/java/com/sneakergo/common/constants/PageConstant.java&#10;common&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/webapp/resources/lib/js/common.js&#10;product.js&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/webapp/resources/lib/js/product-page.js&#10;data&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/webapp/resources/views/common/data-table.jsp&#10;stock&#9;PSI&#9;JAVA://com.sneakergo.model.StockModel&#10;sal&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/webapp/resources/views/pages/sale-management-page.jsp&#10;produc&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/webapp/resources/views/pages/product-page.jsp&#10;footer&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/webapp/resources/views/common/footer.jsp&#10;bill&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/webapp/resources/views/pages/bill-management-page.jsp&#10;produ&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/webapp/resources/views/pages/product-page.jsp&#10;bi&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/webapp/resources/lib/js/bill-management-page.js&#10;bil&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/webapp/resources/views/pages/bill-management-page.jsp&#10;Param&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/java/com/sneakergo/common/constants/ParamConstant.java&#10;Bill&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/java/com/sneakergo/controller/BillController.java&#10;BillDispla&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/java/com/sneakergo/entity/BillDisplayEntity.java&#10;billmodel&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/java/com/sneakergo/model/BillModel.java&#10;Integer&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/java/com/sneakergo/common/utils/IntegerUtils.java&#10;ImportMode&#9;PSI&#9;JAVA://com.sneakergo.model.ImportModel&#10;BillModel&#9;PSI&#9;JAVA://com.sneakergo.model.interfaces.BillModelInterface&#10;StockModel&#9;PSI&#9;JAVA://com.sneakergo.model.StockModel&#10;SQL&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/java/com/sneakergo/common/constants/SQLParamConstant.java&#10;billentit&#9;PSI&#9;JAVA://com.sneakergo.entity.BillEntity&#10;account&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/java/com/sneakergo/entity/AccountEntity.java&#10;Stock&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/webapp/resources/views/pages/stock-management-page.jsp&#10;Import&#9;PSI&#9;JAVA://com.sneakergo.entity.ImportEntity&#10;menu&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/webapp/resources/views/common/menu.jsp&#10;stockdis&#9;PSI&#9;JAVA://com.sneakergo.entity.StockDisplayEntity&#10;param&#9;PSI&#9;JAVA://com.sneakergo.common.constants.ParamConstant&#10;controller&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/java/com/sneakergo/controller/ProductController.java&#10;for&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/webapp/resources/Theme/form_component.html&#10;index&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/java/com/sneakergo/controller/IndexController.java&#10;productcont&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/java/com/sneakergo/controller/ProductController.java&#10;form_component&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/webapp/resources/Theme/form_component.html&#10;das&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/webapp/resources/views/pages/dashboard.jsp&#10;menu.j&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/webapp/resources/views/common/menu.jsp&#10;foot&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/webapp/resources/views/common/footer.jsp&#10;billdetail&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/java/com/sneakergo/model/interfaces/BillDetailModelInterface.java&#10;productEn&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/java/com/sneakergo/entity/ProductEntity.java&#10;top&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/webapp/resources/views/common/topBar.jsp&#10;pro&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/webapp/resources/views/pages/productPage.jsp&#10;head&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/webapp/resources/views/common/header.jsp" />
+    <property name="SearchEverywhereHistoryKey" value="import&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/webapp/resources/views/pages/import-page.jsp&#10;SQL&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/java/com/sneakergo/common/constants/SQLParamConstant.java&#10;Param&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/java/com/sneakergo/common/constants/ParamConstant.java&#10;number&#9;PSI&#9;JAVA://com.sneakergo.common.utils.NumbericUtils&#10;product&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/webapp/resources/views/pages/product-page.jsp&#10;salemodel&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/java/com/sneakergo/model/SaleModel.java&#10;sale en&#9;PSI&#9;JAVA://com.sneakergo.entity.SaleDisplayEntity&#10;sale&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/webapp/resources/views/pages/sale-management-page.jsp&#10;mvc&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml&#10;bill&#9;PSI&#9;JAVA://com.sneakergo.controller.BillController&#10;stockmode&#9;PSI&#9;JAVA://com.sneakergo.model.StockModel&#10;stockcont&#9;PSI&#9;JAVA://com.sneakergo.controller.StockController&#10;importControl&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/java/com/sneakergo/controller/ImportProductController.java&#10;saleservice&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/java/com/sneakergo/service/SaleService.java&#10;stock&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/webapp/resources/views/pages/stock-management-page.jsp&#10;pagecons&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/java/com/sneakergo/common/constants/PageConstant.java&#10;account&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/java/com/sneakergo/entity/AccountEntity.java&#10;billdetail&#9;PSI&#9;JAVA://com.sneakergo.entity.BilldetailEntity&#10;productmodelin&#9;PSI&#9;JAVA://com.sneakergo.model.interfaces.ProductModelInterface&#10;productmodel&#9;PSI&#9;JAVA://com.sneakergo.model.ProductModel&#10;productentity&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/java/com/sneakergo/entity/ProductEntity.java&#10;productmo&#9;PSI&#9;JAVA://com.sneakergo.model.ProductModel&#10;contro&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/java/com/sneakergo/controller/ProductController.java&#10;general.h&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/webapp/resources/Theme/general.html&#10;header&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/webapp/resources/views/common/header.jsp&#10;PageCons&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/java/com/sneakergo/common/constants/PageConstant.java&#10;common&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/webapp/resources/lib/js/common.js&#10;product.js&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/webapp/resources/lib/js/product-page.js&#10;data&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/webapp/resources/views/common/data-table.jsp&#10;sal&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/webapp/resources/views/pages/sale-management-page.jsp&#10;produc&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/webapp/resources/views/pages/product-page.jsp&#10;footer&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/webapp/resources/views/common/footer.jsp&#10;produ&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/webapp/resources/views/pages/product-page.jsp&#10;bi&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/webapp/resources/lib/js/bill-management-page.js&#10;bil&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/webapp/resources/views/pages/bill-management-page.jsp&#10;Bill&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/java/com/sneakergo/controller/BillController.java&#10;BillDispla&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/java/com/sneakergo/entity/BillDisplayEntity.java&#10;billmodel&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/java/com/sneakergo/model/BillModel.java&#10;Integer&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/java/com/sneakergo/common/utils/IntegerUtils.java&#10;ImportMode&#9;PSI&#9;JAVA://com.sneakergo.model.ImportModel&#10;BillModel&#9;PSI&#9;JAVA://com.sneakergo.model.interfaces.BillModelInterface&#10;StockModel&#9;PSI&#9;JAVA://com.sneakergo.model.StockModel&#10;billentit&#9;PSI&#9;JAVA://com.sneakergo.entity.BillEntity&#10;Stock&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/webapp/resources/views/pages/stock-management-page.jsp&#10;Import&#9;PSI&#9;JAVA://com.sneakergo.entity.ImportEntity&#10;menu&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/webapp/resources/views/common/menu.jsp&#10;stockdis&#9;PSI&#9;JAVA://com.sneakergo.entity.StockDisplayEntity&#10;param&#9;PSI&#9;JAVA://com.sneakergo.common.constants.ParamConstant&#10;controller&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/java/com/sneakergo/controller/ProductController.java&#10;for&#9;FILE&#9;file://G:/SWDPro/SneakerGo/src/main/webapp/resources/Theme/form_component.html" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -1372,12 +1390,17 @@
       <workItem from="1479916524736" duration="481000" />
       <workItem from="1479917023367" duration="571000" />
       <workItem from="1479917749453" duration="2549000" />
-      <workItem from="1479920424360" duration="4010000" />
+      <workItem from="1479920424360" duration="4091000" />
+      <workItem from="1480073891817" duration="3063000" />
+      <workItem from="1480092879835" duration="89000" />
+      <workItem from="1480127854701" duration="7900000" />
+      <workItem from="1480161938121" duration="1616000" />
+      <workItem from="1480164275588" duration="12282000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="185239000" />
+    <option name="totallyTimeSpent" value="210270000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1393,30 +1416,29 @@
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4642857" sideWeight="0.26213592" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.4935275" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2421875" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2158385" sideWeight="0.7378641" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.49676377" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.48139158" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4642857" sideWeight="0.26213592" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.4935275" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2421875" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.49676377" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45127437" sideWeight="0.8859375" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.49676377" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.49676377" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29530746" sideWeight="0.35458788" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29530746" sideWeight="0.55676514" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24838188" sideWeight="0.55676514" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29530746" sideWeight="0.44323483" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25776398" sideWeight="0.496875" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2810559" sideWeight="0.7378641" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hibernate Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44827586" sideWeight="0.49375" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1426,6 +1448,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25776398" sideWeight="0.496875" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1450,264 +1473,292 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sneakergo/entity/BillEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="15" column="28" selection-start-line="11" selection-start-column="3" selection-end-line="15" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sneakergo/common/constants/SQLParamConstant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="84" selection-start-line="27" selection-start-column="84" selection-end-line="27" selection-end-column="84" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/src.zip!/java/util/Calendar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="445" column="28" selection-start-line="445" selection-start-column="28" selection-end-line="445" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sneakergo/model/ImportModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="20" column="12" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sneakergo/common/utils/IntegerUtils.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sneakergo/service/interfaces/BillServiceInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sneakergo/model/interfaces/BillModelInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sneakergo/service/BillService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="19" column="42" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sneakergo/model/BillModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="36" column="28" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sneakergo/entity/BillDisplayEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="44" column="23" selection-start-line="44" selection-start-column="23" selection-end-line="44" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sneakergo/controller/IndexController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="19" column="3" selection-start-line="19" selection-start-column="3" selection-end-line="27" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sneakergo/common/utils/NumbericUtils.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/views/common/data-table.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
-          <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
-          <folding />
+          <caret line="10" column="87" selection-start-line="10" selection-start-column="87" selection-end-line="10" selection-end-column="87" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sneakergo/model/SaleModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="43" column="43" selection-start-line="43" selection-start-column="43" selection-end-line="43" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sneakergo/common/constants/UtilsConstant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sneakergo/controller/BillController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="32" column="108" selection-start-line="32" selection-start-column="108" selection-end-line="32" selection-end-column="108" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/advanced-datatable/demo_table.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-210">
-          <caret line="132" column="6" selection-start-line="132" selection-start-column="6" selection-end-line="132" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="2107" column="1" selection-start-line="2107" selection-start-column="1" selection-end-line="2107" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/dataTables.bootstrap.css">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/views/pages/login-page.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="6" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/jquery.dataTables.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="424" column="1" selection-start-line="424" selection-start-column="1" selection-end-line="424" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/Theme/assets/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="1124" column="1" selection-start-line="1124" selection-start-column="1" selection-end-line="1124" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/lib/js/dashboard.js">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/properties/config.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/views/common/footer.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="55" selection-start-line="8" selection-start-column="55" selection-end-line="8" selection-end-column="55" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sneakergo/controller/BillDetailController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="50" selection-start-line="7" selection-start-column="50" selection-end-line="7" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/lib/css/common.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="1" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/lib/js/common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="21" column="32" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/lib/js/product-page.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="60" column="59" selection-start-line="60" selection-start-column="38" selection-end-line="60" selection-end-column="59" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/lib/js/stock-management.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        <state relative-caret-position="361">
+          <caret line="52" column="7" selection-start-line="52" selection-start-column="7" selection-end-line="52" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/lib/js/sale-management.js">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/lib/js/bill-detail-management.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="2" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
+        <state relative-caret-position="170">
+          <caret line="10" column="16" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sneakergo/entity/BillDisplayEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sneakergo/entity/AccountEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/views/pages/dashboard.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1785">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sneakergo/entity/BilldetailEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/lib/js/bill-management-page.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="8" column="2" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
-          <folding>
-            <element signature="e#0#41#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="51">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="8" selection-end-column="2" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/views/pages/bill-management-page.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="70" column="34" selection-start-line="70" selection-start-column="34" selection-end-line="70" selection-end-column="34" />
+        <state relative-caret-position="-646">
+          <caret line="70" column="34" selection-start-line="0" selection-start-column="0" selection-end-line="242" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sneakergo/model/StockModel.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/views/pages/bill-detail-management.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="61" column="64" selection-start-line="61" selection-start-column="64" selection-end-line="61" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sneakergo/entity/StockDisplayEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+        <state relative-caret-position="816">
+          <caret line="48" column="73" selection-start-line="48" selection-start-column="73" selection-end-line="48" selection-end-column="73" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/views/pages/stock-management-page.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="44" column="43" selection-start-line="44" selection-start-column="43" selection-end-line="44" selection-end-column="43" />
+        <state relative-caret-position="382">
+          <caret line="151" column="6" selection-start-line="89" selection-start-column="0" selection-end-line="151" selection-end-column="6" />
+          <folding>
+            <element signature="n#script#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sneakergo/entity/SaleEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="16" column="28" selection-start-line="11" selection-start-column="4" selection-end-line="16" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/views/pages/sale-management-page.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sneakergo/model/ProductModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="94" column="36" selection-start-line="94" selection-start-column="36" selection-end-line="94" selection-end-column="36" />
+        <state relative-caret-position="676">
+          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding>
+            <element signature="e#1597#1598#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sneakergo/model/BillModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="40" column="53" selection-start-line="37" selection-start-column="8" selection-end-line="40" selection-end-column="53" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/views/common/data-table.jsp">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/src.zip!/java/lang/Override.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="10" column="87" selection-start-line="10" selection-start-column="87" selection-end-line="10" selection-end-column="87" />
+        <state relative-caret-position="370">
+          <caret line="50" column="18" selection-start-line="50" selection-start-column="18" selection-end-line="50" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sneakergo/common/constants/ParamConstant.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sneakergo/model/interfaces/SaleModelInterface.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="37" column="31" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
+        <state relative-caret-position="187">
+          <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/views/common/header.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sneakergo/service/interfaces/SaleServiceInterface.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="59" selection-start-line="22" selection-start-column="59" selection-end-line="22" selection-end-column="59" />
+        <state relative-caret-position="170">
+          <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/Theme/general.html">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sneakergo/service/SaleService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="372" column="40" selection-start-line="356" selection-start-column="24" selection-end-line="372" selection-end-column="40" />
+        <state relative-caret-position="289">
+          <caret line="28" column="27" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sneakergo/controller/ProductController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="42" column="118" selection-start-line="42" selection-start-column="50" selection-end-line="42" selection-end-column="118" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sneakergo/model/ImportModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sneakergo/controller/ImportProductController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#5714#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sneakergo/model/StockModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="59" column="40" selection-start-line="59" selection-start-column="40" selection-end-line="59" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sneakergo/controller/StockController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="24" column="62" selection-start-line="24" selection-start-column="62" selection-end-line="24" selection-end-column="62" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sneakergo/common/constants/PageConstant.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="24" column="31" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
+        <state relative-caret-position="168">
+          <caret line="42" column="31" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/views/common/menu.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1003">
+          <caret line="59" column="84" selection-start-line="59" selection-start-column="84" selection-end-line="59" selection-end-column="84" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sneakergo/model/SaleModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="32" column="31" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sneakergo/entity/SaleDisplayEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-34">
+          <caret line="10" column="31" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-969">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="170">
+          <caret line="64" column="56" selection-start-line="64" selection-start-column="56" selection-end-line="64" selection-end-column="56" />
           <folding>
             <marker date="1479744620710" expanded="true" signature="3819:3874" ph="SELECT accou... account" />
             <marker date="1479744620710" expanded="true" signature="3941:4009" ph="SELECT accou... account" />
@@ -1715,78 +1766,105 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.2.RELEASE/spring-web-4.3.2.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sneakergo/controller/BillController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="142" column="0" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
+        <state relative-caret-position="289">
+          <caret line="30" column="92" selection-start-line="30" selection-start-column="92" selection-end-line="30" selection-end-column="92" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.3.2.RELEASE/spring-webmvc-4.3.2.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/RequestMappingHandlerAdapter.class">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/lib/js/bill-detail-management.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="556" column="0" selection-start-line="556" selection-start-column="0" selection-end-line="556" selection-end-column="0" />
+        <state relative-caret-position="34">
+          <caret line="4" column="39" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#41#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sneakergo/controller/SaleController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sneakergo/common/constants/SQLParamConstant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="32" column="84" selection-start-line="32" selection-start-column="43" selection-end-line="32" selection-end-column="84" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-tx/4.3.2.RELEASE/spring-tx-4.3.2.RELEASE.jar!/org/springframework/transaction/interceptor/TransactionAspectSupport.class">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sneakergo/common/utils/NumbericUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="155" column="0" selection-start-line="155" selection-start-column="0" selection-end-line="155" selection-end-column="0" />
+        <state relative-caret-position="150">
+          <caret line="21" column="53" selection-start-line="21" selection-start-column="53" selection-end-line="21" selection-end-column="53" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/4.3.2.RELEASE/spring-aop-4.3.2.RELEASE.jar!/org/springframework/aop/support/AopUtils.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="177" column="0" selection-start-line="177" selection-start-column="0" selection-end-line="177" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/javax/servlet/servlet-api/2.5/servlet-api-2.5.jar!/javax/servlet/http/HttpServlet.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="274" column="0" selection-start-line="274" selection-start-column="0" selection-end-line="274" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sneakergo/model/interfaces/ProductModelInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="150" column="25" selection-start-line="150" selection-start-column="25" selection-end-line="150" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sneakergo/service/interfaces/ProductServiceInterface.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sneakergo/common/constants/ParamConstant.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+          <caret line="7" column="51" selection-start-line="7" selection-start-column="51" selection-end-line="7" selection-end-column="51" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sneakergo/service/ProductService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/views/pages/sale-management-page.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="30" column="4" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
+        <state relative-caret-position="298">
+          <caret line="72" column="45" selection-start-line="72" selection-start-column="45" selection-end-line="72" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/views/pages/product-page.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="64" column="73" selection-start-line="64" selection-start-column="28" selection-end-line="64" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/lib/js/import-page.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
           <folding>
-            <element signature="e#930#931#0" expanded="true" />
-            <element signature="e#991#992#0" expanded="true" />
+            <element signature="e#0#41#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sneakergo/entity/ImportEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="16" column="28" selection-start-line="11" selection-start-column="4" selection-end-line="16" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sneakergo/entity/StockEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sneakergo/entity/AttributeEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1798,45 +1876,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sneakergo/model/ProductModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-          <folding>
-            <element signature="e#1597#1598#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sneakergo/controller/ProductController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="127" column="59" selection-start-line="127" selection-start-column="59" selection-end-line="127" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/lib/js/product-page.js">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/views/pages/import-page.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="290">
-          <caret line="34" column="25" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
+          <caret line="55" column="41" selection-start-line="55" selection-start-column="41" selection-end-line="55" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/views/pages/product-page.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sneakergo/entity/ImportDisplayEntity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="398" column="50" selection-start-line="398" selection-start-column="50" selection-end-line="398" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/lib/js/common.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="25" column="36" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
-          <folding />
+        <state relative-caret-position="306">
+          <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+          <folding>
+            <element signature="e#477#478#0" expanded="true" />
+            <element signature="e#517#518#0" expanded="true" />
+            <element signature="e#555#556#0" expanded="true" />
+            <element signature="e#589#590#0" expanded="true" />
+            <element signature="e#643#644#0" expanded="true" />
+            <element signature="e#689#690#0" expanded="true" />
+            <element signature="e#720#721#0" expanded="true" />
+            <element signature="e#747#748#0" expanded="true" />
+            <element signature="e#787#788#0" expanded="true" />
+            <element signature="e#819#820#0" expanded="true" />
+            <element signature="e#855#856#0" expanded="true" />
+            <element signature="e#886#887#0" expanded="true" />
+            <element signature="e#935#936#0" expanded="true" />
+            <element signature="e#975#976#0" expanded="true" />
+            <element signature="e#1007#1008#0" expanded="true" />
+            <element signature="e#1035#1036#0" expanded="true" />
+            <element signature="e#1077#1078#0" expanded="true" />
+            <element signature="e#1111#1112#0" expanded="true" />
+            <element signature="e#1146#1147#0" expanded="true" />
+            <element signature="e#1179#1180#0" expanded="true" />
+            <element signature="e#1229#1230#0" expanded="true" />
+            <element signature="e#1273#1274#0" expanded="true" />
+            <element signature="e#1308#1309#0" expanded="true" />
+            <element signature="e#1339#1340#0" expanded="true" />
+            <element signature="e#1387#1388#0" expanded="true" />
+            <element signature="e#1427#1428#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

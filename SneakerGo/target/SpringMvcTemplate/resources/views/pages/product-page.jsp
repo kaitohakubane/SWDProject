@@ -40,7 +40,7 @@
                 <div class="content-panel">
                     <div class="adv-table">
                         <div class="form-group">
-                            <button type="button" class="btn btn-primary" data-toggle="modal"
+                            <button type="button" class="btn btn-primary add-btn" data-toggle="modal"
                                     data-target="#productModal">Add Product
                             </button>
                         </div>
@@ -56,7 +56,6 @@
                                 <th>Price</th>
                                 <th>Nation</th>
                                 <th>Sale</th>
-                                <th>Import</th>
                                 <th>Update</th>
                                 <th>Delete</th>
                             </tr>
@@ -65,7 +64,7 @@
                             <tbody role="alert" aria-live="polite" aria-relevant="all">
                             <c:forEach var="item" items="${listProduct}">
                                 <tr class="gradeC even">
-                                    <td class="center">${item.productId}</td>
+                                    <td class="center" data-id="${item.description}">${item.productId}</td>
                                     <td class="center">
                                         <c:choose>
                                             <c:when test="${item.picture eq null}">
@@ -82,18 +81,13 @@
                                     <td class="center">${item.price}</td>
                                     <td class="center">${item.nation}</td>
                                     <td class="center">
-                                        <button type="button" class="btn btn-round btn-warning" data-toggle="modal"
-                                                data-target="#saleModal">Sale
+                                        <button type="button" class="btn btn-round btn-warning sale-btn" data-toggle="modal"
+                                                data-target="#saleModal" data-id="${item.productId}">Sale
                                         </button>
                                     </td>
                                     <td class="center">
-                                        <button type="button" class="btn btn-round btn-success" data-toggle="modal"
-                                                data-target="#importModal">Import
-                                        </button>
-                                    </td>
-                                    <td class="center">
-                                        <button type="button" class="btn btn-round btn-info" data-toggle="modal"
-                                                data-target="#productModal">Update
+                                        <button type="button" class="btn btn-round btn-info update-btn" data-toggle="modal"
+                                                data-target="#productModal" data-id="${item.productId}">Update
                                         </button>
                                     </td>
                                     <td class="center">
@@ -197,10 +191,19 @@
             <div class="modal-body form-horizontal style-form">
 
                 <div class="form-inline" role="form">
-                    <label class="col-lg-2 col-sm-2 control-label" for="addMethodProductName">Name</label>
+                    <label class="col-lg-2 col-sm-2 control-label" for="productName">Name</label>
                     <div class="form-group">
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="addMethodProductName">
+                            <input type="text" class="form-control" id="productName">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-inline" role="form">
+                    <label class="col-lg-2 col-sm-2 control-label" for="price">Price</label>
+                    <div class="form-group">
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="price">
                         </div>
                     </div>
                 </div>
@@ -235,7 +238,7 @@
                     <div class="col-md-9">
                         <div class="fileupload fileupload-new" data-provides="fileupload"><input type="hidden">
                             <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
-                                <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="">
+                                <img id="image" src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="">
                             </div>
                             <div class="fileupload-preview fileupload-exists thumbnail"
                                  style="max-width: 200px; max-height: 150px; line-height: 10px;"></div>
@@ -259,68 +262,10 @@
                                  </span>
                     </div>
                 </div>
-                <label>Size</label>
-                <br/>
-                <div class="radio-inline">
-                    <label>
-                        <input type="radio" name="optionsRadios" id="optionsRadios1"
-                               value="0"
-                               checked>0.0
-                    </label>
-                </div>
-
-                <div class="radio-inline">
-                    <label>
-                        <input type="radio" name="optionsRadios" id="optionsRadios2"
-                               value="0.5">0.5
-                    </label>
-                </div>
-                <hr>
-                <label class="checkbox-inline">
-                    <input type="checkbox" class="size-checkbox" value="3"> 3
-                </label>
-                <label class="checkbox-inline">
-                    <input type="checkbox" class="size-checkbox" value="4"> 4
-                </label>
-                <label class="checkbox-inline">
-                    <input type="checkbox" class="size-checkbox" value="5"> 5
-                </label>
-                <label class="checkbox-inline">
-                    <input type="checkbox" class="size-checkbox" value="6"> 6
-                </label>
-                <label class="checkbox-inline">
-                    <input type="checkbox" class="size-checkbox" value="7"> 7
-                </label>
-                <label class="checkbox-inline">
-                    <input type="checkbox" class="size-checkbox" value="8"> 8
-                </label>
-                <label class="checkbox-inline">
-                    <input type="checkbox" class="size-checkbox" value="9"> 9
-                </label>
-                <label class="checkbox-inline">
-                    <input type="checkbox" class="size-checkbox" value="10"> 10
-                </label>
-                <label class="checkbox-inline">
-                    <input type="checkbox" class="size-checkbox" value="11"> 11
-                </label>
-                <label class="checkbox-inline">
-                    <input type="checkbox" class="size-checkbox" value="12"> 12
-                </label>
-                <label class="checkbox-inline">
-                    <input type="checkbox" class="size-checkbox" value="13"> 13
-                </label>
-                <label class="checkbox-inline">
-                    <input type="checkbox" class="size-checkbox" value="14"> 14
-                </label>
-                <hr>
-                <div class="form-inline action-form">
-                    <button type="button" class="btn btn-default">Cancel</button>
-                    <button type="button" class="btn btn-primary">Add Product</button>
-                </div>
-
             </div>
             <div class="modal-footer">
-
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" id="add-edit-btn">Add Product</button>
             </div>
         </div>
     </div>
@@ -338,29 +283,29 @@
 
             <div class="modal-body form-horizontal style-form">
                 <div class="form-inline" role="form">
-                    <label class="col-lg-2 col-sm-2 control-label" for="saleMethodProductID">ID</label>
+                    <label class="col-lg-2 col-sm-2 control-label" for="sale-product-name">ID</label>
                     <div class="form-group">
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="saleMethodProductID">
+                            <input type="text" class="form-control" id="sale-product-id" disabled>
                         </div>
                     </div>
                 </div>
                 <div class="form-inline" role="form">
                     <label class="col-lg-2 col-sm-2 control-label"
-                           for="saleMethodProductName">Name</label>
+                           for="sale-product-name">Name</label>
                     <div class="form-group">
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="saleMethodProductName">
+                            <input type="text" class="form-control" id="sale-product-name">
                         </div>
                     </div>
                 </div>
 
                 <div class="form-inline" role="form">
                     <label class="col-lg-2 col-sm-2 control-label"
-                           for="saleMethodProductPercent">Percentage</label>
+                           for="sale-percentage">Percentage</label>
                     <div class="form-group">
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="saleMethodProductPercent">
+                            <input class="form-control" type="number" min="1" max="100" id="sale-percentage">
                         </div>
                     </div>
                 </div>
@@ -381,7 +326,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Sale Product</button>
+                <button type="button" class="btn btn-primary" id="sale-btn">Sale Product</button>
             </div>
         </div>
     </div>

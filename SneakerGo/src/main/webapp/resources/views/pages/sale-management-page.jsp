@@ -37,21 +37,19 @@
                 <div class="content-panel">
                     <div class="adv-table">
                         <div id="hidden-table-info_wrapper" class="dataTables_wrapper" role="grid">
-                                <div class="col-md-6 form-group time-control">
-                                    <div class="input-group input-large" data-date="01/01/2014"
-                                         data-date-format="mm/dd/yyyy">
-                                        <input type="text" class="form-control dpd1" name="from">
-                                        <span class="input-group-addon">To</span>
-                                        <input type="text" class="form-control dpd2" name="to">
-                                    </div>
+                            <div class="col-md-6 form-group time-control">
+                                <div class="input-group input-large" data-date="01/01/2014"
+                                     data-date-format="mm/dd/yyyy">
+                                    <input type="text" class="form-control dpd1" name="from">
+                                    <span class="input-group-addon">To</span>
+                                    <input type="text" class="form-control dpd2" name="to">
                                 </div>
+                            </div>
                             <table class="display table table-bordered dataTable" id="sale-table"
                                    aria-describedby="hidden-table-info_info">
                                 <thead>
                                 <tr role="row">
-                                    <th></th>
-                                    <th>Sale ID</th>
-                                    <th>Product ID</th>
+                                    <th>Product Name</th>
                                     <th>Sale Percent</th>
                                     <th>From Date</th>
                                     <th>To Date</th>
@@ -61,36 +59,20 @@
                                 </thead>
 
                                 <tbody role="alert" aria-live="polite" aria-relevant="all">
-                                <tr class="gradeC even">
-                                    <td class="center "></td>
-                                    <td class="center "></td>
-                                    <td class="center "></td>
-                                    <td class="center "></td>
-                                    <td class="center "></td>
-                                    <td class="center">Mac OS 8-X</td>
-                                    <td class="center"></td>
-                                    <td class="center">
-                                        <button type="button" class="btn btn-round btn-danger" data-toggle="modal"
-                                                data-target="#confirmModal">Change Status
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr class="gradeA odd">
-                                    <td class="center "></td>
-                                    <td class="center "></td>
-                                    <td class="center "></td>
-                                    <td class="center "></td>
-                                    <td class="center "></td>
-                                    <td class="">Trident</td>
-                                    <td class="center"></td>
-                                    <td class="center">
-                                        <button type="button" class="btn btn-round btn-danger" data-toggle="modal"
-                                                data-target="#confirmModal">Delete
-                                        </button>
-                                    </td>
-                                </tr>
-
-
+                                <c:forEach var="item" items="${listSale}">
+                                    <tr class="gradeC even">
+                                        <td class="center ">${item.productName}</td>
+                                        <td class="center ">${item.salePercent}</td>
+                                        <td class="center ">${item.fromDate}</td>
+                                        <td class="center ">${item.toDate}</td>
+                                        <td class="center">${item.enabled}</td>
+                                        <td class="center">
+                                            <button type="button" class="btn btn-round btn-danger"
+                                                    data-id="${item.saleId}">Change Status
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </c:forEach>
                                 </tbody>
                             </table>
                         </div>

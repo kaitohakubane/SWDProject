@@ -1,25 +1,20 @@
 <%--
   Created by IntelliJ IDEA.
   User: Hung
-  Date: 11/7/2016
-  Time: 10:15 PM
+  Date: 11/26/2016
+  Time: 10:42 PM
   To change this template use File | Settings | File Templates.
 --%>
-
 <!DOCTYPE html>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>Product</title>
+    <title>Import Management</title>
     <c:import url="/resources/views/common/header.jsp"/>
-
-    <link href="<c:url value="/resources/lib/css/common.css"/>" rel="stylesheet">
     <%--Date time CSS--%>
     <link href="<c:url value="/resources/js/bootstrap-datepicker/datepicker.css"/>" rel="stylesheet">
     <link href="<c:url value="/resources/js/bootstrap-daterangepicker/daterangepicker.css"/>" rel="stylesheet">
-
-
 </head>
 <body>
 <section id="container">
@@ -38,39 +33,66 @@
                 <!-- page start-->
                 <div class="content-panel">
                     <div class="adv-table">
-                        <table cellpadding="0" cellspacing="0" border="0"
-                               class="display table table-bordered dataTable" id="stock-table"
-                               aria-describedby="hidden-table-info_info">
-                            <thead>
-                            <tr role="row">
-                                <th></th>
-                                <th>Name</th>
-                                <th>Size</th>
-                                <th>Quantity</th>
-                                <th>Import</th>
-                            </tr>
-                            </thead>
+                        <div id="hidden-table-info_wrapper" class="dataTables_wrapper" role="grid">
+                            <div class="col-md-4 form-group time-control">
+                                <div class="input-group input-large"
+                                     data-date-format="mm/dd/yyyy">
+                                    <input type="text" class="form-control dpd1" name="from" id="fromDate" value="${fromDate}">
+                                    <span class="input-group-addon">To</span>
+                                    <input type="text" class="form-control dpd2" name="to" id="toDate" value=${toDate}>
+                                </div>
+                            </div>
 
-                            <tbody role="alert" aria-live="polite" aria-relevant="all">
-                            <c:forEach var="item" items="${listStock}" varStatus="counter">
-                                <tr class="gradeC even">
-                                    <td class="center">${counter.count}</td>
-                                    <td class="center">${item.productName}</td>
-                                    <td class="center">${item.size}</td>
-                                    <td class="center">${item.quantity}</td>
-                                    <td class="center">
-                                        <button type="button" class="btn btn-round btn-success import-btn" data-toggle="modal"
-                                                data-target="#importModal" data-id="${item.stockID}">Import
-                                        </button>
-                                    </td>
+                            <table class="display table table-bordered dataTable" id="import-table"
+                                   aria-describedby="hidden-table-info_info">
+                                <thead>
+                                <tr role="row">
+                                    <th>Product Name</th>
+                                    <th>Size</th>
+                                    <th>Quantity</th>
+                                    <th>Price</th>
+                                    <th>Total</th>
+                                    <th>Supplier</th>
+                                    <th>Date</th>
+                                    <th>Change</th>
+                                    <th>Delete</th>
                                 </tr>
-                            </c:forEach>
-                            </tbody>
-                        </table>
+                                </thead>
+
+                                <tbody role="alert" aria-live="polite" aria-relevant="all">
+                                <c:forEach var="item" items="${listBill}">
+                                    <tr class="gradeC even">
+                                        <td class="center">${item.billID}</td>
+                                        <td class="center">${item.accountID}</td>
+                                        <td class="center">${item.accountName}</td>
+                                        <td class="center">${item.totalPrice}</td>
+                                        <td class="center">${item.date}</td>
+                                        <td class="center">${item.enabled}</td>
+                                        <td class="center">
+                                            <button type="button" class="btn btn-round btn-success" data-toggle="modal"
+                                                    data-target="#importModal" data-stockID="${item.stockID}">View
+                                            </button>
+                                        </td>
+
+                                        <td class="center">
+                                            <button type="button" class="btn btn-round btn-success" data-toggle="modal"
+                                                    data-target="#importModal" data-stockID="${item.stockID}">Change
+                                            </button>
+                                        </td>
+
+                                        <td class="center">
+                                            <button type="button" class="btn btn-round btn-success" data-toggle="modal"
+                                                    data-target="#importModal" data-stockID="${item.stockID}">Delete
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </c:forEach>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!-- page end-->
+                <!-- page end-->
             </div><!-- /row -->
         </section><!-- --/wrapper ---->
     </section><!-- /MAIN CONTENT -->
@@ -86,7 +108,7 @@
     </footer>
     <!--footer end-->
 </section>
-<!-- Modal -->
+
 <div class="modal fade" id="importModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
      aria-hidden="true" data-keyboard="false" data-backdrop="static">
     <div class="modal-dialog">
@@ -109,9 +131,7 @@
                     <label class="col-lg-2 col-sm-2 control-label" for="size">Size</label>
                     <div class="form-group">
                         <div class="col-sm-10">
-                            <select class="form-control" id="size">
-
-                            </select>
+                            <input type="text" id="size" class="form-control" disabled>
                         </div>
                     </div>
                 </div>
@@ -150,21 +170,21 @@
         </div>
     </div>
 </div>
-
-<c:import url="/resources/views/common/confirm-modal.jsp"/>
+<%--Time script--%>
 <script src="<c:url value = "/resources/js/bootstrap-datepicker/bootstrap-datepicker.js"/>"
         type="text/javascript"></script>
+
+<script src="<c:url value = "/resources/js/bootstrap-daterangepicker/date.js"/>" type="text/javascript"></script>
 <script src="<c:url value = "/resources/js/bootstrap-daterangepicker/daterangepicker.js"/>"
         type="text/javascript"></script>
-<script src="<c:url value = "/resources/js/bootstrap-daterangepicker/date.js"/>" type="text/javascript"></script>
+
 <script src="<c:url value = "/resources/js/bootstrap-daterangepicker/moment.min.js"/>"
         type="text/javascript"></script>
-<script src="<c:url value = "/resources/js/bootstrap-fileupload/bootstrap-fileupload.js"/>"
-        type="text/javascript">
-</script>
-<script src="<c:url value = "/resources/lib/js/common.js"/>"
-        type="text/javascript">
-</script>
+<script src="<c:url value="/resources/lib/js/import-page.js"/>"></script>
+<c:import url="/resources/views/common/footer.jsp"/>
+<script src="<c:url value="/resources/js/advanced-form-components.js"/>" type="text/javascript"></script>
+<script src="<c:url value="/resources/js/common-scripts.js"/>"></script>
+
 
 <div class="datepicker dropdown-menu">
     <div class="datepicker-days" style="display: block;">
@@ -205,9 +225,9 @@
                 <td class="day">12</td>
             </tr>
             <tr>
-                <td class="day active">13</td>
+                <td class="day">13</td>
                 <td class="day">14</td>
-                <td class="day">15</td>
+                <td class="day active">15</td>
                 <td class="day">16</td>
                 <td class="day">17</td>
                 <td class="day">18</td>
@@ -257,8 +277,8 @@
                 <td colspan="7"><span class="month">Jan</span><span class="month">Feb</span><span
                         class="month">Mar</span><span class="month">Apr</span><span class="month">May</span><span
                         class="month">Jun</span><span class="month">Jul</span><span class="month">Aug</span><span
-                        class="month">Sep</span><span class="month">Oct</span><span
-                        class="month active">Nov</span><span class="month">Dec</span></td>
+                        class="month">Sep</span><span class="month">Oct</span><span class="month active">Nov</span><span
+                        class="month">Dec</span></td>
             </tr>
             </tbody>
         </table>
@@ -275,9 +295,8 @@
             <tbody>
             <tr>
                 <td colspan="7"><span class="year old">2009</span><span class="year">2010</span><span
-                        class="year">2011</span><span
-                        class="year">2012</span><span class="year">2013</span><span class="year">2014</span><span
-                        class="year">2015</span><span class="year active">2016</span><span
+                        class="year">2011</span><span class="year">2012</span><span class="year">2013</span><span
+                        class="year">2014</span><span class="year">2015</span><span class="year active">2016</span><span
                         class="year">2017</span><span class="year">2018</span><span class="year">2019</span><span
                         class="year old">2020</span></td>
             </tr>
@@ -285,10 +304,8 @@
         </table>
     </div>
 </div>
-<c:import url="/resources/views/common/footer.jsp"/>
-<script src="<c:url value="/resources/js/advanced-form-components.js"/>" type="text/javascript"></script>
-<script src="<c:url value="/resources/js/common-scripts.js"/>"></script>
-<script src="<c:url value="/resources/lib/js/stock-management.js"/>"></script>
 
 </body>
+
 </html>
+

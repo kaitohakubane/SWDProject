@@ -43,6 +43,7 @@
                                aria-describedby="hidden-table-info_info">
                             <thead>
                             <tr role="row">
+                                <th></th>
                                 <th>Name</th>
                                 <th>Size</th>
                                 <th>Quantity</th>
@@ -51,14 +52,15 @@
                             </thead>
 
                             <tbody role="alert" aria-live="polite" aria-relevant="all">
-                            <c:forEach var="item" items="${listStock}">
+                            <c:forEach var="item" items="${listStock}" varStatus="counter">
                                 <tr class="gradeC even">
+                                    <td class="center">${counter.count}</td>
                                     <td class="center">${item.productName}</td>
                                     <td class="center">${item.size}</td>
                                     <td class="center">${item.quantity}</td>
                                     <td class="center">
-                                        <button type="button" class="btn btn-round btn-success" data-toggle="modal"
-                                                data-target="#importModal" data-stockID="${item.stockID}">Import
+                                        <button type="button" class="btn btn-round btn-success import-btn" data-toggle="modal"
+                                                data-target="#importModal" data-id="${item.stockID}">Import
                                         </button>
                                     </td>
                                 </tr>
@@ -95,28 +97,21 @@
             </div>
             <div class="modal-body">
                 <div class="form-inline" role="form">
-                    Product ID
-                    <div class="form-group">
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-inline" role="form">
                     Product Name
                     <div class="form-group">
                         <div class="col-sm-10">
-                            <input type="text" class="form-control">
+                            <input type="text" id="productName" class="form-control" disabled>
                         </div>
                     </div>
                 </div>
 
                 <div class="form-inline" role="form">
-                    Product Size
+                    <label class="col-lg-2 col-sm-2 control-label" for="size">Size</label>
                     <div class="form-group">
                         <div class="col-sm-10">
-                            <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here..." disabled>
+                            <select class="form-control" id="size">
+
+                            </select>
                         </div>
                     </div>
                 </div>
@@ -125,7 +120,7 @@
                     Import Quantity
                     <div class="form-group">
                         <div class="col-sm-10">
-                            <input type="text" class="form-control">
+                            <input type="number" min="1" max="1000000000" class="form-control">
                         </div>
                     </div>
                 </div>
@@ -134,7 +129,7 @@
                     Price
                     <div class="form-group">
                         <div class="col-sm-10">
-                            <input type="number" class="form-control" placeholder=".000 VNĐ">
+                            <input type="number" class="form-control" min="1" max="1000000" placeholder=".000 VNĐ">
                         </div>
                     </div>
                 </div>
@@ -150,7 +145,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Import</button>
+                <button type="button" class="btn btn-primary" id="import-btn">Import</button>
             </div>
         </div>
     </div>

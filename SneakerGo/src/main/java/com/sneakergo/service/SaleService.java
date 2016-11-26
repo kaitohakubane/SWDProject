@@ -1,5 +1,6 @@
 package com.sneakergo.service;
 
+import com.sneakergo.entity.SaleDisplayEntity;
 import com.sneakergo.entity.SaleEntity;
 import com.sneakergo.model.interfaces.SaleModelInterface;
 import com.sneakergo.service.interfaces.SaleServiceInterface;
@@ -25,7 +26,7 @@ public class SaleService implements SaleServiceInterface{
     }
 
     @Override
-    public List<SaleEntity> getSaleByTime(Date time) {
+    public List<SaleDisplayEntity> getSaleByTime(Date time) {
         return saleModelInterface.getSaleByTime(time);
     }
 

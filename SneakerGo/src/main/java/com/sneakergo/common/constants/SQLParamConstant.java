@@ -27,4 +27,8 @@ public class SQLParamConstant {
             "FROM bill b, account a " +
             "WHERE b.accountID=a.accountID AND b.date>=:fromDate AND b.date<=:toDate " +
             "ORDER BY b.date DESC";
+
+    public static final String GET_ALL_SALE_IN_TIME="SELECT s.saleID as saleID, p.productName as productName, s.salePercent as salePercent, s.fromDate as fromDate, s.toDate as toDate, s.enabled as enabled " +
+            "FROM sale s, product p " +
+            "WHERE s.productID=p.productID AND s.fromDate<=:date AND s.toDate>=:date";
 }

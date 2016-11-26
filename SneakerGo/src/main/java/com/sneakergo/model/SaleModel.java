@@ -1,10 +1,13 @@
 package com.sneakergo.model;
 
+import com.sneakergo.common.constants.SQLParamConstant;
 import com.sneakergo.common.utils.NumbericUtils;
+import com.sneakergo.entity.SaleDisplayEntity;
 import com.sneakergo.entity.SaleEntity;
 import com.sneakergo.model.common.CommonDAO;
 import com.sneakergo.model.interfaces.SaleModelInterface;
 import org.hibernate.Criteria;
+import org.hibernate.Query;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
@@ -25,10 +28,11 @@ public class SaleModel extends CommonDAO implements SaleModelInterface {
     }
 
     @Override
-    public List<SaleEntity> getSaleByTime(Date time) {
-        Criteria criteria = getSession().createCriteria(SaleEntity.class).add(Restrictions.lt("toDate", time))
-                .add(Restrictions.ge("fromDate", time)).add(Restrictions.eq("enabled", true));
-        List<SaleEntity> sales = criteria.list();
+    public List<SaleDisplayEntity> getSaleByTime(Date time) {
+        Query query=getSession().createSQLQuery(SQLParamConstant.GET_ALL_SALE_IN_TIME).
+                setParameter("date",time)
+                .setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
+        List<SaleDisplayEntity> sales = query.list();
         return sales;
     }
 

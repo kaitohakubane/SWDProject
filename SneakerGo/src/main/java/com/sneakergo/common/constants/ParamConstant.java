@@ -6,7 +6,7 @@ package com.sneakergo.common.constants;
 public class ParamConstant {
 
     public static final String DATE = "yyyy/MM/dd";
-    public static final String DATE_API = "yyyy-MM-dd";
+    public static final String DATE_FORMAT = "yyyy MM dd";
     public static final String ROLE = "ROLE_USER";
     public static final String FROM_DATE = "fromDate";
     public static final String TO_DATE = "toDate";

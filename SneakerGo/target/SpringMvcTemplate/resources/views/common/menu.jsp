@@ -37,6 +37,9 @@
                 <ul class="sub">
                     <li><a  href="${pageContext.request.contextPath}/admin/stock">Stock Management</a></li>
                 </ul>
+                <ul class="sub">
+                    <li><a  href="${pageContext.request.contextPath}/admin/import">Import Management</a></li>
+                </ul>
             </li>
 
             <li class="sub-menu">

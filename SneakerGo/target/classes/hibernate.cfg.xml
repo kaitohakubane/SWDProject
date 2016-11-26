@@ -13,10 +13,8 @@
         <mapping class="com.sneakergo.entity.BillEntity"/>
         <mapping class="com.sneakergo.entity.BilldetailEntity"/>
         <mapping class="com.sneakergo.entity.ImportEntity"/>
-        <mapping class="com.sneakergo.entity.ImportdetailEntity"/>
         <mapping class="com.sneakergo.entity.ProductEntity"/>
         <mapping class="com.sneakergo.entity.SaleEntity"/>
-        <mapping class="com.sneakergo.entity.SaleproductEntity"/>
         <mapping class="com.sneakergo.entity.StockEntity"/>
     </session-factory>
 </hibernate-configuration>

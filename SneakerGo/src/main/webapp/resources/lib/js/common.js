@@ -6,6 +6,9 @@
  */
 var DELETE_PRODUCT_URL='/admin/product/remove';
 var PRODUCT_PAGE_URL="/admin/product";
+var NO_IMG_SOURCE="http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=no+image";
+var ADD_BUTTON_LABEL="Add"
+var UPDATE_BUTTON_LABEL="Update"
 function addDataTable(dataTable){
     dataTable.DataTable();
 }
@@ -14,6 +17,21 @@ function notify(msg){
     $('#notify-message').val(msg);
     $('#notifyModal').show();
 }
+
+
+function setMinMaxForNumberInput(){
+    var max = parseInt($(this).attr('max'));
+    var min = parseInt($(this).attr('min'));
+    if ($(this).val() > max)
+    {
+        $(this).val(max);
+    }
+    else if ($(this).val() < min)
+    {
+        $(this).val(min);
+    }
+}
+
 
 function confirm(msg){
 
