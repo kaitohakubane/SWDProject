@@ -1,6 +1,7 @@
 package com.sneakergo.common.utils;
 
 import com.sneakergo.common.constants.UtilsConstant;
+import org.jcp.xml.dsig.internal.dom.Utils;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import java.text.DateFormat;
@@ -28,5 +29,11 @@ public class StringUtils {
 
     public static boolean matchPassword(String rawPass, String encodedPass) {
         return new BCryptPasswordEncoder().matches(rawPass, encodedPass);
+    }
+
+    public static String[] formatDate(String date){
+        String delimeter = UtilsConstant.TIME_DELIMETER;
+        String[] result=date.split(delimeter);
+        return result;
     }
 }

@@ -4,8 +4,9 @@ import com.sneakergo.common.constants.PageConstant;
 import com.sneakergo.common.constants.ParamConstant;
 import com.sneakergo.common.constants.UtilsConstant;
 import com.sneakergo.common.utils.NumbericUtils;
-import com.sneakergo.entity.BillDisplayEntity;
-import com.sneakergo.service.interfaces.BillServiceInterface;
+import com.sneakergo.entity.ImportDisplayEntity;
+import com.sneakergo.entity.ProductEntity;
+import com.sneakergo.service.interfaces.ImportServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,22 +17,21 @@ import java.sql.Date;
 import java.util.List;
 
 /**
- * Created by Hung on 11/23/2016.
+ * Created by Hung on 11/27/2016.
  */
 @Controller
-public class BillController {
+public class ImportController {
     @Autowired
-    BillServiceInterface billServiceInterface;
+    ImportServiceInterface importServiceInterface;
 
-    @RequestMapping(value = {PageConstant.BILL_PAGE_URL}, method = RequestMethod.GET)
-    public ModelAndView initHomePage() {
-        ModelAndView modelAndView = new ModelAndView(PageConstant.BILL_PAGE);
+    @RequestMapping(value = PageConstant.IMPORT_PAGE_URL, method = RequestMethod.GET)
+    public ModelAndView initProductPage() {
         Date currentDate= NumbericUtils.getCurrentDate();
         Date aMonthAgo=NumbericUtils.getNDateBeforeDate(UtilsConstant.THIRTY);
-
-        List<BillDisplayEntity> billDisplayEntities= billServiceInterface.getBillByTime(aMonthAgo,currentDate);
-        modelAndView.addObject(ParamConstant.LIST_BILL_ATTR,billDisplayEntities)
-                .addObject(ParamConstant.FROM_DATE,aMonthAgo).addObject(ParamConstant.TO_DATE,currentDate);
+        List<ImportDisplayEntity> listImport = importServiceInterface.getImportByTime(aMonthAgo,currentDate);
+        ModelAndView modelAndView = new ModelAndView(PageConstant.IMPORT_PAGE);
+        modelAndView.addObject(ParamConstant.LIST_IMPORT_ATTR, listImport).addObject(ParamConstant.FROM_DATE,aMonthAgo)
+        .addObject(ParamConstant.TO_DATE,currentDate);
         return modelAndView;
     }
 

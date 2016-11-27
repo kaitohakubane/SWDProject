@@ -81,12 +81,14 @@
                                     <td class="center">${item.price}</td>
                                     <td class="center">${item.nation}</td>
                                     <td class="center">
-                                        <button type="button" class="btn btn-round btn-warning sale-btn" data-toggle="modal"
+                                        <button type="button" class="btn btn-round btn-warning sale-btn"
+                                                data-toggle="modal"
                                                 data-target="#saleModal" data-id="${item.productId}">Sale
                                         </button>
                                     </td>
                                     <td class="center">
-                                        <button type="button" class="btn btn-round btn-info update-btn" data-toggle="modal"
+                                        <button type="button" class="btn btn-round btn-info update-btn"
+                                                data-toggle="modal"
                                                 data-target="#productModal" data-id="${item.productId}">Update
                                         </button>
                                     </td>
@@ -118,66 +120,6 @@
     </footer>
     <!--footer end-->
 </section>
-<!-- Modal -->
-<div class="modal fade" id="importModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-     aria-hidden="true" data-keyboard="false" data-backdrop="static">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id="importModalLabel">Import product</h4>
-            </div>
-            <div class="modal-body">
-                <div class="form-inline" role="form">
-                    Product ID
-                    <div class="form-group">
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-inline" role="form">
-                    Product Name
-                    <div class="form-group">
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-inline" role="form">
-                    Product Size
-                    <div class="form-group">
-                        <div class="col-sm-10">
-                            <select class="form-control">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-inline" role="form">
-                    Import Quantity
-                    <div class="form-group">
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Import</button>
-            </div>
-        </div>
-    </div>
-</div>
-
 
 <!-- Product Modal -->
 <div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
@@ -186,82 +128,84 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id="addProductModalTitle">Add product</h4>
+                <h4 class="modal-title" id="productModalTitle">Add product</h4>
             </div>
             <div class="modal-body form-horizontal style-form">
-
-                <div class="form-inline" role="form">
-                    <label class="col-lg-2 col-sm-2 control-label" for="productName">Name</label>
-                    <div class="form-group">
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="productName">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-inline" role="form">
-                    <label class="col-lg-2 col-sm-2 control-label" for="price">Price</label>
-                    <div class="form-group">
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="price">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-inline" role="form">
-                    <label class="col-lg-2 col-sm-2 control-label" for="nation">Nation</label>
-                    <div class="form-group">
-                        <div class="col-sm-10">
-                            <select class="form-control" id="nation">
-                                <option>USA</option>
-                                <option>Europe</option>
-                                <option>VietNam</option>
-                                <option>China</option>
-                                <option>Thailand</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-inline" role="form">
-
-                    <label class="col-lg-2 col-sm-2 control-label" for="description">Description</label>
-                    <div class="form-group">
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="description">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="control-label col-md-3">Image Upload</label>
-                    <div class="col-md-9">
-                        <div class="fileupload fileupload-new" data-provides="fileupload"><input type="hidden">
-                            <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
-                                <img id="image" src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="">
+                <form id="product-form" class="form-horizontal" role="form">
+                    <div class="form-inline" role="form">
+                        <label class="col-lg-2 col-sm-2 control-label" for="productName">Name</label>
+                        <div class="form-group">
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name="productName" id="productName">
                             </div>
-                            <div class="fileupload-preview fileupload-exists thumbnail"
-                                 style="max-width: 200px; max-height: 150px; line-height: 10px;"></div>
-                            <div>
+                        </div>
+                    </div>
+
+                    <div class="form-inline" role="form">
+                        <label class="col-lg-2 col-sm-2 control-label" for="price">Price</label>
+                        <div class="form-group">
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name="price" id="price">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-inline" role="form">
+                        <label class="col-lg-2 col-sm-2 control-label" for="nation">Nation</label>
+                        <div class="form-group">
+                            <div class="col-sm-10">
+                                <select class="form-control" name="nation" id="nation">
+                                    <option>USA</option>
+                                    <option>Europe</option>
+                                    <option>VietNam</option>
+                                    <option>China</option>
+                                    <option>Thailand</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-inline" role="form">
+
+                        <label class="col-lg-2 col-sm-2 control-label" for="description">Description</label>
+                        <div class="form-group">
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name="description" id="description">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-3">Image Upload</label>
+                        <div class="col-md-9">
+                            <div class="fileupload fileupload-new" data-provides="fileupload"><input type="hidden">
+                                <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+                                    <img id="image"
+                                         src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="">
+                                </div>
+                                <div class="fileupload-preview fileupload-exists thumbnail"
+                                     style="max-width: 200px; max-height: 150px; line-height: 10px;"></div>
+                                <div>
                                           <span class="btn btn-theme02 btn-file">
                                            <span class="fileupload-new"><i
                                                    class="fa fa-paperclip"></i> Select image</span>
                                            <span class="fileupload-exists"><i
                                                    class="fa fa-undo"></i> Change</span>
-                                           <input type="file" class="default">
+                                           <input type="file" name="picture" class="default">
 							  </span>
-                                <a href="#" class="btn btn-theme04 fileupload-exists" data-dismiss="fileupload"><i
-                                        class="fa fa-trash-o"></i> Remove</a>
+                                    <a href="#" class="btn btn-theme04 fileupload-exists" data-dismiss="fileupload"><i
+                                            class="fa fa-trash-o"></i> Remove</a>
+                                </div>
                             </div>
-                        </div>
-                        <span class="label label-info">NOTE!</span>
-                        <span>
+                            <span class="label label-info">NOTE!</span>
+                            <span>
                                  Attached image thumbnail is
                                  supported in Latest Firefox, Chrome, Opera,
                                  Safari and Internet Explorer 10 only
                                  </span>
+                        </div>
                     </div>
-                </div>
+                </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
@@ -280,49 +224,67 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h4 class="modal-title" id="saleModalLabel">Sale</h4>
             </div>
-
             <div class="modal-body form-horizontal style-form">
-                <div class="form-inline" role="form">
-                    <label class="col-lg-2 col-sm-2 control-label" for="sale-product-name">ID</label>
-                    <div class="form-group">
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="sale-product-id" disabled>
+                <form id="sale-form" class="form-horizontal" role="form">
+                    <div class="form-inline" role="form">
+                        <label class="col-lg-2 col-sm-2 control-label"
+                               for="sale-product-name">Name</label>
+                        <div class="form-group">
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="sale-product-name">
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="form-inline" role="form">
-                    <label class="col-lg-2 col-sm-2 control-label"
-                           for="sale-product-name">Name</label>
-                    <div class="form-group">
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="sale-product-name">
-                        </div>
-                    </div>
-                </div>
 
-                <div class="form-inline" role="form">
-                    <label class="col-lg-2 col-sm-2 control-label"
-                           for="sale-percentage">Percentage</label>
-                    <div class="form-group">
-                        <div class="col-sm-10">
-                            <input class="form-control" type="number" min="1" max="100" id="sale-percentage">
+                    <div class="form-inline" role="form">
+                        <label class="col-lg-2 col-sm-2 control-label"
+                               for="sale-percentage">Percentage</label>
+                        <div class="form-group">
+                            <div class="col-sm-10">
+                                <input class="form-control" type="number" name="salePercent"
+                                       min="1" max="100" id="sale-percentage">
+                            </div>
                         </div>
                     </div>
-                </div>
-
-
-                <div class="form-group last">
-                    <label class="col-lg-2 col-sm-2 control-label">Date</label>
-                    <div class="col-md-6">
-                        <div class="input-group input-large" data-date="01/01/2014"
-                             data-date-format="mm/dd/yyyy">
-                            <input type="text" class="form-control dpd1" name="from">
-                            <span class="input-group-addon">To</span>
-                            <input type="text" class="form-control dpd2" name="to">
+                    <%--<div class="form-group last">--%>
+                    <%--<label class="col-lg-2 col-sm-2 control-label">Date</label>--%>
+                    <%--<div class="col-md-6">--%>
+                    <%--<div class="input-group input-large" data-date="01/01/2014"--%>
+                    <%--data-date-format="mm/dd/yyyy">--%>
+                    <%--<input type="text" class="form-control dpd1" name="fromDate">--%>
+                    <%--<span class="input-group-addon">To</span>--%>
+                    <%--<input type="text" class="form-control dpd2" name="toDate">--%>
+                    <%--</div>--%>
+                    <%--<span class="help-block">Select date range</span>--%>
+                    <%--</div>--%>
+                    <%--</div>--%>
+                    <div class="form-group last">
+                        <label class="control-label col-md-2">From Date</label>
+                        <div class="col-md-4 col-xs-6">
+                            <div data-date-viewmode="years" data-date-format="dd-mm-yyyy" data-date="01-01-2016"
+                                 class="input-append date dpYears">
+                                <input type="text" readonly="" size="16" name="fromDate" class="form-control">
+                                <span class="input-group-btn add-on">
+		                                        <button class="btn btn-theme" type="button"><i
+                                                        class="fa fa-calendar"></i></button>
+		                                      </span>
+                            </div>
                         </div>
-                        <span class="help-block">Select date range</span>
                     </div>
-                </div>
+                    <div class="form-group last">
+                        <label class="control-label col-md-2">To Date</label>
+                        <div class="col-md-4 col-xs-6">
+                            <div data-date-viewmode="years" data-date-format="dd-mm-yyyy" data-date="01-01-2016"
+                                 class="input-append date dpYears">
+                                <input type="text" readonly="" size="16" name="toDate" class="form-control">
+                                <span class="input-group-btn add-on">
+		                                        <button class="btn btn-theme" type="button"><i
+                                                        class="fa fa-calendar"></i></button>
+		                                      </span>
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -332,6 +294,7 @@
     </div>
 </div>
 
+<%--Notify Modal--%>
 <div class="modal fade notify-modal" id="notifyModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
      aria-hidden="true"
      data-keyboard="false" data-backdrop="static">
@@ -351,6 +314,7 @@
     </div>
 </div>
 
+<%--Confirm Modal--%>
 <div class="modal fade confirm-modal" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
      aria-hidden="true"
      data-keyboard="false" data-backdrop="static">

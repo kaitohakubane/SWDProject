@@ -47,7 +47,7 @@ public class ProductModel extends CommonDAO implements ProductModelInterface {
 
     @Override
     public void updateProduct(ProductEntity product) {
-            getSession().update(product);
+            getSession().saveOrUpdate(product);
     }
 
 

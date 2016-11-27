@@ -1,5 +1,6 @@
 package com.sneakergo.service.interfaces;
 
+import com.sneakergo.entity.ImportDisplayEntity;
 import com.sneakergo.entity.ImportEntity;
 
 import java.sql.Date;
@@ -14,4 +15,6 @@ public interface ImportServiceInterface {
     List<ImportEntity> getImportByStockId(int stockID);
 
     List<ImportEntity> getImportFromTimeToTime(Date fromTime, Date toTime);
+
+    List<ImportDisplayEntity> getImportByTime(Date fromTime, Date toTime);
 }

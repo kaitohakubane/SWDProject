@@ -45,12 +45,11 @@ public class ProductController {
     }
 
     @ResponseBody
-    @RequestMapping(value = PageConstant.CREATE_PRODUCT_URL, method = RequestMethod.POST)
+    @RequestMapping(value = PageConstant.ADD_PRODUCT_URL, method = RequestMethod.POST)
     public boolean createProduct(
             @RequestParam(value = ParamConstant.PICTURE, required = false) MultipartFile picture,
             @RequestParam(value = ParamConstant.PRODUCT_NAME) String productName,
             @RequestParam(value = ParamConstant.PRICE) String price,
-            @RequestParam(value = ParamConstant.SIZE) String size,
             @RequestParam(value = ParamConstant.NATION) String nation,
             @RequestParam(value = ParamConstant.DESCRIPTION) String description) {
         try {
@@ -85,9 +84,6 @@ public class ProductController {
                                @RequestParam(value = ParamConstant.PICTURE, required = false) MultipartFile picture,
                                @RequestParam(value = ParamConstant.PRODUCT_NAME) String productName,
                                @RequestParam(value = ParamConstant.PRICE) String price,
-                               @RequestParam(value = ParamConstant.SALE) int saleId,
-                               @RequestParam(value = ParamConstant.SIZE) String size,
-                               @RequestParam(value = ParamConstant.COLOR) String color,
                                @RequestParam(value = ParamConstant.NATION) String nation,
                                @RequestParam(value = ParamConstant.DESCRIPTION) String description) {
         try {
@@ -108,8 +104,8 @@ public class ProductController {
             productEntity.setNation(nation);
             productEntity.setDescription(description);
             productEntity.setEnabled(true);
-            boolean result = productServiceInterface.addProduct(productEntity);
-            return result;
+            productServiceInterface.updateProduct(productEntity);
+            return true;
         } catch (Exception e) {
             e.printStackTrace();
         }

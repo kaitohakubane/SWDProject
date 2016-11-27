@@ -4,11 +4,8 @@
 /**
  * Scroll top for common ajax.
  */
-var DELETE_PRODUCT_URL='/admin/product/remove';
-var PRODUCT_PAGE_URL="/admin/product";
+
 var NO_IMG_SOURCE="http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=no+image";
-var ADD_BUTTON_LABEL="Add"
-var UPDATE_BUTTON_LABEL="Update"
 function addDataTable(dataTable){
     dataTable.DataTable();
 }

@@ -50,7 +50,6 @@
                                     <th>Product Name</th>
                                     <th>Size</th>
                                     <th>Quantity</th>
-                                    <th>Price</th>
                                     <th>Total</th>
                                     <th>Supplier</th>
                                     <th>Date</th>
@@ -60,29 +59,23 @@
                                 </thead>
 
                                 <tbody role="alert" aria-live="polite" aria-relevant="all">
-                                <c:forEach var="item" items="${listBill}">
+                                <c:forEach var="item" items="${listImport}">
                                     <tr class="gradeC even">
-                                        <td class="center">${item.billID}</td>
-                                        <td class="center">${item.accountID}</td>
-                                        <td class="center">${item.accountName}</td>
-                                        <td class="center">${item.totalPrice}</td>
-                                        <td class="center">${item.date}</td>
-                                        <td class="center">${item.enabled}</td>
+                                        <td class="center">${item.productName}</td>
+                                        <td class="center">${item.size}</td>
+                                        <td class="center">${item.quantity}</td>
+                                        <td class="center">${item.price}</td>
+                                        <td class="center">${item.supplier}</td>
+                                        <td class="center">${item.importDate}</td>
                                         <td class="center">
-                                            <button type="button" class="btn btn-round btn-success" data-toggle="modal"
-                                                    data-target="#importModal" data-stockID="${item.stockID}">View
+                                            <button type="button" class="btn btn-round btn-success change-btn" data-toggle="modal"
+                                                    data-target="#importModal" data-id="${item.importID}">Change
                                             </button>
                                         </td>
 
                                         <td class="center">
-                                            <button type="button" class="btn btn-round btn-success" data-toggle="modal"
-                                                    data-target="#importModal" data-stockID="${item.stockID}">Change
-                                            </button>
-                                        </td>
-
-                                        <td class="center">
-                                            <button type="button" class="btn btn-round btn-success" data-toggle="modal"
-                                                    data-target="#importModal" data-stockID="${item.stockID}">Delete
+                                            <button type="button" class="btn btn-round btn-danger" data-toggle="modal"
+                                                    data-target="#importModal" data-id="${item.importID}">Delete
                                             </button>
                                         </td>
                                     </tr>
@@ -122,7 +115,7 @@
                     Product Name
                     <div class="form-group">
                         <div class="col-sm-10">
-                            <input type="text" id="productName" class="form-control" disabled>
+                            <input type="text" id="name" class="form-control" disabled>
                         </div>
                     </div>
                 </div>
@@ -140,16 +133,17 @@
                     Import Quantity
                     <div class="form-group">
                         <div class="col-sm-10">
-                            <input type="number" min="1" max="1000000000" class="form-control">
+                            <input type="number" id="quantity" min="1" max="1000000000" class="form-control">
                         </div>
                     </div>
                 </div>
 
                 <div class="form-inline" role="form">
-                    Price
+                    Total
                     <div class="form-group">
                         <div class="col-sm-10">
-                            <input type="number" class="form-control" min="1" max="1000000" placeholder=".000 VNĐ">
+                            <input type="number" id="price" class="form-control"
+                                   min="1" max="1000000" placeholder=".000 VNĐ">
                         </div>
                     </div>
                 </div>
@@ -158,18 +152,62 @@
                     Supplier
                     <div class="form-group">
                         <div class="col-sm-10">
-                            <input type="text" class="form-control">
+                            <input type="text" id="supplier" class="form-control">
                         </div>
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" id="import-btn">Import</button>
+                <button type="button" class="btn btn-primary" id="import-btn">Change</button>
             </div>
         </div>
     </div>
 </div>
+
+
+<%--Notify Modal--%>
+<div class="modal fade notify-modal" id="notifyModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true"
+     data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title notify-title" id="myModalLabel">Modal title</h4>
+            </div>
+            <div class="modal-body notify-content">
+                Hi there, I am a Modal Example for Dashgum Admin Panel.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default notify-button" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%--Confirm Modal--%>
+<div class="modal fade confirm-modal" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true"
+     data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title confirm-title">Modal title</h4>
+            </div>
+            <div class="modal-body confirm-content">
+                Are you sure to do this ?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary confirm-button">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <%--Time script--%>
 <script src="<c:url value = "/resources/js/bootstrap-datepicker/bootstrap-datepicker.js"/>"
         type="text/javascript"></script>

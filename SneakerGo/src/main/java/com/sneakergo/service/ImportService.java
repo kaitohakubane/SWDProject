@@ -1,5 +1,6 @@
 package com.sneakergo.service;
 
+import com.sneakergo.entity.ImportDisplayEntity;
 import com.sneakergo.entity.ImportEntity;
 import com.sneakergo.model.interfaces.ImportModelInterface;
 import com.sneakergo.service.interfaces.ImportServiceInterface;
@@ -30,6 +31,10 @@ public class ImportService implements ImportServiceInterface {
 
     public List<ImportEntity> getImportFromTimeToTime(Date fromTime, Date toTime) {
         return importModelInterface.getImportFromTimeToTime(fromTime, toTime);
+    }
+
+    public List<ImportDisplayEntity> getImportByTime(Date fromTime, Date toTime){
+        return importModelInterface.getImportByTime(fromTime,toTime);
     }
 
 }

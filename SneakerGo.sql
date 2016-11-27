@@ -204,20 +204,20 @@ VALUES (5,3,1,'1800');
 INSERT INTO BillDetail(billID,productID,quantity,price) 
 VALUES (5,4,1,'1600');
 
-INSERT INTO Sale(productID,salePercent,fromDate,toDate) 
-VALUES (1,10,'2016-11-30','2016-12-28');
+INSERT INTO Sale(productID,salePercent,fromDate,toDate,enabled) 
+VALUES (1,10,'2016-11-30','2016-12-28',1);
 
 INSERT INTO Sale(productID,salePercent,fromDate,toDate) 
-VALUES (1,15,'2016-12-10','2016-12-28');
+VALUES (1,15,'2016-12-10','2016-12-28',1);
 
 INSERT INTO Sale(productID,salePercent,fromDate,toDate) 
-VALUES (2,20,'2016-12-10','2016-12-28');
+VALUES (2,20,'2016-12-10','2016-12-28',1);
 
 INSERT INTO Sale(productID,salePercent,fromDate,toDate) 
-VALUES (3,40,'2016-12-25','2016-12-28');
+VALUES (3,40,'2016-12-25','2016-12-28',1);
 
 INSERT INTO Sale(productID,salePercent,fromDate,toDate) 
-VALUES (4,15,'2016-12-10','2016-12-25');
+VALUES (4,15,'2016-12-10','2016-12-25',1);
 
 
 INSERT INTO Import(stockID,price,quantity,importDate,Supplier) 

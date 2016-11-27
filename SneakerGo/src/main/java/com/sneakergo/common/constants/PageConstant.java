@@ -23,8 +23,8 @@ public class PageConstant {
 
     // Product
     public static final String PRODUCT_PAGE_URL = "/admin/product";
-    public static final String CREATE_PRODUCT_URL = "/admin/product/create";
-    public static final String EDIT_PRODUCT_URL = "/admin/product/edit";
+    public static final String ADD_PRODUCT_URL = "/admin/product/add";
+    public static final String EDIT_PRODUCT_URL = "/admin/product/update";
     public static final String REMOVE_PRODUCT_URL = "/admin/product/remove";
     public static final String SEARCH_PRODUCT_URL="/admin/product/search";
     public static final String CREATE_PRODUCT_PAGE_URL="/admin/product/create-product";
@@ -46,7 +46,7 @@ public class PageConstant {
     public static final String REMOVE_SALE_URL = "/admin/sale-management/remove";
 
     // Import Product
-    public static final String IMPORT_PRODUCT_PAGE_URL = "/admin/import";
+    public static final String IMPORT_PAGE_URL = "/admin/import";
     public static final String EDIT_IMPORT_PRODUCT_URL = "/admin/import/edit";
     public static final String REMOVE_IMPORT_PRODUCT_URL = "/admin/import/remove";
 
@@ -83,7 +83,7 @@ public class PageConstant {
     public static final String SALE_PAGE = "sale-management-page";
 
     // Import Product
-    public static final String IMPORT_PRODUCT_PAGE = "import-product-page";
+    public static final String IMPORT_PAGE = "import-page";
 
     // Stock
     public static final String STOCK_PAGE="stock-management-page";

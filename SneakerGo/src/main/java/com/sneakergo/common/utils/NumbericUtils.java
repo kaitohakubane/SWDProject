@@ -23,9 +23,17 @@ public class NumbericUtils {
         return nDate;
     }
 
-    public static Date getDate(int year,int month,int day){
-        Calendar calendar = new GregorianCalendar(year,month,day);
-        Date nDate=new Date(calendar.getTimeInMillis());
-        return nDate;
+    public static Date getDate(String year,String month,String day){
+        try{
+            int intYear=Integer.parseInt(year);
+            int intMonth=Integer.parseInt(month);
+            int intDay=Integer.parseInt(day);
+            Calendar calendar = new GregorianCalendar(intYear,intMonth,intDay);
+            Date nDate=new Date(calendar.getTimeInMillis());
+            return nDate;
+        }
+        catch(NumberFormatException e){
+            return getCurrentDate();
+        }
     }
 }

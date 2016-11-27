@@ -8,6 +8,7 @@ public class ParamConstant {
     public static final String DATE = "yyyy/MM/dd";
     public static final String DATE_FORMAT = "yyyy MM dd";
     public static final String ROLE = "ROLE_USER";
+    public static final String CURRENT_DATE="currentDate";
     public static final String FROM_DATE = "fromDate";
     public static final String TO_DATE = "toDate";
 
@@ -40,13 +41,8 @@ public class ParamConstant {
     public static final String PRODUCT_NAME = "productName";
     public static final String PRICE = "price";
     public static final String SIZE = "size";
-    public static final String SALE = "sale";
-    public static final String COLOR = "color";
     public static final String NATION = "nation";
     public static final String DESCRIPTION = "description";
-    public static final String QUANTITY = "quantity";
-    public static final String PRODUCTS = "products";
-    public static final String NUMBER_PRODUCT_ATTR = "numOfProduct";
 
     /**
      * Type
@@ -83,7 +79,7 @@ public class ParamConstant {
     /**
      * Import Product
      */
-    public static final String LIST_IMPORT_PRODUCT_ATTR = "listImportProduct";
+    public static final String LIST_IMPORT_ATTR = "listImport";
     public static final String IMPORT_PRODUCT_ID = "importProductId";
     public static final String IMPORT_DATE = "importDate";
     public static final String PRODUCT = "product";

@@ -37,14 +37,17 @@
                 <div class="content-panel">
                     <div class="adv-table">
                         <div id="hidden-table-info_wrapper" class="dataTables_wrapper" role="grid">
-                            <div class="col-md-6 form-group time-control">
-                                <div class="input-group input-large" data-date="01/01/2014"
-                                     data-date-format="mm/dd/yyyy">
-                                    <input type="text" class="form-control dpd1" name="from">
-                                    <span class="input-group-addon">To</span>
-                                    <input type="text" class="form-control dpd2" name="to">
+
+                            <div class="col-md-3 col-xs-6">
+                                <div data-date-viewmode="years" data-date-format="dd-mm-yyyy" data-date="01-01-2014" class="input-append date dpYears">
+                                    <input type="text" readonly="" value="${currentDate}" size="16" class="form-control">
+                                    <span class="input-group-btn add-on">
+		                                        <button class="btn btn-theme" type="button"><i class="fa fa-calendar"></i></button>
+		                                      </span>
                                 </div>
+                                <span class="help-block">Select date</span>
                             </div>
+
                             <table class="display table table-bordered dataTable" id="sale-table"
                                    aria-describedby="hidden-table-info_info">
                                 <thead>
