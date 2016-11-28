@@ -1,9 +1,10 @@
 /**
  * Created by Hung on 11/26/2016.
  */
+
 $(document).ready(function(){
-    var $fromDate=$('#fromDate');
-    var $toDate=$('#toDate');
+    var SEARCH_IMPORT_URL="/admin/import/search";
+
     var dataTable=$('#import-table');
     addDataTable(dataTable);
     $('.change-btn').off("click").on("click", function () {
@@ -17,8 +18,11 @@ $(document).ready(function(){
         importModalInitialize(importID,name,size,quantity,price,supplier);
     });
 
-    $("#import-btn").on("click",function(){
-
+    $("#search-btn").on("click",function(){
+        if($('#fromDate').val()!=null&&$('#toDate').val()!=null){
+            $('#search-form').attr('action',contextPath+SEARCH_IMPORT_URL);
+            $('#search-form').submit();
+        }
     })
 })
 

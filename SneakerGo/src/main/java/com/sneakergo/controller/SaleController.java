@@ -18,10 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
-
-import java.io.File;
 import java.sql.Date;
-import java.util.Calendar;
 import java.util.List;
 
 /**
@@ -53,7 +50,6 @@ public class SaleController {
             saleEntity.setProductId(productId);
             saleEntity.setSalePercent(salePercent);
             saleEntity.setEnabled(true);
-            int a=1;
             String[] from = StringUtils.formatDate(fromDate);
             String[] to = StringUtils.formatDate(toDate);
             saleEntity.setFromDate(NumbericUtils.getDate(from[UtilsConstant.TWO],
@@ -67,5 +63,6 @@ public class SaleController {
         }
         return false;
     }
+
 
 }

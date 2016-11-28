@@ -4,27 +4,34 @@ package com.sneakergo.entity;
  * Created by Hung on 11/21/2016.
  */
 public class StockDisplayEntity {
-    private int stockID;
+    private int productID;
+    private int attributeID;
     private int quantity;
     private String size;
     private String productName;
 
-    public StockDisplayEntity(int stockID, int productID, int quantity, String size, String productName) {
-        this.stockID = stockID;
+    public StockDisplayEntity(int productID, int attributeID, int quantity, String size, String productName) {
+        this.productID = productID;
+        this.attributeID = attributeID;
         this.quantity = quantity;
         this.size = size;
         this.productName = productName;
     }
 
-    public StockDisplayEntity() {
+    public int getProductID() {
+        return productID;
     }
 
-    public int getStockID() {
-        return stockID;
+    public void setProductID(int productID) {
+        this.productID = productID;
     }
 
-    public void setStockID(int stockID) {
-        this.stockID = stockID;
+    public int getAttributeID() {
+        return attributeID;
+    }
+
+    public void setAttributeID(int attributeID) {
+        this.attributeID = attributeID;
     }
 
     public int getQuantity() {

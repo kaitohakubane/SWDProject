@@ -26,24 +26,19 @@ public class StockModel extends CommonDAO implements StockModelInterface {
         return stockEntity;
     }
 
-    @Override
-    public boolean updateStockQuantity(StockEntity stockEntity, int quantity) {
-        if (getStockByProductIDAndAttributeID(stockEntity.getProductId(), stockEntity.getAttributeId()) != null) {
-            stockEntity.setQuantity(stockEntity.getQuantity() + quantity);
-            getSession().merge(stockEntity);
-            getSession().saveOrUpdate(stockEntity);
-            return true;
-        }
-        return false;
+    public StockEntity getStockByStockID(int stockID) {
+        StockEntity stockEntity=getSession().get(StockEntity.class,stockID);
+        return stockEntity;
     }
 
     @Override
-    public boolean createStock(StockEntity stockEntity) {
-        if (getStockByProductIDAndAttributeID(stockEntity.getProductId(), stockEntity.getAttributeId()) == null) {
+    public void updateStockQuantity(StockEntity stockEntity) {
+            getSession().saveOrUpdate(stockEntity);
+    }
+
+    @Override
+    public void createStock(StockEntity stockEntity) {
             getSession().persist(stockEntity);
-            return true;
-        }
-        return false;
     }
 
     @Override

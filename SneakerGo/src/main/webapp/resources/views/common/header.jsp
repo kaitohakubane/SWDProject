@@ -19,6 +19,8 @@
 <script src="<c:url value="/resources/js/jquery.js"/>"></script>
 <link href="<c:url value="/resources/css/dataTables.bootstrap4.css"/>" rel="stylesheet">
 <link href="<c:url value="/resources/css/responsive.bootstrap.css"/>" rel="stylesheet">
+<link href="<c:url value="/resources/lib/css/common.css"/>" rel="stylesheet">
+
 <script language="JavaScript">
     var contextPath = "${pageContext.request.contextPath}";
 </script>

@@ -207,16 +207,16 @@ VALUES (5,4,1,'1600');
 INSERT INTO Sale(productID,salePercent,fromDate,toDate,enabled) 
 VALUES (1,10,'2016-11-30','2016-12-28',1);
 
-INSERT INTO Sale(productID,salePercent,fromDate,toDate) 
+INSERT INTO Sale(productID,salePercent,fromDate,toDate,enabled) 
 VALUES (1,15,'2016-12-10','2016-12-28',1);
 
-INSERT INTO Sale(productID,salePercent,fromDate,toDate) 
+INSERT INTO Sale(productID,salePercent,fromDate,toDate,enabled) 
 VALUES (2,20,'2016-12-10','2016-12-28',1);
 
-INSERT INTO Sale(productID,salePercent,fromDate,toDate) 
+INSERT INTO Sale(productID,salePercent,fromDate,toDate,enabled) 
 VALUES (3,40,'2016-12-25','2016-12-28',1);
 
-INSERT INTO Sale(productID,salePercent,fromDate,toDate) 
+INSERT INTO Sale(productID,salePercent,fromDate,toDate,enabled) 
 VALUES (4,15,'2016-12-10','2016-12-25',1);
 
 
