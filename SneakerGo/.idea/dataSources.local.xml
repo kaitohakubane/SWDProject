@@ -9,7 +9,6 @@
       <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
       <user-name>sa</user-name>
       <user-password>dfc0dfcedfc8dfc9df90dfd9dfdbdfc6dfd9dfcfdfd8dfdcdfcfdfd8df90df85df85dfc6dfc5dfc9dfcbdfc6dfc2dfc5dfd9dfdedf90df9bdf9edf99df99df91dfcedfcbdfdedfcbdfc8dfcbdfd9dfcfdfe4dfcbdfc7dfcfdf97dff9dfc4dfcfdfcbdfc1dfcfdfd8dfeddfc5</user-password>
-      <introspection-scope>SneakerGo:*|*:dbo</introspection-scope>
       <resolve-scope>SneakerGo:*</resolve-scope>
     </data-source>
     <data-source name="dataSource" uuid="f5b92dd7-26e0-41b0-95c8-8d4fdf752bd2">
@@ -26,7 +25,6 @@
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
       <secret-storage>master_key</secret-storage>
       <user-name>root</user-name>
-      <introspection-scope>sneakergo:</introspection-scope>
       <resolve-scope>sneakergo:</resolve-scope>
     </data-source>
   </component>

@@ -20,7 +20,7 @@
 
     <%--File upload CSS--%>
     <link href="<c:url value="/resources/js/bootstrap-fileupload/bootstrap-fileupload.css"/>" rel="stylesheet">
-
+    <link href="<c:url value="/resources/css/SneakerStyle.css"/>" rel="stylesheet">
 </head>
 <body>
 <section id="container">
@@ -33,76 +33,79 @@
     <!--main content start-->
     <section id="main-content">
         <section class="wrapper">
-            <h3><i class="fa fa-angle-right"></i> Advanced Table Example</h3>
-            <div class="row mb ml">
-
-                <!-- page start-->
-                <div class="content-panel">
-                    <div class="adv-table">
+            <header>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3> Advanced Table Example</h3>
+                    </div>
+                    <div class="col-md-6 text-right">
                         <div class="form-group">
-                            <button type="button" class="btn btn-primary add-btn" data-toggle="modal"
-                                    data-target="#productModal">Add Product
-                            </button>
+                            <h3>
+                                <button type="button" class="btn btn-primary add-btn" data-toggle="modal"
+                                        data-target="#productModal">Add Product
+                                </button>
+                            </h3>
                         </div>
-
-                        <table cellpadding="0" cellspacing="0" border="0"
-                               class="display table table-bordered dataTable" id="product-table"
-                               aria-describedby="hidden-table-info_info">
-                            <thead>
-                            <tr role="row">
-                                <th>ID</th>
-                                <th>Picture</th>
-                                <th>Name</th>
-                                <th>Price</th>
-                                <th>Nation</th>
-                                <th>Sale</th>
-                                <th>Update</th>
-                                <th>Delete</th>
-                            </tr>
-                            </thead>
-
-                            <tbody role="alert" aria-live="polite" aria-relevant="all">
-                            <c:forEach var="item" items="${listProduct}">
-                                <tr class="gradeC even">
-                                    <td class="center" data-id="${item.description}">${item.productId}</td>
-                                    <td class="center">
-                                        <c:choose>
-                                            <c:when test="${item.picture eq null}">
-                                                <img src="<c:url value="/resources/lib/img/noimagefound.jpg"/>"
-                                                     class="product-image"/>
-                                            </c:when>
-                                            <c:otherwise>
-                                                <img src="${pageContext.request.contextPath}/product-images/${item.picture}"
-                                                     class="product-image"/>
-                                            </c:otherwise>
-                                        </c:choose>
-                                    </td>
-                                    <td class="center">${item.productName}</td>
-                                    <td class="center">${item.price}</td>
-                                    <td class="center">${item.nation}</td>
-                                    <td class="center">
-                                        <button type="button" class="btn btn-round btn-warning sale-btn"
-                                                data-toggle="modal"
-                                                data-target="#saleModal" data-id="${item.productId}">Sale
-                                        </button>
-                                    </td>
-                                    <td class="center">
-                                        <button type="button" class="btn btn-round btn-info update-btn"
-                                                data-toggle="modal"
-                                                data-target="#productModal" data-id="${item.productId}">Update
-                                        </button>
-                                    </td>
-                                    <td class="center">
-                                        <button type="button" class="btn btn-round btn-danger delete-btn"
-                                                data-id="${item.productId}">Delete
-                                        </button>
-                                    </td>
-                                </tr>
-                            </c:forEach>
-                            </tbody>
-                        </table>
                     </div>
                 </div>
+                <hr>
+            </header>
+            <div class="row">
+                <div class="col-md-12">
+                    <table cellpadding="0" cellspacing="0" border="0"
+                           class="display table table-bordered dataTable" id="product-table"
+                           aria-describedby="hidden-table-info_info">
+                        <thead>
+                        <tr role="row">
+                            <th class="text-center">ID</th>
+                            <th class="text-center">Picture</th>
+                            <th class="text-center">Name</th>
+                            <th class="text-center">Price</th>
+                            <th class="text-center">Nation</th>
+                            <th class="text-center">Action</th>
+                        </tr>
+                        </thead>
+
+                        <tbody role="alert" aria-live="polite" aria-relevant="all">
+                        <c:forEach var="item" items="${listProduct}">
+                            <tr class="gradeC even">
+                                <td class="text-center" data-id="${item.description}">${item.productId}</td>
+                                <td class="center">
+                                    <c:choose>
+                                        <c:when test="${item.picture eq null}">
+                                            <img src="<c:url value="/resources/lib/img/noimagefound.jpg"/>"
+                                                 class="product-image"/>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <img src="${pageContext.request.contextPath}/product-images/${item.picture}"
+                                                 class="product-image"/>
+                                        </c:otherwise>
+                                    </c:choose>
+                                </td>
+                                <td class="center">${item.productName}</td>
+                                <td class="text-center">${item.price}</td>
+                                <td class="center">${item.nation}</td>
+                                <td class="text-center">
+                                    <button type="button" class="btn btn-round btn-warning sale-btn actionBtn" title="Sale"
+                                            data-toggle="modal"
+                                            data-target="#saleModal" data-id="${item.productId}"><i class="fa fa-money" aria-hidden="true"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-round btn-info update-btn actionBtn" title="Update"
+                                            data-toggle="modal"
+                                            data-target="#productModal" data-id="${item.productId}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-round btn-danger delete-btn actionBtn" title="Delete"
+                                            data-id="${item.productId}"><i class="fa fa-trash-o" aria-hidden="true"></i>
+                                    </button>
+                                </td>
+
+                            </tr>
+                        </c:forEach>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- page start-->
+
             </div>
             <!-- page end-->
             </div><!-- /row -->
@@ -133,27 +136,27 @@
             <div class="modal-body form-horizontal style-form">
                 <form id="product-form" class="form-horizontal" role="form">
                     <div class="form-inline" role="form">
-                        <label class="col-lg-2 col-sm-2 control-label" for="productName">Name</label>
-                        <div class="form-group">
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" name="productName" id="productName">
+                        <div class="row">
+                            <label class="col-md-4 col-md-offset-1 control-label" for="productName">Name</label>
+                            <div class="form-group col-sm-6">
+                                    <input type="text" class="form-control" name="productName" id="productName">
                             </div>
                         </div>
                     </div>
 
                     <div class="form-inline" role="form">
-                        <label class="col-lg-2 col-sm-2 control-label" for="price">Price</label>
-                        <div class="form-group">
-                            <div class="col-sm-10">
+                        <div class="row">
+                            <label class="col-md-4 col-md-offset-1 control-label" for="price">Price</label>
+                            <div class="form-group col-sm-6">
                                 <input type="text" class="form-control" name="price" id="price">
                             </div>
                         </div>
                     </div>
 
                     <div class="form-inline" role="form">
-                        <label class="col-lg-2 col-sm-2 control-label" for="nation">Nation</label>
-                        <div class="form-group">
-                            <div class="col-sm-10">
+                        <div class="row">
+                            <label class="col-md-4 col-md-offset-1 control-label" for="nation">Nation</label>
+                            <div class="form-group col-sm-6">
                                 <select class="form-control" name="nation" id="nation">
                                     <option>USA</option>
                                     <option>Europe</option>
@@ -166,26 +169,26 @@
                     </div>
 
                     <div class="form-inline" role="form">
-
-                        <label class="col-lg-2 col-sm-2 control-label" for="description">Description</label>
-                        <div class="form-group">
-                            <div class="col-sm-10">
+                        <div class="row">
+                            <label class="col-md-4 col-md-offset-1 control-label" for="description">Description</label>
+                            <div class="form-group col-sm-6">
                                 <input type="text" class="form-control" name="description" id="description">
                             </div>
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label class="control-label col-md-3">Image Upload</label>
-                        <div class="col-md-9">
-                            <div class="fileupload fileupload-new" data-provides="fileupload"><input type="hidden">
-                                <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
-                                    <img id="image"
-                                         src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="">
-                                </div>
-                                <div class="fileupload-preview fileupload-exists thumbnail"
-                                     style="max-width: 200px; max-height: 150px; line-height: 10px;"></div>
-                                <div>
+                    <div class="form-inline">
+                        <div class="row">
+                            <label class="col-md-4 col-md-offset-1 control-label" >Image Upload</label>
+                            <div class="form-group col-sm-6">
+                                <div class="fileupload fileupload-new" data-provides="fileupload"><input type="hidden">
+                                    <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+                                        <img id="image"
+                                             src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="">
+                                    </div>
+                                    <div class="fileupload-preview fileupload-exists thumbnail"
+                                         style="max-width: 200px; max-height: 150px; line-height: 10px;"></div>
+                                    <div>
                                           <span class="btn btn-theme02 btn-file">
                                            <span class="fileupload-new"><i
                                                    class="fa fa-paperclip"></i> Select image</span>
@@ -193,16 +196,17 @@
                                                    class="fa fa-undo"></i> Change</span>
                                            <input type="file" name="picture" class="default">
 							  </span>
-                                    <a href="#" class="btn btn-theme04 fileupload-exists" data-dismiss="fileupload"><i
-                                            class="fa fa-trash-o"></i> Remove</a>
+                                        <a href="#" class="btn btn-theme04 fileupload-exists" data-dismiss="fileupload"><i
+                                                class="fa fa-trash-o"></i> Remove</a>
+                                    </div>
                                 </div>
-                            </div>
-                            <span class="label label-info">NOTE!</span>
-                            <span>
+                                <span class="label label-info">NOTE!</span>
+                                <span>
                                  Attached image thumbnail is
                                  supported in Latest Firefox, Chrome, Opera,
                                  Safari and Internet Explorer 10 only
                                  </span>
+                            </div>
                         </div>
                     </div>
                 </form>
@@ -227,20 +231,21 @@
             <div class="modal-body form-horizontal style-form">
                 <form id="sale-form" class="form-horizontal" role="form">
                     <div class="form-inline" role="form">
-                        <label class="col-lg-2 col-sm-2 control-label"
-                               for="sale-product-name">Name</label>
-                        <div class="form-group">
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="sale-product-name">
+                        <div class="row">
+                            <label class="col-md-4 col-md-offset-1 control-label"
+                                   for="sale-product-name">Name</label>
+                            <div class="form-group col-sm-6">
+                                    <input type="text" class="form-control" id="sale-product-name">
                             </div>
                         </div>
+
                     </div>
 
                     <div class="form-inline" role="form">
-                        <label class="col-lg-2 col-sm-2 control-label"
-                               for="sale-percentage">Percentage</label>
-                        <div class="form-group">
-                            <div class="col-sm-10">
+                        <div class="row">
+                            <label class="col-md-4 col-md-offset-1 control-label"
+                                   for="sale-percentage">Percentage</label>
+                            <div class="form-group col-sm-6">
                                 <input class="form-control" type="number" name="salePercent"
                                        min="1" max="100" id="sale-percentage">
                             </div>
@@ -258,29 +263,36 @@
                     <%--<span class="help-block">Select date range</span>--%>
                     <%--</div>--%>
                     <%--</div>--%>
-                    <div class="form-group last">
-                        <label class="control-label col-md-2">From Date</label>
-                        <div class="col-md-4 col-xs-6">
-                            <div data-date-viewmode="years" data-date-format="dd-mm-yyyy" data-date="01-01-2016"
-                                 class="input-append date dpYears">
-                                <input type="text" readonly="" size="16" name="fromDate" class="form-control">
-                                <span class="input-group-btn add-on">
+                    <div class="form-inline">
+                        <div class="row">
+                            <label class="col-md-4 col-md-offset-1 control-label">
+                                From Date</label>
+                            <div class="form-group col-sm-6">
+                                <div data-date-viewmode="years" data-date-format="dd-mm-yyyy" data-date="01-01-2016"
+                                     class="input-append date dpYears">
+                                    <input type="text" readonly="" size="16" name="fromDate" class="form-control">
+                                    <span class="input-group-btn add-on">
 		                                        <button class="btn btn-theme" type="button"><i
                                                         class="fa fa-calendar"></i></button>
 		                                      </span>
+                                </div>
                             </div>
                         </div>
+
                     </div>
-                    <div class="form-group last">
-                        <label class="control-label col-md-2">To Date</label>
-                        <div class="col-md-4 col-xs-6">
-                            <div data-date-viewmode="years" data-date-format="dd-mm-yyyy" data-date="01-01-2016"
-                                 class="input-append date dpYears">
-                                <input type="text" readonly="" size="16" name="toDate" class="form-control">
-                                <span class="input-group-btn add-on">
+                    <div class="form-inline">
+                        <div class="row">
+                            <label class="col-md-4 col-md-offset-1 control-label">
+                                To Date</label>
+                            <div class="form-group col-sm-6">
+                                <div data-date-viewmode="years" data-date-format="dd-mm-yyyy" data-date="01-01-2016"
+                                     class="input-append date dpYears">
+                                    <input type="text" readonly="" size="16" name="toDate" class="form-control">
+                                    <span class="input-group-btn add-on">
 		                                        <button class="btn btn-theme" type="button"><i
                                                         class="fa fa-calendar"></i></button>
 		                                      </span>
+                                </div>
                             </div>
                         </div>
                     </div>
