@@ -53,6 +53,7 @@ public class SaleController {
             saleEntity.setProductId(productId);
             saleEntity.setSalePercent(salePercent);
             saleEntity.setEnabled(true);
+            int a=1;
             String[] from = StringUtils.formatDate(fromDate);
             String[] to = StringUtils.formatDate(toDate);
             saleEntity.setFromDate(NumbericUtils.getDate(from[UtilsConstant.TWO],
