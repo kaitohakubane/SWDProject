@@ -18,7 +18,7 @@
     <%--Date time CSS--%>
     <link href="<c:url value="/resources/js/bootstrap-datepicker/datepicker.css"/>" rel="stylesheet">
     <link href="<c:url value="/resources/js/bootstrap-daterangepicker/daterangepicker.css"/>" rel="stylesheet">
-
+    <link href="<c:url value="/resources/css/SneakerStyle.css"/>" rel="stylesheet">
 
 </head>
 <body>
@@ -32,43 +32,51 @@
     <!--main content start-->
     <section id="main-content">
         <section class="wrapper">
-            <h3><i class="fa fa-angle-right"></i> Advanced Table Example</h3>
-            <div class="row mb ml">
+            <header>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3> Advanced Table Example</h3>
+                    </div>
+                    <div class="col-md-6 text-right">
 
-                <!-- page start-->
-                <div class="content-panel">
-                    <div class="adv-table">
-                        <table cellpadding="0" cellspacing="0" border="0"
-                               class="display table table-bordered dataTable" id="stock-table"
-                               aria-describedby="hidden-table-info_info">
-                            <thead>
-                            <tr role="row">
-                                <th></th>
-                                <th>Name</th>
-                                <th>Size</th>
-                                <th>Quantity</th>
-                                <th>Import</th>
-                            </tr>
-                            </thead>
-
-                            <tbody role="alert" aria-live="polite" aria-relevant="all">
-                            <c:forEach var="item" items="${listStock}" varStatus="counter">
-                                <tr class="gradeC even">
-                                    <td class="center">${counter.count}</td>
-                                    <td class="center">${item.productName}</td>
-                                    <td class="center">${item.size}</td>
-                                    <td class="center">${item.quantity}</td>
-                                    <td class="center">
-                                        <button type="button" class="btn btn-round btn-success import-btn" data-toggle="modal"
-                                                data-target="#importModal" data-id="${item.stockID}">Import
-                                        </button>
-                                    </td>
-                                </tr>
-                            </c:forEach>
-                            </tbody>
-                        </table>
                     </div>
                 </div>
+                <hr>
+            </header>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <table cellpadding="0" cellspacing="0" border="0"
+                           class="display table table-bordered dataTable" id="stock-table"
+                           aria-describedby="hidden-table-info_info">
+                        <thead>
+                        <tr role="row">
+                            <th class="text-center">ID</th>
+                            <th class="text-center">Name</th>
+                            <th class="text-center">Size</th>
+                            <th class="text-center">Quantity</th>
+                            <th class="text-center">Action</th>
+                        </tr>
+                        </thead>
+
+                        <tbody role="alert" aria-live="polite" aria-relevant="all">
+                        <c:forEach var="item" items="${listStock}" varStatus="counter">
+                            <tr class="gradeC even">
+                                <td class="text-center">${counter.count}</td>
+                                <td class="center">${item.productName}</td>
+                                <td class="text-center">${item.size}</td>
+                                <td class="text-center">${item.quantity}</td>
+                                <td class="text-center">
+                                    <button type="button" class="btn btn-round btn-success import-btn actionBtn" data-toggle="modal"
+                                            data-target="#importModal" data-id="${item.stockID}" title="Import product"><i class="fa fa-plus" aria-hidden="true"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </c:forEach>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- page start-->
             </div>
             <!-- page end-->
             </div><!-- /row -->
@@ -76,15 +84,9 @@
     </section><!-- /MAIN CONTENT -->
     <!--main content end-->
     <!--footer start-->
-    <footer class="site-footer">
-        <div class="text-center">
-            2014 - Alvarez.is
-            <a href="#" class="go-top">
-                <i class="fa fa-angle-up"></i>
-            </a>
-        </div>
-    </footer>
+
     <!--footer end-->
+
 </section>
 <!-- Modal -->
 <div class="modal fade" id="importModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
@@ -95,53 +97,58 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h4 class="modal-title" id="importModalLabel">Import product</h4>
             </div>
-            <div class="modal-body">
-                <div class="form-inline" role="form">
-                    Product Name
-                    <div class="form-group">
-                        <div class="col-sm-10">
-                            <input type="text" id="productName" class="form-control" disabled>
+            <div class="modal-body form-horizontal style-form">
+                <form class="form-horizontal" role="form">
+                    <div class="form-inline" role="form">
+                        <div class="row">
+                            <label class="col-md-4 col-md-offset-1 control-label">Product Name</label>
+                            <div class="form-group col-sm-6">
+                                <input type="text" id="productName" class="form-control" disabled>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="form-inline" role="form">
-                    <label class="col-lg-2 col-sm-2 control-label" for="size">Size</label>
-                    <div class="form-group">
-                        <div class="col-sm-10">
-                            <select class="form-control" id="size">
+                    <div class="form-inline" role="form">
+                        <div class="row">
+                            <label class="col-md-4 col-md-offset-1 control-label" for="size">Size</label>
+                            <div class="form-group col-sm-6">
+                                <select class="form-control" id="size">
 
-                            </select>
+                                </select>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="form-inline" role="form">
-                    Import Quantity
-                    <div class="form-group">
-                        <div class="col-sm-10">
-                            <input type="number" min="1" max="1000000000" class="form-control">
+                    <div class="form-inline" role="form">
+                        <div class="row">
+                            <label class="col-md-4 col-md-offset-1 control-label">Import Quantity</label>
+                            <div class="form-group col-sm-6">
+                                <input type="number" min="1" max="1000000000" class="form-control">
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="form-inline" role="form">
-                    Price
-                    <div class="form-group">
-                        <div class="col-sm-10">
-                            <input type="number" class="form-control" min="1" max="1000000" placeholder=".000 VNĐ">
+                    <div class="form-inline" role="form">
+                        <div class="row">
+                            <label class="col-md-4 col-md-offset-1 control-label">Price</label>
+                            <div class="form-group col-sm-6">
+                                <input type="number" class="form-control" min="1" max="1000000" placeholder=".000 VNĐ">
+                            </div>
                         </div>
-                    </div>
-                </div>
 
-                <div class="form-inline" role="form">
-                    Supplier
-                    <div class="form-group">
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control">
-                        </div>
                     </div>
-                </div>
+
+                    <div class="form-inline" role="form">
+                        <div class="row">
+                            <label class="col-md-4 col-md-offset-1 control-label"> Supplier</label>
+                            <div class="form-group col-sm-6">
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
