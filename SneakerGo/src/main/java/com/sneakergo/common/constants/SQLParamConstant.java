@@ -8,7 +8,7 @@ public class SQLParamConstant {
             "FROM Bill " +
             "WHERE status = 'Finished' AND enabled = true AND YEAR(date) = :year GROUP BY MONTH(date)";
 
-    public static final String GET_STOCK_RECORDS = "SELECT s.stockID as stockID, p.productID as productID,s.quantity" +
+    public static final String GET_STOCK_RECORDS = "SELECT s.attributeID as attributeID, s.productID as productID,s.quantity" +
             " as quantity, a.size as size, p.productName as productName " +
             "FROM attribute a,stock s, product p " +
             "WHERE a.attributeID=s.attributeID AND s.productID=p.productID ORDER BY s.quantity ASC";
@@ -27,7 +27,7 @@ public class SQLParamConstant {
 
     public static final String GET_ALL_IMPORT_IN_TIME = "SELECT i.importID as importID, p.productName as productName, " +
             "a.size as size, i.quantity as quantity, i.price as price, " +
-            "i.importDate as importDate, i.Supplier as supplier " +
+            "i.importDate as importDate, i.Supplier as supplier, i.quantity*i.price as total " +
             "FROM import i,stock s,product p,attribute a " +
             "WHERE i.stockID=s.stockID AND s.productID=p.productID AND s.attributeID=a.attributeID " +
             "AND i.importDate>=:fromDate AND i.importDate<=:toDate";

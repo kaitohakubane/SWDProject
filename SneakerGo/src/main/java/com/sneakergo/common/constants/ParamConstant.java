@@ -45,13 +45,6 @@ public class ParamConstant {
     public static final String DESCRIPTION = "description";
 
     /**
-     * Type
-     */
-    public static final String LIST_TYPE_ATTR = "listType";
-    public static final String TYPE_ID = "typeId";
-    public static final String TYPE_NAME = "typeName";
-
-    /**
      * Bill
      */
     public static final String LIST_BILL_ATTR = "listBill";
@@ -80,9 +73,7 @@ public class ParamConstant {
      * Import Product
      */
     public static final String LIST_IMPORT_ATTR = "listImport";
-    public static final String IMPORT_PRODUCT_ID = "importProductId";
-    public static final String IMPORT_DATE = "importDate";
-    public static final String PRODUCT = "product";
+    public static final String SUPPLIER = "supplier";
     public static final String IMPORT_PRICE = "importPrice";
     public static final String IMPORT_QUANTITY = "importQuantity";
 
@@ -90,4 +81,6 @@ public class ParamConstant {
      * Stock
      */
     public static final String LIST_STOCK_ATTR="listStock";
+    public static final String STOCK_ID="stockID";
+    public static final String ATTRIBUTE_ID="attributeID";
 }

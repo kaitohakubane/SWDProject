@@ -59,8 +59,10 @@
                                     <td class="center">${item.size}</td>
                                     <td class="center">${item.quantity}</td>
                                     <td class="center">
-                                        <button type="button" class="btn btn-round btn-success import-btn" data-toggle="modal"
-                                                data-target="#importModal" data-id="${item.stockID}">Import
+                                        <button type="button" class="btn btn-round btn-success import-btn"
+                                                data-toggle="modal"
+                                                data-target="#importModal" data-product="${item.productID}"
+                                                data-attribute="${item.attributeID}">Import
                                         </button>
                                     </td>
                                 </tr>
@@ -100,7 +102,7 @@
                     Product Name
                     <div class="form-group">
                         <div class="col-sm-10">
-                            <input type="text" id="productName" class="form-control" disabled>
+                            <input type="text" id="productName" name="productName" class="form-control" disabled>
                         </div>
                     </div>
                 </div>
@@ -109,43 +111,87 @@
                     <label class="col-lg-2 col-sm-2 control-label" for="size">Size</label>
                     <div class="form-group">
                         <div class="col-sm-10">
-                            <select class="form-control" id="size">
+                            <select class="form-control" name="size" id="size">
 
                             </select>
                         </div>
                     </div>
                 </div>
-
-                <div class="form-inline" role="form">
-                    Import Quantity
-                    <div class="form-group">
-                        <div class="col-sm-10">
-                            <input type="number" min="1" max="1000000000" class="form-control">
+                <form id="import-form">
+                    <div class="form-inline" role="form">
+                        Import Quantity
+                        <div class="form-group">
+                            <div class="col-sm-10">
+                                <input type="number" min="1" max="1000000000" class="form-control"
+                                       name="importQuantity" id="quantity" required>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="form-inline" role="form">
-                    Price
-                    <div class="form-group">
-                        <div class="col-sm-10">
-                            <input type="number" class="form-control" min="1" max="1000000" placeholder=".000 VNĐ">
+                    <div class="form-inline" role="form">
+                        Price
+                        <div class="form-group">
+                            <div class="col-sm-10">
+                                <input type="number" class="form-control" name="importPrice" id="price"
+                                       min="1" max="1000000" placeholder=".000 VNĐ" required>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="form-inline" role="form">
-                    Supplier
-                    <div class="form-group">
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control">
+                    <div class="form-inline" role="form">
+                        Supplier
+                        <div class="form-group">
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name="supplier" id="supplier" required>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 <button type="button" class="btn btn-primary" id="import-btn">Import</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%--Notify Modal--%>
+<div class="modal fade notify-modal" id="notifyModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true"
+     data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title notify-title" id="myModalLabel">Modal title</h4>
+            </div>
+            <div class="modal-body notify-content">
+                Hi there, I am a Modal Example for Dashgum Admin Panel.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default notify-button" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%--Confirm Modal--%>
+<div class="modal fade confirm-modal" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true"
+     data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title confirm-title">Modal title</h4>
+            </div>
+            <div class="modal-body confirm-content">
+                Are you sure to do this ?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary confirm-button">OK</button>
             </div>
         </div>
     </div>

@@ -24,14 +24,18 @@ public class StockService implements StockServiceInterface{
         return stockModelInterface.getStockByProductIDAndAttributeID(productID,attributeID);
     }
 
-    @Override
-    public boolean updateStockQuantity(StockEntity stockEntity, int quantity){
-        return stockModelInterface.updateStockQuantity(stockEntity,quantity);
+    public StockEntity getStockByStockID(int stockID){
+        return stockModelInterface.getStockByStockID(stockID);
     }
 
     @Override
-    public boolean createStock(StockEntity stockEntity){
-        return stockModelInterface.createStock(stockEntity);
+    public void updateStockQuantity(StockEntity stockEntity){
+          stockModelInterface.updateStockQuantity(stockEntity);
+    }
+
+    @Override
+    public void createStock(StockEntity stockEntity){
+         stockModelInterface.createStock(stockEntity);
     }
 
     @Override

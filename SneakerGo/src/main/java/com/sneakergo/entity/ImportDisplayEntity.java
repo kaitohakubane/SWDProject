@@ -13,19 +13,28 @@ public class ImportDisplayEntity {
     private String size;
     private Integer quantity;
     private String price;
+    private Integer total;
     private Date importDate;
     private String supplier;
 
-
-    public ImportDisplayEntity(int importID, String productName, String size,
-                               Integer quantity, String price, Date importDate, String supplier) {
+    public ImportDisplayEntity(int importID, String productName, String size, Integer quantity,
+                               String price, Integer total, Date importDate, String supplier) {
         this.importID = importID;
         this.productName = productName;
         this.size = size;
         this.quantity = quantity;
         this.price = price;
+        this.total = total;
         this.importDate = importDate;
         this.supplier = supplier;
+    }
+
+    public Integer getTotal() {
+        return total;
+    }
+
+    public void setTotal(int total) {
+        this.total = total;
     }
 
     public ImportDisplayEntity() {

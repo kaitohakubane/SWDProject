@@ -1,7 +1,10 @@
 /**
  * Created by Hung on 11/23/2016.
  */
-
+var IMPORT_PRODUCT_URL="/admin/import/create";
+var STOCK_PAGE_URL="/admin/stock";
+var IMPORT_PRODUCT_POPUP_TITLE="IMPORT PRODUCT";
+var IMPORT_PRODUCT_POPUP_MSG="Import Product successfully";
 $(document).ready(function () {
     var dataTable = $('#stock-table');
     var SIZE_LIST = {
@@ -46,16 +49,66 @@ $(document).ready(function () {
 
     $('.import-btn').off("click").on("click", function () {
         var row = $(this);
-        var stockID = row.data("id");
+        var productID = row.data("product");
+        var attributeID = row.data("attribute");
         var name = $(row).closest("tr").find("td:nth-child(2)").html().trim();
         var size = $(row).closest("tr").find("td:nth-child(3)").html().trim();
-        importModalInitialize(stockID,name,size);
+        importModalInitialize(productID,attributeID,name,size);
     });
+
+    $('#import-btn').on("click",function(){
+        var button=$(this);
+        var name=$('#importModal').find('#productName').val();
+        var size=$('#importModal').find('#size').val();
+        var quantity=$('#importModal').find('#quantity').val();
+        var price=$('#importModal').find('#price').val();
+        var supplier=$('#importModal').find('#supplier').val();
+        var confirmData = {
+            'title': CONFIRM_INFORMATION_TITLE,
+            'content': 'Name: '+name+ '</br>' + 'Size: '+size+ '</br>'+
+            'Quantity: '+quantity+ '</br>' +'Price: '+price+ '</br>'+ 'Supplier: '+supplier+ '</br>'
+        }
+        showConfirmModal(importProduct,confirmData,[button.data("productID"),button.data("attributeID")]);
+    })
 
 })
 
-function importModalInitialize(stockID,name, size) {
+function importModalInitialize(productID,attributeID,name, size) {
     $('#importModal').find('#productName').val(name);
     $('#importModal').find('#size').val(size);
-    $('#importModal').find('#import-btn').data("id",stockID);;
+    $('#importModal').find('#import-btn').data("productID",productID);
+    $('#importModal').find('#import-btn').data("attributeID",attributeID);
+    $('#importModal').find('#quantity').val('');
+    $('#importModal').find('#price').val('');
+    $('#importModal').find('#supplier').val('');
+}
+
+function importProduct(productID,attributeID){
+    $('#importModal').modal("hide");
+    var formData = new FormData($('#import-form')[0]);
+    formData.append("productId", productID)
+    formData.append("attributeID", attributeID)
+    var requestURL = contextPath + IMPORT_PRODUCT_URL;
+    var requestMethod = "POST";
+    var requestData = formData;
+
+    $.ajax({
+        url: requestURL,
+        type: requestMethod,
+        data: requestData,
+        processData: false,
+        contentType: false,
+        success: function () {
+            var notifyData = {
+                'title': IMPORT_PRODUCT_POPUP_TITLE,
+                'content': IMPORT_PRODUCT_POPUP_MSG
+            }
+            $(".confirm-modal").modal('hide');
+            showNotifyModal(contextPath + STOCK_PAGE_URL, true, notifyData);
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.error(textStatus);
+        }
+    });
+
 }

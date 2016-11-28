@@ -4,7 +4,7 @@
 /**
  * Scroll top for common ajax.
  */
-
+var CONFIRM_INFORMATION_TITLE="CONFIRM INFORMATION";
 var NO_IMG_SOURCE="http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=no+image";
 function addDataTable(dataTable){
     dataTable.DataTable();
@@ -58,7 +58,7 @@ function showNotifyModal(callIfOk, isNavigate, data) {
     modal.modal('show');
 }
 
-function showConfirmModal(callIfConfirm, data) {
+function showConfirmModal(callIfConfirm, data,args) {
 
     var modal = $(".confirm-modal");
     var title = $(".confirm-title");
@@ -66,10 +66,10 @@ function showConfirmModal(callIfConfirm, data) {
     var confirmBtn = $(".confirm-button");
 
     title.text(data.title);
-    content.text(data.content);
+    content.html(data.content);
     confirmBtn.click(function (e) {
         e.preventDefault();
-        callIfConfirm();
+        callIfConfirm.apply(this,args);
         confirmBtn.unbind();
     });
 

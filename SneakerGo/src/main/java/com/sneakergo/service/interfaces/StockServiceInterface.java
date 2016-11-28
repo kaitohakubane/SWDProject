@@ -11,11 +11,14 @@ import java.util.List;
 public interface StockServiceInterface {
     StockEntity getStockByProductIDAndAttributeID(int productID, int attributeID);
 
-    boolean updateStockQuantity(StockEntity stockEntity, int quantity);
+    void updateStockQuantity(StockEntity stockEntity);
 
-    boolean createStock(StockEntity stockEntity);
+    void createStock(StockEntity stockEntity);
 
     boolean isProductStockAvailable(int productID);
 
     List<StockDisplayEntity> getStock();
+
+    public StockEntity getStockByStockID(int stockID);
+
 }
