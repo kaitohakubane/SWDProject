@@ -11,7 +11,7 @@ import java.util.List;
 public interface StockServiceInterface {
     StockEntity getStockByProductIDAndAttributeID(int productID, int attributeID);
 
-    void updateStockQuantity(StockEntity stockEntity);
+    void updateStockQuantity(StockEntity stockEntity2);
 
     void createStock(StockEntity stockEntity);
 

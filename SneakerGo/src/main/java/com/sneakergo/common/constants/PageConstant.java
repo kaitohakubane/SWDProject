@@ -47,8 +47,8 @@ public class PageConstant {
 
     // Import Product
     public static final String IMPORT_PAGE_URL = "/admin/import";
-    public static final String SEARCH_IMPORT_URL = "/admin/import/search";
-    public static final String CREATE_IMPORT_URL = "/admin/import/create";
+    public static final String SEARCH_IMPORT_URL_2 = "/admin/import/search";
+    public static final String CREATE_IMPORT_URL_2 = "/admin/import/create";
 
     // Stock
     public static final String STOCK_PAGE_URL="/admin/stock";

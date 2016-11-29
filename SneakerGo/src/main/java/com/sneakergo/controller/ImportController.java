@@ -45,7 +45,7 @@ public class ImportController {
     }
 
 
-    @RequestMapping(value = PageConstant.SEARCH_IMPORT_URL, method = RequestMethod.POST)
+    @RequestMapping(value = PageConstant.SEARCH_IMPORT_URL_2, method = RequestMethod.POST)
     public ModelAndView searchImport(@RequestParam(value = ParamConstant.FROM_DATE) String fromDate,
                                      @RequestParam(value = ParamConstant.TO_DATE) String toDate) {
 
@@ -63,12 +63,12 @@ public class ImportController {
     }
 
     @ResponseBody
-    @RequestMapping(value = PageConstant.CREATE_IMPORT_URL, method = RequestMethod.POST)
+    @RequestMapping(value = PageConstant.CREATE_IMPORT_URL_2, method = RequestMethod.POST)
     public boolean importProduct(@RequestParam(value = ParamConstant.PRODUCT_ID) int productID,
-                                 @RequestParam(value = ParamConstant.ATTRIBUTE_ID) int attributeID,
+                                 @RequestParam(value = ParamConstant.ATTRIBUTE_ID_2) int attributeID,
                                  @RequestParam(value = ParamConstant.IMPORT_QUANTITY) int quantity,
                                  @RequestParam(value = ParamConstant.IMPORT_PRICE) String price,
-                                 @RequestParam(value = ParamConstant.SUPPLIER) String supplier) {
+                                 @RequestParam(value = ParamConstant.SUPPLIER_2) String supplier) {
         try {
             //Add quantity to stock
             StockEntity stockEntity = stockServiceInterface.getStockByProductIDAndAttributeID(productID,attributeID);

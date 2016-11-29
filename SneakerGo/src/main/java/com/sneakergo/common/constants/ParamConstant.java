@@ -73,7 +73,7 @@ public class ParamConstant {
      * Import Product
      */
     public static final String LIST_IMPORT_ATTR = "listImport";
-    public static final String SUPPLIER = "supplier";
+    public static final String SUPPLIER_2 = "supplier";
     public static final String IMPORT_PRICE = "importPrice";
     public static final String IMPORT_QUANTITY = "importQuantity";
 
@@ -82,5 +82,5 @@ public class ParamConstant {
      */
     public static final String LIST_STOCK_ATTR="listStock";
     public static final String STOCK_ID="stockID";
-    public static final String ATTRIBUTE_ID="attributeID";
+    public static final String ATTRIBUTE_ID_2="attributeID";
 }

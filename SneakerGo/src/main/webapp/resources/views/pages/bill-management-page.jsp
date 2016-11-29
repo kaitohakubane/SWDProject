@@ -15,6 +15,8 @@
     <%--Date time CSS--%>
     <link href="<c:url value="/resources/js/bootstrap-datepicker/datepicker.css"/>" rel="stylesheet">
     <link href="<c:url value="/resources/js/bootstrap-daterangepicker/daterangepicker.css"/>" rel="stylesheet">
+    <link href="<c:url value="/resources/css/SneakerStyle.css"/>" rel="stylesheet">
+    <script src="/resources/js/jquery-1.8.3.min.js"></script>
 </head>
 <body>
 <section id="container">
@@ -27,16 +29,16 @@
     <!--main content start-->
     <section id="main-content">
         <section class="wrapper">
-            <h3><i class="fa fa-angle-right"></i> Advanced Table Example</h3>
-            <div class="row mb ml">
-
-                <!-- page start-->
-                <div class="content-panel">
-                    <div class="adv-table">
-                        <div id="hidden-table-info_wrapper" class="dataTables_wrapper" role="grid">
+            <header>
+                <div class="row">
+                    <div class="col-md-4">
+                        <h3> Advanced Table Example</h3>
+                    </div>
+                    <div class="col-md-8 text-right">
+                        <h3>
                             <form id="search-form" method="POST">
-                                <div class="form-group ">
-                                    <div class="col-md-2 col-xs-6">
+                                <div class="row">
+                                    <div class="col-md-5">
                                         <div data-date-viewmode="years" data-date-format="yyyy-mm-dd"
                                              data-date="2016-01-01"
                                              class="input-append date dpYears">
@@ -44,19 +46,17 @@
                                                    class="form-control"
                                                    name="fromDate" id="fromDate" value="${fromDate}">
                                             <span class="input-group-btn add-on">
-		                                        <button class="btn btn-theme" type="button"><i
+		                                        <button class="btn btn-theme myBtnDate" type="button"><i
                                                         class="fa fa-calendar"></i></button>
 		                                      </span>
                                         </div>
                                     </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="col-md-2 col-xs-6">
+                                    <div class="col-md-5">
                                         <div data-date-viewmode="years" data-date-format="yyyy-mm-dd"
                                              data-date="2016-01-01"
                                              class="input-append date dpYears">
-                                            <input type="text" readonly="" size="16" name="toDate" class="form-control"
+                                            <input type="text" readonly="" size="16" name="toDate"
+                                                   class="form-control"
                                                    name="toDate" id="toDate" value="${toDate}">
                                             <span class="input-group-btn add-on">
 		                                        <button class="btn btn-theme" type="button"><i
@@ -65,69 +65,72 @@
 		                                      </span>
                                         </div>
                                     </div>
+                                    <div class="col-md-2">
+
+                                        <button type="button" class="btn btn-primary search-btn"
+                                                data-toggle="modal"
+                                                data-target="#productModal" id="search-btn">Search
+                                        </button>
+                                    </div>
                                 </div>
+
                             </form>
-                            <div class="form-group">
-                                <button type="button" class="btn btn-primary search-btn" data-toggle="modal"
-                                        data-target="#productModal" id="search-btn">Search
-                                </button>
-                            </div>
 
-                            <table class="display table table-bordered dataTable" id="bill-table"
-                                   aria-describedby="hidden-table-info_info">
-                                <thead>
-                                <tr role="row">
-                                    <th>Bill ID</th>
-                                    <th>Account ID</th>
-                                    <th>Customer Name</th>
-                                    <th>Total</th>
-                                    <th>Date</th>
-                                    <th>Status</th>
-                                    <th>View</th>
-                                    <th>Action</th>
-                                </tr>
-                                </thead>
-
-                                <tbody role="alert" aria-live="polite" aria-relevant="all">
-                                <c:forEach var="item" items="${listBill}">
-                                    <tr class="gradeC even">
-                                        <td class="center">${item.billID}</td>
-                                        <td class="center">${item.accountID}</td>
-                                        <td class="center">${item.accountName}</td>
-                                        <td class="center">${item.totalPrice}</td>
-                                        <td class="center">${item.date}</td>
-                                        <td class="center">${item.enabled}</td>
-                                        <td class="center">
-                                            <button type="button" class="btn btn-round btn-success" data-toggle="modal"
-                                                    data-target="#importModal" data-stockID="${item.stockID}">View
-                                            </button>
-                                        </td>
-                                        <td class="center">
-                                            <button type="button" class="btn btn-round btn-danger" data-toggle="modal"
-                                                    data-target="#confirmModal">Delete
-                                            </button>
-                                        </td>
-                                    </tr>
-                                </c:forEach>
-                                </tbody>
-                            </table>
-                        </div>
+                        </h3>
                     </div>
                 </div>
+                <hr>
+            </header>
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="display table table-bordered dataTable" id="bill-table"
+                           aria-describedby="hidden-table-info_info">
+                        <thead>
+                        <tr role="row">
+                            <th>Bill ID</th>
+                            <th>Account ID</th>
+                            <th>Customer Name</th>
+                            <th>Total</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+
+                        <tbody role="alert" aria-live="polite" aria-relevant="all">
+                        <c:forEach var="item" items="${listBill}">
+                            <tr class="gradeC even">
+                                <td class="text-center">${item.billID}</td>
+                                <td class="text-center">${item.accountID}</td>
+                                <td class="center">${item.accountName}</td>
+                                <td class="text-center">${item.totalPrice}</td>
+                                <td class="text-center">${item.date}</td>
+                                <td class="text-center status">${item.enabled}</td>
+                                <td class="text-center">
+                                    <button type="button" class="btn btn-round btn-success actionBtn"
+                                            data-toggle="modal" title="view"
+                                            data-target="#importModal" data-stockID="${item.stockID}"><i
+                                            class="fa fa-eye" aria-hidden="true"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-round btn-danger actionBtn" data-toggle="modal"
+                                            title="delete"
+                                            data-target="#confirmModal"><i class="fa fa-trash-o" aria-hidden="true"></i>
+                                    </button>
+                                </td>
+
+
+                            </tr>
+                        </c:forEach>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- page start-->
                 <!-- page end-->
             </div><!-- /row -->
         </section><!-- --/wrapper ---->
     </section><!-- /MAIN CONTENT -->
     <!--main content end-->
     <!--footer start-->
-    <footer class="site-footer">
-        <div class="text-center">
-            2014 - Alvarez.is
-            <a href="#" class="go-top">
-                <i class="fa fa-angle-up"></i>
-            </a>
-        </div>
-    </footer>
     <!--footer end-->
 </section>
 
@@ -269,4 +272,18 @@
 </body>
 
 </html>
+<script>
+    $(document).ready(function () {
+        $(".status").each(function () {
+            var real = $(this).text();
+            if (real == "true") {
+                $(this).html("<span class='status onStock'>Còn hàng</span>")
+            }
+            else {
+                $(this).html("<span class='status sold'>Hết hàng</span>")
+            }
+        })
+    })
+
+</script>
 
