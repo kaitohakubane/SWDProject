@@ -58,7 +58,7 @@ function showNotifyModal(callIfOk, isNavigate, data) {
     modal.modal('show');
 }
 
-function showConfirmModal(callIfConfirm, data) {
+function showConfirmModal(callIfConfirm, data,args) {
 
     var modal = $(".confirm-modal");
     var title = $(".confirm-title");
@@ -66,10 +66,10 @@ function showConfirmModal(callIfConfirm, data) {
     var confirmBtn = $(".confirm-button");
 
     title.text(data.title);
-    content.text(data.content);
+    content.html(data.content);
     confirmBtn.click(function (e) {
         e.preventDefault();
-        callIfConfirm();
+        callIfConfirm.apply(this,args);
         confirmBtn.unbind();
     });
 

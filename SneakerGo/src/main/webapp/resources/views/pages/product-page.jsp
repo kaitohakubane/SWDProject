@@ -340,7 +340,6 @@
     </div>
 </div>
 
-<c:import url="/resources/views/common/confirm-modal.jsp"/>
 <script src="<c:url value = "/resources/js/bootstrap-datepicker/bootstrap-datepicker.js"/>"
         type="text/javascript"></script>
 <script src="<c:url value = "/resources/js/bootstrap-daterangepicker/daterangepicker.js"/>"

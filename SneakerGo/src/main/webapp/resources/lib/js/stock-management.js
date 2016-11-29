@@ -5,6 +5,7 @@ var IMPORT_PRODUCT_URL="/admin/import/create";
 var STOCK_PAGE_URL="/admin/stock";
 var IMPORT_PRODUCT_POPUP_TITLE="IMPORT PRODUCT";
 var IMPORT_PRODUCT_POPUP_MSG="Import Product successfully";
+var CONFIRM_INFORMATION_TITLE="CONFIRM INFORMATION";
 $(document).ready(function () {
     var dataTable = $('#stock-table');
     var SIZE_LIST = {
@@ -50,10 +51,9 @@ $(document).ready(function () {
     $('.import-btn').off("click").on("click", function () {
         var row = $(this);
         var productID = row.data("product");
-        var attributeID = row.data("attribute");
         var name = $(row).closest("tr").find("td:nth-child(2)").html().trim();
         var size = $(row).closest("tr").find("td:nth-child(3)").html().trim();
-        importModalInitialize(productID,attributeID,name,size);
+        importModalInitialize(productID,name,size);
     });
 
     $('#import-btn').on("click",function(){
@@ -68,26 +68,24 @@ $(document).ready(function () {
             'content': 'Name: '+name+ '</br>' + 'Size: '+size+ '</br>'+
             'Quantity: '+quantity+ '</br>' +'Price: '+price+ '</br>'+ 'Supplier: '+supplier+ '</br>'
         }
-        showConfirmModal(importProduct,confirmData,[button.data("productID"),button.data("attributeID")]);
+        showConfirmModal(importProduct,confirmData,[button.data("productID")]);
     })
 
 })
 
-function importModalInitialize(productID,attributeID,name, size) {
+function importModalInitialize(productID,name, size) {
     $('#importModal').find('#productName').val(name);
     $('#importModal').find('#size').val(size);
     $('#importModal').find('#import-btn').data("productID",productID);
-    $('#importModal').find('#import-btn').data("attributeID",attributeID);
     $('#importModal').find('#quantity').val('');
     $('#importModal').find('#price').val('');
     $('#importModal').find('#supplier').val('');
 }
 
-function importProduct(productID,attributeID){
+function importProduct(productID){
     $('#importModal').modal("hide");
     var formData = new FormData($('#import-form')[0]);
     formData.append("productId", productID)
-    formData.append("attributeID", attributeID)
     var requestURL = contextPath + IMPORT_PRODUCT_URL;
     var requestMethod = "POST";
     var requestData = formData;

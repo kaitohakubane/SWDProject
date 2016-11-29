@@ -4,7 +4,7 @@
 /**
  * Scroll top for common ajax.
  */
-var CONFIRM_INFORMATION_TITLE="CONFIRM INFORMATION";
+
 var NO_IMG_SOURCE="http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=no+image";
 function addDataTable(dataTable){
     dataTable.DataTable();
