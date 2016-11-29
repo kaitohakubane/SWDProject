@@ -34,14 +34,44 @@
                 <div class="content-panel">
                     <div class="adv-table">
                         <div id="hidden-table-info_wrapper" class="dataTables_wrapper" role="grid">
-                                <div class="col-md-4 form-group time-control">
-                                    <div class="input-group input-large"
-                                         data-date-format="mm/dd/yyyy">
-                                        <input type="text" class="form-control dpd1" name="from" id="fromDate" value="${fromDate}">
-                                        <span class="input-group-addon">To</span>
-                                        <input type="text" class="form-control dpd2" name="to" id="toDate" value=${toDate}>
+                            <form id="search-form" method="POST">
+                                <div class="form-group ">
+                                    <div class="col-md-2 col-xs-6">
+                                        <div data-date-viewmode="years" data-date-format="yyyy-mm-dd"
+                                             data-date="2016-01-01"
+                                             class="input-append date dpYears">
+                                            <input type="text" readonly="" size="16" name="fromDate"
+                                                   class="form-control"
+                                                   name="fromDate" id="fromDate" value="${fromDate}">
+                                            <span class="input-group-btn add-on">
+		                                        <button class="btn btn-theme" type="button"><i
+                                                        class="fa fa-calendar"></i></button>
+		                                      </span>
+                                        </div>
                                     </div>
                                 </div>
+
+                                <div class="form-group">
+                                    <div class="col-md-2 col-xs-6">
+                                        <div data-date-viewmode="years" data-date-format="yyyy-mm-dd"
+                                             data-date="2016-01-01"
+                                             class="input-append date dpYears">
+                                            <input type="text" readonly="" size="16" name="toDate" class="form-control"
+                                                   name="toDate" id="toDate" value="${toDate}">
+                                            <span class="input-group-btn add-on">
+		                                        <button class="btn btn-theme" type="button"><i
+                                                        class="fa fa-calendar"></i>
+                                                </button>
+		                                      </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="form-group">
+                                <button type="button" class="btn btn-primary search-btn" data-toggle="modal"
+                                        data-target="#productModal" id="search-btn">Search
+                                </button>
+                            </div>
 
                             <table class="display table table-bordered dataTable" id="bill-table"
                                    aria-describedby="hidden-table-info_info">

@@ -50,11 +50,11 @@
                                     <input type="text" class="form-control" id="bill-price" disabled>
                                 </div>
                                 <div class="form-group">
-                                    <label for="user-name">Total</label>
+                                    <label for="user-name">Customer</label>
                                     <input type="text" class="form-control" id="user-name" disabled>
                                 </div>
                                 <div class="form-group">
-                                    <label for="user-phone">Total</label>
+                                    <label for="user-phone">Phone Number</label>
                                     <input type="text" class="form-control" id="user-phone" disabled>
                                 </div>
                             </form>

@@ -37,12 +37,12 @@
                             <form id="search-form" method="POST">
                                 <div class="form-group ">
                                     <div class="col-md-2 col-xs-6">
-                                        <div data-date-viewmode="years" data-date-format="dd-mm-yyyy"
-                                             data-date="01-01-2016"
+                                        <div data-date-viewmode="years" data-date-format="yyyy-mm-dd"
+                                             data-date="2016-01-01"
                                              class="input-append date dpYears">
                                             <input type="text" readonly="" size="16" name="fromDate"
                                                    class="form-control"
-                                                   id="fromDate" value="${fromDate}">
+                                                   name="fromDate" id="fromDate" value="${fromDate}">
                                             <span class="input-group-btn add-on">
 		                                        <button class="btn btn-theme" type="button"><i
                                                         class="fa fa-calendar"></i></button>
@@ -53,11 +53,11 @@
 
                                 <div class="form-group">
                                     <div class="col-md-2 col-xs-6">
-                                        <div data-date-viewmode="years" data-date-format="dd-mm-yyyy"
-                                             data-date="01-01-2016"
+                                        <div data-date-viewmode="years" data-date-format="yyyy-mm-dd"
+                                             data-date="2016-01-01"
                                              class="input-append date dpYears">
                                             <input type="text" readonly="" size="16" name="toDate" class="form-control"
-                                                   id="toDate" value="${toDate}">
+                                                   name="toDate" id="toDate" value="${toDate}">
                                             <span class="input-group-btn add-on">
 		                                        <button class="btn btn-theme" type="button"><i
                                                         class="fa fa-calendar"></i>

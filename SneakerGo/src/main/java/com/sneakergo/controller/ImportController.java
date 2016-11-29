@@ -51,10 +51,10 @@ public class ImportController {
 
         String[] from = StringUtils.formatDate(fromDate);
         String[] to = StringUtils.formatDate(toDate);
-        Date fromTime = NumbericUtils.getDate(from[UtilsConstant.TWO],
-                from[UtilsConstant.ONE], from[UtilsConstant.ZERO]);
-        Date toTime = NumbericUtils.getDate(to[UtilsConstant.TWO],
-                to[UtilsConstant.ONE], to[UtilsConstant.ZERO]);
+        Date fromTime = NumbericUtils.getDate(from[UtilsConstant.ZERO],
+                from[UtilsConstant.ONE], from[UtilsConstant.TWO]);
+        Date toTime = NumbericUtils.getDate(to[UtilsConstant.ZERO],
+                to[UtilsConstant.ONE], to[UtilsConstant.TWO]);
         List<ImportDisplayEntity> listImport = importServiceInterface.getImportByTime(fromTime, toTime);
         ModelAndView modelAndView = new ModelAndView(PageConstant.IMPORT_PAGE);
         modelAndView.addObject(ParamConstant.LIST_IMPORT_ATTR, listImport).addObject(ParamConstant.FROM_DATE, fromDate)
