@@ -16,7 +16,8 @@ public class SQLParamConstant {
     public static final String COUNT_ALL_STOCK_QUANTITY_OF_PRODUCT = "SELECT COUNT(stockID) " +
             "FROM Stock Where productID =:productID";
 
-    public static final String GET_ALL_BILL_IN_TIME = "SELECT b.billID as billID, a.accountID as accountID, a.name as accountName, b.date as date, b.totalPrice as totalPrice,b.enabled as enabled " +
+    public static final String GET_ALL_BILL_IN_TIME = "SELECT b.billID as billID, a.accountID as accountID," +
+            " a.name as accountName, b.date as date, b.totalPrice as totalPrice,b.enabled as enabled " +
             "FROM bill b, account a " +
             "WHERE b.accountID=a.accountID AND b.date>=:fromDate AND b.date<=:toDate " +
             "ORDER BY b.date DESC";
@@ -31,4 +32,9 @@ public class SQLParamConstant {
             "FROM import i,stock s,product p,attribute a " +
             "WHERE i.stockID=s.stockID AND s.productID=p.productID AND s.attributeID=a.attributeID " +
             "AND i.importDate>=:fromDate AND i.importDate<=:toDate";
+
+    public static final String GET_BILL_DETAIL_OF_BILL="SELECT p.productName as productName, b.price as price, " +
+            "b.quantity as quantity, b.price*b.quantity as total " +
+            "FROM billdetail b,product p W" +
+            "HERE b.productID=p.productID AND b.billID=:billID";
 }

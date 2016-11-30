@@ -49,10 +49,11 @@ public class ParamConstant {
      */
     public static final String LIST_BILL_ATTR = "listBill";
     public static final String BILL_ID = "billId";
+    public static final String BILL = "bill";
     public static final String BILL_STATUS = "status";
     public static final String NUMBER_ORDER_ATTR = "numOfOrder";
-
-    public static final String PENDING_STATUS = "Pending";
+    public static final String BILL_DETAIL_LIST="listBillDetail";
+    public static final String CUSTOMER="customer";
 
     /**
      * Sale
@@ -73,7 +74,7 @@ public class ParamConstant {
      * Import Product
      */
     public static final String LIST_IMPORT_ATTR = "listImport";
-    public static final String SUPPLIER_2 = "supplier";
+    public static final String SUPPLIER = "supplier";
     public static final String IMPORT_PRICE = "importPrice";
     public static final String IMPORT_QUANTITY = "importQuantity";
 
@@ -82,5 +83,5 @@ public class ParamConstant {
      */
     public static final String LIST_STOCK_ATTR="listStock";
     public static final String STOCK_ID="stockID";
-    public static final String ATTRIBUTE_ID_2="attributeID";
+    public static final String ATTRIBUTE_ID="attributeID";
 }

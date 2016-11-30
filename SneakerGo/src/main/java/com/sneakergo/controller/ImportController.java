@@ -5,10 +5,8 @@ import com.sneakergo.common.constants.ParamConstant;
 import com.sneakergo.common.constants.UtilsConstant;
 import com.sneakergo.common.utils.NumbericUtils;
 import com.sneakergo.common.utils.StringUtils;
-import com.sneakergo.entity.ImportDisplayEntity;
-import com.sneakergo.entity.ImportEntity;
-import com.sneakergo.entity.ProductEntity;
-import com.sneakergo.entity.StockEntity;
+import com.sneakergo.entity.*;
+import com.sneakergo.service.interfaces.AttributeServiceInterface;
 import com.sneakergo.service.interfaces.ImportServiceInterface;
 import com.sneakergo.service.interfaces.StockServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +31,9 @@ public class ImportController {
     @Autowired
     StockServiceInterface stockServiceInterface;
 
+    @Autowired
+    AttributeServiceInterface attributeServiceInterface;
+
     @RequestMapping(value = PageConstant.IMPORT_PAGE_URL, method = RequestMethod.GET)
     public ModelAndView initImportPage() {
         Date currentDate = NumbericUtils.getCurrentDate();
@@ -45,7 +46,7 @@ public class ImportController {
     }
 
 
-    @RequestMapping(value = PageConstant.SEARCH_IMPORT_URL_2, method = RequestMethod.POST)
+    @RequestMapping(value = PageConstant.SEARCH_IMPORT_URL, method = RequestMethod.POST)
     public ModelAndView searchImport(@RequestParam(value = ParamConstant.FROM_DATE) String fromDate,
                                      @RequestParam(value = ParamConstant.TO_DATE) String toDate) {
 
@@ -63,25 +64,40 @@ public class ImportController {
     }
 
     @ResponseBody
-    @RequestMapping(value = PageConstant.CREATE_IMPORT_URL_2, method = RequestMethod.POST)
+    @RequestMapping(value = PageConstant.CREATE_IMPORT_URL, method = RequestMethod.POST)
     public boolean importProduct(@RequestParam(value = ParamConstant.PRODUCT_ID) int productID,
-                                 @RequestParam(value = ParamConstant.ATTRIBUTE_ID_2) int attributeID,
+                                 @RequestParam(value = ParamConstant.SIZE) String size,
                                  @RequestParam(value = ParamConstant.IMPORT_QUANTITY) int quantity,
                                  @RequestParam(value = ParamConstant.IMPORT_PRICE) String price,
-                                 @RequestParam(value = ParamConstant.SUPPLIER_2) String supplier) {
+                                 @RequestParam(value = ParamConstant.SUPPLIER) String supplier) {
         try {
+
+            AttributeEntity attributeEntity=attributeServiceInterface.getAttributeBySize(size);
+            if(attributeEntity==null){
+                attributeEntity=new AttributeEntity();
+                attributeEntity.setSize(size);
+                attributeServiceInterface.insertAttribute(attributeEntity);
+            }
+
+            attributeEntity=attributeServiceInterface.getAttributeBySize(size);
             //Add quantity to stock
-            StockEntity stockEntity = stockServiceInterface.getStockByProductIDAndAttributeID(productID,attributeID);
+            StockEntity stockEntity = stockServiceInterface.
+                    getStockByProductIDAndAttributeID(productID,attributeEntity.getAttributeId());
             if (stockEntity != null) {
                 stockEntity.setQuantity(quantity + stockEntity.getQuantity());
                 stockServiceInterface.updateStockQuantity(stockEntity);
             } else {
+                stockEntity=new StockEntity();
+                stockEntity.setAttributeId(attributeEntity.getAttributeId());
+                stockEntity.setEnabled(true);
+                stockEntity.setProductId(productID);
                 stockEntity.setQuantity(quantity);
                 stockServiceInterface.createStock(stockEntity);
             }
 
             //Get stock ID
-            stockEntity = stockServiceInterface.getStockByProductIDAndAttributeID(productID,attributeID);
+            stockEntity = stockServiceInterface.
+                    getStockByProductIDAndAttributeID(productID,attributeEntity.getAttributeId());
 
             //New import information
             ImportEntity importEntity = new ImportEntity();
@@ -91,7 +107,6 @@ public class ImportController {
             importEntity.setPrice(price);
             importEntity.setSupplier(supplier);
             importServiceInterface.importProduct(importEntity);
-
             return true;
         } catch (Exception e) {
             return false;

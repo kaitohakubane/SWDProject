@@ -1,5 +1,6 @@
 package com.sneakergo.service;
 
+import com.sneakergo.entity.BillDetailDisplayEntity;
 import com.sneakergo.entity.BillEntity;
 import com.sneakergo.entity.BilldetailEntity;
 import com.sneakergo.model.interfaces.BillDetailModelInterface;
@@ -22,5 +23,10 @@ public class BillDetailService implements BillDetailServiceInterface {
     @Override
     public List<BilldetailEntity> getBillDetailByBillID(BillEntity billEntity) {
         return billDetailModelInterface.getBillDetailByBillID(billEntity);
+    }
+
+    @Override
+    public List<BillDetailDisplayEntity> getBillDetailByBill(int billID){
+        return billDetailModelInterface.getBillDetailByBill(billID);
     }
 }

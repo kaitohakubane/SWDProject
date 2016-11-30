@@ -1,5 +1,6 @@
 package com.sneakergo.model.interfaces;
 
+import com.sneakergo.entity.BillDetailDisplayEntity;
 import com.sneakergo.entity.BillEntity;
 import com.sneakergo.entity.BilldetailEntity;
 
@@ -12,4 +13,5 @@ public interface BillDetailModelInterface {
 
     List<BilldetailEntity> getBillDetailByBillID(BillEntity billEntity);
 
+    List<BillDetailDisplayEntity> getBillDetailByBill(int billID);
 }

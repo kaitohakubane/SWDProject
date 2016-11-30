@@ -68,7 +68,7 @@
                                 <td class="text-center">${item.quantity}</td>
                                 <td class="text-center">
                                     <button type="button" class="btn btn-round btn-success import-btn actionBtn" data-toggle="modal"
-                                            data-target="#importModal" data-id="${item.stockID}" title="Import product"><i class="fa fa-plus" aria-hidden="true"></i>
+                                            data-target="#importModal" data-product="${item.productID}" title="Import product"><i class="fa fa-plus" aria-hidden="true"></i>
                                     </button>
                                 </td>
                             </tr>
@@ -88,7 +88,7 @@
     <!--footer end-->
 
 </section>
-<!-- Modal -->
+<!-- Import Modal -->
 <div class="modal fade" id="importModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
      aria-hidden="true" data-keyboard="false" data-backdrop="static">
     <div class="modal-dialog">
@@ -98,12 +98,12 @@
                 <h4 class="modal-title" id="importModalLabel">Import product</h4>
             </div>
             <div class="modal-body form-horizontal style-form">
-                <form class="form-horizontal" role="form">
+                <form class="form-horizontal" role="form" id="import-form">
                     <div class="form-inline" role="form">
                         <div class="row">
                             <label class="col-md-4 col-md-offset-1 control-label">Product Name</label>
                             <div class="form-group col-sm-6">
-                                <input type="text" id="productName" class="form-control" disabled>
+                                <input type="text" id="productName" name="productName" class="form-control" disabled>
                             </div>
                         </div>
                     </div>
@@ -112,7 +112,7 @@
                         <div class="row">
                             <label class="col-md-4 col-md-offset-1 control-label" for="size">Size</label>
                             <div class="form-group col-sm-6">
-                                <select class="form-control" id="size">
+                                <select class="form-control" id="size" name="size">
 
                                 </select>
                             </div>
@@ -123,7 +123,8 @@
                         <div class="row">
                             <label class="col-md-4 col-md-offset-1 control-label">Import Quantity</label>
                             <div class="form-group col-sm-6">
-                                <input type="number" min="1" max="1000000000" class="form-control">
+                                <input type="number" min="1" max="1000000000" class="form-control"
+                                name="importQuantity" id="quantity">
                             </div>
                         </div>
                     </div>
@@ -132,7 +133,8 @@
                         <div class="row">
                             <label class="col-md-4 col-md-offset-1 control-label">Price</label>
                             <div class="form-group col-sm-6">
-                                <input type="number" class="form-control" min="1" max="1000000" placeholder=".000 VNĐ">
+                                <input type="number" class="form-control" min="1" max="1000000" placeholder=".000 VNĐ"
+                                name="importPrice" id="price">
                             </div>
                         </div>
 
@@ -142,7 +144,7 @@
                         <div class="row">
                             <label class="col-md-4 col-md-offset-1 control-label"> Supplier</label>
                             <div class="form-group col-sm-6">
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" id="supplier" name="supplier">
                             </div>
                         </div>
 
@@ -158,7 +160,48 @@
     </div>
 </div>
 
-<c:import url="/resources/views/common/confirm-modal.jsp"/>
+<%--Notify Modal--%>
+<div class="modal fade notify-modal" id="notifyModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true"
+     data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title notify-title" id="myModalLabel">Modal title</h4>
+            </div>
+            <div class="modal-body notify-content">
+                Hi there, I am a Modal Example for Dashgum Admin Panel.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default notify-button" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%--Confirm Modal--%>
+<div class="modal fade confirm-modal" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true"
+     data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title confirm-title">Modal title</h4>
+            </div>
+            <div class="modal-body confirm-content">
+                Are you sure to do this ?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary confirm-button">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <script src="<c:url value = "/resources/js/bootstrap-datepicker/bootstrap-datepicker.js"/>"
         type="text/javascript"></script>
 <script src="<c:url value = "/resources/js/bootstrap-daterangepicker/daterangepicker.js"/>"

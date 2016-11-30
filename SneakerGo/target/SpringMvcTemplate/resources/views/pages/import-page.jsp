@@ -34,14 +34,45 @@
                 <div class="content-panel">
                     <div class="adv-table">
                         <div id="hidden-table-info_wrapper" class="dataTables_wrapper" role="grid">
-                            <div class="col-md-4 form-group time-control">
-                                <div class="input-group input-large"
-                                     data-date-format="mm/dd/yyyy">
-                                    <input type="text" class="form-control dpd1" name="from" id="fromDate" value="${fromDate}">
-                                    <span class="input-group-addon">To</span>
-                                    <input type="text" class="form-control dpd2" name="to" id="toDate" value=${toDate}>
+                            <form id="search-form" method="POST">
+                                <div class="form-group ">
+                                    <div class="col-md-2 col-xs-6">
+                                        <div data-date-viewmode="years" data-date-format="yyyy-mm-dd"
+                                             data-date="2016-01-01"
+                                             class="input-append date dpYears">
+                                            <input type="text" readonly="" size="16" name="fromDate"
+                                                   class="form-control"
+                                                   name="fromDate" id="fromDate" value="${fromDate}">
+                                            <span class="input-group-btn add-on">
+		                                        <button class="btn btn-theme" type="button"><i
+                                                        class="fa fa-calendar"></i></button>
+		                                      </span>
+                                        </div>
+                                    </div>
                                 </div>
+
+                                <div class="form-group">
+                                    <div class="col-md-2 col-xs-6">
+                                        <div data-date-viewmode="years" data-date-format="yyyy-mm-dd"
+                                             data-date="2016-01-01"
+                                             class="input-append date dpYears">
+                                            <input type="text" readonly="" size="16" name="toDate" class="form-control"
+                                                   name="toDate" id="toDate" value="${toDate}">
+                                            <span class="input-group-btn add-on">
+		                                        <button class="btn btn-theme" type="button"><i
+                                                        class="fa fa-calendar"></i>
+                                                </button>
+		                                      </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="form-group">
+                                <button type="button" class="btn btn-primary search-btn" data-toggle="modal"
+                                        data-target="#productModal" id="search-btn">Search
+                                </button>
                             </div>
+
 
                             <table class="display table table-bordered dataTable" id="import-table"
                                    aria-describedby="hidden-table-info_info">
@@ -50,11 +81,10 @@
                                     <th>Product Name</th>
                                     <th>Size</th>
                                     <th>Quantity</th>
+                                    <th>Price</th>
                                     <th>Total</th>
                                     <th>Supplier</th>
                                     <th>Date</th>
-                                    <th>Change</th>
-                                    <th>Delete</th>
                                 </tr>
                                 </thead>
 
@@ -65,19 +95,9 @@
                                         <td class="center">${item.size}</td>
                                         <td class="center">${item.quantity}</td>
                                         <td class="center">${item.price}</td>
+                                        <td class="center">${item.total}</td>
                                         <td class="center">${item.supplier}</td>
                                         <td class="center">${item.importDate}</td>
-                                        <td class="center">
-                                            <button type="button" class="btn btn-round btn-success change-btn" data-toggle="modal"
-                                                    data-target="#importModal" data-id="${item.importID}">Change
-                                            </button>
-                                        </td>
-
-                                        <td class="center">
-                                            <button type="button" class="btn btn-round btn-danger" data-toggle="modal"
-                                                    data-target="#importModal" data-id="${item.importID}">Delete
-                                            </button>
-                                        </td>
                                     </tr>
                                 </c:forEach>
                                 </tbody>
@@ -101,112 +121,6 @@
     </footer>
     <!--footer end-->
 </section>
-
-<div class="modal fade" id="importModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-     aria-hidden="true" data-keyboard="false" data-backdrop="static">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id="importModalLabel">Import product</h4>
-            </div>
-            <div class="modal-body">
-                <div class="form-inline" role="form">
-                    Product Name
-                    <div class="form-group">
-                        <div class="col-sm-10">
-                            <input type="text" id="name" class="form-control" disabled>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-inline" role="form">
-                    <label class="col-lg-2 col-sm-2 control-label" for="size">Size</label>
-                    <div class="form-group">
-                        <div class="col-sm-10">
-                            <input type="text" id="size" class="form-control" disabled>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-inline" role="form">
-                    Import Quantity
-                    <div class="form-group">
-                        <div class="col-sm-10">
-                            <input type="number" id="quantity" min="1" max="1000000000" class="form-control">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-inline" role="form">
-                    Total
-                    <div class="form-group">
-                        <div class="col-sm-10">
-                            <input type="number" id="price" class="form-control"
-                                   min="1" max="1000000" placeholder=".000 VNĐ">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-inline" role="form">
-                    Supplier
-                    <div class="form-group">
-                        <div class="col-sm-10">
-                            <input type="text" id="supplier" class="form-control">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" id="import-btn">Change</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<%--Notify Modal--%>
-<div class="modal fade notify-modal" id="notifyModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-     aria-hidden="true"
-     data-keyboard="false" data-backdrop="static">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title notify-title" id="myModalLabel">Modal title</h4>
-            </div>
-            <div class="modal-body notify-content">
-                Hi there, I am a Modal Example for Dashgum Admin Panel.
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default notify-button" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<%--Confirm Modal--%>
-<div class="modal fade confirm-modal" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-     aria-hidden="true"
-     data-keyboard="false" data-backdrop="static">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title confirm-title">Modal title</h4>
-            </div>
-            <div class="modal-body confirm-content">
-                Are you sure to do this ?
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary confirm-button">OK</button>
-            </div>
-        </div>
-    </div>
-</div>
-
 
 <%--Time script--%>
 <script src="<c:url value = "/resources/js/bootstrap-datepicker/bootstrap-datepicker.js"/>"

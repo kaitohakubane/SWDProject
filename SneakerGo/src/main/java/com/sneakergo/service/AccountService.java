@@ -2,6 +2,7 @@ package com.sneakergo.service;
 
 import com.sneakergo.entity.AccountEntity;
 import com.sneakergo.model.interfaces.AccountModelInterface;
+import com.sneakergo.service.interfaces.AccountServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -11,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Service
 @Transactional
-public class AccountService {
+public class AccountService implements AccountServiceInterface {
     @Autowired
     AccountModelInterface accountModelInterface;
 

@@ -1,13 +1,17 @@
 package com.sneakergo.model;
 
+import com.sneakergo.common.constants.SQLParamConstant;
+import com.sneakergo.entity.BillDetailDisplayEntity;
 import com.sneakergo.entity.BillEntity;
 import com.sneakergo.entity.BilldetailEntity;
 import com.sneakergo.model.common.CommonDAO;
 import com.sneakergo.model.interfaces.BillDetailModelInterface;
 import org.hibernate.Criteria;
+import org.hibernate.Query;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 
+import java.sql.Date;
 import java.util.List;
 
 /**
@@ -23,4 +27,13 @@ public class BillDetailModel extends CommonDAO implements BillDetailModelInterfa
         List<BilldetailEntity> billdetailEntities = criteria.list();
         return billdetailEntities;
     }
+
+    @Override
+    public List<BillDetailDisplayEntity> getBillDetailByBill(int billID) {
+        Query query = getSession().createSQLQuery(SQLParamConstant.GET_BILL_DETAIL_OF_BILL).
+                setParameter("billID",billID).setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
+        List<BillDetailDisplayEntity> billDetailDisplayEntities = query.list();
+        return billDetailDisplayEntities;
+    }
+
 }

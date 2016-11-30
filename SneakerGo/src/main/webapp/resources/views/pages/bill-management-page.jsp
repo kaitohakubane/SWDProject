@@ -73,9 +73,7 @@
                                         </button>
                                     </div>
                                 </div>
-
                             </form>
-
                         </h3>
                     </div>
                 </div>
@@ -100,21 +98,20 @@
                         <tbody role="alert" aria-live="polite" aria-relevant="all">
                         <c:forEach var="item" items="${listBill}">
                             <tr class="gradeC even">
-                                <td class="text-center">${item.billID}</td>
-                                <td class="text-center">${item.accountID}</td>
+                                <td class="center">${item.billID}</td>
+                                <td class="center">${item.accountID}</td>
                                 <td class="center">${item.accountName}</td>
-                                <td class="text-center">${item.totalPrice}</td>
-                                <td class="text-center">${item.date}</td>
-                                <td class="text-center status">${item.enabled}</td>
+                                <td class="center">${item.totalPrice}</td>
+                                <td class="center">${item.date}</td>
+                                <td class="center">${item.enabled}</td>
                                 <td class="text-center">
-                                    <button type="button" class="btn btn-round btn-success actionBtn"
-                                            data-toggle="modal" title="view"
-                                            data-target="#importModal" data-stockID="${item.stockID}"><i
+                                    <form id="billDetail-form" method="POST"></form>
+                                    <button type="button" class="btn btn-success actionBtn view-btn" title="view"
+                                            data-id="${item.billID}"><i
                                             class="fa fa-eye" aria-hidden="true"></i>
                                     </button>
-                                    <button type="button" class="btn btn-round btn-danger actionBtn" data-toggle="modal"
-                                            title="delete"
-                                            data-target="#confirmModal"><i class="fa fa-trash-o" aria-hidden="true"></i>
+                                    <button type="button" class="btn btn-danger actionBtn" data-toggle="modal"
+                                            title="delete"><i class="fa fa-trash-o" aria-hidden="true"></i>
                                     </button>
                                 </td>
 

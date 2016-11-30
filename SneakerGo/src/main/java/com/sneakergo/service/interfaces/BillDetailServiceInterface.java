@@ -1,5 +1,6 @@
 package com.sneakergo.service.interfaces;
 
+import com.sneakergo.entity.BillDetailDisplayEntity;
 import com.sneakergo.entity.BillEntity;
 import com.sneakergo.entity.BilldetailEntity;
 
@@ -10,4 +11,6 @@ import java.util.List;
  */
 public interface BillDetailServiceInterface {
     List<BilldetailEntity> getBillDetailByBillID(BillEntity billEntity);
+
+    List<BillDetailDisplayEntity> getBillDetailByBill(int billID);
 }
