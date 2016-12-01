@@ -17,7 +17,7 @@
     <link href="<c:url value="/resources/js/bootstrap-datepicker/datepicker.css"/>" rel="stylesheet">
     <link href="<c:url value="/resources/js/bootstrap-daterangepicker/daterangepicker.css"/>" rel="stylesheet">
     <link href="<c:url value="/resources/js/bootstrap-datetimepicker/datertimepicker.css"/>" rel="stylesheet">
-    <link href="<c:url value="/resources/lib/css/"/>" rel="stylesheet">
+    <link href="<c:url value="/resources/lib/css/common.css"/>" rel="stylesheet">
 
 </head>
 <body>
@@ -72,8 +72,7 @@
                                         <div class="col-md-2">
 
                                             <button type="button" class="btn btn-primary search-btn"
-                                                    data-toggle="modal"
-                                                    data-target="#productModal" id="search-btn">Search
+                                                    id="search-btn">Search
                                             </button>
                                         </div>
                                     </div>

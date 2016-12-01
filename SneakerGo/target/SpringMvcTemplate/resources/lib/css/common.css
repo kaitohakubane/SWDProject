@@ -38,3 +38,16 @@ table thead th {
 .onStock{
     background: #449d44;
 }
+.billDetailLable {
+    padding-top: 10px;
+    font-weight: 900;
+}
+.billDetailSearch{
+    margin-bottom: 10px;
+}
+.backToView{
+    border-radius: 5px;
+    padding: 3px 20px 3px 25px;
+    color: white;
+    font-size: 80%;
+}

@@ -12,11 +12,10 @@ import java.util.List;
 public interface SaleServiceInterface {
     SaleEntity getSaleByID(int saleID);
 
-    List<SaleDisplayEntity> getSaleByTime(Date time);
+    List<SaleDisplayEntity> getSaleByTime(Date fromTime,Date toTime);
 
     List<SaleEntity> getAllSale();
 
-    List<SaleEntity> getSaleContainsToday();
 
     boolean createSave(SaleEntity saleEntity);
 }

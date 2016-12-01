@@ -6,6 +6,7 @@
  */
 var NO_IMG_SOURCE="http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=no+image";
 var CONFIRM_INFORMATION_TITLE="CONFIRM INFORMATION";
+var BILL_PAGE_URL="/admin/bill-management"
 function addDataTable(dataTable){
     dataTable.DataTable();
 }
@@ -74,4 +75,16 @@ function showConfirmModal(callIfConfirm, data,args) {
     });
 
     modal.modal('show');
+}
+
+function setEnabledLabel(){
+    $(".status").each(function () {
+        var real = $(this).text();
+        if (real == "true") {
+            $(this).html("<span class='status onStock'>Active</span>")
+        }
+        else {
+            $(this).html("<span class='status sold'>Inactive</span>")
+        }
+    })
 }

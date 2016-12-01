@@ -50,20 +50,6 @@
                 <hr>
             </header>
             <div class="row">
-                <%--<div class="col-md-12 billDetailSearch">--%>
-                    <%--<form class="form-inline" role="form">--%>
-                        <%--<div class="row">--%>
-                            <%--<div class="col-md-3 col-md-offset-8">--%>
-                                <%--<input type="text" class="form-control" name="billID" id="billID"--%>
-                                       <%--value="${bill.billId}" disabled>--%>
-                            <%--</div>--%>
-                            <%--<div class="col-md-1 text-right">--%>
-                                <%--<button type="button" class="btn btn-primary" id="search-btn">Search--%>
-                                <%--</button>--%>
-                            <%--</div>--%>
-                        <%--</div>--%>
-                    <%--</form>--%>
-                <%--</div>--%>
                 <div class="col-md-12">
                     <form class="form-inline" role="form">
                         <div class="row">

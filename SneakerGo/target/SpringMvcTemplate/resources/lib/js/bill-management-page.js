@@ -4,8 +4,7 @@
 var BILL_DETAIL_URL = "/admin/bill-detail";
 var SEARCH_BILL_URL = "/admin/bill-management/search";
 var DELETE_BILL_URL = "/admin/bill-management/delete";
-var BILL_CONFIRM_MSG="Are you sure to delete bill ";
-var BILL_PAGE_URL="/admin/bill-management"
+var BILL_CONFIRM_MSG = "Are you sure to delete bill ";
 $(document).ready(function () {
     var $fromDate = $('#fromDate');
     var $toDate = $('#toDate');
@@ -27,16 +26,6 @@ $(document).ready(function () {
         $('#billDetail-form').submit();
     })
 
-    $(".status").each(function () {
-        var real = $(this).text();
-        if (real == "true") {
-            $(this).html("<span class='status onStock'>Active</span>")
-        }
-        else {
-            $(this).html("<span class='status sold'>Inactive</span>")
-        }
-    })
-
     $("#search-btn").on("click", function () {
         if ($('#fromDate').val() != null && $('#toDate').val() != null) {
             $('#search-form').attr('action', contextPath + SEARCH_BILL_URL);
@@ -45,13 +34,15 @@ $(document).ready(function () {
     })
 
     $('.delete-btn').off("click").on("click", function () {
-        var button=$(this);
+        var button = $(this);
         var confirmData = {
             'title': CONFIRM_INFORMATION_TITLE,
-            'content': BILL_CONFIRM_MSG+ button.data('id')
+            'content': BILL_CONFIRM_MSG + button.data('id')
         }
-        showConfirmModal(deleteBill,confirmData,[button.data("id")]);
+        showConfirmModal(deleteBill, confirmData, [button.data("id")]);
     })
+
+    setEnabledLabel();
 })
 
 function deleteBill(billID) {

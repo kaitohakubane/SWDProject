@@ -6,6 +6,7 @@ import com.sneakergo.common.constants.UtilsConstant;
 import com.sneakergo.common.utils.FileUtils;
 import com.sneakergo.common.utils.NumbericUtils;
 import com.sneakergo.common.utils.StringUtils;
+import com.sneakergo.entity.ImportDisplayEntity;
 import com.sneakergo.entity.ProductEntity;
 import com.sneakergo.entity.SaleDisplayEntity;
 import com.sneakergo.entity.SaleEntity;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
+
 import java.sql.Date;
 import java.util.List;
 
@@ -33,18 +35,19 @@ public class SaleController {
     public ModelAndView initSalePage() {
         ModelAndView modelAndView = new ModelAndView(PageConstant.SALE_PAGE);
         Date currentDate = NumbericUtils.getCurrentDate();
-        List<SaleDisplayEntity> listSale = saleServiceInterface.getSaleByTime(currentDate);
+        Date aMonthAgo = NumbericUtils.getNDateBeforeDate(UtilsConstant.THIRTY);
+        List<SaleDisplayEntity> listSale = saleServiceInterface.getSaleByTime(aMonthAgo, currentDate);
         modelAndView.addObject(ParamConstant.LIST_SALE_ATTR, listSale).
-                addObject(ParamConstant.CURRENT_DATE,currentDate);
+                addObject(ParamConstant.FROM_DATE, aMonthAgo).addObject(ParamConstant.TO_DATE, currentDate);
         return modelAndView;
     }
 
     @ResponseBody
     @RequestMapping(value = PageConstant.CREATE_SALE_URL, method = RequestMethod.POST)
     public boolean createSale(@RequestParam(value = ParamConstant.PRODUCT_ID) int productId,
-                            @RequestParam(value = ParamConstant.SALE_PERCENT) int salePercent,
-                            @RequestParam(value = ParamConstant.FROM_DATE) String fromDate,
-                            @RequestParam(value = ParamConstant.TO_DATE) String toDate) {
+                              @RequestParam(value = ParamConstant.SALE_PERCENT) int salePercent,
+                              @RequestParam(value = ParamConstant.FROM_DATE) String fromDate,
+                              @RequestParam(value = ParamConstant.TO_DATE) String toDate) {
         try {
             SaleEntity saleEntity = new SaleEntity();
             saleEntity.setProductId(productId);
@@ -62,6 +65,22 @@ public class SaleController {
             e.printStackTrace();
         }
         return false;
+    }
+
+    @RequestMapping(value = PageConstant.SEARCH_SALE_URL, method = RequestMethod.POST)
+    public ModelAndView searchSale(@RequestParam(value = ParamConstant.FROM_DATE) String fromDate,
+                                   @RequestParam(value = ParamConstant.TO_DATE) String toDate) {
+        ModelAndView modelAndView = new ModelAndView(PageConstant.SALE_PAGE);
+        String[] from = StringUtils.formatDate(fromDate);
+        String[] to = StringUtils.formatDate(toDate);
+        Date fromTime = NumbericUtils.getDate(from[UtilsConstant.ZERO],
+                from[UtilsConstant.ONE], from[UtilsConstant.TWO]);
+        Date toTime = NumbericUtils.getDate(to[UtilsConstant.ZERO],
+                to[UtilsConstant.ONE], to[UtilsConstant.TWO]);
+        List<SaleDisplayEntity> listSale = saleServiceInterface.getSaleByTime(fromTime, toTime);
+        modelAndView.addObject(ParamConstant.LIST_SALE_ATTR, listSale).addObject(ParamConstant.FROM_DATE, fromDate)
+                .addObject(ParamConstant.TO_DATE, toDate);
+        return modelAndView;
     }
 
 

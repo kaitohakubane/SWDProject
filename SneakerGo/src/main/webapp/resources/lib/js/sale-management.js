@@ -1,17 +1,15 @@
 /**
  * Created by Hung on 11/23/2016.
  */
+var SEARCH_SALE_URL="/admin/sale-management/search";
 $(document).ready(function(){
     var dataTable=$('#sale-table');
     addDataTable(dataTable);
-
-    $(".status").each(function () {
-        var real = $(this).text();
-        if (real == "true") {
-            $(this).html("<span class='status onStock'>Active</span>")
-        }
-        else {
-            $(this).html("<span class='status sold'>Inactive</span>")
+    setEnabledLabel();
+    $("#search-btn").on("click", function () {
+        if ($('#fromDate').val() != null && $('#toDate').val() != null) {
+            $('#search-form').attr('action', contextPath + SEARCH_SALE_URL);
+            $('#search-form').submit();
         }
     })
 })

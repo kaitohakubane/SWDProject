@@ -22,9 +22,9 @@ public class SQLParamConstant {
             "WHERE b.accountID=a.accountID AND b.date>=:fromDate AND b.date<=:toDate " +
             "ORDER BY b.date DESC";
 
-    public static final String GET_ALL_SALE_IN_TIME = "SELECT s.saleID as saleID, p.productName as productName, s.salePercent as salePercent, s.fromDate as fromDate, s.toDate as toDate, s.enabled as enabled " +
+    public static final String GET_ALL_SALE_BY_TIME = "SELECT s.saleID as saleID, p.productName as productName, s.salePercent as salePercent, s.fromDate as fromDate, s.toDate as toDate, s.enabled as enabled " +
             "FROM sale s, product p " +
-            "WHERE s.productID=p.productID AND s.fromDate<=:date AND s.toDate>=:date";
+            "WHERE s.productID=p.productID AND s.fromDate<=:toDate AND s.toDate>=:fromDate";
 
     public static final String GET_ALL_IMPORT_IN_TIME = "SELECT i.importID as importID, p.productName as productName, " +
             "a.size as size, i.quantity as quantity, i.price as price, " +

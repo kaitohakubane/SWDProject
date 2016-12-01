@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.Date;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -26,18 +28,13 @@ public class SaleService implements SaleServiceInterface{
     }
 
     @Override
-    public List<SaleDisplayEntity> getSaleByTime(Date time) {
-        return saleModelInterface.getSaleByTime(time);
+    public List<SaleDisplayEntity> getSaleByTime(Date fromTime,Date toTime) {
+        return saleModelInterface.getSaleByTime(fromTime,toTime);
     }
 
     @Override
     public List<SaleEntity> getAllSale() {
         return saleModelInterface.getAllSale();
-    }
-
-    @Override
-    public List<SaleEntity> getSaleContainsToday() {
-        return saleModelInterface.getSaleContainsToday();
     }
 
     @Override

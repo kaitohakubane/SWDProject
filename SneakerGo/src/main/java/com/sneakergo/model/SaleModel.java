@@ -9,6 +9,7 @@ import com.sneakergo.model.interfaces.SaleModelInterface;
 import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 
@@ -28,9 +29,9 @@ public class SaleModel extends CommonDAO implements SaleModelInterface {
     }
 
     @Override
-    public List<SaleDisplayEntity> getSaleByTime(Date time) {
-        Query query=getSession().createSQLQuery(SQLParamConstant.GET_ALL_SALE_IN_TIME).
-                setParameter("date",time)
+    public List<SaleDisplayEntity> getSaleByTime(Date fromTime, Date toTime) {
+        Query query = getSession().createSQLQuery(SQLParamConstant.GET_ALL_SALE_BY_TIME).
+                setParameter("fromDate", fromTime).setParameter("toDate", toTime)
                 .setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
         List<SaleDisplayEntity> sales = query.list();
         return sales;
@@ -40,14 +41,6 @@ public class SaleModel extends CommonDAO implements SaleModelInterface {
     public List<SaleEntity> getAllSale() {
         Criteria criteria = getSession().createCriteria(SaleEntity.class).add(Restrictions.eq("enabled", true)).
                 addOrder(Order.desc("toDate"));
-        List<SaleEntity> sales = criteria.list();
-        return sales;
-    }
-
-    @Override
-    public List<SaleEntity> getSaleContainsToday() {
-        Criteria criteria = getSession().createCriteria(SaleEntity.class).add(Restrictions.eq("enabled", true)).
-                add(Restrictions.lt("toDate", NumbericUtils.getCurrentDate())).addOrder(Order.desc("toDate"));
         List<SaleEntity> sales = criteria.list();
         return sales;
     }
