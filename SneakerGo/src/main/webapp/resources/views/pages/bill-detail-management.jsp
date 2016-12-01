@@ -15,6 +15,7 @@
     <%--Date time CSS--%>
     <link href="<c:url value="/resources/js/bootstrap-datepicker/datepicker.css"/>" rel="stylesheet">
     <link href="<c:url value="/resources/js/bootstrap-daterangepicker/daterangepicker.css"/>" rel="stylesheet">
+    <link href="<c:url value="/resources/css/SneakerStyle.css"/>" rel="stylesheet">
 </head>
 <body>
 <section id="container">
@@ -27,78 +28,103 @@
     <!--main content start-->
     <section id="main-content">
         <section class="wrapper">
-            <h3><i class="fa fa-angle-right"></i> Advanced Table Example</h3>
-            <div class="row mb ml">
-
-                <!-- page start-->
-                <div class="content-panel">
-                    <div class="adv-table">
-                        <div id="hidden-table-info_wrapper" class="dataTables_wrapper" role="grid">
-                            <form class="form-inline" role="form">
-                                <input type="text" class="form-control" name="billID" id="billID"
-                                       value="${bill.billId}" disabled>
-                                <div class="form-group">
-                                    <button type="button" class="btn btn-primary" id="search-btn">Search Bill
-                                    </button>
-                                </div>
-                            </form>
-
-                            <form class="form-inline" role="form">
-                                <div class="form-group">
-                                    <label for="bill-price">Total</label>
-                                    <input type="text" class="form-control"
-                                           id="bill-price" value="${bill.totalPrice}" disabled>
-                                </div>
-                                <div class="form-group">
-                                    <label for="user-name">Customer</label>
-                                    <input type="text" class="form-control"
-                                           id="user-name" value="${customer.name}" disabled>
-                                </div>
-                                <div class="form-group">
-                                    <label for="user-phone">Phone Number</label>
-                                    <input type="text" class="form-control"
-                                           id="user-phone" value="${customer.phone}" disabled>
-                                </div>
-                            </form>
-
-                            <table class="display table table-bordered dataTable" id="bill-detail-table"
-                                   aria-describedby="hidden-table-info_info">
-                                <thead>
-                                <tr role="row">
-                                    <th></th>
-                                    <th>Product</th>
-                                    <th>Quantity</th>
-                                    <th>Price</th>
-                                    <th>Total</th>
-                                </tr>
-                                </thead>
-
-                                <tbody role="alert" aria-live="polite" aria-relevant="all">
-                                <c:forEach var="item" items="${listBillDetail}" varStatus="counter">
-                                    <tr class="gradeC even">
-                                        <td class="center">${counter.count}</td>
-                                        <td class="center">${item.productName}</td>
-                                        <td class="center">${item.quantity}</td>
-                                        <td class="center">${item.price}</td>
-                                        <td class="center">${item.total}</td>
-                                    </tr>
-                                </c:forEach>
-                                </tbody>
-                            </table>
-                        </div>
+            <header>
+                <div class="row">
+                    <div class="col-md-8">
+                        <h3> Advanced Table Example</h3>
+                    </div>
+                    <div class="col-md-4 text-right">
+                        <h3>
+                            <a>
+                                <form id="back-form" method="POST">
+                                <span class="btn btn-primary backToView">
+                                    back
+                                </span>
+                                </form>
+                            </a>
+                        </h3>
                     </div>
                 </div>
-                <!-- page end-->
+                <hr>
+            </header>
+            <div class="row">
+                <%--<div class="col-md-12 billDetailSearch">--%>
+                    <%--<form class="form-inline" role="form">--%>
+                        <%--<div class="row">--%>
+                            <%--<div class="col-md-3 col-md-offset-8">--%>
+                                <%--<input type="text" class="form-control" name="billID" id="billID"--%>
+                                       <%--value="${bill.billId}" disabled>--%>
+                            <%--</div>--%>
+                            <%--<div class="col-md-1 text-right">--%>
+                                <%--<button type="button" class="btn btn-primary" id="search-btn">Search--%>
+                                <%--</button>--%>
+                            <%--</div>--%>
+                        <%--</div>--%>
+                    <%--</form>--%>
+                <%--</div>--%>
+                <div class="col-md-12">
+                    <form class="form-inline" role="form">
+                        <div class="row">
+                            <div class="col-md-1">
+                                <label class="billDetailLable" for="bill-price">Total</label>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control"
+                                       id="bill-price" value="${bill.totalPrice}" disabled>
+                            </div>
+                            <div class="col-md-1">
+                                <label class="billDetailLable" for="bill-price">Customer</label>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control"
+                                       id="user-name" value="${customer.name}" disabled>
+                            </div>
+                            <div class="col-md-1">
+                                <label class="billDetailLable" for="bill-price">Phone</label>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control"
+                                       id="user-phone" value="${customer.phone}" disabled>
+                            </div>
+                        </div>
+                    </form>
+
+                .</div>
+                <div class="col-md-12">
+                    <table class="display table table-bordered dataTable" id="bill-detail-table"
+                           aria-describedby="hidden-table-info_info">
+                        <thead>
+                        <tr role="row">
+                            <th></th>
+                            <th>Product</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            <th>Total</th>
+                        </tr>
+                        </thead>
+
+                        <tbody role="alert" aria-live="polite" aria-relevant="all">
+                        <c:forEach var="item" items="${listBillDetail}" varStatus="counter">
+                            <tr class="gradeC even">
+                                <td class="text-center">${counter.count}</td>
+                                <td class="center">${item.productName}</td>
+                                <td class="text-center">${item.quantity}</td>
+                                <td class="text-center">${item.price}</td>
+                                <td class="text-center">${item.total}</td>
+                            </tr>
+                        </c:forEach>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- page start-->
+
+            <!-- page end-->
             </div><!-- /row -->
         </section><!-- --/wrapper ---->
     </section><!-- /MAIN CONTENT -->
     <!--main content end-->
     <!--footer start-->
-    <footer class="site-footer" id="back-label" data-from="${fromDate}" data-to="${toDate}">
-        <form id="back-form" method="POST"></form>
-        <div class="text-center"> BACK
-        </div>
-    </footer>
     <!--footer end-->
 </section>
 
