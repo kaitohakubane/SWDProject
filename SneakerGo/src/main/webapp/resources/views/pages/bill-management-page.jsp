@@ -13,8 +13,8 @@
     <title>Bill Management</title>
     <c:import url="/resources/views/common/header.jsp"/>
     <%--Date time CSS--%>
-    <link href="<c:url value="/resources/js/bootstrap-datepicker/datepicker.css"/>" rel="stylesheet">
-    <link href="<c:url value="/resources/js/bootstrap-daterangepicker/daterangepicker.css"/>" rel="stylesheet">
+    <%--<link href="<c:url value="/resources/js/bootstrap-datepicker/datepicker.css"/>" rel="stylesheet">--%>
+    <%--<link href="<c:url value="/resources/js/bootstrap-daterangepicker/daterangepicker.css"/>" rel="stylesheet">--%>
     <link href="<c:url value="/resources/css/SneakerStyle.css"/>" rel="stylesheet">
     <script src="/resources/js/jquery-1.8.3.min.js"></script>
 </head>

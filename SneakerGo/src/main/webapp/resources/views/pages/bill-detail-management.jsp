@@ -14,8 +14,10 @@
     <c:import url="/resources/views/common/header.jsp"/>
     <%--Date time CSS--%>
     <link href="<c:url value="/resources/js/bootstrap-datepicker/datepicker.css"/>" rel="stylesheet">
+
     <link href="<c:url value="/resources/js/bootstrap-daterangepicker/daterangepicker.css"/>" rel="stylesheet">
     <link href="<c:url value="/resources/css/SneakerStyle.css"/>" rel="stylesheet">
+    <script src="/resources/js/jquery-1.8.3.min.js"></script>
 </head>
 <body>
 <section id="container">
@@ -127,10 +129,10 @@
     <!--footer start-->
     <!--footer end-->
 </section>
-
+<%--<script class="include" type="text/javascript" src="<c:url value="/resources/js/jquery.dcjqaccordion.2.7.js"/>"></script>--%>
 <script src="<c:url value="/resources/lib/js/bill-detail-management.js"/>"></script>
 <c:import url="/resources/views/common/footer.jsp"/>
-<script src="<c:url value="/resources/js/advanced-form-components.js"/>" type="text/javascript"></script>
+<%--<script src="<c:url value="/resources/js/advanced-form-components.js"/>" type="text/javascript"></script>--%>
 <script src="<c:url value="/resources/js/common-scripts.js"/>"></script>
 
 </body>
