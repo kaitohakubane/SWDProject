@@ -54,21 +54,21 @@
                     <form class="form-inline" role="form">
                         <div class="row">
                             <div class="col-md-1">
-                                <label class="billDetailLable" for="bill-price">Total</label>
+                                <label class="billDetailLabel" for="bill-price">Total</label>
                             </div>
                             <div class="col-md-3">
                                 <input type="text" class="form-control"
                                        id="bill-price" value="${bill.totalPrice}" disabled>
                             </div>
                             <div class="col-md-1">
-                                <label class="billDetailLable" for="bill-price">Customer</label>
+                                <label class="billDetailLabel" for="bill-price">Customer</label>
                             </div>
                             <div class="col-md-3">
                                 <input type="text" class="form-control"
                                        id="user-name" value="${customer.name}" disabled>
                             </div>
                             <div class="col-md-1">
-                                <label class="billDetailLable" for="bill-price">Phone</label>
+                                <label class="billDetailLabel" for="bill-price">Phone</label>
                             </div>
                             <div class="col-md-3">
                                 <input type="text" class="form-control"
