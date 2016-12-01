@@ -9,14 +9,27 @@ $(document).ready(function () {
     addDataTable(dataTable);
     $('.view-btn').on("click", function () {
         var button = $(this);
-        alert(button.data('id'))
         $('#billDetail-form').attr('action', contextPath + BILL_DETAIL_URL);
-        var input = $("<input>").attr("name", "billId").val(button.data('id'));
-        var fromDate = $("<input>").attr("name", "fromDate").val($('#fromDate').val());
-        var toDate = $("<input>").attr("name", "toDate").val($('#toDate').val());
+        var input = $("<input>").attr("type", "hidden")
+        var fromDate = $("<input>").attr("type", "hidden")
+        var toDate = $("<input>").attr("type", "hidden")
+        input.attr("name", "billId").val(button.data('id'));
+        fromDate.attr("name", "fromDate").val($('#fromDate').val());
+        toDate.attr("name", "toDate").val($('#toDate').val());
+
         $('#billDetail-form').append(input);
         $('#billDetail-form').append(fromDate);
         $('#billDetail-form').append(toDate);
         $('#billDetail-form').submit();
+    })
+
+    $(".status").each(function () {
+        var real = $(this).text();
+        if (real == "true") {
+            $(this).html("<span class='status onStock'>Active</span>")
+        }
+        else {
+            $(this).html("<span class='status sold'>Inactive</span>")
+        }
     })
 })

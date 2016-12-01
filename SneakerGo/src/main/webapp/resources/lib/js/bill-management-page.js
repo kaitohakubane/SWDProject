@@ -22,4 +22,14 @@ $(document).ready(function () {
         $('#billDetail-form').append(toDate);
         $('#billDetail-form').submit();
     })
+
+    $(".status").each(function () {
+        var real = $(this).text();
+        if (real == "true") {
+            $(this).html("<span class='status onStock'>Active</span>")
+        }
+        else {
+            $(this).html("<span class='status sold'>Inactive</span>")
+        }
+    })
 })

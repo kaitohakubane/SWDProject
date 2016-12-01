@@ -17,6 +17,7 @@
     <link href="<c:url value="/resources/js/bootstrap-datepicker/datepicker.css"/>" rel="stylesheet">
     <link href="<c:url value="/resources/js/bootstrap-daterangepicker/daterangepicker.css"/>" rel="stylesheet">
     <link href="<c:url value="/resources/js/bootstrap-datetimepicker/datertimepicker.css"/>" rel="stylesheet">
+    <link href="<c:url value="/resources/lib/css/"/>" rel="stylesheet">
 
 </head>
 <body>
@@ -31,58 +32,88 @@
     <section id="main-content">
         <section class="wrapper">
             <h3><i class="fa fa-angle-right"></i> Advanced Table Example</h3>
-            <div class="row mb ml">
+            <header>
+                <div class="row mb ml">
 
-                <!-- page start-->
-                <div class="content-panel">
-                    <div class="adv-table">
-                        <div id="hidden-table-info_wrapper" class="dataTables_wrapper" role="grid">
+                    <!-- page start-->
+                    <div class="content-panel">
+                        <div class="adv-table">
+                            <div id="hidden-table-info_wrapper" class="dataTables_wrapper" role="grid">
 
-                            <div class="col-md-3 col-xs-6">
-                                <div data-date-viewmode="years" data-date-format="dd-mm-yyyy" data-date="01-01-2014" class="input-append date dpYears">
-                                    <input type="text" readonly="" value="${currentDate}" size="16" class="form-control">
-                                    <span class="input-group-btn add-on">
-		                                        <button class="btn btn-theme" type="button"><i class="fa fa-calendar"></i></button>
+                                <form id="search-form" method="POST">
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <div data-date-viewmode="years" data-date-format="yyyy-mm-dd"
+                                                 data-date="2016-01-01"
+                                                 class="input-append date dpYears">
+                                                <input type="text" readonly="" size="16" name="fromDate"
+                                                       class="form-control"
+                                                       name="fromDate" id="fromDate" value="${fromDate}">
+                                                <span class="input-group-btn add-on">
+		                                        <button class="btn btn-theme myBtnDate" type="button"><i
+                                                        class="fa fa-calendar"></i></button>
 		                                      </span>
-                                </div>
-                                <span class="help-block">Select date</span>
-                            </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div data-date-viewmode="years" data-date-format="yyyy-mm-dd"
+                                                 data-date="2016-01-01"
+                                                 class="input-append date dpYears">
+                                                <input type="text" readonly="" size="16" name="toDate"
+                                                       class="form-control"
+                                                       name="toDate" id="toDate" value="${toDate}">
+                                                <span class="input-group-btn add-on">
+		                                        <button class="btn btn-theme" type="button"><i
+                                                        class="fa fa-calendar"></i>
+                                                </button>
+		                                      </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
 
-                            <table class="display table table-bordered dataTable" id="sale-table"
-                                   aria-describedby="hidden-table-info_info">
-                                <thead>
-                                <tr role="row">
-                                    <th>Product Name</th>
-                                    <th>Sale Percent</th>
-                                    <th>From Date</th>
-                                    <th>To Date</th>
-                                    <th>Status</th>
-                                    <th>Action</th>
-                                </tr>
-                                </thead>
-
-                                <tbody role="alert" aria-live="polite" aria-relevant="all">
-                                <c:forEach var="item" items="${listSale}">
-                                    <tr class="gradeC even">
-                                        <td class="center ">${item.productName}</td>
-                                        <td class="center ">${item.salePercent}</td>
-                                        <td class="center ">${item.fromDate}</td>
-                                        <td class="center ">${item.toDate}</td>
-                                        <td class="center">${item.enabled}</td>
-                                        <td class="center">
-                                            <button type="button" class="btn btn-round btn-danger"
-                                                    data-id="${item.saleId}">Change Status
+                                            <button type="button" class="btn btn-primary search-btn"
+                                                    data-toggle="modal"
+                                                    data-target="#productModal" id="search-btn">Search
                                             </button>
-                                        </td>
+                                        </div>
+                                    </div>
+                                </form>
+
+                                <table class="display table table-bordered dataTable" id="sale-table"
+                                       aria-describedby="hidden-table-info_info">
+                                    <thead>
+                                    <tr role="row">
+                                        <th>Product Name</th>
+                                        <th>Sale Percent</th>
+                                        <th>From Date</th>
+                                        <th>To Date</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
                                     </tr>
-                                </c:forEach>
-                                </tbody>
-                            </table>
+                                    </thead>
+
+                                    <tbody role="alert" aria-live="polite" aria-relevant="all">
+                                    <c:forEach var="item" items="${listSale}">
+                                        <tr class="gradeC even">
+                                            <td class="center ">${item.productName}</td>
+                                            <td class="center ">${item.salePercent}</td>
+                                            <td class="center ">${item.fromDate}</td>
+                                            <td class="center ">${item.toDate}</td>
+                                            <td class="center status">${item.enabled}</td>
+                                            <td class="center">
+                                                <button type="button" class="btn btn-round btn-danger"
+                                                        data-id="${item.saleId}">Change Status
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </c:forEach>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- page end-->
-            </div><!-- /row -->
+                    <!-- page end-->
+                </div><!-- /row -->
         </section><!-- --/wrapper ---->
     </section><!-- /MAIN CONTENT -->
     <!--main content end-->

@@ -103,7 +103,7 @@
                                 <td class="center">${item.accountName}</td>
                                 <td class="center">${item.totalPrice}</td>
                                 <td class="center">${item.date}</td>
-                                <td class="center">${item.enabled}</td>
+                                <td class="center status" >${item.enabled}</td>
                                 <td class="text-center">
                                     <form id="billDetail-form" method="POST"></form>
                                     <button type="button" class="btn btn-success actionBtn view-btn" title="view"
@@ -269,18 +269,4 @@
 </body>
 
 </html>
-<script>
-    $(document).ready(function () {
-        $(".status").each(function () {
-            var real = $(this).text();
-            if (real == "true") {
-                $(this).html("<span class='status onStock'>Còn hàng</span>")
-            }
-            else {
-                $(this).html("<span class='status sold'>Hết hàng</span>")
-            }
-        })
-    })
-
-</script>
 

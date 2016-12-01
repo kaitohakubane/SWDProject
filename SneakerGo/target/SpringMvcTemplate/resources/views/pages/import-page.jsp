@@ -15,6 +15,7 @@
     <%--Date time CSS--%>
     <link href="<c:url value="/resources/js/bootstrap-datepicker/datepicker.css"/>" rel="stylesheet">
     <link href="<c:url value="/resources/js/bootstrap-daterangepicker/daterangepicker.css"/>" rel="stylesheet">
+    <link href="<c:url value="/resources/css/SneakerStyle.css"/>" rel="stylesheet">
 </head>
 <body>
 <section id="container">
@@ -27,98 +28,100 @@
     <!--main content start-->
     <section id="main-content">
         <section class="wrapper">
-            <h3><i class="fa fa-angle-right"></i> Advanced Table Example</h3>
-            <div class="row mb ml">
-
-                <!-- page start-->
-                <div class="content-panel">
-                    <div class="adv-table">
-                        <div id="hidden-table-info_wrapper" class="dataTables_wrapper" role="grid">
-                            <form id="search-form" method="POST">
-                                <div class="form-group ">
-                                    <div class="col-md-2 col-xs-6">
-                                        <div data-date-viewmode="years" data-date-format="yyyy-mm-dd"
-                                             data-date="2016-01-01"
-                                             class="input-append date dpYears">
-                                            <input type="text" readonly="" size="16" name="fromDate"
-                                                   class="form-control"
-                                                   name="fromDate" id="fromDate" value="${fromDate}">
-                                            <span class="input-group-btn add-on">
-		                                        <button class="btn btn-theme" type="button"><i
+            <header>
+                <div class="row">
+                    <div class="col-md-4">
+                        <h3> Advanced Table Example</h3>
+                    </div>
+                    <div class="col-md-8 text-right">
+                        <div class="form-group">
+                            <h3>
+                                <form id="search-form" method="POST">
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <div data-date-viewmode="years" data-date-format="yyyy-mm-dd"
+                                                 data-date="2016-01-01"
+                                                 class="input-append date dpYears">
+                                                <input type="text" readonly="" size="16" name="fromDate"
+                                                       class="form-control"
+                                                       name="fromDate" id="fromDate" value="${fromDate}">
+                                                <span class="input-group-btn add-on">
+		                                        <button class="btn btn-theme myBtnDate" type="button"><i
                                                         class="fa fa-calendar"></i></button>
 		                                      </span>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="col-md-2 col-xs-6">
-                                        <div data-date-viewmode="years" data-date-format="yyyy-mm-dd"
-                                             data-date="2016-01-01"
-                                             class="input-append date dpYears">
-                                            <input type="text" readonly="" size="16" name="toDate" class="form-control"
-                                                   name="toDate" id="toDate" value="${toDate}">
-                                            <span class="input-group-btn add-on">
-		                                        <button class="btn btn-theme" type="button"><i
+                                        <div class="col-md-5">
+                                            <div data-date-viewmode="years" data-date-format="yyyy-mm-dd"
+                                                 data-date="2016-01-01"
+                                                 class="input-append date dpYears">
+                                                <input type="text" readonly="" size="16" name="toDate"
+                                                       class="form-control"
+                                                       name="toDate" id="toDate" value="${toDate}">
+                                                <span class="input-group-btn add-on">
+		                                        <button class="btn btn-theme myBtnDate" type="button"><i
                                                         class="fa fa-calendar"></i>
                                                 </button>
 		                                      </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <button type="button" class="btn btn-primary search-btn"
+                                                        data-toggle="modal"
+                                                        data-target="#productModal" id="search-btn">Search
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </form>
-                            <div class="form-group">
-                                <button type="button" class="btn btn-primary search-btn" data-toggle="modal"
-                                        data-target="#productModal" id="search-btn">Search
-                                </button>
-                            </div>
 
+                                </form>
 
-                            <table class="display table table-bordered dataTable" id="import-table"
-                                   aria-describedby="hidden-table-info_info">
-                                <thead>
-                                <tr role="row">
-                                    <th>Product Name</th>
-                                    <th>Size</th>
-                                    <th>Quantity</th>
-                                    <th>Price</th>
-                                    <th>Total</th>
-                                    <th>Supplier</th>
-                                    <th>Date</th>
-                                </tr>
-                                </thead>
-
-                                <tbody role="alert" aria-live="polite" aria-relevant="all">
-                                <c:forEach var="item" items="${listImport}">
-                                    <tr class="gradeC even">
-                                        <td class="center">${item.productName}</td>
-                                        <td class="center">${item.size}</td>
-                                        <td class="center">${item.quantity}</td>
-                                        <td class="center">${item.price}</td>
-                                        <td class="center">${item.total}</td>
-                                        <td class="center">${item.supplier}</td>
-                                        <td class="center">${item.importDate}</td>
-                                    </tr>
-                                </c:forEach>
-                                </tbody>
-                            </table>
+                            </h3>
                         </div>
                     </div>
                 </div>
+                <hr>
+            </header>
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="display table table-bordered dataTable" id="import-table"
+                           aria-describedby="hidden-table-info_info">
+                        <thead>
+                        <tr role="row">
+                            <th class="text-center">Product Name</th>
+                            <th  class="text-center">Size</th>
+                            <th  class="text-center">Quantity</th>
+                            <th  class="text-center">Price</th>
+                            <th  class="text-center">Total</th>
+                            <th  class="text-center">Supplier</th>
+                            <th  class="text-center">Date</th>
+                        </tr>
+                        </thead>
+
+                        <tbody role="alert" aria-live="polite" aria-relevant="all">
+                        <c:forEach var="item" items="${listImport}">
+                            <tr class="gradeC even">
+                                <td  class="text-center">${item.productName}</td>
+                                <td  class="text-center">${item.size}</td>
+                                <td  class="text-center">${item.quantity}</td>
+                                <td  class="text-center">${item.price}</td>
+                                <td  class="text-center">${item.total}</td>
+                                <td  class="text-center">${item.supplier}</td>
+                                <td  class="text-center">${item.importDate}</td>
+                            </tr>
+                        </c:forEach>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- page start-->
+
                 <!-- page end-->
             </div><!-- /row -->
         </section><!-- --/wrapper ---->
     </section><!-- /MAIN CONTENT -->
     <!--main content end-->
     <!--footer start-->
-    <footer class="site-footer">
-        <div class="text-center">
-            2014 - Alvarez.is
-            <a href="#" class="go-top">
-                <i class="fa fa-angle-up"></i>
-            </a>
-        </div>
-    </footer>
     <!--footer end-->
 </section>
 
