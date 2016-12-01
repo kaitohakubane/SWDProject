@@ -2,6 +2,10 @@
  * Created by Hung on 11/23/2016.
  */
 var BILL_DETAIL_URL = "/admin/bill-detail";
+var SEARCH_BILL_URL = "/admin/bill-management/search";
+var DELETE_BILL_URL = "/admin/bill-management/delete";
+var BILL_CONFIRM_MSG="Are you sure to delete bill ";
+var BILL_PAGE_URL="/admin/bill-management"
 $(document).ready(function () {
     var $fromDate = $('#fromDate');
     var $toDate = $('#toDate');
@@ -32,4 +36,44 @@ $(document).ready(function () {
             $(this).html("<span class='status sold'>Inactive</span>")
         }
     })
+
+    $("#search-btn").on("click", function () {
+        if ($('#fromDate').val() != null && $('#toDate').val() != null) {
+            $('#search-form').attr('action', contextPath + SEARCH_BILL_URL);
+            $('#search-form').submit();
+        }
+    })
+
+    $('.delete-btn').off("click").on("click", function () {
+        var button=$(this);
+        var confirmData = {
+            'title': CONFIRM_INFORMATION_TITLE,
+            'content': BILL_CONFIRM_MSG+ button.data('id')
+        }
+        showConfirmModal(deleteBill,confirmData,[button.data("id")]);
+    })
 })
+
+function deleteBill(billID) {
+    $(".confirm-modal").modal("hide")
+    var Data = {
+        "billId": billID
+    }
+    var requestURL = contextPath + DELETE_BILL_URL;
+    var requestMethod = "POST";
+    $.ajax({
+        url: requestURL,
+        type: requestMethod,
+        data: Data,
+        success: function () {
+            var notifyData = {
+                'title': 'Delete Product',
+                'content': 'Delete bill successfully'
+            }
+            showNotifyModal(contextPath + BILL_PAGE_URL, true, notifyData);
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.error(textStatus);
+        }
+    });
+}

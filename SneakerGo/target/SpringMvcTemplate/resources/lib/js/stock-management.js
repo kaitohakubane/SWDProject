@@ -5,7 +5,6 @@ var IMPORT_PRODUCT_URL="/admin/import/create";
 var STOCK_PAGE_URL="/admin/stock";
 var IMPORT_PRODUCT_POPUP_TITLE="IMPORT PRODUCT";
 var IMPORT_PRODUCT_POPUP_MSG="Import Product successfully";
-var CONFIRM_INFORMATION_TITLE="CONFIRM INFORMATION";
 $(document).ready(function () {
     var dataTable = $('#stock-table');
     var SIZE_LIST = {
@@ -84,6 +83,7 @@ function importModalInitialize(productID,name, size) {
 
 function importProduct(productID){
     $('#importModal').modal("hide");
+    $(".confirm-modal").model("hide");
     var formData = new FormData($('#import-form')[0]);
     formData.append("productId", productID)
     var requestURL = contextPath + IMPORT_PRODUCT_URL;

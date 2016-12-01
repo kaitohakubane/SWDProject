@@ -68,8 +68,7 @@
                                     <div class="col-md-2">
 
                                         <button type="button" class="btn btn-primary search-btn"
-                                                data-toggle="modal"
-                                                data-target="#productModal" id="search-btn">Search
+                                                id="search-btn">Search
                                         </button>
                                     </div>
                                 </div>
@@ -103,15 +102,16 @@
                                 <td class="center">${item.accountName}</td>
                                 <td class="center">${item.totalPrice}</td>
                                 <td class="center">${item.date}</td>
-                                <td class="center status" >${item.enabled}</td>
+                                <td class="center status">${item.enabled}</td>
                                 <td class="text-center">
                                     <form id="billDetail-form" method="POST"></form>
                                     <button type="button" class="btn btn-success actionBtn view-btn" title="view"
                                             data-id="${item.billID}"><i
                                             class="fa fa-eye" aria-hidden="true"></i>
                                     </button>
-                                    <button type="button" class="btn btn-danger actionBtn" data-toggle="modal"
-                                            title="delete"><i class="fa fa-trash-o" aria-hidden="true"></i>
+                                    <button type="button" class="btn btn-danger actionBtn delete-btn"
+                                            data-id="${item.billID}" title="delete">
+                                        <i class="fa fa-trash-o" aria-hidden="true"></i>
                                     </button>
                                 </td>
 
@@ -131,6 +131,47 @@
     <!--footer end-->
 </section>
 
+
+<%--Confirm Modal--%>
+<div class="modal fade confirm-modal" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true"
+     data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title confirm-title">Modal title</h4>
+            </div>
+            <div class="modal-body confirm-content">
+                Are you sure to do this ?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary confirm-button">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%--Notify Modal--%>
+<div class="modal fade notify-modal" id="notifyModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true"
+     data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title notify-title" id="myModalLabel">Modal title</h4>
+            </div>
+            <div class="modal-body notify-content">
+                Hi there, I am a Modal Example for Dashgum Admin Panel.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default notify-button" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 <%--Time script--%>
 <script src="<c:url value = "/resources/js/bootstrap-datepicker/bootstrap-datepicker.js"/>"
         type="text/javascript"></script>

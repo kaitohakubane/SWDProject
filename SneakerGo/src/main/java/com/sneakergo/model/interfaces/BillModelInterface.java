@@ -16,4 +16,6 @@ public interface BillModelInterface {
     List<BillEntity> getBillByAccount(AccountEntity accountEntity);
 
     List<BillDisplayEntity> getBillByTime(Date fromDate, Date toDate);
+
+    void updateBill(BillEntity billEntity);
 }

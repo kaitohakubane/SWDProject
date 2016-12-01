@@ -32,8 +32,8 @@ public class PageConstant {
     // Bill
     public static final String BILL_PAGE_URL = "/admin/bill-management";
     public static final String UPDATE_BILL_URL = "/admin/bill-management/update";
-    public static final String REMOVE_BILL_URL = "/admin/bill-management/remove";
-
+    public static final String DELETE_BILL_URL = "/admin/bill-management/delete";
+    public static final String SEARCH_BILL_URL="/admin/bill-management/search";
     public static final String VIEW_BILL_PAGE_URL = "/api/bill";
 
     // Bill Detail

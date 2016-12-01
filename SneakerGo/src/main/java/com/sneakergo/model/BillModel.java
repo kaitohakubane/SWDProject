@@ -42,4 +42,8 @@ public class BillModel extends CommonDAO implements BillModelInterface {
         return bills;
     }
 
+    @Override
+    public void updateBill(BillEntity billEntity){
+        getSession().saveOrUpdate(billEntity);
+    }
 }

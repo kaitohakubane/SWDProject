@@ -36,4 +36,9 @@ public class BillService implements BillServiceInterface{
     public List<BillDisplayEntity> getBillByTime(Date fromDate, Date toDate){
         return billModelInterface.getBillByTime(fromDate,toDate);
     }
+
+    @Override
+    public void updateBill(BillEntity billEntity){
+        billModelInterface.updateBill(billEntity);
+    }
 }

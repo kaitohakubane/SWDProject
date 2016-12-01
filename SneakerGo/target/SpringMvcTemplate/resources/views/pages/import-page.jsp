@@ -68,8 +68,7 @@
                                         <div class="col-md-2">
                                             <div class="form-group">
                                                 <button type="button" class="btn btn-primary search-btn"
-                                                        data-toggle="modal"
-                                                        data-target="#productModal" id="search-btn">Search
+                                                         id="search-btn">Search
                                                 </button>
                                             </div>
                                         </div>

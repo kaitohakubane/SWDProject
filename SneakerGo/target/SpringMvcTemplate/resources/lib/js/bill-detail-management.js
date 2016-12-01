@@ -1,7 +1,7 @@
 /**
  * Created by Hung on 11/26/2016.
  */
-var BILL_PAGE_URL="/admin/bill-management"
+
 $(document).ready(function () {
     var dataTable = $('#bill-detail-table');
     addDataTable(dataTable);
