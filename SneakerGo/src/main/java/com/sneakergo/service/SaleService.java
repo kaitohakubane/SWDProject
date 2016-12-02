@@ -42,4 +42,7 @@ public class SaleService implements SaleServiceInterface{
         return saleModelInterface.createSave(saleEntity);
     }
 
+    public void updateSale(SaleEntity sale){
+        saleModelInterface.updateSale(sale);
+    }
 }

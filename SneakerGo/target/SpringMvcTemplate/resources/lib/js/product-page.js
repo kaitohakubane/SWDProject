@@ -36,15 +36,14 @@ function registerEvent() {
 
     $('.update-btn').off("click").on("click", function () {
         var row = $(this);
-        // var productId = row.data("id");
-        // var picture = $(row).closest("tr").find("td:nth-child(2)").find(".product-image").attr("src");
-        // var description = $(row).closest("tr").find("td:nth-child(1)").data("id");
-        // var name = $(row).closest("tr").find("td:nth-child(3)").html().trim();
-        // var nation = $(row).closest("tr").find("td:nth-child(5)").html().trim();
-        // var price = $(row).closest("tr").find("td:nth-child(4)").html().trim();
-        // productModalInitialize(UPDATE_BUTTON_LABEL, UPDATE_PRODUCT_POPUP_TITLE, UPDATE_ACTION
-        //     , productId, picture, description, name, nation, price);
-        getValue(row);
+        var productId = row.data("id");
+        var picture = $(row).closest("tr").find("td:nth-child(2)").find(".product-image").attr("src");
+        var description = $(row).closest("tr").find("td:nth-child(1)").data("id");
+        var name = $(row).closest("tr").find("td:nth-child(3)").html().trim();
+        var nation = $(row).closest("tr").find("td:nth-child(5)").html().trim();
+        var price = $(row).closest("tr").find("td:nth-child(4)").html().trim();
+        productModalInitialize(UPDATE_BUTTON_LABEL, UPDATE_PRODUCT_POPUP_TITLE, UPDATE_ACTION
+            , productId, picture, description, name, nation, price);
     });
 
     $('.add-btn').off("click").on("click", function () {
@@ -198,13 +197,3 @@ function createSale(productID) {
     });
 }
 
-function getValue(row) {
-    var productId = row.data("id");
-    var picture = $(row).closest("tr").find("td:nth-child(2)").find(".product-image").attr("src");
-    var description = $(row).closest("tr").find("td:nth-child(1)").data("id");
-    var name = $(row).closest("tr").find("td:nth-child(3)").html().trim();
-    var nation = $(row).closest("tr").find("td:nth-child(5)").html().trim();
-    var price = $(row).closest("tr").find("td:nth-child(4)").html().trim();
-    productModalInitialize(UPDATE_BUTTON_LABEL, UPDATE_PRODUCT_POPUP_TITLE, UPDATE_ACTION
-        , productId, picture, description, name, nation, price);
-};

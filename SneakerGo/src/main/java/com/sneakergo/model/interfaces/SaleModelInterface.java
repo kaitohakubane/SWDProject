@@ -13,10 +13,12 @@ public interface SaleModelInterface {
 
     SaleEntity getSaleByID(int saleID);
 
-    List<SaleDisplayEntity> getSaleByTime(Date fromTime,Date toTime);
+    List<SaleDisplayEntity> getSaleByTime(Date fromTime, Date toTime);
 
     List<SaleEntity> getAllSale();
 
     boolean createSave(SaleEntity saleEntity);
+
+    void updateSale(SaleEntity sale);
 
 }

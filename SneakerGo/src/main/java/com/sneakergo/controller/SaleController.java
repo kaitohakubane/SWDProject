@@ -6,10 +6,7 @@ import com.sneakergo.common.constants.UtilsConstant;
 import com.sneakergo.common.utils.FileUtils;
 import com.sneakergo.common.utils.NumbericUtils;
 import com.sneakergo.common.utils.StringUtils;
-import com.sneakergo.entity.ImportDisplayEntity;
-import com.sneakergo.entity.ProductEntity;
-import com.sneakergo.entity.SaleDisplayEntity;
-import com.sneakergo.entity.SaleEntity;
+import com.sneakergo.entity.*;
 import com.sneakergo.service.interfaces.SaleServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -81,6 +78,18 @@ public class SaleController {
         modelAndView.addObject(ParamConstant.LIST_SALE_ATTR, listSale).addObject(ParamConstant.FROM_DATE, fromDate)
                 .addObject(ParamConstant.TO_DATE, toDate);
         return modelAndView;
+    }
+
+    @ResponseBody
+    @RequestMapping(value = {PageConstant.DELETE_SALE_URL}, method = RequestMethod.POST)
+    public boolean deleteBill(@RequestParam(value = ParamConstant.SALE_ID) int saleId) {
+        SaleEntity saleEntity=saleServiceInterface.getSaleByID(saleId);
+        if(saleEntity!=null){
+            saleEntity.setEnabled(false);
+            saleServiceInterface.updateSale(saleEntity);
+            return true;
+        }
+        return false;
     }
 
 

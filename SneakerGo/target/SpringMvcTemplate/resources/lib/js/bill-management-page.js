@@ -58,8 +58,8 @@ function deleteBill(billID) {
         data: Data,
         success: function () {
             var notifyData = {
-                'title': 'Delete Product',
-                'content': 'Delete bill successfully'
+                'title': 'Delete Bill',
+                'content': 'Delete Bill successfully'
             }
             showNotifyModal(contextPath + BILL_PAGE_URL, true, notifyData);
         },

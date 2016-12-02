@@ -1,7 +1,7 @@
 package com.sneakergo.model;
 
 import com.sneakergo.common.constants.SQLParamConstant;
-import com.sneakergo.common.utils.NumbericUtils;
+
 import com.sneakergo.entity.SaleDisplayEntity;
 import com.sneakergo.entity.SaleEntity;
 import com.sneakergo.model.common.CommonDAO;
@@ -9,12 +9,10 @@ import com.sneakergo.model.interfaces.SaleModelInterface;
 import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.criterion.Order;
-import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 
 import java.sql.Date;
-import java.util.Calendar;
 import java.util.List;
 
 /**
@@ -52,5 +50,10 @@ public class SaleModel extends CommonDAO implements SaleModelInterface {
             return true;
         }
         return false;
+    }
+
+    @Override
+    public void updateSale(SaleEntity sale) {
+        getSession().saveOrUpdate(sale);
     }
 }

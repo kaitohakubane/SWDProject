@@ -44,7 +44,7 @@ public class PageConstant {
     public static final String SEARCH_SALE_URL="/admin/sale-management/search";
     public static final String CREATE_SALE_URL = "/admin/sale-management/create";
     public static final String EDIT_SALE_URL = "/admin/sale-management/edit";
-    public static final String REMOVE_SALE_URL = "/admin/sale-management/remove";
+    public static final String DELETE_SALE_URL = "/admin/sale-management/delete";
 
     // Import Product
     public static final String IMPORT_PAGE_URL = "/admin/import";

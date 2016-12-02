@@ -100,8 +100,8 @@
                                             <td class="center ">${item.toDate}</td>
                                             <td class="center status">${item.enabled}</td>
                                             <td class="center">
-                                                <button type="button" class="btn btn-round btn-danger"
-                                                        data-id="${item.saleId}">Change Status
+                                                <button type="button" class="btn btn-round btn-danger delete-btn"
+                                                        data-id="${item.saleID}">Delete
                                                 </button>
                                             </td>
                                         </tr>
@@ -113,6 +113,7 @@
                     </div>
                     <!-- page end-->
                 </div><!-- /row -->
+                </header>
         </section><!-- --/wrapper ---->
     </section><!-- /MAIN CONTENT -->
     <!--main content end-->
@@ -127,66 +128,46 @@
     </footer>
     <!--footer end-->
 </section>
-<!-- Modal -->
-<div class="modal fade" id="importModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-     aria-hidden="true">
+<%--Confirm Modal--%>
+<div class="modal fade confirm-modal" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true"
+     data-keyboard="false" data-backdrop="static">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id="importModalLabel">Import product</h4>
+                <h4 class="modal-title confirm-title">Modal title</h4>
             </div>
-            <div class="modal-body">
-                <div class="form-inline" role="form">
-                    Product ID
-                    <div class="form-group">
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-inline" role="form">
-                    Product Name
-                    <div class="form-group">
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-inline" role="form">
-                    Product Size
-                    <div class="form-group">
-                        <div class="col-sm-10">
-                            <select class="form-control">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-inline" role="form">
-                    Import Quantity
-                    <div class="form-group">
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control">
-                        </div>
-                    </div>
-                </div>
+            <div class="modal-body confirm-content">
+                Are you sure to do this ?
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Import</button>
+                <button type="button" class="btn btn-primary confirm-button">OK</button>
             </div>
         </div>
     </div>
 </div>
 
+<%--Notify Modal--%>
+<div class="modal fade notify-modal" id="notifyModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true"
+     data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title notify-title" id="myModalLabel">Modal title</h4>
+            </div>
+            <div class="modal-body notify-content">
+                Hi there, I am a Modal Example for Dashgum Admin Panel.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default notify-button" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <%--Time script--%>
 <script src="<c:url value = "/resources/js/bootstrap-datepicker/bootstrap-datepicker.js"/>"
