@@ -127,7 +127,7 @@ INSERT INTO Product (productName,price,picture,nation,description,enabled)
 VALUES ('Nike Air Huarache','1500',NULL,'China','',1); 
 
 INSERT INTO Attribute(size) 
-VALUES ('2');   
+VALUES ('0');   
 INSERT INTO Attribute(size) 
 VALUES ('3');   
 INSERT INTO Attribute(size) 

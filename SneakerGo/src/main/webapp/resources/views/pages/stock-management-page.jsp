@@ -64,8 +64,8 @@
                             <tr class="gradeC even">
                                 <td class="text-center">${counter.count}</td>
                                 <td class="center">${item.productName}</td>
-                                <td class="text-center">${item.size}</td>
-                                <td class="text-center">${item.quantity}</td>
+                                <td class="text-center product-size">${item.size}</td>
+                                <td class="text-center product-quantity">${item.quantity}</td>
                                 <td class="text-center">
                                     <button type="button" class="btn btn-round btn-success import-btn actionBtn" data-toggle="modal"
                                             data-target="#importModal" data-product="${item.productID}" title="Import product"><i class="fa fa-plus" aria-hidden="true"></i>

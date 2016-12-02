@@ -2,19 +2,19 @@
  * Created by Hung on 11/20/2016.
  */
 
-var CREATE_SALE_URL='/admin/sale-management/create';
-var DELETE_PRODUCT_URL='/admin/product/remove';
-var ADD_PRODUCT_URL='/admin/product/add';
-var UPDATE_PRODUCT_URL='/admin/product/update';
-var PRODUCT_PAGE_URL="/admin/product";
-var ADD_BUTTON_LABEL="Add";
-var UPDATE_BUTTON_LABEL="Update";
-var ADD_PRODUCT_POPUP_TITLE="Add Product";
-var UPDATE_PRODUCT_POPUP_TITLE="Update Product";
-var CREATE_SALE_POPUP_TITLE='Create Sale';
-var ADD_ACTION="add";
-var UPDATE_ACTION="update";
-var INIT_PERCENT_VAL='0';
+var CREATE_SALE_URL = '/admin/sale-management/create';
+var DELETE_PRODUCT_URL = '/admin/product/remove';
+var ADD_PRODUCT_URL = '/admin/product/add';
+var UPDATE_PRODUCT_URL = '/admin/product/update';
+var PRODUCT_PAGE_URL = "/admin/product";
+var ADD_BUTTON_LABEL = "Add";
+var UPDATE_BUTTON_LABEL = "Update";
+var ADD_PRODUCT_POPUP_TITLE = "Add Product";
+var UPDATE_PRODUCT_POPUP_TITLE = "Update Product";
+var CREATE_SALE_POPUP_TITLE = 'Create Sale';
+var ADD_ACTION = "add";
+var UPDATE_ACTION = "update";
+var INIT_PERCENT_VAL = '0';
 
 $(document).ready(function () {
 
@@ -31,18 +31,20 @@ function registerEvent() {
     })
 
     $('#sale-percentage').change(setMinMaxForNumberInput);
+    $('#price').change(setMinMaxForNumberInput);
 
 
     $('.update-btn').off("click").on("click", function () {
         var row = $(this);
-        var productId = row.data("id");
-        var picture = $(row).closest("tr").find("td:nth-child(2)").find(".product-image").attr("src");
-        var description = $(row).closest("tr").find("td:nth-child(1)").data("id");
-        var name = $(row).closest("tr").find("td:nth-child(3)").html().trim();
-        var nation = $(row).closest("tr").find("td:nth-child(5)").html().trim();
-        var price = $(row).closest("tr").find("td:nth-child(4)").html().trim();
-        productModalInitialize(UPDATE_BUTTON_LABEL, UPDATE_PRODUCT_POPUP_TITLE, UPDATE_ACTION
-            , productId, picture, description, name, nation, price);
+        // var productId = row.data("id");
+        // var picture = $(row).closest("tr").find("td:nth-child(2)").find(".product-image").attr("src");
+        // var description = $(row).closest("tr").find("td:nth-child(1)").data("id");
+        // var name = $(row).closest("tr").find("td:nth-child(3)").html().trim();
+        // var nation = $(row).closest("tr").find("td:nth-child(5)").html().trim();
+        // var price = $(row).closest("tr").find("td:nth-child(4)").html().trim();
+        // productModalInitialize(UPDATE_BUTTON_LABEL, UPDATE_PRODUCT_POPUP_TITLE, UPDATE_ACTION
+        //     , productId, picture, description, name, nation, price);
+        getValue(row);
     });
 
     $('.add-btn').off("click").on("click", function () {
@@ -65,10 +67,9 @@ function registerEvent() {
 
     })
 
-    $('#sale-btn').on("click",function(){
+    $('#sale-btn').on("click", function () {
         createSale($(this).data('id'))
     })
-
 }
 function productModalInitialize(buttonLabel, titleLabel, action, productId, picture, description, name, nation, price) {
     if (picture == null) {
@@ -197,3 +198,13 @@ function createSale(productID) {
     });
 }
 
+function getValue(row) {
+    var productId = row.data("id");
+    var picture = $(row).closest("tr").find("td:nth-child(2)").find(".product-image").attr("src");
+    var description = $(row).closest("tr").find("td:nth-child(1)").data("id");
+    var name = $(row).closest("tr").find("td:nth-child(3)").html().trim();
+    var nation = $(row).closest("tr").find("td:nth-child(5)").html().trim();
+    var price = $(row).closest("tr").find("td:nth-child(4)").html().trim();
+    productModalInitialize(UPDATE_BUTTON_LABEL, UPDATE_PRODUCT_POPUP_TITLE, UPDATE_ACTION
+        , productId, picture, description, name, nation, price);
+};

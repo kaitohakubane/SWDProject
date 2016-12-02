@@ -2,10 +2,17 @@ package com.sneakergo.controller;
 
 import com.sneakergo.common.constants.PageConstant;
 import com.sneakergo.common.constants.ParamConstant;
+import com.sneakergo.common.constants.UtilsConstant;
 import com.sneakergo.common.utils.FileUtils;
 import com.sneakergo.common.utils.StringUtils;
+import com.sneakergo.entity.AttributeEntity;
 import com.sneakergo.entity.ProductEntity;
+import com.sneakergo.entity.StockEntity;
+import com.sneakergo.service.AttributeService;
+import com.sneakergo.service.interfaces.AttributeServiceInterface;
 import com.sneakergo.service.interfaces.ProductServiceInterface;
+import com.sneakergo.service.interfaces.StockServiceInterface;
+import org.jcp.xml.dsig.internal.dom.Utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -29,6 +36,12 @@ public class ProductController {
 
     @Autowired
     private ProductServiceInterface productServiceInterface;
+
+    @Autowired
+    private StockServiceInterface stockServiceInterface;
+
+    @Autowired
+    private AttributeServiceInterface attributeServiceInterface;
 
     @RequestMapping(value = PageConstant.PRODUCT_PAGE_URL, method = RequestMethod.GET)
     public ModelAndView initProductPage() {
@@ -71,6 +84,18 @@ public class ProductController {
             productEntity.setDescription(description);
             productEntity.setEnabled(true);
             boolean result = productServiceInterface.addProduct(productEntity);
+
+            //Create stock record with default size
+            AttributeEntity attributeEntity = attributeServiceInterface.getAttributeBySize
+                    (String.valueOf(UtilsConstant.ZERO));
+            StockEntity stockEntity = new StockEntity();
+            stockEntity.setAttributeId(attributeEntity.getAttributeId());
+            stockEntity.setEnabled(true);
+            stockEntity.setProductId(productEntity.getProductId());
+            stockEntity.setQuantity(UtilsConstant.ZERO);
+            stockServiceInterface.createStock(stockEntity);
+
+
             return result;
         } catch (Exception e) {
             e.printStackTrace();

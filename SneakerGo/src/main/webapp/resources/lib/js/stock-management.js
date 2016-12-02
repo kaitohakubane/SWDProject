@@ -69,7 +69,10 @@ $(document).ready(function () {
         }
         showConfirmModal(importProduct,confirmData,[button.data("productID")]);
     })
+    setLabel();
 
+    $('#quantity').change(setMinMaxForNumberInput);
+    $('#price').change(setMinMaxForNumberInput);
 })
 
 function importModalInitialize(productID,name, size) {
@@ -83,7 +86,7 @@ function importModalInitialize(productID,name, size) {
 
 function importProduct(productID){
     $('#importModal').modal("hide");
-    $(".confirm-modal").model("hide");
+    $(".confirm-modal").modal("hide");
     var formData = new FormData($('#import-form')[0]);
     formData.append("productId", productID)
     var requestURL = contextPath + IMPORT_PRODUCT_URL;

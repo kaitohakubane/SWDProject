@@ -77,7 +77,7 @@ function showConfirmModal(callIfConfirm, data,args) {
     modal.modal('show');
 }
 
-function setEnabledLabel(){
+function setLabel(){
     $(".status").each(function () {
         var real = $(this).text();
         if (real == "true") {
@@ -85,6 +85,20 @@ function setEnabledLabel(){
         }
         else {
             $(this).html("<span class='status sold'>Inactive</span>")
+        }
+    })
+
+    $(".product-size").each(function(){
+        var status=$(this).text();
+        if (status == "0") {
+            $(this).html("<span class='status onStock'>Not imported</span>")
+        }
+    })
+
+    $(".product-quantity").each(function(){
+        var status=$(this).text();
+        if (status == "0") {
+            $(this).html("<span class='status sold'>Out of stock</span>")
         }
     })
 }

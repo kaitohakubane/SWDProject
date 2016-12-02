@@ -88,11 +88,13 @@
                                 <td class="text-center">
                                     <button type="button" class="btn btn-round btn-warning sale-btn actionBtn" title="Sale"
                                             data-toggle="modal"
-                                            data-target="#saleModal" data-id="${item.productId}"><i class="fa fa-money" aria-hidden="true"></i>
+                                            data-target="#saleModal" data-id="${item.productId}">
+                                        <i class="fa fa-money" aria-hidden="true"></i>
                                     </button>
                                     <button type="button" class="btn btn-round btn-info update-btn actionBtn" title="Update"
                                             data-toggle="modal"
-                                            data-target="#productModal" data-id="${item.productId}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                            data-target="#productModal" data-id="${item.productId}">
+                                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                     </button>
                                     <button type="button" class="btn btn-round btn-danger delete-btn actionBtn" title="Delete"
                                             data-id="${item.productId}"><i class="fa fa-trash-o" aria-hidden="true"></i>
@@ -141,7 +143,8 @@
                         <div class="row">
                             <label class="col-md-4 col-md-offset-1 control-label" for="price">Price</label>
                             <div class="form-group col-sm-6">
-                                <input type="text" class="form-control" name="price" id="price">
+                                <input type="number" class="form-control" min="1" max="1000000" placeholder=".000 VNĐ"
+                                       name="price" id="price">
                             </div>
                         </div>
                     </div>
@@ -165,7 +168,7 @@
                         <div class="row">
                             <label class="col-md-4 col-md-offset-1 control-label" for="description">Description</label>
                             <div class="form-group col-sm-6">
-                                <input type="text" class="form-control" name="description" id="description">
+                                <textarea type="text" class="form-control" name="description" id="description"></textarea>
                             </div>
                         </div>
                     </div>
@@ -244,18 +247,6 @@
                             </div>
                         </div>
                     </div>
-                    <%--<div class="form-group last">--%>
-                    <%--<label class="col-lg-2 col-sm-2 control-label">Date</label>--%>
-                    <%--<div class="col-md-6">--%>
-                    <%--<div class="input-group input-large" data-date="01/01/2014"--%>
-                    <%--data-date-format="mm/dd/yyyy">--%>
-                    <%--<input type="text" class="form-control dpd1" name="fromDate">--%>
-                    <%--<span class="input-group-addon">To</span>--%>
-                    <%--<input type="text" class="form-control dpd2" name="toDate">--%>
-                    <%--</div>--%>
-                    <%--<span class="help-block">Select date range</span>--%>
-                    <%--</div>--%>
-                    <%--</div>--%>
                     <div class="form-inline">
                         <div class="row">
                             <label class="col-md-4 col-md-offset-1 control-label">

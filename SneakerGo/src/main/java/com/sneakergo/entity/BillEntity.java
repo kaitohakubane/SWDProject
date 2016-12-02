@@ -16,6 +16,7 @@ public class BillEntity {
     private Boolean enabled;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "billID", nullable = false)
     public int getBillId() {
         return billId;

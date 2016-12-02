@@ -42,7 +42,7 @@ $(document).ready(function () {
         showConfirmModal(deleteBill, confirmData, [button.data("id")]);
     })
 
-    setEnabledLabel();
+    setLabel();
 })
 
 function deleteBill(billID) {

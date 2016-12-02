@@ -15,6 +15,7 @@ public class StockEntity {
     private Boolean enabled;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "stockID", nullable = false)
     public int getStockId() {
         return stockId;

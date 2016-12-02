@@ -17,6 +17,7 @@ public class ImportEntity {
     private String supplier;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "importID", nullable = false)
     public int getImportId() {
         return importId;

@@ -15,6 +15,7 @@ public class BilldetailEntity {
     private String price;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "billDetailID", nullable = false)
     public int getBillDetailId() {
         return billDetailId;
