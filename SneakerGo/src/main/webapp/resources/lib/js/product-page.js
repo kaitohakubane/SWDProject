@@ -23,67 +23,69 @@ $(document).ready(function () {
     registerEvent();
 
 })
+$( document ).ready(function() {
+    function registerEvent() {
+        $('.delete-btn').on('click', function () {
+            var productId = $(this).data("id");
+            deleteProduct(productId);
+        })
 
-function registerEvent() {
-    $('.delete-btn').on('click', function () {
-        var productId = $(this).data("id");
-        deleteProduct(productId);
-    })
+        $('#sale-percentage').change(setMinMaxForNumberInput);
+        $('#price').change(setMinMaxForNumberInput);
+        $('.update-btn').on("click", function () {
+            var row = $(this);
+            var productId = row.data("id");
+            var picture = $(row).closest("tr").find("td:nth-child(2)").find(".product-image").attr("src");
+            var description = $(row).closest("tr").find("td:nth-child(1)").data("id");
+            var name = $(row).closest("tr").find("td:nth-child(3)").html().trim();
+            var nation = $(row).closest("tr").find("td:nth-child(5)").html().trim();
+            var price = $(row).closest("tr").find("td:nth-child(4)").html().trim();
+            productModalInitialize(UPDATE_BUTTON_LABEL, UPDATE_PRODUCT_POPUP_TITLE, UPDATE_ACTION
+                , productId, picture, description, name, nation, price);
+        });
 
-    $('#sale-percentage').change(setMinMaxForNumberInput);
-    $('#price').change(setMinMaxForNumberInput);
 
 
-    $('.update-btn').off("click").on("click", function () {
-        var row = $(this);
-        var productId = row.data("id");
-        var picture = $(row).closest("tr").find("td:nth-child(2)").find(".product-image").attr("src");
-        var description = $(row).closest("tr").find("td:nth-child(1)").data("id");
-        var name = $(row).closest("tr").find("td:nth-child(3)").html().trim();
-        var nation = $(row).closest("tr").find("td:nth-child(5)").html().trim();
-        var price = $(row).closest("tr").find("td:nth-child(4)").html().trim();
-        productModalInitialize(UPDATE_BUTTON_LABEL, UPDATE_PRODUCT_POPUP_TITLE, UPDATE_ACTION
-            , productId, picture, description, name, nation, price);
-    });
+        $('.add-btn').off("click").on("click", function () {
+            productModalInitialize(ADD_BUTTON_LABEL, ADD_PRODUCT_POPUP_TITLE, ADD_ACTION);
+        });
 
-    $('.add-btn').off("click").on("click", function () {
-        productModalInitialize(ADD_BUTTON_LABEL, ADD_PRODUCT_POPUP_TITLE, ADD_ACTION);
-    });
+        $('.sale-btn').off("click").on("click", function () {
+            var row = $(this);
+            var productId = row.data("id");
+            var name = $(row).closest("tr").find("td:nth-child(3)").html().trim();
+            saleModalInitialize(productId, name);
+        });
 
-    $('.sale-btn').off("click").on("click", function () {
-        var row = $(this);
-        var productId = row.data("id");
-        var name = $(row).closest("tr").find("td:nth-child(3)").html().trim();
-        saleModalInitialize(productId, name);
-    });
+        $('#add-edit-btn').on("click", function () {
+            if ($(this).data('action') == ADD_ACTION) {
+                addProduct();
+            } else {
+                updateProduct($(this).data('id'))
+            }
 
-    $('#add-edit-btn').on("click", function () {
-        if ($(this).data('action') == ADD_ACTION) {
-            addProduct();
-        } else {
-            updateProduct($(this).data('id'))
-        }
+        })
 
-    })
-
-    $('#sale-btn').on("click", function () {
-        createSale($(this).data('id'))
-    })
-}
-function productModalInitialize(buttonLabel, titleLabel, action, productId, picture, description, name, nation, price) {
-    if (picture == null) {
-        picture = NO_IMG_SOURCE;
+        $('#sale-btn').on("click", function () {
+            createSale($(this).data('id'))
+        })
     }
-    $('#productModalTitle').text(titleLabel)
-    $('#add-edit-btn').text(buttonLabel);
-    $('#productModal').find('#productName').val(name);
-    $('#productModal').find('#price').val(price);
-    $('#productModal').find('#nation').val(nation);
-    $('#productModal').find('#description').val(description);
-    $('#productModal').find('#image').attr("src", picture);
-    $('#productModal').find('#add-edit-btn').data("id", productId);
-    $('#productModal').find('#add-edit-btn').data("action", action);
-}
+    function productModalInitialize(buttonLabel, titleLabel, action, productId, picture, description, name, nation, price) {
+        if (picture == null) {
+            picture = NO_IMG_SOURCE;
+        }
+        $('#productModalTitle').text(titleLabel)
+        $('#add-edit-btn').text(buttonLabel);
+        $('#productModal').find('#productName').val(name);
+        $('#productModal').find('#price').val(price);
+        $('#productModal').find('#nation').val(nation);
+        $('#productModal').find('#description').val(description);
+        $('#productModal').find('#image').attr("src", picture);
+        $('#productModal').find('#add-edit-btn').data("id", productId);
+        $('#productModal').find('#add-edit-btn').data("action", action);
+    }
+
+});
 
 function saleModalInitialize(productId, name) {
     $('#saleModal').find('#sale-product-id').val(productId);

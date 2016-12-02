@@ -465,7 +465,7 @@
     </div>
 </div>
 <c:import url="/resources/views/common/footer.jsp"/>
-<script src="<c:url value="/resources/js/advanced-form-components.js"/>" type="text/javascript"></script>
+<%--<script src="<c:url value="/resources/js/advanced-form-components.js"/>" type="text/javascript"></script>--%>
 <script src="<c:url value="/resources/js/common-scripts.js"/>"></script>
 <script src="<c:url value="/resources/lib/js/product-page.js"/>"></script>
 </body>

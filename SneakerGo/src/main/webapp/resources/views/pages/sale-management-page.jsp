@@ -31,15 +31,14 @@
     <!--main content start-->
     <section id="main-content">
         <section class="wrapper">
-            <h3><i class="fa fa-angle-right"></i> Advanced Table Example</h3>
             <header>
-                <div class="row mb ml">
-
-                    <!-- page start-->
-                    <div class="content-panel">
-                        <div class="adv-table">
-                            <div id="hidden-table-info_wrapper" class="dataTables_wrapper" role="grid">
-
+                <div class="row">
+                    <div class="col-md-4">
+                        <h3> Advanced Table Example</h3>
+                    </div>
+                    <div class="col-md-8 text-right">
+                        <div class="form-group">
+                            <h3>
                                 <form id="search-form" method="POST">
                                     <div class="row">
                                         <div class="col-md-5">
@@ -78,54 +77,53 @@
                                     </div>
                                 </form>
 
-                                <table class="display table table-bordered dataTable" id="sale-table"
-                                       aria-describedby="hidden-table-info_info">
-                                    <thead>
-                                    <tr role="row">
-                                        <th>Product Name</th>
-                                        <th>Sale Percent</th>
-                                        <th>From Date</th>
-                                        <th>To Date</th>
-                                        <th>Status</th>
-                                        <th>Action</th>
-                                    </tr>
-                                    </thead>
-
-                                    <tbody role="alert" aria-live="polite" aria-relevant="all">
-                                    <c:forEach var="item" items="${listSale}">
-                                        <tr class="gradeC even">
-                                            <td class="center ">${item.productName}</td>
-                                            <td class="center ">${item.salePercent}</td>
-                                            <td class="center ">${item.fromDate}</td>
-                                            <td class="center ">${item.toDate}</td>
-                                            <td class="center status">${item.enabled}</td>
-                                            <td class="center">
-                                                <button type="button" class="btn btn-round btn-danger delete-btn"
-                                                        data-id="${item.saleID}">Delete
-                                                </button>
-                                            </td>
-                                        </tr>
-                                    </c:forEach>
-                                    </tbody>
-                                </table>
-                            </div>
+                            </h3>
                         </div>
                     </div>
-                    <!-- page end-->
-                </div><!-- /row -->
-                </header>
+                </div>
+                <hr>
+            </header>
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="display table table-bordered dataTable" id="sale-table"
+                           aria-describedby="hidden-table-info_info">
+                        <thead>
+                        <tr role="row">
+                            <th>Product Name</th>
+                            <th>Sale Percent</th>
+                            <th>From Date</th>
+                            <th>To Date</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+
+                        <tbody role="alert" aria-live="polite" aria-relevant="all">
+                        <c:forEach var="item" items="${listSale}">
+                            <tr class="gradeC even">
+                                <td class="center ">${item.productName}</td>
+                                <td class="text-center ">${item.salePercent}</td>
+                                <td class="text-center ">${item.fromDate}</td>
+                                <td class="text-center ">${item.toDate}</td>
+                                <td class="text-center status">${item.enabled}</td>
+                                <td class="text-center">
+                                    <button type="button" class="btn btn-round btn-danger delete-btn actionBtn"
+                                            data-id="${item.saleID}"><i class="fa fa-trash-o"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </c:forEach>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- page start-->
+                <!-- page end-->
+            </div><!-- /row -->
         </section><!-- --/wrapper ---->
     </section><!-- /MAIN CONTENT -->
     <!--main content end-->
     <!--footer start-->
-    <footer class="site-footer">
-        <div class="text-center">
-            2014 - Alvarez.is
-            <a href="#" class="go-top">
-                <i class="fa fa-angle-up"></i>
-            </a>
-        </div>
-    </footer>
+
     <!--footer end-->
 </section>
 <%--Confirm Modal--%>
