@@ -31,9 +31,9 @@
                         <div class="col-md-2 col-sm-2 col-md-offset-1 box0">
                             <div class="box1">
                                 <span class="li_stack"></span>
-                                <h3>50</h3>
+                                <h3>${numberOfProduct}</h3>
                             </div>
-                            <p>You have 50 product on business</p>
+                            <p>You have ${numberOfProduct} product on business</p>
                         </div>
 
                         <div class="col-md-2 col-sm-2 box0">
@@ -47,9 +47,9 @@
                         <div class="col-md-2 col-sm-2 box0">
                             <div class="box1">
                                 <span class="li_shop"></span>
-                                <h3>25</h3>
+                                <h3>${numberOfBill}</h3>
                             </div>
-                            <p>25 bills is made today</p>
+                            <p>${numberOfBill} bills is made today</p>
                         </div>
 
                         <div class="col-md-2 col-sm-2 box0">

@@ -16,6 +16,7 @@ public class ParamConstant {
      * Homepage
      */
     public static final String LOGGED_USER_ATTR = "username";
+    public static final String NUMBER_OF_PRODUCT="numberOfProduct";
 
     /**
      * Account
@@ -51,7 +52,7 @@ public class ParamConstant {
     public static final String BILL_ID = "billId";
     public static final String BILL = "bill";
     public static final String BILL_STATUS = "status";
-    public static final String NUMBER_ORDER_ATTR = "numOfOrder";
+    public static final String NUMBER_OF_BILL = "numberOfBill";
     public static final String BILL_DETAIL_LIST="listBillDetail";
     public static final String CUSTOMER="customer";
 

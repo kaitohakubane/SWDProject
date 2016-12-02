@@ -46,4 +46,11 @@ public class BillModel extends CommonDAO implements BillModelInterface {
     public void updateBill(BillEntity billEntity){
         getSession().saveOrUpdate(billEntity);
     }
+
+    @Override
+    public int countBillRecord(Date date){
+        int count = ((Long)getSession().createQuery(SQLParamConstant.BILL_RECORD_COUNT_BY_TIME).
+                setParameter("date",date).setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP).uniqueResult()).intValue();
+        return count;
+    }
 }

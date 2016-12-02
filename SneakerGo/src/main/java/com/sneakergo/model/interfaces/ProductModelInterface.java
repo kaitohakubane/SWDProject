@@ -19,4 +19,6 @@ public interface ProductModelInterface {
 
     List<ProductEntity> getProductByName(String productName);
 
+    int countProductRecord();
+
 }

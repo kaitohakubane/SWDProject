@@ -3,6 +3,9 @@ package com.sneakergo.controller;
 import com.sneakergo.common.constants.PageConstant;
 import com.sneakergo.common.constants.ParamConstant;
 import com.sneakergo.common.constants.UtilsConstant;
+import com.sneakergo.service.interfaces.BillServiceInterface;
+import com.sneakergo.service.interfaces.ProductServiceInterface;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -15,15 +18,19 @@ import org.springframework.web.servlet.ModelAndView;
  */
 @Controller
 public class IndexController {
+    @Autowired
+    ProductServiceInterface productServiceInterface;
 
+    @Autowired
+    BillServiceInterface billServiceInterface;
 
     @RequestMapping(value = {PageConstant.ADMIN_ROOT_PATH_URL, PageConstant.HOME_PAGE_URL}, method = RequestMethod.GET)
     public ModelAndView initHomePage() {
         ModelAndView modelAndView = new ModelAndView(PageConstant.HOME_PAGE);
-//        int numOfProduct = productServiceInterface.countAllProduct();
-//        int numOfOrder = billServiceInterface.countAllOrder();
-//        modelAndView.addObject(ParamConstant.NUMBER_PRODUCT_ATTR, numOfProduct);
-//        modelAndView.addObject(ParamConstant.NUMBER_ORDER_ATTR, numOfOrder);
+//        int numberOfProduct = productServiceInterface.countProductRecord();
+//        int numOfOrder = billServiceInterface.countTodayBillRecord();
+        modelAndView.addObject(ParamConstant.NUMBER_OF_PRODUCT, 50);
+        modelAndView.addObject(ParamConstant.NUMBER_OF_BILL, 80);
         return modelAndView;
     }
 

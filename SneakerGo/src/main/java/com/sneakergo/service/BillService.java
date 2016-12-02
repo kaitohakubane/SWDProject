@@ -1,5 +1,6 @@
 package com.sneakergo.service;
 
+import com.sneakergo.common.utils.NumbericUtils;
 import com.sneakergo.entity.AccountEntity;
 import com.sneakergo.entity.BillDisplayEntity;
 import com.sneakergo.entity.BillEntity;
@@ -17,28 +18,39 @@ import java.util.List;
  */
 @Service
 @Transactional
-public class BillService implements BillServiceInterface{
+public class BillService implements BillServiceInterface {
 
     @Autowired
     private BillModelInterface billModelInterface;
 
     @Override
-    public BillEntity getBillByID(int billID){
+    public BillEntity getBillByID(int billID) {
         return billModelInterface.getBillByID(billID);
     }
 
     @Override
-    public List<BillEntity> getBillByAccount(AccountEntity accountEntity){
+    public List<BillEntity> getBillByAccount(AccountEntity accountEntity) {
         return billModelInterface.getBillByAccount(accountEntity);
     }
 
     @Override
-    public List<BillDisplayEntity> getBillByTime(Date fromDate, Date toDate){
-        return billModelInterface.getBillByTime(fromDate,toDate);
+    public List<BillDisplayEntity> getBillByTime(Date fromDate, Date toDate) {
+        return billModelInterface.getBillByTime(fromDate, toDate);
     }
 
     @Override
-    public void updateBill(BillEntity billEntity){
+    public void updateBill(BillEntity billEntity) {
         billModelInterface.updateBill(billEntity);
+    }
+
+    @Override
+    public int countBillRecord(Date date) {
+        return billModelInterface.countBillRecord(date);
+    }
+
+    @Override
+    public int countTodayBillRecord(){
+        Date currentDate= NumbericUtils.getCurrentDate();
+        return billModelInterface.countBillRecord(currentDate);
     }
 }

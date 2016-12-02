@@ -17,4 +17,6 @@ public interface ProductServiceInterface {
     ProductEntity getProductByID(int productID);
 
     List<ProductEntity> getProductByName(String productName);
+
+    int countProductRecord();
 }

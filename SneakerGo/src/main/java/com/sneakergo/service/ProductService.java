@@ -42,4 +42,9 @@ public class ProductService implements ProductServiceInterface {
     public List<ProductEntity> getProductByName(String productName) {
         return productModelInterface.getProductByName(productName);
     }
+
+    @Override
+    public int countProductRecord(){
+        return productModelInterface.countProductRecord();
+    }
 }

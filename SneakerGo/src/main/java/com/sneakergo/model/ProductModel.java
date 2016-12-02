@@ -1,5 +1,6 @@
 package com.sneakergo.model;
 
+import com.sneakergo.common.constants.SQLParamConstant;
 import com.sneakergo.entity.ProductEntity;
 import com.sneakergo.model.common.CommonDAO;
 import com.sneakergo.model.interfaces.ProductModelInterface;
@@ -50,5 +51,10 @@ public class ProductModel extends CommonDAO implements ProductModelInterface {
             getSession().saveOrUpdate(product);
     }
 
-
+    @Override
+    public int countProductRecord(){
+        int count = ((Long)getSession().createQuery(SQLParamConstant.PRODUCT_RECORD_COUNT).
+                setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP).uniqueResult()).intValue();
+        return count;
+    }
 }

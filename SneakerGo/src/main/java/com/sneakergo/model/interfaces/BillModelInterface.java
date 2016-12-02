@@ -18,4 +18,6 @@ public interface BillModelInterface {
     List<BillDisplayEntity> getBillByTime(Date fromDate, Date toDate);
 
     void updateBill(BillEntity billEntity);
+
+    int countBillRecord(Date date);
 }
