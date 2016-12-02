@@ -100,5 +100,10 @@ function setLabel(){
         if (status == "0") {
             $(this).html("<span class='status sold'>Out of stock</span>")
         }
+        else {
+            if (status < 10 && status >0){
+                $(this).html("<span class='status onStock'>" + status+"</span>")
+            }
+        }
     })
 }
