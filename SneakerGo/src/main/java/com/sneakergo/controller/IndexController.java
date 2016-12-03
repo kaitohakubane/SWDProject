@@ -27,10 +27,10 @@ public class IndexController {
     @RequestMapping(value = {PageConstant.ADMIN_ROOT_PATH_URL, PageConstant.HOME_PAGE_URL}, method = RequestMethod.GET)
     public ModelAndView initHomePage() {
         ModelAndView modelAndView = new ModelAndView(PageConstant.HOME_PAGE);
-//        int numberOfProduct = productServiceInterface.countProductRecord();
-//        int numOfOrder = billServiceInterface.countTodayBillRecord();
-        modelAndView.addObject(ParamConstant.NUMBER_OF_PRODUCT, 50);
-        modelAndView.addObject(ParamConstant.NUMBER_OF_BILL, 80);
+        int numberOfProduct = productServiceInterface.countProductRecord();
+        int numberOfOrder = billServiceInterface.countTodayBillRecord();
+        modelAndView.addObject(ParamConstant.NUMBER_OF_PRODUCT, numberOfProduct);
+        modelAndView.addObject(ParamConstant.NUMBER_OF_BILL, numberOfOrder);
         return modelAndView;
     }
 

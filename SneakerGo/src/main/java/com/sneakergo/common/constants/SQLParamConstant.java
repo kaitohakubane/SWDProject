@@ -37,7 +37,4 @@ public class SQLParamConstant {
             "b.quantity as quantity, b.price*b.quantity as total " +
             "FROM billdetail b,product p W" +
             "HERE b.productID=p.productID AND b.billID=:billID";
-
-    public static final String PRODUCT_RECORD_COUNT="SELECT count(p.productID) FROM product p";
-    public static final String BILL_RECORD_COUNT_BY_TIME="SELECT count(b.billID) FROM bill b WHERE date=:date";
 }

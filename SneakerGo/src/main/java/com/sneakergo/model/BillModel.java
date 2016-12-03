@@ -9,6 +9,7 @@ import com.sneakergo.model.interfaces.BillModelInterface;
 import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 
@@ -49,8 +50,8 @@ public class BillModel extends CommonDAO implements BillModelInterface {
 
     @Override
     public int countBillRecord(Date date){
-        int count = ((Long)getSession().createQuery(SQLParamConstant.BILL_RECORD_COUNT_BY_TIME).
-                setParameter("date",date).setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP).uniqueResult()).intValue();
-        return count;
+        Long count = (Long)getSession().createCriteria(BillEntity.class).
+                add(Restrictions.eq("date",date)).setProjection(Projections.rowCount()).uniqueResult();
+        return count.intValue();
     }
 }
