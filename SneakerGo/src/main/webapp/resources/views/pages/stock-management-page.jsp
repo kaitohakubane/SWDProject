@@ -51,7 +51,7 @@
                            aria-describedby="hidden-table-info_info">
                         <thead>
                         <tr role="row">
-                            <th class="text-center">ID</th>
+                            <th class="text-center"></th>
                             <th class="text-center">Name</th>
                             <th class="text-center">Size</th>
                             <th class="text-center">Quantity</th>

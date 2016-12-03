@@ -27,4 +27,11 @@ public class AttributeModel extends CommonDAO implements AttributeModelInterface
     public void insertAttribute(AttributeEntity attributeEntity){
         getSession().persist(attributeEntity);
     }
+
+    @Override
+    public AttributeEntity getProductByID(int attId) {
+        AttributeEntity attributeEntity = getSession().get(AttributeEntity.class, attId);
+        return attributeEntity;
+    }
+
 }

@@ -22,16 +22,12 @@ public class ParamConstant {
      * Account
      */
     public static final String ACCOUNT_ID = "accountId";
-    public static final String USERNAME = "username";
-    public static final String PASS = "password";
-    public static final String LASTNAME = "lastName";
-    public static final String FIRSTNAME = "firstName";
+    public static final String NAME = "username";
     public static final String BIRTHDAY = "birthday";
     public static final String ADDRESS = "address";
     public static final String PHONE = "phone";
     public static final String EMAIL = "email";
-    public static final String OLD_PASS = "oldPassword";
-    public static final String NEW_PASS = "newPassword";
+    public static final String PASSWORD = "password";
 
     /**
      * Product
@@ -64,7 +60,7 @@ public class ParamConstant {
     public static final String SALE_PERCENT = "salePercent";
 
 
-    public static final String CART = "cart";
+    public static final String ORDER = "order";
 
     /**
      * Sale Product
@@ -85,4 +81,5 @@ public class ParamConstant {
     public static final String LIST_STOCK_ATTR="listStock";
     public static final String STOCK_ID="stockID";
     public static final String ATTRIBUTE_ID="attributeID";
+    public static final String QUANTITY="quantity";
 }

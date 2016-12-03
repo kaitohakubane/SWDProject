@@ -21,4 +21,5 @@ public interface SaleModelInterface {
 
     void updateSale(SaleEntity sale);
 
+    SaleEntity getSaleByProductId(int productId,Date date);
 }

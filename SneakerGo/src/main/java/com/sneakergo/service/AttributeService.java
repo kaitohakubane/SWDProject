@@ -21,7 +21,15 @@ public class AttributeService implements AttributeServiceInterface {
         return attributeModelInterface.getAttributeBySize(size);
     }
 
+    @Override
     public void insertAttribute(AttributeEntity attributeEntity) {
         attributeModelInterface.insertAttribute(attributeEntity);
     }
+
+    @Override
+    public AttributeEntity getProductByID(int attId){
+        return attributeModelInterface.getProductByID(attId);
+    }
+
+
 }

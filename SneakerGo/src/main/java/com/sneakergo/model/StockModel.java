@@ -7,6 +7,8 @@ import com.sneakergo.model.common.CommonDAO;
 import com.sneakergo.model.interfaces.StockModelInterface;
 import org.hibernate.Criteria;
 import org.hibernate.Query;
+import org.hibernate.criterion.Projection;
+import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 
@@ -42,13 +44,10 @@ public class StockModel extends CommonDAO implements StockModelInterface {
     }
 
     @Override
-    public boolean isProductStockAvailable(int productID) {
-        Query query = getSession().createSQLQuery(SQLParamConstant.COUNT_ALL_STOCK_QUANTITY_OF_PRODUCT);
-        query.setParameter(1, productID);
-        if ((Integer) query.uniqueResult() > 0) {
-            return true;
-        }
-        return false;
+    public List getSizeOfProduct(int productID) {
+        Criteria criteria=getSession().createCriteria(StockEntity.class)
+                .add(Restrictions.eq("productId",productID)).setProjection(Projections.property("attributeId"));
+        return criteria.list();
     }
 
     @Override

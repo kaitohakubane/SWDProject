@@ -54,4 +54,10 @@ public class BillModel extends CommonDAO implements BillModelInterface {
                 add(Restrictions.eq("date",date)).setProjection(Projections.rowCount()).uniqueResult();
         return count.intValue();
     }
+
+    @Override
+    public BillEntity createBill(BillEntity billEntity){
+        getSession().persist(billEntity);
+        return billEntity;
+    }
 }

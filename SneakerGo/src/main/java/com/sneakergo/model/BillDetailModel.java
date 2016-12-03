@@ -36,4 +36,14 @@ public class BillDetailModel extends CommonDAO implements BillDetailModelInterfa
         return billDetailDisplayEntities;
     }
 
+    @Override
+    public void updateBillDetail(BilldetailEntity billdetailEntity){
+        getSession().saveOrUpdate(billdetailEntity);
+    }
+
+    @Override
+    public void createBillDetail(BilldetailEntity billdetailEntity){
+        getSession().persist(billdetailEntity);
+    }
+
 }

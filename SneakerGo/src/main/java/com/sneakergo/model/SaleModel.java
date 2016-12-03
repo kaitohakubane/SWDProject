@@ -2,6 +2,7 @@ package com.sneakergo.model;
 
 import com.sneakergo.common.constants.SQLParamConstant;
 
+import com.sneakergo.common.constants.UtilsConstant;
 import com.sneakergo.entity.SaleDisplayEntity;
 import com.sneakergo.entity.SaleEntity;
 import com.sneakergo.model.common.CommonDAO;
@@ -55,5 +56,15 @@ public class SaleModel extends CommonDAO implements SaleModelInterface {
     @Override
     public void updateSale(SaleEntity sale) {
         getSession().saveOrUpdate(sale);
+    }
+
+    @Override
+    public SaleEntity getSaleByProductId(int productId,Date date){
+        Criteria criteria= getSession().createCriteria(SaleEntity.class).add(Restrictions.eq("enabled",true))
+                .add(Restrictions.le("fromDate",date)).add(Restrictions.ge("toDate",date))
+                .add(Restrictions.eq("productId",productId)).addOrder(Order.desc("fromDate"))
+                .setMaxResults(UtilsConstant.ONE);
+        SaleEntity saleEntity=(SaleEntity) criteria.uniqueResult();
+        return saleEntity;
     }
 }

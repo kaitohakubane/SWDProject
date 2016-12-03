@@ -39,8 +39,8 @@ public class StockService implements StockServiceInterface{
     }
 
     @Override
-    public boolean isProductStockAvailable(int productID){
-        return stockModelInterface.isProductStockAvailable(productID);
+    public List getSizeOfProduct(int productID){
+        return stockModelInterface.getSizeOfProduct(productID);
     }
 
     @Override

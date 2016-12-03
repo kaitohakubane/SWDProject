@@ -20,4 +20,6 @@ public interface SaleServiceInterface {
     boolean createSave(SaleEntity saleEntity);
 
     void updateSale(SaleEntity sale);
+
+    SaleEntity getSaleByProductId(int productId);
 }

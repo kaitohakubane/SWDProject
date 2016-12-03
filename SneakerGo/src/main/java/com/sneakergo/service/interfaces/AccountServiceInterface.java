@@ -12,4 +12,6 @@ public interface AccountServiceInterface {
     boolean updateAccount(AccountEntity accountEntity);
 
     boolean createAccount(AccountEntity accountEntity);
+
+    AccountEntity checkLogin(String accountID, String password);
 }

@@ -21,13 +21,18 @@ public class PageConstant {
     public static final String LOGIN_PAGE_URL = "/login";
     public static final String GET_ACCOUNT_URL = "/admin/account/get-account";
 
+    //Account
+    public static final String ACCOUNT_REGISTER_URL="/api/register";
+    public static final String CHECK_LOGIN_URL="/api/login";
+
     // Product
     public static final String PRODUCT_PAGE_URL = "/admin/product";
     public static final String ADD_PRODUCT_URL = "/admin/product/add";
     public static final String EDIT_PRODUCT_URL = "/admin/product/update";
     public static final String REMOVE_PRODUCT_URL = "/admin/product/remove";
     public static final String SEARCH_PRODUCT_URL="/admin/product/search";
-    public static final String CREATE_PRODUCT_PAGE_URL="/admin/product/create-product";
+    public static final String GET_ALL_PRODUCT_URL="/api/product";
+    public static final String GET_PRODUCT_SIZE="/api/product/get-size";
 
     // Bill
     public static final String BILL_PAGE_URL = "/admin/bill-management";
@@ -62,6 +67,9 @@ public class PageConstant {
     public static final String MONTHLY_IMPORT_PRODUCT_REPORT_URL = "/admin/report/monthly/import-product";
     public static final String REVENUE_REPORT_URL = "/admin/report/monthly/revenue";
 
+    //Customer API
+    public static final String CHECKOUT_URL="/api/checkout";
+
     /**
      * For jsp page constant
      */
@@ -92,5 +100,6 @@ public class PageConstant {
     // Report
     public static final String DAILY_REPORT_PAGE = "daily-report-page";
     public static final String MONTHLY_REPORT_PAGE = "monthly-report-page";
+
 
 }

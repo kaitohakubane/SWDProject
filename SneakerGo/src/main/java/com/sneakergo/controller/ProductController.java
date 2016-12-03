@@ -24,6 +24,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -155,4 +156,25 @@ public class ProductController {
         return false;
     }
 
+    @ResponseBody
+    @RequestMapping(value = PageConstant.GET_ALL_PRODUCT_URL, method = RequestMethod.GET)
+    public List<ProductEntity> getAllProduct() {
+        List<ProductEntity> listProduct = productServiceInterface.getAllProduct();
+        return listProduct;
+    }
+
+    @ResponseBody
+    @RequestMapping(value = PageConstant.GET_PRODUCT_SIZE, method = RequestMethod.POST)
+    public List<String> getProductSize(@RequestParam(value = ParamConstant.PRODUCT_ID) int productId) {
+        ProductEntity productEntity= productServiceInterface.getProductByID(productId);
+        if(productEntity!=null){
+            List<Integer> listOfAttId= stockServiceInterface.getSizeOfProduct(productEntity.getProductId());
+            List<String> listOfSize=new ArrayList<String>();
+            for(int i=UtilsConstant.ZERO;i<listOfAttId.size();i++){
+                listOfSize.add(attributeServiceInterface.getProductByID(listOfAttId.get(i)).getSize());
+            }
+            return listOfSize;
+        }
+        return null;
+    }
 }

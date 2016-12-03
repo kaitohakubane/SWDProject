@@ -3,6 +3,7 @@ package com.sneakergo.model.interfaces;
 import com.sneakergo.entity.AccountEntity;
 import com.sneakergo.entity.BillDisplayEntity;
 import com.sneakergo.entity.BillEntity;
+import com.sneakergo.entity.BilldetailEntity;
 
 import java.sql.Date;
 import java.util.List;
@@ -20,4 +21,6 @@ public interface BillModelInterface {
     void updateBill(BillEntity billEntity);
 
     int countBillRecord(Date date);
+
+    BillEntity createBill(BillEntity billEntity);
 }

@@ -4,6 +4,7 @@ import com.sneakergo.common.utils.NumbericUtils;
 import com.sneakergo.entity.AccountEntity;
 import com.sneakergo.entity.BillDisplayEntity;
 import com.sneakergo.entity.BillEntity;
+import com.sneakergo.entity.BilldetailEntity;
 import com.sneakergo.model.interfaces.BillModelInterface;
 import com.sneakergo.service.interfaces.BillServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,4 +54,11 @@ public class BillService implements BillServiceInterface {
         Date currentDate= NumbericUtils.getCurrentDate();
         return billModelInterface.countBillRecord(currentDate);
     }
+
+    @Override
+    public BillEntity createBill(BillEntity billEntity){
+        return billModelInterface.createBill(billEntity);
+    }
+
+
 }

@@ -26,7 +26,17 @@ public class BillDetailService implements BillDetailServiceInterface {
     }
 
     @Override
-    public List<BillDetailDisplayEntity> getBillDetailByBill(int billID){
+    public List<BillDetailDisplayEntity> getBillDetailByBill(int billID) {
         return billDetailModelInterface.getBillDetailByBill(billID);
+    }
+
+    @Override
+    public void updateBillDetail(BilldetailEntity billdetailEntity) {
+        billDetailModelInterface.updateBillDetail(billdetailEntity);
+    }
+
+    @Override
+    public void createBillDetail(BilldetailEntity billdetailEntity) {
+        billDetailModelInterface.createBillDetail(billdetailEntity);
     }
 }

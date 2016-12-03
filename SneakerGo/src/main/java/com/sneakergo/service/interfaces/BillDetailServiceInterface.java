@@ -13,4 +13,8 @@ public interface BillDetailServiceInterface {
     List<BilldetailEntity> getBillDetailByBillID(BillEntity billEntity);
 
     List<BillDetailDisplayEntity> getBillDetailByBill(int billID);
+
+    void updateBillDetail(BilldetailEntity billdetailEntity);
+
+    void createBillDetail(BilldetailEntity billdetailEntity);
 }

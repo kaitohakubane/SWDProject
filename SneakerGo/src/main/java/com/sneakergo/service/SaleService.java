@@ -1,5 +1,6 @@
 package com.sneakergo.service;
 
+import com.sneakergo.common.utils.NumbericUtils;
 import com.sneakergo.entity.SaleDisplayEntity;
 import com.sneakergo.entity.SaleEntity;
 import com.sneakergo.model.interfaces.SaleModelInterface;
@@ -42,7 +43,14 @@ public class SaleService implements SaleServiceInterface{
         return saleModelInterface.createSave(saleEntity);
     }
 
+    @Override
     public void updateSale(SaleEntity sale){
         saleModelInterface.updateSale(sale);
+    }
+
+    @Override
+    public SaleEntity getSaleByProductId(int productId){
+        Date date= NumbericUtils.getCurrentDate();
+        return saleModelInterface.getSaleByProductId(productId,date);
     }
 }

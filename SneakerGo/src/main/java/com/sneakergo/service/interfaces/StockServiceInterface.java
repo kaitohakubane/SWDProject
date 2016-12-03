@@ -15,7 +15,7 @@ public interface StockServiceInterface {
 
     void createStock(StockEntity stockEntity);
 
-    boolean isProductStockAvailable(int productID);
+    List getSizeOfProduct(int productID);
 
     List<StockDisplayEntity> getStock();
 

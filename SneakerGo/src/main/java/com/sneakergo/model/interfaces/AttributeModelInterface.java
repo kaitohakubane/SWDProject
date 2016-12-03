@@ -10,4 +10,5 @@ public interface AttributeModelInterface {
     AttributeEntity getAttributeBySize(String size);
 
     void insertAttribute(AttributeEntity attributeEntity);
+    AttributeEntity getProductByID(int attId);
 }
