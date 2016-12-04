@@ -65,7 +65,7 @@ public class PageConstant {
     public static final String CURRENT_WAREHOUSE_CONSUMER_REPORT_URL = "/admin/report/daily/warehouse-consumer";
     public static final String GET_ALL_BILL_DAILY_REPORT_URL = "/admin/report/daily/sale/get-bill";
     public static final String MONTHLY_IMPORT_PRODUCT_REPORT_URL = "/admin/report/monthly/import-product";
-    public static final String REVENUE_REPORT_URL = "/admin/report/monthly/revenue";
+    public static final String REVENUE_REPORT_URL = "/admin/revenue-report";
 
     //Customer API
     public static final String CHECKOUT_URL="/api/checkout";
@@ -99,7 +99,7 @@ public class PageConstant {
 
     // Report
     public static final String DAILY_REPORT_PAGE = "daily-report-page";
-    public static final String MONTHLY_REPORT_PAGE = "monthly-report-page";
+    public static final String CHART_PAGE = "chart-page";
 
 
 }

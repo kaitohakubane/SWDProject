@@ -64,8 +64,7 @@
                     <span>Report</span>
                 </a>
                 <ul class="sub">
-                    <li><a  href="morris.html">Revenue Report</a></li>
-                    <li><a  href="chartjs.html">Import Report</a></li>
+                    <li><a  href="${pageContext.request.contextPath}/admin/revenue-report">Revenue Report</a></li>
                 </ul>
             </li>
 
