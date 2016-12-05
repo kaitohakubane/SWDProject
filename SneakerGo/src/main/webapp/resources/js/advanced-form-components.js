@@ -18,7 +18,6 @@
             minViewMode: "years",
             startDate: '2016',
             endDate: new Date(),
-            orientation: "bottom left",
         });
 
         var startDate = new Date(2012,1,20);

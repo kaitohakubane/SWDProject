@@ -38,7 +38,7 @@
                         <h3>
                             <form id="search-form" method="POST">
                                 <div class="row">
-                                    <div class="col-md-5">
+                                    <div class="col-md-4">
                                         <div data-date-viewmode="years" data-date-format="dd-mm-yyyy"
                                              data-date="01-01-2016"
                                              class="input-append date dpYears">
@@ -51,7 +51,7 @@
 		                                      </span>
                                         </div>
                                     </div>
-                                    <div class="col-md-5">
+                                    <div class="col-md-4">
                                         <div data-date-viewmode="years" data-date-format="dd-mm-yyyy"
                                              data-date="01-01-2016"
                                              class="input-append date dpYears">
@@ -65,7 +65,7 @@
 		                                      </span>
                                         </div>
                                     </div>
-                                    <div class="col-md-2">
+                                    <div class="col-md-4">
 
                                         <button type="button" class="btn btn-primary search-btn"
                                                 id="search-btn">Search

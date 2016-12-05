@@ -34,14 +34,14 @@
         <section class="wrapper">
             <header>
                 <div class="row">
-                    <div class="col-md-8">
+                    <div class="col-md-7">
                         <h3> Revenue Report</h3>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-5">
                         <h3>
                             <form id="search-form" method="POST">
                                 <div class="row">
-                                    <div class="col-md-8">
+                                    <div class="col-md-7">
                                         <div data-date-viewmode="years" data-date-format="yyyy-mm-dd"
                                              data-date="2016-01-01"
                                              class="input-append date onlyYears">
@@ -54,7 +54,7 @@
 		                                      </span>
                                         </div>
                                     </div>
-                                    <div class="col-md-4 text-right">
+                                    <div class="col-md-5 text-right">
                                         <div class="form-group">
                                             <button type="button" class="btn btn-primary search-btn"
                                                     id="search-btn">Search
