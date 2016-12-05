@@ -1,6 +1,7 @@
 package com.sneakergo.common.utils;
 
 import com.sneakergo.common.constants.ParamConstant;
+import com.sneakergo.common.constants.UtilsConstant;
 
 import java.sql.Date;
 import java.text.SimpleDateFormat;
@@ -26,7 +27,7 @@ public class NumbericUtils {
     public static Date getDate(String year,String month,String day){
         try{
             int intYear=Integer.parseInt(year);
-            int intMonth=Integer.parseInt(month);
+            int intMonth=Integer.parseInt(month)- UtilsConstant.ONE;
             int intDay=Integer.parseInt(day);
             Calendar calendar = new GregorianCalendar(intYear,intMonth,intDay);
             Date nDate=new Date(calendar.getTimeInMillis());

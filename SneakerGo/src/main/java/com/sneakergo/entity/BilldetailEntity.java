@@ -3,19 +3,18 @@ package com.sneakergo.entity;
 import javax.persistence.*;
 
 /**
- * Created by Hung on 11/21/2016.
+ * Created by Hung on 12/5/2016.
  */
 @Entity
 @Table(name = "billdetail", schema = "sneakergo", catalog = "")
 public class BilldetailEntity {
     private int billDetailId;
     private Integer billId;
-    private Integer productId;
+    private Integer stockId;
     private Integer quantity;
     private String price;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "billDetailID", nullable = false)
     public int getBillDetailId() {
         return billDetailId;
@@ -36,13 +35,13 @@ public class BilldetailEntity {
     }
 
     @Basic
-    @Column(name = "productID", nullable = true)
-    public Integer getProductId() {
-        return productId;
+    @Column(name = "stockID", nullable = true)
+    public Integer getStockId() {
+        return stockId;
     }
 
-    public void setProductId(Integer productId) {
-        this.productId = productId;
+    public void setStockId(Integer stockId) {
+        this.stockId = stockId;
     }
 
     @Basic
@@ -74,7 +73,7 @@ public class BilldetailEntity {
 
         if (billDetailId != that.billDetailId) return false;
         if (billId != null ? !billId.equals(that.billId) : that.billId != null) return false;
-        if (productId != null ? !productId.equals(that.productId) : that.productId != null) return false;
+        if (stockId != null ? !stockId.equals(that.stockId) : that.stockId != null) return false;
         if (quantity != null ? !quantity.equals(that.quantity) : that.quantity != null) return false;
         if (price != null ? !price.equals(that.price) : that.price != null) return false;
 
@@ -85,7 +84,7 @@ public class BilldetailEntity {
     public int hashCode() {
         int result = billDetailId;
         result = 31 * result + (billId != null ? billId.hashCode() : 0);
-        result = 31 * result + (productId != null ? productId.hashCode() : 0);
+        result = 31 * result + (stockId != null ? stockId.hashCode() : 0);
         result = 31 * result + (quantity != null ? quantity.hashCode() : 0);
         result = 31 * result + (price != null ? price.hashCode() : 0);
         return result;

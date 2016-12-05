@@ -2,9 +2,11 @@ package com.sneakergo.model;
 
 import com.sneakergo.common.constants.SQLParamConstant;
 import com.sneakergo.entity.ProductEntity;
+import com.sneakergo.entity.ProductSellEntity;
 import com.sneakergo.model.common.CommonDAO;
 import com.sneakergo.model.interfaces.ProductModelInterface;
 import org.hibernate.Criteria;
+import org.hibernate.Query;
 import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;

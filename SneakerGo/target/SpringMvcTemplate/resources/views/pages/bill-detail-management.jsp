@@ -39,7 +39,8 @@
                         <h3>
                             <a>
                                 <form id="back-form" method="POST">
-                                <span class="btn btn-primary backToView">
+                                <span class="btn btn-primary backToView" id="back-label" data-from="${fromDate}"
+                                data-to="${toDate}">
                                     back
                                 </span>
                                 </form>

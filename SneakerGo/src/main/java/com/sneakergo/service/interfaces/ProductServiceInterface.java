@@ -1,6 +1,7 @@
 package com.sneakergo.service.interfaces;
 
 import com.sneakergo.entity.ProductEntity;
+import com.sneakergo.entity.ProductSellEntity;
 
 import java.util.List;
 

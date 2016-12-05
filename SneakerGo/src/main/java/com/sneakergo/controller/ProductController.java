@@ -5,14 +5,11 @@ import com.sneakergo.common.constants.ParamConstant;
 import com.sneakergo.common.constants.UtilsConstant;
 import com.sneakergo.common.utils.FileUtils;
 import com.sneakergo.common.utils.StringUtils;
-import com.sneakergo.entity.AttributeEntity;
-import com.sneakergo.entity.ProductEntity;
-import com.sneakergo.entity.StockEntity;
-import com.sneakergo.service.AttributeService;
+import com.sneakergo.entity.*;
 import com.sneakergo.service.interfaces.AttributeServiceInterface;
 import com.sneakergo.service.interfaces.ProductServiceInterface;
+import com.sneakergo.service.interfaces.SaleServiceInterface;
 import com.sneakergo.service.interfaces.StockServiceInterface;
-import org.jcp.xml.dsig.internal.dom.Utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -43,6 +40,9 @@ public class ProductController {
 
     @Autowired
     private AttributeServiceInterface attributeServiceInterface;
+
+    @Autowired
+    private SaleServiceInterface saleServiceInterface;
 
     @RequestMapping(value = PageConstant.PRODUCT_PAGE_URL, method = RequestMethod.GET)
     public ModelAndView initProductPage() {
@@ -158,9 +158,20 @@ public class ProductController {
 
     @ResponseBody
     @RequestMapping(value = PageConstant.GET_ALL_PRODUCT_URL, method = RequestMethod.GET)
-    public List<ProductEntity> getAllProduct() {
+    public List<ProductSellEntity> getAllProduct() {
         List<ProductEntity> listProduct = productServiceInterface.getAllProduct();
-        return listProduct;
+        List<ProductSellEntity> listSellProduct=new ArrayList<ProductSellEntity>();
+        ProductSellEntity productSellEntity;
+        for(ProductEntity entity: listProduct){
+             SaleEntity saleEntity= saleServiceInterface.getSaleByProductId(entity.getProductId());
+             if(saleEntity==null){
+                 productSellEntity=new ProductSellEntity(entity,UtilsConstant.ZERO);
+             }else{
+                 productSellEntity=new ProductSellEntity(entity,saleEntity.getSalePercent());
+             }
+            listSellProduct.add(productSellEntity);
+        }
+        return listSellProduct;
     }
 
     @ResponseBody

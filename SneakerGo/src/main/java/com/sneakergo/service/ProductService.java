@@ -1,6 +1,7 @@
 package com.sneakergo.service;
 
 import com.sneakergo.entity.ProductEntity;
+import com.sneakergo.entity.ProductSellEntity;
 import com.sneakergo.model.interfaces.ProductModelInterface;
 import com.sneakergo.service.interfaces.ProductServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;

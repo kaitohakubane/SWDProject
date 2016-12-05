@@ -54,3 +54,15 @@ table thead th {
 .smallQuan{
     background: red;
 }
+
+.datepicker.dropdown-menu{
+    left: 1050px!important;
+}
+.datepicker:before{
+    right: 6px!important;
+    left: auto!important;
+}
+.datepicker:after{
+    right: 6px!important;
+    left: auto!important;
+}

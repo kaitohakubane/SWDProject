@@ -54,7 +54,7 @@ CREATE TABLE Bill (
 CREATE TABLE BillDetail (
   billDetailID INT NOT NULL AUTO_INCREMENT,
   billID       INT,
-  productID    INT,
+  stockID    INT,
   quantity     INT,
   price     VARCHAR(255),
   PRIMARY KEY (billDetailID)
@@ -88,7 +88,7 @@ ALTER TABLE BillDetail
   ADD FOREIGN KEY (billID) REFERENCES Bill (billID);
 
 ALTER TABLE BillDetail
-  ADD FOREIGN KEY (productId) REFERENCES Product (productId);
+  ADD FOREIGN KEY (stockID) REFERENCES Stock (stockID);
 
 ALTER TABLE Import
 ADD FOREIGN KEY (stockID) REFERENCES Stock(stockID);
@@ -177,31 +177,31 @@ VALUES ('kietta','3000','2016-10-16',1);
 INSERT INTO Bill(accountID,totalPrice,date,enabled) 
 VALUES ('trungtq','3400','2016-11-20',1);
 
-INSERT INTO BillDetail(billID,productID,quantity,price) 
+INSERT INTO BillDetail(billID,stockID,quantity,price) 
 VALUES (1,1,1,'1000');
 
-INSERT INTO BillDetail(billID,productID,quantity,price) 
+INSERT INTO BillDetail(billID,stockID,quantity,price) 
 VALUES (1,5,1,'1500');
 
-INSERT INTO BillDetail(billID,productID,quantity,price) 
+INSERT INTO BillDetail(billID,stockID,quantity,price) 
 VALUES (2,5,2,'3000');
 
-INSERT INTO BillDetail(billID,productID,quantity,price) 
+INSERT INTO BillDetail(billID,stockID,quantity,price) 
 VALUES (2,1,2,'1000');
 
-INSERT INTO BillDetail(billID,productID,quantity,price) 
+INSERT INTO BillDetail(billID,stockID,quantity,price) 
 VALUES (3,4,1,'1600');
 
-INSERT INTO BillDetail(billID,productID,quantity,price) 
+INSERT INTO BillDetail(billID,stockID,quantity,price) 
 VALUES (3,5,1,'1500');
 
-INSERT INTO BillDetail(billID,productID,quantity,price) 
+INSERT INTO BillDetail(billID,stockID,quantity,price) 
 VALUES (4,5,2,'1600');
 
-INSERT INTO BillDetail(billID,productID,quantity,price) 
+INSERT INTO BillDetail(billID,stockID,quantity,price) 
 VALUES (5,3,1,'1800');
 
-INSERT INTO BillDetail(billID,productID,quantity,price) 
+INSERT INTO BillDetail(billID,stockID,quantity,price) 
 VALUES (5,4,1,'1600');
 
 INSERT INTO Sale(productID,salePercent,fromDate,toDate,enabled) 

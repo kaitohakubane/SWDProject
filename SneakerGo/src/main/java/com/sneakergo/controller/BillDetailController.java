@@ -100,9 +100,9 @@ public class BillDetailController {
                 BilldetailEntity billDetailEntity = new BilldetailEntity();
                 SaleEntity sale = saleServiceInterface.getSaleByProductId(order.getProductId());
                 if (sale != null) {
-                    salePercent = 1 - (sale.getSalePercent() / 100.0);
+                    salePercent = UtilsConstant.ONE - (sale.getSalePercent() / 100.0);
                 } else {
-                    salePercent = 1;
+                    salePercent = UtilsConstant.ONE;
                 }
 
                 //Create bill detail record
@@ -110,18 +110,22 @@ public class BillDetailController {
                 price += order.getQuantity() * salePercent * Integer.parseInt(productServiceInterface.getProductByID(order.getProductId()).getPrice());
                 totalPrice+=price;
                 billDetailEntity.setBillId(billEntity.getBillId());
-                billDetailEntity.setProductId(order.getProductId());
+
+                //Handle stockId attribute of billdetail
+                AttributeEntity attributeEntity=attributeServiceInterface.getAttributeBySize(order.getSize());
+                StockEntity stockEntity= stockServiceInterface.getStockByProductIDAndAttributeID
+                        (order.getProductId(),attributeEntity.getAttributeId());
+                billDetailEntity.setStockId(stockEntity.getStockId());
+
                 billDetailEntity.setPrice(String.valueOf(price));
                 billDetailEntity.setQuantity(order.getQuantity());
                 billDetailServiceInterface.createBillDetail(billDetailEntity);
 
                 //Update stock
-                AttributeEntity attributeEntity=attributeServiceInterface.getAttributeBySize(order.getSize());
-                StockEntity stockEntity= stockServiceInterface.getStockByProductIDAndAttributeID
-                        (order.getProductId(),attributeEntity.getAttributeId());
+
+
                 stockEntity.setQuantity(stockEntity.getQuantity()-order.getQuantity());
                 stockServiceInterface.updateStockQuantity(stockEntity);
-
             }
 
             //Create bill
