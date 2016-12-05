@@ -242,23 +242,31 @@
                 title: {
                     text: "Earthquakes - per month"
                 },
+                axisX:{
+                    valueFormatString: "MMM",
+                    title: "Month"
+                },
+                axisY: {
+                    title: ".000VNĐ"
+                },
                 data: [
                     {
-                        type: "line",
+                        type: "area",
 
                         dataPoints: [
-                            {x: new Date(2012, 00, 1), y: 450},
-                            {x: new Date(2012, 01, 1), y: 414},
-                            {x: new Date(2012, 02, 1), y: 520},
-                            {x: new Date(2012, 03, 1), y: 460},
-                            {x: new Date(2012, 04, 1), y: 450},
-                            {x: new Date(2012, 05, 1), y: 500},
-                            {x: new Date(2012, 06, 1), y: 480},
-                            {x: new Date(2012, 07, 1), y: 480},
-                            {x: new Date(2012, 08, 1), y: 410},
-                            {x: new Date(2012, 09, 1), y: 500},
-                            {x: new Date(2012, 10, 1), y: 480},
-                            {x: new Date(2012, 11, 1), y: 510}
+                            { x: new Date(2010, 1, 0), y: 650 },
+                            { x: new Date(2010, 2, 0), y: 700 },
+                            { x: new Date(2010, 3, 0), y: 710 },
+                            { x: new Date(2010, 4, 0), y: 658 },
+                            { x: new Date(2010, 5, 0), y: 734 },
+                            { x: new Date(2010, 6, 0), y: 963 },
+                            { x: new Date(2010, 7, 0), y: 847 },
+                            { x: new Date(2010, 8, 0), y: 853 },
+                            { x: new Date(2010, 9, 0), y: 869 },
+                            { x: new Date(2010, 10, 0), y: 943 },
+                            { x: new Date(2010, 11, 0), y: 970 },
+                            { x: new Date(2010, 12, 0), y: 970 }
+
                         ]
                     }
                 ]
