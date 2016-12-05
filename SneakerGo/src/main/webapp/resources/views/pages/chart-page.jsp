@@ -19,6 +19,19 @@
     <script src="<c:url value = "/resources/js/bootstrap-daterangepicker/moment.min.js"/>"
             type="text/javascript"></script>
 </head>
+<style>
+    .datepicker.dropdown-menu{
+        left: 1050px!important;
+    }
+    .datepicker:before{
+        right: 6px!important;
+        left: auto!important;
+    }
+    .datepicker:after{
+        right: 6px!important;
+        left: auto!important;
+    }
+</style>
 <body>
 <section id="container">
     <c:import url="/resources/views/common/data-table.jsp"/>
@@ -32,11 +45,36 @@
         <section class="wrapper">
             <header>
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-8">
                         <h3> Revenue Report</h3>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <h3>
+                            <form id="search-form" method="POST">
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <div data-date-viewmode="years" data-date-format="yyyy-mm-dd"
+                                             data-date="2016-01-01"
+                                             class="input-append date onlyYears">
+                                            <input type="text" readonly="" size="16" name="fromDate"
+                                                   class="form-control"
+                                                   name="fromDate" id="fromDate" value="${fromDate}">
+                                            <span class="input-group-btn add-on">
+		                                        <button class="btn btn-theme myBtnDate" type="button"><i
+                                                        class="fa fa-calendar"></i></button>
+		                                      </span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 text-right">
+                                        <div class="form-group">
+                                            <button type="button" class="btn btn-primary search-btn"
+                                                    id="search-btn">Search
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </form>
 
 
                         </h3>
@@ -179,7 +217,7 @@
     <!--footer end-->
 </section>
 
-<%--Time script--%>
+<script src="http://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
 <script src="<c:url value = "/resources/js/bootstrap-datepicker/bootstrap-datepicker.js"/>"
         type="text/javascript"></script>
 
@@ -189,22 +227,9 @@
 
 <script src="<c:url value = "/resources/js/bootstrap-daterangepicker/moment.min.js"/>"
         type="text/javascript"></script>
-
 <c:import url="/resources/views/common/footer.jsp"/>
+<script src="<c:url value="/resources/js/advanced-form-components.js"/>" type="text/javascript"></script>
 <script src="<c:url value="/resources/js/common-scripts.js"/>"></script>
-<script src="/resources/Theme/assets/js/jquery-1.8.3.min.js"></script>
-<script src="http://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
-
-<%--<script src="<c:url value="/resources/js/advanced-form-components.js"/>" type="text/javascript"></script>--%>
-
-
-<!--common script for all pages-->
-<script src="<c:url value="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"/>"></script>
-<script src="<c:url value="http://cdn.oesmith.co.uk/morris-0.4.3.min.js"/>"></script>
-<!--script for this page-->
-<script src="<c:url value="/resources/lib/js/chart-page.js"/>"></script>
-
-
 </body>
 
 </html>
