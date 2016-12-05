@@ -24,11 +24,11 @@
         <section class="wrapper">
 
             <div class="row">
-                <div class="col-lg-9 main-chart">
+                <div class="col-lg-12 main-chart">
 
                     <div class="row mtbox">
 
-                        <div class="col-md-2 col-sm-2 col-md-offset-1 box0">
+                        <div class="col-md-2 col-sm-2 col-md-offset-2 box0">
                             <div class="box1">
                                 <span class="li_stack"></span>
                                 <h3>${numberOfProduct}</h3>
@@ -65,7 +65,7 @@
 
                     <div class="row mt">
                         <!-- SERVER STATUS PANELS -->
-                        <div class="col-md-4 col-sm-4 mb">
+                        <div class="col-md-6 col-sm-6 mb">
                             <div class="white-panel pn donut-chart">
                                 <div class="white-header">
                                     <h5>STOCK STATUS</h5>
@@ -94,7 +94,7 @@
                         </div><!-- /col-md-4-->
 
 
-                        <div class="col-md-4 col-sm-4 mb">
+                        <div class="col-md-6 col-sm-6 mb">
                             <div class="white-panel pn">
                                 <div class="white-header">
                                     <h5>TOP PRODUCT</h5>
@@ -111,22 +111,22 @@
                             </div>
                         </div><!-- /col-md-4 -->
 
-                        <div class="col-md-4 col-sm-4 mb">
-                            <!-- REVENUE PANEL -->
-                            <div class="darkblue-panel pn">
-                                <div class="darkblue-header">
-                                    <h5>RECENT 7 DAY REVENUE</h5>
-                                </div>
-                                <div class="chart mt">
-                                    <div class="sparkline" data-type="line" data-resize="true" data-height="75"
-                                         data-width="90%" data-line-width="1" data-line-color="#fff"
-                                         data-spot-color="#fff" data-fill-color="" data-highlight-line-color="#fff"
-                                         data-spot-radius="4"
-                                         data-data="[200,135,667,333,526,996,564,123,890,464,655]"></div>
-                                </div>
-                                <p class="mt"><b>$ 17,980</b><br/>Total</p>
-                            </div>
-                        </div><!-- /col-md-4 -->
+                        <%--<div class="col-md-4 col-sm-4 mb">--%>
+                            <%--<!-- REVENUE PANEL -->--%>
+                            <%--<div class="darkblue-panel pn">--%>
+                                <%--<div class="darkblue-header">--%>
+                                    <%--<h5>RECENT 7 DAY REVENUE</h5>--%>
+                                <%--</div>--%>
+                                <%--<div class="chart mt">--%>
+                                    <%--<div class="sparkline" data-type="line" data-resize="true" data-height="75"--%>
+                                         <%--data-width="90%" data-line-width="1" data-line-color="#fff"--%>
+                                         <%--data-spot-color="#fff" data-fill-color="" data-highlight-line-color="#fff"--%>
+                                         <%--data-spot-radius="4"--%>
+                                         <%--data-data="[200,135,667,333,526,996,564,123,890,464,655]"></div>--%>
+                                <%--</div>--%>
+                                <%--<p class="mt"><b>$ 17,980</b><br/>Total</p>--%>
+                            <%--</div>--%>
+                        <%--</div><!-- /col-md-4 -->--%>
 
 
                     </div><!-- /row -->
@@ -137,56 +137,56 @@
                 RIGHT SIDEBAR CONTENT
                 *********************************************************************************************************************************************************** -->
 
-                <div class="col-lg-3 ds">
-                    <!--COMPLETED ACTIONS DONUTS CHART-->
-                    <h3>NOTIFICATIONS</h3>
+                <%--<div class="col-lg-3 ds">--%>
+                    <%--<!--COMPLETED ACTIONS DONUTS CHART-->--%>
+                    <%--<h3>NOTIFICATIONS</h3>--%>
 
-                    <!-- First Action -->
-                    <div class="desc">
-                        <div class="thumb">
-                            <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
-                        </div>
-                        <div class="details">
+                    <%--<!-- First Action -->--%>
+                    <%--<div class="desc">--%>
+                        <%--<div class="thumb">--%>
+                            <%--<span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>--%>
+                        <%--</div>--%>
+                        <%--<div class="details">--%>
 
-                        </div>
-                    </div>
-                    <!-- Second Action -->
-                    <div class="desc">
-                        <div class="thumb">
-                            <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
-                        </div>
-                        <div class="details">
+                        <%--</div>--%>
+                    <%--</div>--%>
+                    <%--<!-- Second Action -->--%>
+                    <%--<div class="desc">--%>
+                        <%--<div class="thumb">--%>
+                            <%--<span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>--%>
+                        <%--</div>--%>
+                        <%--<div class="details">--%>
 
-                        </div>
-                    </div>
-                    <!-- Third Action -->
-                    <div class="desc">
-                        <div class="thumb">
-                            <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
-                        </div>
-                        <div class="details">
+                        <%--</div>--%>
+                    <%--</div>--%>
+                    <%--<!-- Third Action -->--%>
+                    <%--<div class="desc">--%>
+                        <%--<div class="thumb">--%>
+                            <%--<span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>--%>
+                        <%--</div>--%>
+                        <%--<div class="details">--%>
 
-                        </div>
-                    </div>
-                    <!-- Fourth Action -->
-                    <div class="desc">
-                        <div class="thumb">
-                            <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
-                        </div>
-                        <div class="details">
-                            </p>
-                        </div>
-                    </div>
-                    <!-- Fifth Action -->
-                    <div class="desc">
-                        <div class="thumb">
-                            <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
-                        </div>
-                        <div class="details">
-                        </div>
-                    </div>
+                        <%--</div>--%>
+                    <%--</div>--%>
+                    <%--<!-- Fourth Action -->--%>
+                    <%--<div class="desc">--%>
+                        <%--<div class="thumb">--%>
+                            <%--<span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>--%>
+                        <%--</div>--%>
+                        <%--<div class="details">--%>
+                            <%--</p>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
+                    <%--<!-- Fifth Action -->--%>
+                    <%--<div class="desc">--%>
+                        <%--<div class="thumb">--%>
+                            <%--<span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>--%>
+                        <%--</div>--%>
+                        <%--<div class="details">--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
 
-                </div><!-- /col-lg-3 -->
+                <%--</div><!-- /col-lg-3 -->--%>
             </div><! --/row -->
         </section>
     </section>
