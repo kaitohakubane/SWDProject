@@ -13,8 +13,8 @@
     <title>Bill Management</title>
     <c:import url="/resources/views/common/header.jsp"/>
     <%--Date time CSS--%>
-    <%--<link href="<c:url value="/resources/js/bootstrap-datepicker/datepicker.css"/>" rel="stylesheet">--%>
-    <%--<link href="<c:url value="/resources/js/bootstrap-daterangepicker/daterangepicker.css"/>" rel="stylesheet">--%>
+    <link href="<c:url value="/resources/js/bootstrap-datepicker/datepicker.css"/>" rel="stylesheet">
+    <link href="<c:url value="/resources/js/bootstrap-daterangepicker/daterangepicker.css"/>" rel="stylesheet">
     <link href="<c:url value="/resources/css/SneakerStyle.css"/>" rel="stylesheet">
     <script src="/resources/js/jquery-1.8.3.min.js"></script>
 </head>
@@ -39,8 +39,8 @@
                             <form id="search-form" method="POST">
                                 <div class="row">
                                     <div class="col-md-5">
-                                        <div data-date-viewmode="years" data-date-format="yyyy-mm-dd"
-                                             data-date="2016-01-01"
+                                        <div data-date-viewmode="years" data-date-format="dd-mm-yyyy"
+                                             data-date="01-01-2016"
                                              class="input-append date dpYears">
                                             <input type="text" readonly="" size="16" name="fromDate"
                                                    class="form-control"
@@ -52,8 +52,8 @@
                                         </div>
                                     </div>
                                     <div class="col-md-5">
-                                        <div data-date-viewmode="years" data-date-format="yyyy-mm-dd"
-                                             data-date="2016-01-01"
+                                        <div data-date-viewmode="years" data-date-format="dd-mm-yyyy"
+                                             data-date="01-01-2016"
                                              class="input-append date dpYears">
                                             <input type="text" readonly="" size="16" name="toDate"
                                                    class="form-control"

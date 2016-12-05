@@ -39,8 +39,8 @@
                                 <form id="search-form" method="POST">
                                     <div class="row">
                                         <div class="col-md-5">
-                                            <div data-date-viewmode="years" data-date-format="yyyy-mm-dd"
-                                                 data-date="2016-01-01"
+                                            <div data-date-viewmode="years" data-date-format="dd-mm-yyyy"
+                                                 data-date="01-01-2016"
                                                  class="input-append date dpYears">
                                                 <input type="text" readonly="" size="16" name="fromDate"
                                                        class="form-control"
@@ -52,8 +52,8 @@
                                             </div>
                                         </div>
                                         <div class="col-md-5">
-                                            <div data-date-viewmode="years" data-date-format="yyyy-mm-dd"
-                                                 data-date="2016-01-01"
+                                            <div data-date-viewmode="years" data-date-format="dd-mm-yyyyZ"
+                                                 data-date="01-01-2016"
                                                  class="input-append date dpYears">
                                                 <input type="text" readonly="" size="16" name="toDate"
                                                        class="form-control"

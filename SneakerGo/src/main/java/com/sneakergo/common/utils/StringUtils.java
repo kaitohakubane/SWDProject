@@ -37,4 +37,9 @@ public class StringUtils {
         return result;
     }
 
+    public static String formatDateToString(Date date){
+        String strDate = new SimpleDateFormat("dd-MM-yyyy").format(date);
+        return strDate;
+    }
+
 }

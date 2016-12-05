@@ -33,9 +33,12 @@ public class SaleController {
         ModelAndView modelAndView = new ModelAndView(PageConstant.SALE_PAGE);
         Date currentDate = NumbericUtils.getCurrentDate();
         Date aMonthAgo = NumbericUtils.getNDateBeforeDate(UtilsConstant.THIRTY);
+
+
         List<SaleDisplayEntity> listSale = saleServiceInterface.getSaleByTime(aMonthAgo, currentDate);
-        modelAndView.addObject(ParamConstant.LIST_SALE_ATTR, listSale).
-                addObject(ParamConstant.FROM_DATE, aMonthAgo).addObject(ParamConstant.TO_DATE, currentDate);
+        modelAndView.addObject(ParamConstant.LIST_SALE_ATTR, listSale)
+                .addObject(ParamConstant.FROM_DATE, StringUtils.formatDateToString(aMonthAgo))
+                .addObject(ParamConstant.TO_DATE, StringUtils.formatDateToString(currentDate));
         return modelAndView;
     }
 
@@ -70,10 +73,10 @@ public class SaleController {
         ModelAndView modelAndView = new ModelAndView(PageConstant.SALE_PAGE);
         String[] from = StringUtils.formatDate(fromDate);
         String[] to = StringUtils.formatDate(toDate);
-        Date fromTime = NumbericUtils.getDate(from[UtilsConstant.ZERO],
-                from[UtilsConstant.ONE], from[UtilsConstant.TWO]);
-        Date toTime = NumbericUtils.getDate(to[UtilsConstant.ZERO],
-                to[UtilsConstant.ONE], to[UtilsConstant.TWO]);
+        Date fromTime = NumbericUtils.getDate(from[UtilsConstant.TWO],
+                from[UtilsConstant.ONE], from[UtilsConstant.ZERO]);
+        Date toTime = NumbericUtils.getDate(to[UtilsConstant.TWO],
+                to[UtilsConstant.ONE], to[UtilsConstant.ZERO]);
         List<SaleDisplayEntity> listSale = saleServiceInterface.getSaleByTime(fromTime, toTime);
         modelAndView.addObject(ParamConstant.LIST_SALE_ATTR, listSale).addObject(ParamConstant.FROM_DATE, fromDate)
                 .addObject(ParamConstant.TO_DATE, toDate);

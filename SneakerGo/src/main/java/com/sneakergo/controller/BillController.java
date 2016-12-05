@@ -35,7 +35,8 @@ public class BillController {
 
         List<BillDisplayEntity> billDisplayEntities= billServiceInterface.getBillByTime(aMonthAgo,currentDate);
         modelAndView.addObject(ParamConstant.LIST_BILL_ATTR,billDisplayEntities)
-                .addObject(ParamConstant.FROM_DATE,aMonthAgo).addObject(ParamConstant.TO_DATE,currentDate);
+                .addObject(ParamConstant.FROM_DATE,StringUtils.formatDateToString(aMonthAgo))
+                .addObject(ParamConstant.TO_DATE,StringUtils.formatDateToString(currentDate));
         return modelAndView;
     }
 
@@ -46,13 +47,14 @@ public class BillController {
         ModelAndView modelAndView = new ModelAndView(PageConstant.BILL_PAGE);
         String[] from = StringUtils.formatDate(fromDate);
         String[] to = StringUtils.formatDate(toDate);
-        Date fromTime = NumbericUtils.getDate(from[UtilsConstant.ZERO],
-                from[UtilsConstant.ONE], from[UtilsConstant.TWO]);
-        Date toTime = NumbericUtils.getDate(to[UtilsConstant.ZERO],
-                to[UtilsConstant.ONE], to[UtilsConstant.TWO]);
+        Date fromTime = NumbericUtils.getDate(from[UtilsConstant.TWO],
+                from[UtilsConstant.ONE], from[UtilsConstant.ZERO]);
+        Date toTime = NumbericUtils.getDate(to[UtilsConstant.TWO],
+                to[UtilsConstant.ONE], to[UtilsConstant.ZERO]);
         List<BillDisplayEntity> billDisplayEntities= billServiceInterface.getBillByTime(fromTime,toTime);
         modelAndView.addObject(ParamConstant.LIST_BILL_ATTR,billDisplayEntities)
-                .addObject(ParamConstant.FROM_DATE,fromTime).addObject(ParamConstant.TO_DATE,toTime);
+                .addObject(ParamConstant.FROM_DATE,StringUtils.formatDateToString(fromTime))
+                .addObject(ParamConstant.TO_DATE,StringUtils.formatDateToString(toTime));
         return modelAndView;
     }
 

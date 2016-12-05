@@ -40,8 +40,8 @@ public class ImportController {
         Date aMonthAgo = NumbericUtils.getNDateBeforeDate(UtilsConstant.THIRTY);
         List<ImportDisplayEntity> listImport = importServiceInterface.getImportByTime(aMonthAgo, currentDate);
         ModelAndView modelAndView = new ModelAndView(PageConstant.IMPORT_PAGE);
-        modelAndView.addObject(ParamConstant.LIST_IMPORT_ATTR, listImport).addObject(ParamConstant.FROM_DATE, aMonthAgo)
-                .addObject(ParamConstant.TO_DATE, currentDate);
+        modelAndView.addObject(ParamConstant.LIST_IMPORT_ATTR, listImport).addObject(ParamConstant.FROM_DATE, StringUtils.formatDateToString(aMonthAgo))
+                .addObject(ParamConstant.TO_DATE, StringUtils.formatDateToString(currentDate));
         return modelAndView;
     }
 
@@ -52,13 +52,14 @@ public class ImportController {
 
         String[] from = StringUtils.formatDate(fromDate);
         String[] to = StringUtils.formatDate(toDate);
-        Date fromTime = NumbericUtils.getDate(from[UtilsConstant.ZERO],
-                from[UtilsConstant.ONE], from[UtilsConstant.TWO]);
-        Date toTime = NumbericUtils.getDate(to[UtilsConstant.ZERO],
-                to[UtilsConstant.ONE], to[UtilsConstant.TWO]);
+        Date fromTime = NumbericUtils.getDate(from[UtilsConstant.TWO],
+                from[UtilsConstant.ONE], from[UtilsConstant.ZERO]);
+        Date toTime = NumbericUtils.getDate(to[UtilsConstant.TWO],
+                to[UtilsConstant.ONE], to[UtilsConstant.ZERO]);
         List<ImportDisplayEntity> listImport = importServiceInterface.getImportByTime(fromTime, toTime);
         ModelAndView modelAndView = new ModelAndView(PageConstant.IMPORT_PAGE);
-        modelAndView.addObject(ParamConstant.LIST_IMPORT_ATTR, listImport).addObject(ParamConstant.FROM_DATE, fromDate)
+        modelAndView.addObject(ParamConstant.LIST_IMPORT_ATTR, listImport)
+                .addObject(ParamConstant.FROM_DATE, fromDate)
                 .addObject(ParamConstant.TO_DATE, toDate);
         return modelAndView;
     }
