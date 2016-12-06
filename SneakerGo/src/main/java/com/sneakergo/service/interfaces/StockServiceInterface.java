@@ -19,6 +19,8 @@ public interface StockServiceInterface {
 
     List<StockDisplayEntity> getStock();
 
-    public StockEntity getStockByStockID(int stockID);
+    StockEntity getStockByStockID(int stockID);
+
+    int countStockRecord();
 
 }

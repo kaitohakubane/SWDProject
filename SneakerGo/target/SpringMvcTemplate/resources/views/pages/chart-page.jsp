@@ -34,30 +34,30 @@
         <section class="wrapper">
             <header>
                 <div class="row">
-                    <div class="col-md-8">
+                    <div class="col-md-7">
                         <h3> Revenue Report</h3>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-5">
                         <h3>
                             <form id="search-form" method="POST">
                                 <div class="row">
-                                    <div class="col-md-8">
+                                    <div class="col-md-7">
                                         <div data-date-viewmode="years" data-date-format="yyyy-mm-dd"
                                              data-date="2016-01-01"
                                              class="input-append date onlyYears">
                                             <input type="text" readonly="" size="16" name="fromDate"
                                                    class="form-control"
-                                                   name="fromDate" id="fromDate" value="${fromDate}">
+                                                   name="year" id="year" value="${fromDate}">
                                             <span class="input-group-btn add-on">
 		                                        <button class="btn btn-theme myBtnDate" type="button"><i
                                                         class="fa fa-calendar"></i></button>
 		                                      </span>
                                         </div>
                                     </div>
-                                    <div class="col-md-4 text-right">
+                                    <div class="col-md-5 text-right">
                                         <div class="form-group">
-                                            <button type="button" class="btn btn-primary search-btn"
-                                                    id="search-btn">Search
+                                            <button type="button" class="btn btn-primary chart-btn"
+                                                    id="chart-btn">Search
                                             </button>
                                         </div>
                                     </div>
@@ -207,8 +207,8 @@
 </section>
 
 
-<script src="<c:url value = "/resources/js/jquery.canvasjs.min.js"/>"
-        type="text/javascript"></script>
+<script src="<c:url value = "/resources/js/raphael.min.js"/>" type="text/javascript"></script>
+<script src="<c:url value = "/resources/js/morris.min.js"/>" type="text/javascript"></script>
 
 <script src="<c:url value = "/resources/js/bootstrap-datepicker/bootstrap-datepicker.js"/>"
         type="text/javascript"></script>
@@ -222,48 +222,9 @@
 <c:import url="/resources/views/common/footer.jsp"/>
 <script src="<c:url value="/resources/js/advanced-form-components.js"/>" type="text/javascript"></script>
 <script src="<c:url value="/resources/js/common-scripts.js"/>"></script>
+<script src="<c:url value="/resources/lib/js/chart-page.js"/>"></script>
+
 
 </body>
 </html>
-<script>
 
-    window.onload = function () {
-        var chart = new CanvasJS.Chart("chartContainer",
-            {
-
-                title: {
-                    text: "Earthquakes - per month"
-                },
-                axisX:{
-                    valueFormatString: "MMM",
-                    title: "Month"
-                },
-                axisY: {
-                    title: ".000VNĐ"
-                },
-                data: [
-                    {
-                        type: "area",
-
-                        dataPoints: [
-                            { x: new Date(2010, 1, 0), y: 650 },
-                            { x: new Date(2010, 2, 0), y: 700 },
-                            { x: new Date(2010, 3, 0), y: 710 },
-                            { x: new Date(2010, 4, 0), y: 658 },
-                            { x: new Date(2010, 5, 0), y: 734 },
-                            { x: new Date(2010, 6, 0), y: 963 },
-                            { x: new Date(2010, 7, 0), y: 847 },
-                            { x: new Date(2010, 8, 0), y: 853 },
-                            { x: new Date(2010, 9, 0), y: 869 },
-                            { x: new Date(2010, 10, 0), y: 943 },
-                            { x: new Date(2010, 11, 0), y: 970 },
-                            { x: new Date(2010, 12, 0), y: 970 }
-
-                        ]
-                    }
-                ]
-            });
-
-        chart.render();
-    }
-</script>

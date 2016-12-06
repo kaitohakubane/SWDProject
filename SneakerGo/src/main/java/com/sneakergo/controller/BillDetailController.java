@@ -133,7 +133,7 @@ public class BillDetailController {
             billEntity.setAccountId(orders.get(UtilsConstant.ZERO).getAccountId());
             billEntity.setTotalPrice(String.valueOf(totalPrice));
             billEntity.setEnabled(true);
-            billServiceInterface.createBill(billEntity);
+            billServiceInterface.updateBill(billEntity);
 
             return billEntity;
         } catch (Exception e) {

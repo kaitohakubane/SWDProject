@@ -21,4 +21,6 @@ public interface StockModelInterface {
 
     StockEntity getStockByStockID(int stockID);
 
+    int countStockRecord();
+
 }

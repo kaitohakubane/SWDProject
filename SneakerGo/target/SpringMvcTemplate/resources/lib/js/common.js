@@ -91,7 +91,7 @@ function setLabel(){
     $(".product-size").each(function(){
         var status=$(this).text();
         if (status == "0") {
-            $(this).html("<span class='status onStock'>Not imported</span>")
+            $(this).html("<span class='status sold'>Not imported</span>")
         }
     })
 

@@ -53,4 +53,9 @@ public class SaleService implements SaleServiceInterface{
         Date date= NumbericUtils.getCurrentDate();
         return saleModelInterface.getSaleByProductId(productId,date);
     }
+
+    @Override
+    public int countSaleRecordToday(){
+        return saleModelInterface.countSaleRecordToday(NumbericUtils.getCurrentDate());
+    }
 }

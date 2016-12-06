@@ -94,6 +94,13 @@ public class ImportController {
                 stockEntity.setProductId(productID);
                 stockEntity.setQuantity(quantity);
                 stockServiceInterface.createStock(stockEntity);
+
+                //Remove no stock product record
+                AttributeEntity zeroSize= attributeServiceInterface.getAttributeBySize(UtilsConstant.ZERO_STRING);
+                StockEntity zeroSizeEntity=stockServiceInterface.getStockByProductIDAndAttributeID
+                        (stockEntity.getProductId(),zeroSize.getAttributeId());
+                zeroSizeEntity.setEnabled(false);
+                stockServiceInterface.updateStockQuantity(zeroSizeEntity);
             }
 
             //Get stock ID

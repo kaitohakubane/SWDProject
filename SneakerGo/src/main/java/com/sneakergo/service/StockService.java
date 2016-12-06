@@ -48,4 +48,8 @@ public class StockService implements StockServiceInterface{
         return stockModelInterface.getStock();
     }
 
+    @Override
+    public int countStockRecord(){
+        return stockModelInterface.countStockRecord();
+    }
 }

@@ -22,4 +22,6 @@ public interface SaleServiceInterface {
     void updateSale(SaleEntity sale);
 
     SaleEntity getSaleByProductId(int productId);
+
+    int countSaleRecordToday();
 }

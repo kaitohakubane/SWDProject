@@ -1,22 +1,21 @@
 package com.sneakergo.common.constants;
 
 /**
- * Created by thanh on 16/9/2016.
+ * Created by Hung on 11/18/2016.
  */
 public class ParamConstant {
 
-    public static final String DATE = "yyyy/MM/dd";
-    public static final String DATE_FORMAT = "yyyy MM dd";
-    public static final String ROLE = "ROLE_USER";
-    public static final String CURRENT_DATE="currentDate";
     public static final String FROM_DATE = "fromDate";
     public static final String TO_DATE = "toDate";
 
     /**
      * Homepage
      */
-    public static final String LOGGED_USER_ATTR = "username";
     public static final String NUMBER_OF_PRODUCT="numberOfProduct";
+    public static final String NUMBER_OF_BILL = "numberOfBill";
+    public static final String NUMBER_OF_STOCK="numberOfStock";
+    public static final String NUMBER_OF_SALE="numberOfSale";
+    public static final String TOP_SELL_PRODUCT="topProduct";
 
     /**
      * Account
@@ -47,8 +46,6 @@ public class ParamConstant {
     public static final String LIST_BILL_ATTR = "listBill";
     public static final String BILL_ID = "billId";
     public static final String BILL = "bill";
-    public static final String BILL_STATUS = "status";
-    public static final String NUMBER_OF_BILL = "numberOfBill";
     public static final String BILL_DETAIL_LIST="listBillDetail";
     public static final String CUSTOMER="customer";
 
@@ -59,13 +56,10 @@ public class ParamConstant {
     public static final String SALE_ID = "saleId";
     public static final String SALE_PERCENT = "salePercent";
 
-
-    public static final String ORDER = "order";
-
     /**
-     * Sale Product
+     * Order
      */
-    public static final String LIST_SALE_PRODUCT_ATTR = "listSaleProduct";
+    public static final String ORDER = "order";
 
     /**
      * Import Product
@@ -79,7 +73,10 @@ public class ParamConstant {
      * Stock
      */
     public static final String LIST_STOCK_ATTR="listStock";
-    public static final String STOCK_ID="stockID";
-    public static final String ATTRIBUTE_ID="attributeID";
     public static final String QUANTITY="quantity";
+
+    /**
+     * Chart
+     */
+    public static final String YEAR="year";
 }

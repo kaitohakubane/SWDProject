@@ -147,10 +147,10 @@ VALUES ('11');
 
 
  INSERT INTO Stock(attributeID,productID,quantity,enabled) 
-VALUES (1,1,10,1); 
+VALUES (4,1,10,1); 
 
 INSERT INTO Stock(attributeID,productID,quantity,enabled) 
-VALUES (1,3,20,1);  
+VALUES (1,3,0,1);  
 
 INSERT INTO Stock(attributeID,productID,quantity,enabled) 
 VALUES (2,4,30,1);

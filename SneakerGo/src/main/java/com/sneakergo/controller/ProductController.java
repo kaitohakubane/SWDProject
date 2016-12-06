@@ -6,6 +6,7 @@ import com.sneakergo.common.constants.UtilsConstant;
 import com.sneakergo.common.utils.FileUtils;
 import com.sneakergo.common.utils.StringUtils;
 import com.sneakergo.entity.*;
+import com.sneakergo.service.StockService;
 import com.sneakergo.service.interfaces.AttributeServiceInterface;
 import com.sneakergo.service.interfaces.ProductServiceInterface;
 import com.sneakergo.service.interfaces.SaleServiceInterface;
@@ -160,16 +161,29 @@ public class ProductController {
     @RequestMapping(value = PageConstant.GET_ALL_PRODUCT_URL, method = RequestMethod.GET)
     public List<ProductSellEntity> getAllProduct() {
         List<ProductEntity> listProduct = productServiceInterface.getAllProduct();
-        List<ProductSellEntity> listSellProduct=new ArrayList<ProductSellEntity>();
-        ProductSellEntity productSellEntity;
+
         for(ProductEntity entity: listProduct){
-             SaleEntity saleEntity= saleServiceInterface.getSaleByProductId(entity.getProductId());
-             if(saleEntity==null){
-                 productSellEntity=new ProductSellEntity(entity,UtilsConstant.ZERO);
-             }else{
-                 productSellEntity=new ProductSellEntity(entity,saleEntity.getSalePercent());
-             }
-            listSellProduct.add(productSellEntity);
+            System.out.println(entity.getProductId());
+            AttributeEntity attributeEntity=attributeServiceInterface.getAttributeBySize(UtilsConstant.ZERO_STRING);
+            StockEntity stockEntity=stockServiceInterface.
+                    getStockByProductIDAndAttributeID(entity.getProductId(),attributeEntity.getAttributeId());
+            if(stockEntity!=null&&stockEntity.getEnabled()){
+                entity.setEnabled(false);
+            }
+        }
+
+        List<ProductSellEntity> listSellProduct = new ArrayList<ProductSellEntity>();
+        ProductSellEntity productSellEntity;
+        for (ProductEntity entity : listProduct) {
+            SaleEntity saleEntity = saleServiceInterface.getSaleByProductId(entity.getProductId());
+            if(entity.getEnabled()){
+                if (saleEntity == null) {
+                    productSellEntity = new ProductSellEntity(entity, UtilsConstant.ZERO);
+                } else {
+                    productSellEntity = new ProductSellEntity(entity, saleEntity.getSalePercent());
+                }
+                listSellProduct.add(productSellEntity);
+            }
         }
         return listSellProduct;
     }
@@ -177,12 +191,12 @@ public class ProductController {
     @ResponseBody
     @RequestMapping(value = PageConstant.GET_PRODUCT_SIZE, method = RequestMethod.POST)
     public List<String> getProductSize(@RequestParam(value = ParamConstant.PRODUCT_ID) int productId) {
-        ProductEntity productEntity= productServiceInterface.getProductByID(productId);
-        if(productEntity!=null){
-            List<Integer> listOfAttId= stockServiceInterface.getSizeOfProduct(productEntity.getProductId());
-            List<String> listOfSize=new ArrayList<String>();
-            for(int i=UtilsConstant.ZERO;i<listOfAttId.size();i++){
-                listOfSize.add(attributeServiceInterface.getProductByID(listOfAttId.get(i)).getSize());
+        ProductEntity productEntity = productServiceInterface.getProductByID(productId);
+        if (productEntity != null) {
+            List<Integer> listOfAttId = stockServiceInterface.getSizeOfProduct(productEntity.getProductId());
+            List<String> listOfSize = new ArrayList<String>();
+            for (int i = UtilsConstant.ZERO; i < listOfAttId.size(); i++) {
+                    listOfSize.add(attributeServiceInterface.getAttributeById(listOfAttId.get(i)).getSize());
             }
             return listOfSize;
         }

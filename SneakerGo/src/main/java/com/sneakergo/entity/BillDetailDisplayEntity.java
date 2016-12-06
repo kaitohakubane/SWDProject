@@ -6,6 +6,7 @@ package com.sneakergo.entity;
 public class BillDetailDisplayEntity {
 
     private String productName;
+    String size;
     private Integer quantity;
     private String price;
     private String total;
@@ -42,9 +43,17 @@ public class BillDetailDisplayEntity {
         this.total = total;
     }
 
-    public BillDetailDisplayEntity(String productName, Integer quantity, String price, String total) {
+    public String getSize() {
+        return size;
+    }
 
+    public void setSize(String size) {
+        this.size = size;
+    }
+
+    public BillDetailDisplayEntity(String productName, String size, Integer quantity, String price, String total) {
         this.productName = productName;
+        this.size = size;
         this.quantity = quantity;
         this.price = price;
         this.total = total;

@@ -10,5 +10,5 @@ public interface AttributeServiceInterface {
 
     void insertAttribute(AttributeEntity attributeEntity);
 
-    AttributeEntity getProductByID(int attId);
+    AttributeEntity getAttributeById(int attId);
 }

@@ -66,7 +66,7 @@ public class PageConstant {
     public static final String GET_ALL_BILL_DAILY_REPORT_URL = "/admin/report/daily/sale/get-bill";
     public static final String MONTHLY_IMPORT_PRODUCT_REPORT_URL = "/admin/report/monthly/import-product";
     public static final String REVENUE_REPORT_URL = "/admin/revenue-report";
-    public static final String SEARCH_REVENUE_REPORT_URL = "/admin/revenue-report/search";
+    public static final String SEARCH_REVENUE_REPORT_URL = "/admin/revenue-report/generate";
 
     //Customer API
     public static final String CHECKOUT_URL="/api/checkout";

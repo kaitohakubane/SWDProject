@@ -10,6 +10,7 @@ import com.sneakergo.model.interfaces.SaleModelInterface;
 import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 
@@ -66,5 +67,14 @@ public class SaleModel extends CommonDAO implements SaleModelInterface {
                 .setMaxResults(UtilsConstant.ONE);
         SaleEntity saleEntity=(SaleEntity) criteria.uniqueResult();
         return saleEntity;
+    }
+
+    @Override
+    public int countSaleRecordToday(Date date){
+        Long count = (Long)getSession().createCriteria(SaleEntity.class)
+                .add(Restrictions.le("fromDate",date))
+                .add(Restrictions.ge("toDate",date))
+                .setProjection(Projections.rowCount()).uniqueResult();
+        return count.intValue();
     }
 }

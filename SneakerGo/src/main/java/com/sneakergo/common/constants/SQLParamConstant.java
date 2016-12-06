@@ -1,16 +1,17 @@
 package com.sneakergo.common.constants;
 
 /**
- * Created by thanh on 16/9/2016.
+ * Created by Hung on 11/18/2016.
  */
 public class SQLParamConstant {
-    public static final String GET_REVENUE_EACH_MONTH = "SELECT DATE_FORMAT(date,'%m') AS period, sum(totalPrice) AS revenue FROM Bill" +
+    public static final String GET_REVENUE_EACH_MONTH = "SELECT DATE_FORMAT(date,'%m') AS period, sum(totalPrice) " +
+            "AS revenue FROM Bill" +
             " WHERE enabled=true AND YEAR(date) =:year GROUP BY MONTH(date)";
 
     public static final String GET_STOCK_RECORDS = "SELECT s.attributeID as attributeID, s.productID as productID,s.quantity" +
             " as quantity, a.size as size, p.productName as productName " +
             "FROM attribute a,stock s, product p " +
-            "WHERE a.attributeID=s.attributeID AND s.productID=p.productID ORDER BY s.quantity ASC";
+            "WHERE a.attributeID=s.attributeID AND s.productID=p.productID AND s.enabled=true ORDER BY s.quantity ASC";
 
 
     public static final String GET_ALL_BILL_IN_TIME = "SELECT b.billID as billID, a.accountID as accountID," +
@@ -30,8 +31,10 @@ public class SQLParamConstant {
             "WHERE i.stockID=s.stockID AND s.productID=p.productID AND s.attributeID=a.attributeID " +
             "AND i.importDate>=:fromDate AND i.importDate<=:toDate";
 
-    public static final String GET_BILL_DETAIL_OF_BILL="SELECT p.productName as productName, b.price as price, " +
+    public static final String GET_BILL_DETAIL_OF_BILL="SELECT p.productName as productName,a.size as size, b.price as price, " +
             "b.quantity as quantity, b.price*b.quantity as total " +
-            "FROM billdetail b,product p,stock s " +
-            "WHERE b.stockID=s.stockID AND b.billID=:billID AND s.productID=p.productID";
+            "FROM billdetail b,product p,stock s,attribute a " +
+            "WHERE b.stockID=s.stockID AND b.billID=:billID AND s.productID=p.productID AND s.attributeID=a.attributeID";
+
+
 }

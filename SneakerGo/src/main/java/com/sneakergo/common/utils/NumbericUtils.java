@@ -17,6 +17,12 @@ public class NumbericUtils {
         return currentDate;
     }
 
+    public static int getCurrentYear(){
+        Calendar now = Calendar.getInstance();
+        int year = now.get(Calendar.YEAR);
+        return year;
+    }
+
     public static Date getNDateBeforeDate(int n){
         Calendar cDate=GregorianCalendar.getInstance();
         cDate.add(Calendar.DATE,-n);

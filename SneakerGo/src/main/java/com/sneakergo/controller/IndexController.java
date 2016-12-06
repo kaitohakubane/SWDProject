@@ -1,12 +1,16 @@
 package com.sneakergo.controller;
 
+import com.mysql.jdbc.Util;
 import com.sneakergo.common.constants.PageConstant;
 import com.sneakergo.common.constants.ParamConstant;
 import com.sneakergo.common.constants.SQLParamConstant;
 import com.sneakergo.common.constants.UtilsConstant;
+import com.sneakergo.entity.ProductEntity;
 import com.sneakergo.entity.ProductSellEntity;
 import com.sneakergo.service.interfaces.BillServiceInterface;
 import com.sneakergo.service.interfaces.ProductServiceInterface;
+import com.sneakergo.service.interfaces.SaleServiceInterface;
+import com.sneakergo.service.interfaces.StockServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -28,13 +32,25 @@ public class IndexController {
     @Autowired
     BillServiceInterface billServiceInterface;
 
+    @Autowired
+    StockServiceInterface stockServiceInterface;
+
+    @Autowired
+    SaleServiceInterface saleServiceInterface;
+
     @RequestMapping(value = {PageConstant.ADMIN_ROOT_PATH_URL, PageConstant.HOME_PAGE_URL}, method = RequestMethod.GET)
     public ModelAndView initHomePage() {
         ModelAndView modelAndView = new ModelAndView(PageConstant.HOME_PAGE);
         int numberOfProduct = productServiceInterface.countProductRecord();
         int numberOfOrder = billServiceInterface.countTodayBillRecord();
-        modelAndView.addObject(ParamConstant.NUMBER_OF_PRODUCT, numberOfProduct);
-        modelAndView.addObject(ParamConstant.NUMBER_OF_BILL, numberOfOrder);
+        int numberOfStock = stockServiceInterface.countStockRecord();
+        int numberOfSale = saleServiceInterface.countSaleRecordToday();
+        ProductEntity productEntity = productServiceInterface.getProductByID(UtilsConstant.ONE);
+        modelAndView.addObject(ParamConstant.TOP_SELL_PRODUCT, productEntity)
+                .addObject(ParamConstant.NUMBER_OF_PRODUCT, numberOfProduct)
+                .addObject(ParamConstant.NUMBER_OF_BILL, numberOfOrder)
+                .addObject(ParamConstant.NUMBER_OF_STOCK, numberOfStock)
+                .addObject(ParamConstant.NUMBER_OF_SALE, numberOfSale);
         return modelAndView;
     }
 

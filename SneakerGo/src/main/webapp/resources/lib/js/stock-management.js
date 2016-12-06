@@ -5,6 +5,7 @@ var IMPORT_PRODUCT_URL="/admin/import/create";
 var STOCK_PAGE_URL="/admin/stock";
 var IMPORT_PRODUCT_POPUP_TITLE="IMPORT PRODUCT";
 var IMPORT_PRODUCT_POPUP_MSG="Import Product successfully";
+var DEFAULT_VALUE_OF_DROPDOWN="3";
 $(document).ready(function () {
     var dataTable = $('#stock-table');
     var SIZE_LIST = {
@@ -40,6 +41,7 @@ $(document).ready(function () {
             text : item.text
         }));
     });
+
 
     /**
      * Style for Data table

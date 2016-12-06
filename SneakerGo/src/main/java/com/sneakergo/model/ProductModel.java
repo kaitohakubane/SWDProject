@@ -35,7 +35,8 @@ public class ProductModel extends CommonDAO implements ProductModelInterface {
 
     @Override
     public List<ProductEntity> getAllProduct() {
-        Criteria criteria = getSession().createCriteria(ProductEntity.class).add(Restrictions.eq("enabled", true));
+        Criteria criteria = getSession().createCriteria(ProductEntity.class).
+                add(Restrictions.eq("enabled", true));
         List<ProductEntity> productList = criteria.list();
         return productList;
     }

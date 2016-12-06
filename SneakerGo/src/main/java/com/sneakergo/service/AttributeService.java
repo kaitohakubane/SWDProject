@@ -27,8 +27,8 @@ public class AttributeService implements AttributeServiceInterface {
     }
 
     @Override
-    public AttributeEntity getProductByID(int attId){
-        return attributeModelInterface.getProductByID(attId);
+    public AttributeEntity getAttributeById(int attId){
+        return attributeModelInterface.getAttributeById(attId);
     }
 
 

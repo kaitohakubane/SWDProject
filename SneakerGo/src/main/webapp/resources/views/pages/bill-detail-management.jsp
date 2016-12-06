@@ -86,6 +86,7 @@
                         <tr role="row">
                             <th></th>
                             <th>Product</th>
+                            <th>Size</th>
                             <th>Quantity</th>
                             <th>Price</th>
                             <th>Total</th>
@@ -97,6 +98,7 @@
                             <tr class="gradeC even">
                                 <td class="text-center">${counter.count}</td>
                                 <td class="center">${item.productName}</td>
+                                <td class="center">${item.size}</td>
                                 <td class="text-center">${item.quantity}</td>
                                 <td class="text-center">${item.price}</td>
                                 <td class="text-center">${item.total}</td>

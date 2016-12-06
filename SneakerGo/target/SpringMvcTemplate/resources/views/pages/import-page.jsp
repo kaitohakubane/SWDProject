@@ -52,7 +52,7 @@
                                             </div>
                                         </div>
                                         <div class="col-md-5">
-                                            <div data-date-viewmode="years" data-date-format="dd-mm-yyyyZ"
+                                            <div data-date-viewmode="years" data-date-format="dd-mm-yyyy"
                                                  data-date="01-01-2016"
                                                  class="input-append date dpYears">
                                                 <input type="text" readonly="" size="16" name="toDate"

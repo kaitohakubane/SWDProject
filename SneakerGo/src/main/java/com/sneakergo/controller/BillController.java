@@ -7,7 +7,11 @@ import com.sneakergo.common.utils.NumbericUtils;
 import com.sneakergo.common.utils.StringUtils;
 import com.sneakergo.entity.BillDisplayEntity;
 import com.sneakergo.entity.BillEntity;
+import com.sneakergo.entity.BilldetailEntity;
+import com.sneakergo.entity.StockEntity;
+import com.sneakergo.service.interfaces.BillDetailServiceInterface;
 import com.sneakergo.service.interfaces.BillServiceInterface;
+import com.sneakergo.service.interfaces.StockServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,6 +30,12 @@ import java.util.List;
 public class BillController {
     @Autowired
     BillServiceInterface billServiceInterface;
+
+    @Autowired
+    BillDetailServiceInterface billDetailServiceInterface;
+
+    @Autowired
+    StockServiceInterface stockServiceInterface;
 
     @RequestMapping(value = {PageConstant.BILL_PAGE_URL}, method = RequestMethod.GET)
     public ModelAndView initHomePage() {
@@ -65,6 +75,12 @@ public class BillController {
         if(billEntity!=null){
             billEntity.setEnabled(false);
             billServiceInterface.updateBill(billEntity);
+            List<BilldetailEntity> billdetailEntities=billDetailServiceInterface.getBillDetailByBillID(billEntity);
+            for(BilldetailEntity entity: billdetailEntities){
+                StockEntity stockEntity=stockServiceInterface.getStockByStockID( entity.getStockId());
+                stockEntity.setQuantity(stockEntity.getQuantity()+entity.getQuantity());
+                stockServiceInterface.updateStockQuantity(stockEntity);
+            }
             return true;
         }
         return false;
