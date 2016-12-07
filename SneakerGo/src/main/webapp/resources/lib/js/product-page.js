@@ -15,6 +15,7 @@ var CREATE_SALE_POPUP_TITLE = 'Create Sale';
 var ADD_ACTION = "add";
 var UPDATE_ACTION = "update";
 var INIT_PERCENT_VAL = '0';
+var PRODUCT_CONFIRM_MSG = "Are you sure to delete this product ";
 
 $(document).ready(function () {
 
@@ -27,7 +28,11 @@ $(document).ready(function () {
 function registerEvent() {
     $('.delete-btn').on('click', function () {
         var productId = $(this).data("id");
-        deleteProduct(productId);
+        var confirmData = {
+            'title': CONFIRM_INFORMATION_TITLE,
+            'content': PRODUCT_CONFIRM_MSG
+        }
+        showConfirmModal(deleteProduct,confirmData,[productId]);
     })
 
     $('#sale-percentage').change(setMinMaxForNumberInput);
@@ -93,6 +98,7 @@ function saleModalInitialize(productId, name) {
 }
 
 function deleteProduct(productId) {
+    $('#confirmModal').modal("hide");
     var Data = {
         "productId": productId
     }

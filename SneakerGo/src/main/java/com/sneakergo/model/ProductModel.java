@@ -2,11 +2,9 @@ package com.sneakergo.model;
 
 import com.sneakergo.common.constants.SQLParamConstant;
 import com.sneakergo.entity.ProductEntity;
-import com.sneakergo.entity.ProductSellEntity;
 import com.sneakergo.model.common.CommonDAO;
 import com.sneakergo.model.interfaces.ProductModelInterface;
 import org.hibernate.Criteria;
-import org.hibernate.Query;
 import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
@@ -57,8 +55,10 @@ public class ProductModel extends CommonDAO implements ProductModelInterface {
 
     @Override
     public int countProductRecord(){
-        Long count = (Long)getSession().createCriteria(ProductEntity.class).
-                setProjection(Projections.rowCount()).uniqueResult();
+        Long count = (Long)getSession().createCriteria(ProductEntity.class)
+                .add(Restrictions.eq("enabled",true))
+                .setProjection(Projections.rowCount()).uniqueResult();
         return count.intValue();
     }
+
 }

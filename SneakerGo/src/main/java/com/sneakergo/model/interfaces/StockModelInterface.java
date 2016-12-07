@@ -23,4 +23,6 @@ public interface StockModelInterface {
 
     int countStockRecord();
 
+    int countAvailableStockRecord();
+
 }

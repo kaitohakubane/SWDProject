@@ -50,8 +50,9 @@ public class BillModel extends CommonDAO implements BillModelInterface {
 
     @Override
     public int countBillRecord(Date date){
-        Long count = (Long)getSession().createCriteria(BillEntity.class).
-                add(Restrictions.eq("date",date)).setProjection(Projections.rowCount()).uniqueResult();
+        Long count = (Long)getSession().createCriteria(BillEntity.class)
+                .add(Restrictions.eq("date",date)).add(Restrictions.eq("enabled",true))
+                .setProjection(Projections.rowCount()).uniqueResult();
         return count.intValue();
     }
 

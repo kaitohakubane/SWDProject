@@ -74,6 +74,7 @@ public class SaleModel extends CommonDAO implements SaleModelInterface {
         Long count = (Long)getSession().createCriteria(SaleEntity.class)
                 .add(Restrictions.le("fromDate",date))
                 .add(Restrictions.ge("toDate",date))
+                .add(Restrictions.eq("enabled",true))
                 .setProjection(Projections.rowCount()).uniqueResult();
         return count.intValue();
     }

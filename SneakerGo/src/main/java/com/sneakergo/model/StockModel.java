@@ -62,7 +62,7 @@ public class StockModel extends CommonDAO implements StockModelInterface {
     }
 
     @Override
-    public int countStockRecord(){
+    public int countAvailableStockRecord(){
         Long count = (Long)getSession().createCriteria(StockEntity.class)
                 .add(Restrictions.eq("enabled",true))
                 .add(Restrictions.ne("attributeId", UtilsConstant.ONE))
@@ -70,5 +70,11 @@ public class StockModel extends CommonDAO implements StockModelInterface {
         return count.intValue();
     }
 
-
+    @Override
+    public int countStockRecord(){
+        Long count = (Long)getSession().createCriteria(StockEntity.class)
+                .add(Restrictions.eq("enabled",true))
+                .setProjection(Projections.rowCount()).uniqueResult();
+        return count.intValue();
+    }
 }

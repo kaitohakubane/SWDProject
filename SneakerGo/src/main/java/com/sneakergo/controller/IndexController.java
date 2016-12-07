@@ -44,12 +44,14 @@ public class IndexController {
         int numberOfProduct = productServiceInterface.countProductRecord();
         int numberOfOrder = billServiceInterface.countTodayBillRecord();
         int numberOfStock = stockServiceInterface.countStockRecord();
+        int numberOfAvailableStock=stockServiceInterface.countAvailableStockRecord();
         int numberOfSale = saleServiceInterface.countSaleRecordToday();
         ProductEntity productEntity = productServiceInterface.getProductByID(UtilsConstant.ONE);
         modelAndView.addObject(ParamConstant.TOP_SELL_PRODUCT, productEntity)
                 .addObject(ParamConstant.NUMBER_OF_PRODUCT, numberOfProduct)
                 .addObject(ParamConstant.NUMBER_OF_BILL, numberOfOrder)
                 .addObject(ParamConstant.NUMBER_OF_STOCK, numberOfStock)
+                .addObject(ParamConstant.NUMBER_OF_AVAILABLE_STOCK,numberOfAvailableStock)
                 .addObject(ParamConstant.NUMBER_OF_SALE, numberOfSale);
         return modelAndView;
     }

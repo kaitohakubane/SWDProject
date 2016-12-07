@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html lang="en">
 <head>
     <title>DASHBOARD</title>
@@ -39,9 +40,9 @@
                         <div class="col-md-2 col-sm-2 box0">
                             <div class="box1">
                                 <span class="li_data"></span>
-                                <h3>${numberOfStock}</h3>
+                                <h3>${numberOfAvailableStock}</h3>
                             </div>
-                            <p>You have ${numberOfStock} product records in stock</p>
+                            <p>You have ${numberOfAvailableStock} product records in stock</p>
                         </div>
 
                         <div class="col-md-2 col-sm-2 box0">
@@ -72,21 +73,24 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-sm-6 col-xs-6 goleft">
-                                        <p><i class="fa fa-database"></i> 80%</p>
+                                        <c:set var="total" value="${(numberOfAvailableStock*100) / numberOfStock}"/>
+                                        <p><i class="fa fa-database"><fmt:formatNumber pattern="#0.##"
+                                                                                       value="${total}"/>%</i></p>
                                     </div>
                                 </div>
                                 <canvas id="serverstatus01" height="120" width="120"></canvas>
                                 <script>
                                     var doughnutData = [
                                         {
-                                            value: 80,
+                                            value: ${numberOfAvailableStock},
                                             color: "#68dff0"
                                         },
                                         {
-                                            value: 20,
+                                            value: ${numberOfStock}-${numberOfAvailableStock},
                                             color: "#fdfdfd"
                                         }
                                     ];
+
                                     var myDoughnut = new Chart(document.getElementById("serverstatus01").getContext("2d")).Doughnut(doughnutData);
                                 </script>
                             </div>
@@ -121,7 +125,8 @@
                         </div><!-- /col-md-4 -->
                     </div><!-- /row -->
                 </div><!-- /col-lg-9 END SECTION MIDDLE -->
-            </div><! --/row -->
+            </div>
+            <! --/row -->
         </section>
     </section>
 

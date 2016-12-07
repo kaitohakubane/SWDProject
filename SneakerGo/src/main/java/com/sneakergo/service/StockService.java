@@ -52,4 +52,9 @@ public class StockService implements StockServiceInterface{
     public int countStockRecord(){
         return stockModelInterface.countStockRecord();
     }
+
+    @Override
+    public int countAvailableStockRecord(){
+        return stockModelInterface.countAvailableStockRecord();
+    }
 }

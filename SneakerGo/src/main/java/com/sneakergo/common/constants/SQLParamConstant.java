@@ -36,5 +36,9 @@ public class SQLParamConstant {
             "FROM billdetail b,product p,stock s,attribute a " +
             "WHERE b.stockID=s.stockID AND b.billID=:billID AND s.productID=p.productID AND s.attributeID=a.attributeID";
 
-
+    public static final String GET_TOP_PRODUCT="SELECT p.productID as productID, SUM(d.quantity) as quantity " +
+            "FROM product p,billdetail d,stock s,bill b " +
+            "WHERE p.productID=s.productID AND s.stockID=d.stockID " +
+            "AND b.billID=d.billID AND YEAR(b.date)=:year " +
+            "GROUP BY p.productID ORDER BY quantity DESC";
 }

@@ -14,6 +14,7 @@ public class ParamConstant {
     public static final String NUMBER_OF_PRODUCT="numberOfProduct";
     public static final String NUMBER_OF_BILL = "numberOfBill";
     public static final String NUMBER_OF_STOCK="numberOfStock";
+    public static final String NUMBER_OF_AVAILABLE_STOCK="numberOfAvailableStock";
     public static final String NUMBER_OF_SALE="numberOfSale";
     public static final String TOP_SELL_PRODUCT="topProduct";
 

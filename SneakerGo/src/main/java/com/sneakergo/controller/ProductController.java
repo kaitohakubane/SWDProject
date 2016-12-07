@@ -149,8 +149,12 @@ public class ProductController {
             productEntity.setEnabled(false);
 
             productServiceInterface.updateProduct(productEntity);
-
             new File(imagePath + productEntity.getPicture()).delete();
+            AttributeEntity attributeEntity= attributeServiceInterface.getAttributeBySize(UtilsConstant.ZERO_STRING);
+            StockEntity stockEntity=stockServiceInterface.getStockByProductIDAndAttributeID
+                    (productEntity.getProductId(),attributeEntity.getAttributeId());
+            stockEntity.setEnabled(false);
+            stockServiceInterface.updateStockQuantity(stockEntity);
             return true;
         }
 
